@@ -1,0 +1,27 @@
+$tablet: 1179px;
+$mobile: 539px;
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=El+Messiri&family=Montserrat:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500&family=Poppins:wght@300;500&family=Raleway:wght@300;400;600&display=swap');
+//common
+@import 'common/reset';
+@import 'common/header';
+@import 'common/footer';
+@import 'common/layout';
+@import 'common/mixin';
+@import 'common/color';
+@import 'common/font';
+@import 'common/modal';
+
+//main
+@import 'main/visual';
+@import 'main/list';
+@import 'main/banner';
+@import 'main/content';
+
+//sub
+@import 'sub/brand';
+@import 'sub/gallery';
+@import 'sub/youtube';
+@import 'sub/notice';
+@import 'sub/mypage';
+@import 'sub/contactUs';

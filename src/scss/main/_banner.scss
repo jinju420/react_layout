@@ -1,0 +1,35 @@
+#banner {
+	.inner {
+		display: flex;
+		align-items: center;
+		padding: 75px 0;
+		position: relative;
+		width: 1180px;
+		margin: 0 auto;
+		h1 {
+			width: 50%;
+			height: 100%;
+			line-height: 150px;
+			text-align: center;
+			font-size: 60px;
+			font-weight: bold;
+			border-right: 1px solid #222;
+			font-family: 'Poppins';
+			color: #666;
+		}
+		p {
+			width: 50%;
+			height: 100%;
+			padding: 0 50px 0 20px;
+			text-align: right;
+			line-height: 1.5;
+			word-break: keep-all;
+			font-family: 'Noto Sans KR';
+			color: #666;
+			span {
+				width: 150px;
+				white-space: pre-line;
+			}
+		}
+	}
+}

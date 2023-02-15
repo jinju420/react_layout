@@ -1,0 +1,45 @@
+.Contact {
+	.sub_con {
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+			> span {
+			}
+			.sns {
+				span {
+				}
+			}
+			#map {
+				height: 500px;
+				border: 1px solid pink;
+				margin-bottom: 30px;
+				margin-top: 10px;
+			}
+			.map_guide {
+				display: flex;
+				justify-content: space-between;
+				.traffic {
+					display: flex;
+					li {
+						margin-right: 20px;
+						border: 1px solid salmon;
+						// padding: 10px 30px;
+						width: 150px;
+						height: 30px;
+					}
+				}
+				.store {
+					display: flex;
+					li {
+						margin-right: 20px;
+						border: 1px solid salmon;
+						padding: 10px 30px;
+						&:last-child {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

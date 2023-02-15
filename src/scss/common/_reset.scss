@@ -1,0 +1,25 @@
+@charset 'utf-8';
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul,
+li,
+ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.hide {
+	position: absolute;
+	top: -9999px;
+	opacity: 0;
+}
+fieldset {
+	border: none;
+}
+// body {
+// 	overflow: hidden;
+// }

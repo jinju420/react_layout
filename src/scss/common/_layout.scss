@@ -1,0 +1,52 @@
+.content {
+	figure {
+		width: 100%;
+		height: 0;
+		// height: 500px;
+		opacity: 0;
+		transition: 1s;
+		background: pink;
+	}
+	.sub_con {
+		background: #eee;
+		> .inner {
+			position: relative;
+			width: 1180px;
+			margin: 0 auto;
+			min-height: 400px;
+			opacity: 0;
+			transition: 1s;
+			transform: translateY(100px);
+			padding: 120px 0;
+			h1 {
+				font: bold 50px/1 'arial';
+				color: #777;
+				margin-bottom: 50px;
+			}
+		}
+	}
+	&.on {
+		figure {
+			height: 500px;
+			opacity: 1;
+		}
+		.inner {
+			opacity: 1;
+			transform: translateX(0px);
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.content {
+		figure {
+			// height: 200px;
+		}
+		.sub_con {
+			> .inner {
+				width: 100%;
+				padding: 120px 50px;
+			}
+		}
+	}
+}

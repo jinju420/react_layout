@@ -1,0 +1,26 @@
+//float해제
+@mixin clear {
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+//inner공통
+@mixin innerWid {
+	width: 1180px;
+	margin: 0 auto;
+}
+
+//imgFit
+@mixin imgFit {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+//img좌우반전
+@mixin imgScale {
+	transform: rotate(90deg);
+	transform: scaleX(-1);
+}
