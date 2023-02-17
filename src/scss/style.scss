@@ -6,17 +6,21 @@ $mobile: 539px;
 @import 'common/reset';
 @import 'common/header';
 @import 'common/footer';
-@import 'common/layout';
 @import 'common/mixin';
 @import 'common/color';
 @import 'common/font';
 @import 'common/modal';
+@import 'common/layout';
 
 //main
 @import 'main/visual';
-@import 'main/list';
-@import 'main/banner';
-@import 'main/content';
+@import 'main/news';
+@import 'main/pics';
+@import 'main/vids';
+@import 'main/btns';
+// @import 'main/list';
+// @import 'main/banner';
+// @import 'main/content';
 
 //sub
 @import 'sub/brand';

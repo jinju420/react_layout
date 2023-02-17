@@ -8,13 +8,24 @@
 	left: 0;
 	z-index: 10;
 	.con {
-		width: 100%;
-		height: 100%;
+		// width: 100%;
+		// height: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: relative;
+		padding-bottom: 56.25%;
 		img,
 		video,
 		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
+			// width: 100%;
+			// height: 100%;
 			object-fit: cover;
 			border: none;
 		}
@@ -26,5 +37,22 @@
 		top: 4vh;
 		right: 5vw;
 		cursor: pointer;
+	}
+}
+.video {
+	.video_con {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: relative;
+		padding-bottom: 56.25%;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
 	}
 }

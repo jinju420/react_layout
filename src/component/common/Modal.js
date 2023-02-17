@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-
+//실행이 될때
 function Modal(props) {
 	useEffect(() => {
 		//모발 컴포넌트 마운트시에 스크롤 비활성화
@@ -10,7 +10,7 @@ function Modal(props) {
 		};
 	}, []);
 	return (
-		<aside className='modal'>
+		<aside className='modal video'>
 			<div className='con'>{props.children}</div>
 			<span
 				className='close'

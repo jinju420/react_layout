@@ -63,3 +63,17 @@ footer {
 		}
 	}
 }
+@media screen and (max-width: $mobile) {
+	footer {
+		.inner {
+			width: 100%;
+			padding: 0 30px;
+			.wrap {
+				padding: 80px 0;
+				article {
+					margin-right: 40px;
+				}
+			}
+		}
+	}
+}

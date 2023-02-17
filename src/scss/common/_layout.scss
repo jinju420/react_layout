@@ -8,7 +8,7 @@
 		background: pink;
 	}
 	.sub_con {
-		background: #eee;
+		background: $basicColor2;
 		> .inner {
 			position: relative;
 			width: 1180px;
@@ -19,7 +19,7 @@
 			transform: translateY(100px);
 			padding: 120px 0;
 			h1 {
-				font: bold 50px/1 'arial';
+				font: bold 50px/1 $titleFont;
 				color: #777;
 				margin-bottom: 50px;
 			}

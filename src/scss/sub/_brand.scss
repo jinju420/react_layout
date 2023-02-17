@@ -15,7 +15,7 @@
 					width: 100%;
 					.pic {
 						width: 100%;
-						height: 300px;
+						height: 350px;
 						background: #111;
 						margin-bottom: 20px;
 						transition: 0.5s;
@@ -28,6 +28,16 @@
 							height: 100%;
 							object-fit: cover;
 						}
+					}
+					h3 {
+						font-size: 35px;
+						text-align: center;
+						font-family: $titleFont;
+					}
+					p {
+						font-size: 25px;
+						text-align: center;
+						font-family: $contentFont;
 					}
 				}
 				&::after {
@@ -93,7 +103,7 @@
 					> .inner {
 						width: 100%;
 						.pic {
-							height: 50vw;
+							// height: 50vw;
 							background: #111;
 							margin-bottom: 20px;
 							transition: 0.5s;
@@ -101,6 +111,26 @@
 							&:hover {
 								filter: saturate(1.1);
 							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	.Brand {
+		.sub_con {
+			> .inner {
+				padding: 120px 30px;
+				article {
+					width: 100%;
+					padding: 0;
+					margin-bottom: 50px;
+					> .inner {
+						width: 100%;
+						.pic {
+							// height: 75vw;
 						}
 					}
 				}
