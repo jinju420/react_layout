@@ -4,8 +4,46 @@
 	background: lightgreen;
 	position: relative;
 	padding: 10vw;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	perspective: 700px;
 	h1 {
-		font: bold 200px/1 'arial';
+		width: 100%;
+		margin-bottom: 30px;
+		font: bold 100px/1 'arial';
+		position: relative;
+		z-index: 2;
+	}
+	h2 {
+		position: absolute;
+		top: 100px;
+		left: 100px;
 		color: #fff;
+		opacity: 0.5;
+		z-index: 1;
+		font-size: 200px;
+	}
+	article {
+		width: 200px;
+		height: 200px;
+		background: #555;
+		opacity: 0;
+		transform: rotateY(180deg) translateY(100px);
+		transition-duration: 0.5s;
+		@for $i from 1 through 4 {
+			&:nth-of-type(#{$i}) {
+				transition-delay: 0.2s * ($i - 1);
+			}
+		}
+	}
+}
+//활성화 모션
+#news.on {
+	article {
+		opacity: 1;
+		transform: rotateY(0deg) translateY(0px);
 	}
 }

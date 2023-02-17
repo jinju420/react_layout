@@ -1,8 +1,8 @@
 .content {
+	color: #333;
 	figure {
 		width: 100%;
 		height: 0;
-		// height: 500px;
 		opacity: 0;
 		transition: 1s;
 		background: pink;
@@ -11,8 +11,7 @@
 		background: $basicColor2;
 		> .inner {
 			position: relative;
-			width: 1180px;
-			margin: 0 auto;
+			@include innerWid;
 			min-height: 400px;
 			opacity: 0;
 			transition: 1s;
@@ -20,7 +19,7 @@
 			padding: 120px 0;
 			h1 {
 				font: bold 50px/1 $titleFont;
-				color: #777;
+				color: #666;
 				margin-bottom: 50px;
 			}
 		}
@@ -46,6 +45,19 @@
 			> .inner {
 				width: 100%;
 				padding: 120px 50px;
+			}
+		}
+	}
+}
+@media screen and (max-width: $tablet) {
+	.content {
+		figure {
+			// height: 200px;
+		}
+		.sub_con {
+			> .inner {
+				width: 100%;
+				padding: 80px 30px;
 			}
 		}
 	}

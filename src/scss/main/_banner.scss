@@ -4,8 +4,7 @@
 		align-items: center;
 		padding: 75px 0;
 		position: relative;
-		width: 1180px;
-		margin: 0 auto;
+		@include innerWid;
 		h1 {
 			width: 50%;
 			height: 100%;

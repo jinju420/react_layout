@@ -2,14 +2,13 @@
 	width: 100%;
 	height: 100vh;
 	background: pink;
-	// height: 500px;
-	// height: 100vh;
 	position: relative;
 	z-index: 1;
+	img {
+		@include imgFit;
+	}
 	.inner {
-		position: relative;
-		width: 1180px;
-		margin: 0 auto;
+		@include innerWid;
 		.title_txt {
 			position: absolute;
 			top: 0;

@@ -1,31 +1,39 @@
 footer {
 	width: 100%;
-	// border-top: 1px solid #bbb;
-	// padding: 100px 0;
 	.inner {
-		width: 1180px;
-		margin: 0 auto;
-		position: relative;
+		@include innerWid;
 		.wrap {
 			display: flex;
+			justify-content: center;
 			width: 100%;
-			padding: 150px 50px 50px;
-			// font-size: 14px;
+			padding: 120px 0 80px;
+			@include clear;
 			article {
-				width: 280px;
-				height: 80px;
-				line-height: 40px;
-				border: 1px solid pink;
+				float: left;
+				width: calc((100% - 240px) / 3);
 				margin-right: 120px;
-				padding: 20px 0;
 				text-align: center;
 				&:last-child {
 					margin-right: 0;
 				}
 				a {
 					display: block;
-					height: 100%;
+					line-height: 40px;
+					padding: 20px 0;
+					&:last-child {
+						margin-right: 0;
+					}
+					.svg-inline--fa {
+						font-size: 40px;
+						color: #333;
+					}
+				}
+				span {
+					display: block;
+					letter-spacing: 1px;
 					color: #666;
+					font-family: $contentFont;
+					font-weight: 500;
 				}
 			}
 		}
@@ -52,12 +60,12 @@ footer {
 	footer {
 		.inner {
 			width: 100%;
-			padding: 0 40px;
+			padding: 0 50px;
 			.wrap {
 				article {
-					&:last-child {
-						margin-right: 0;
-					}
+					float: left;
+					width: calc((100% - 160px) / 3);
+					margin-right: 80px;
 				}
 			}
 		}
@@ -69,9 +77,18 @@ footer {
 			width: 100%;
 			padding: 0 30px;
 			.wrap {
-				padding: 80px 0;
 				article {
-					margin-right: 40px;
+					float: left;
+					width: calc(100% / 3);
+					margin-right: 60px;
+					a {
+						.svg-inline--fa {
+							font-size: 40px;
+						}
+					}
+					span {
+						font-size: 14px;
+					}
 				}
 			}
 		}

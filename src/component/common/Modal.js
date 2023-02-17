@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 //실행이 될때
 function Modal(props) {
 	useEffect(() => {
@@ -18,7 +20,8 @@ function Modal(props) {
 					props.setOpen(false);
 				}}
 			>
-				Close
+				<FontAwesomeIcon icon={faCircleXmark} />
+				{/* Close */}
 			</span>
 		</aside>
 	);

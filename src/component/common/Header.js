@@ -24,7 +24,7 @@ function Header(props) {
 						<NavLink to='/brand' activeStyle={active}>
 							BRAND
 						</NavLink>
-						<div className='sub_menu'>
+						{/* <div className='sub_menu'>
 							<ul>
 								<li>
 									<NavLink to='/brand'>ABOUT</NavLink>
@@ -33,61 +33,61 @@ function Header(props) {
 									<NavLink to='/brand'>MEMBER</NavLink>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 					</li>
 					<li>
 						<NavLink to='/gallery' activeStyle={active}>
 							GALLERY
 						</NavLink>
-						<div className='sub_menu'>
+						{/* <div className='sub_menu'>
 							<ul>
 								<li>
 									<NavLink to='/gallery'>POPULAR</NavLink>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 					</li>
 					<li>
 						<NavLink to='/youtube' activeStyle={active}>
 							YOUTUBE
 						</NavLink>
-						<div className='sub_menu'>
+						{/* <div className='sub_menu'>
 							<ul>
 								<li>
 									<NavLink to='/youtube'>COMMUNITY</NavLink>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 					</li>
 					<li>
 						<NavLink to='/mypage' activeStyle={active}>
 							MYPAGE
 						</NavLink>
-						<div className='sub_menu'>
+						{/* <div className='sub_menu'>
 							<ul>
 								<li>
 									<NavLink to='/mypage'>JOIN</NavLink>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 					</li>
 					<li>
 						<NavLink to='/notice' activeStyle={active}>
 							NOTICE
 						</NavLink>
-						<div className='sub_menu'>
+						{/* <div className='sub_menu'>
 							<ul>
 								<li>
 									<NavLink to='/notice'>REQUEST</NavLink>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 					</li>
 					<li>
 						<NavLink to='/contact' activeStyle={active}>
 							CONTACT US
 						</NavLink>
-						<div className='sub_menu'>
+						{/* <div className='sub_menu'>
 							<ul>
 								<li>
 									<NavLink to='/contact'>LOCATION</NavLink>
@@ -96,7 +96,7 @@ function Header(props) {
 									<NavLink to='/contact'>SNS</NavLink>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 					</li>
 				</ul>
 				<FontAwesomeIcon icon={faBars} />

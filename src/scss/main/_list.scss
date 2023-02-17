@@ -1,8 +1,7 @@
 #list {
 	width: 100%;
 	.inner {
-		width: 1180px;
-		margin: 0 auto;
+		@include innerWid;
 		.wrap {
 			height: 654px;
 			.util {

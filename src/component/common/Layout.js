@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import axios from 'axios';
+import { useState, useEffect, useRef } from 'react';
 /*
 기존 공통레이아웃으로 각 서브페이지 분산되어있던 스타일을 Layout.js로 합쳐서 따로 분리
 그리고 각각의 세부 컨텐츠들은 props라는 걸로 전달할 수 있도록 한다
@@ -13,10 +14,14 @@ function Layout(props) {
 	//props는 부모로부터 전달받은 인수값
 	const frame = useRef(null); //queryselector 느낌/만들어지지않은 걸 선택
 	//console.log(frame);
-
+	const [Subimg, setSubimg] = useState([]);
 	useEffect(() => {
 		frame.current.classList.add('on');
-	}, []); //[]비어있으면 build됐을 때 1반민
+		axios.get(`${process.env.PUBLIC_URL}/DB/sub.json`).then((json) => {
+			console.log(json);
+			setSubimg(json.data.sub);
+		});
+	}, [Subimg]); //[]비어있으면 build됐을 때 1반민
 	return (
 		// //frame안에 sec들어온것
 		<section className={`content ${props.name}`} ref={frame}>

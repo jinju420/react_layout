@@ -12,7 +12,7 @@
 		height: 10px;
 		background: #fff;
 		border-radius: 5px;
-		transition: 0.5s;
+		transition: height 0.5s, background 0.5s;
 		cursor: pointer;
 		&.on {
 			height: 100px;
