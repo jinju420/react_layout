@@ -22,11 +22,9 @@ import { useState, useRef } from 'react';
 function Main() {
 	const [Scrolled, setScrolled] = useState(0);
 	const [Pos, setPos] = useState([]);
-	const hdbg = useRef(null);
-	// const [Hdbg, setHdbg] = useState('');
 	return (
 		<main>
-			<Header type={'main'} ref={hdbg} />
+			<Header type={'main'} />
 			<Visual Scrolled={Scrolled} Pos={Pos[0]} />
 			<News Scrolled={Scrolled} Pos={Pos[1]} />
 			<Pics Scrolled={Scrolled} Pos={Pos[2]} />

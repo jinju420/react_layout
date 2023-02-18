@@ -8,11 +8,11 @@ function Visual({ Scrolled, Pos }) {
 		<figure id='visual' className='myScroll'>
 			<img src={`${process.env.PUBLIC_URL}/sub/main.jpg`} alt='화장품' />
 			<div className='inner'>
-				<div className='title_txt'>
+				{/* <div className='title_txt'>
 					<h1>LEEJINJU'S</h1>
 					<p>
 						PORTFOLIO
-						{/* <span>P</span>
+						<span>P</span>
 						<span>O</span>
 						<span>R</span>
 						<span>T</span>
@@ -20,9 +20,9 @@ function Visual({ Scrolled, Pos }) {
 						<span>O</span>
 						<span>L</span>
 						<span>I</span>
-						<span>O</span> */}
+						<span>O</span>
 					</p>
-				</div>
+				</div> */}
 			</div>
 		</figure>
 	);

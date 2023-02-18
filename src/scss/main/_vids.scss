@@ -4,4 +4,32 @@
 	background: lightblue;
 	position: relative;
 	padding: 10vw;
+	// width: 100%;
+	// height: 100%;
+	// margin: 0 auto;
+	// border: 1px solid pink;
+	// display: flex;
+	// padding: 20px;
+	.inner {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		// border: 1px solid pink;
+		margin-top: 20px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		article {
+			.vids {
+				width: 200px;
+				height: 200px;
+				background: salmon;
+			}
+			p {
+				width: 200px;
+				margin-top: 30px;
+			}
+		}
+	}
 }
