@@ -1,4 +1,9 @@
 .Youtube {
+	figure {
+		background: url('../../../public/sub/visual/youtube.jpg') no-repeat bottom/cover;
+		// background-position: 0 100%;
+		// background-size: cover;
+	}
 	.sub_con {
 		> .inner {
 			@include clear;
@@ -53,7 +58,7 @@
 						display: block;
 						font: bold 16px/1 $contentFont;
 						color: $strongColor;
-						text-align: right;
+						text-align: left;
 					}
 				}
 			}

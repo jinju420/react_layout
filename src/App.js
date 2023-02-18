@@ -2,14 +2,9 @@ import { Route, Switch } from 'react-router-dom';
 //common
 import Header from './component/common/Header';
 import Footer from './component/common/Footer';
-// import Modal from './component/common/Modal';
 
 //main
 import Main from './component/main/Main';
-// import Visual from './component/main/Visual';
-// import Banner from './component/main/Banner';
-// import List from './component/main/List';
-// import Content from './component/main/Content';
 
 //sub
 import Brand from './component/sub/Brand';
@@ -17,9 +12,9 @@ import ContactUs from './component/sub/ContactUs';
 import Gallery from './component/sub/Gallery';
 import Mypage from './component/sub/Mypage';
 import Notice from './component/sub/Notice';
+import Youtube from './component/sub/Youtube';
 
 import './scss/style.scss';
-import Youtube from './component/sub/Youtube';
 // switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
 function App() {
 	return (

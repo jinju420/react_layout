@@ -2,22 +2,22 @@
     "members": [
         {
             "name": "Kim Nam-Gil",
-            "position": "President",
+            "position": "COMPANY CEO",
             "pic": "member1.jpg"
         },
         {
             "name": "Lee Da-Hee",
-            "position": "Vice President",
+            "position": "MANAGER",
             "pic": "member2.jpg"
         },
         {
             "name": "Cha Eun-Woo",
-            "position": "UI Designer",
+            "position": "EXHIBITION MANAGER",
             "pic": "member3.jpg"
         },
         {
             "name": "Sung Jun",
-            "position": "Front-end Engineer",
+            "position": "PRODUCT PLANNER",
             "pic": "member4.jpg"
         }
     ]

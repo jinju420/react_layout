@@ -11,7 +11,7 @@
 		@include innerWid;
 		.title_txt {
 			position: absolute;
-			top: 0;
+			top: 30px;
 			left: 0;
 			padding-top: 130px;
 			h1 {
@@ -20,14 +20,15 @@
 				margin-left: 5px;
 				color: #666;
 			}
-			.intoTxt {
-				span {
-					width: 100%;
-					font-size: 80px;
-					letter-spacing: 10px;
-					color: #666;
-					font-weight: bold;
-				}
+
+			p {
+				opacity: 1;
+				// transform: rotate(-35deg) translate(-500px, 400px);
+				width: 100%;
+				font-size: 80px;
+				// letter-spacing: 10px;
+				color: #666;
+				font-weight: bold;
 			}
 		}
 	}

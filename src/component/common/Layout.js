@@ -13,15 +13,12 @@ import { useState, useEffect, useRef } from 'react';
 function Layout(props) {
 	//props는 부모로부터 전달받은 인수값
 	const frame = useRef(null); //queryselector 느낌/만들어지지않은 걸 선택
+	const img = useRef(null);
 	//console.log(frame);
 	const [Subimg, setSubimg] = useState([]);
 	useEffect(() => {
 		frame.current.classList.add('on');
-		axios.get(`${process.env.PUBLIC_URL}/DB/sub.json`).then((json) => {
-			console.log(json);
-			setSubimg(json.data.sub);
-		});
-	}, [Subimg]); //[]비어있으면 build됐을 때 1반민
+	}, []); //[]비어있으면 build됐을 때 1반민
 	return (
 		// //frame안에 sec들어온것
 		<section className={`content ${props.name}`} ref={frame}>

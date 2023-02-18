@@ -13,7 +13,7 @@
 	h1 {
 		width: 100%;
 		margin-bottom: 30px;
-		font: bold 100px/1 'arial';
+		font: bold 50px/1 'arial';
 		position: relative;
 		z-index: 2;
 	}
@@ -33,9 +33,9 @@
 		opacity: 0;
 		transform: rotateY(180deg) translateY(100px);
 		transition-duration: 0.5s;
-		@for $i from 1 through 4 {
+		@for $i from 1 through 8 {
 			&:nth-of-type(#{$i}) {
-				transition-delay: 0.2s * ($i - 1);
+				transition-delay: 0.2s * $i / 2;
 			}
 		}
 	}

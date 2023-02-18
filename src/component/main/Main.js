@@ -4,7 +4,7 @@ import Pics from './Pics';
 import Vids from './Vids';
 import Visual from './Visual';
 import Btns from './Btns';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 /*
 	useRef사용 이유
@@ -22,10 +22,12 @@ import { useState } from 'react';
 function Main() {
 	const [Scrolled, setScrolled] = useState(0);
 	const [Pos, setPos] = useState([]);
+	const hdbg = useRef(null);
+	// const [Hdbg, setHdbg] = useState('');
 	return (
 		<main>
-			<Header type={'main'} />
-			<Visual />
+			<Header type={'main'} ref={hdbg} />
+			<Visual Scrolled={Scrolled} Pos={Pos[0]} />
 			<News Scrolled={Scrolled} Pos={Pos[1]} />
 			<Pics Scrolled={Scrolled} Pos={Pos[2]} />
 			<Vids />
