@@ -1,7 +1,7 @@
 import Layout from '../common/Layout';
 import Modal from '../common/Modal';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // usestate 스테이는 변경을 원할하게 관리하도록 하는 것
 //useEffect 효과주는 내용들을 코드에 넣고 효과를 줄지 정하는 거죠
 
