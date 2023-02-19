@@ -2,10 +2,10 @@
 	color: #333;
 	figure {
 		width: 100%;
-		height: 100vh;
+		// height: 600px;
 		// background: pink;
-		// height: 0;
-		// opacity: 0;
+		height: 0;
+		opacity: 0;
 		transition: 1s;
 	}
 	.sub_con {
@@ -26,10 +26,10 @@
 		}
 	}
 	&.on {
-		// figure {
-		// 	height: 600px;
-		// 	opacity: 1;
-		// }
+		figure {
+			height: 600px;
+			opacity: 1;
+		}
 		.inner {
 			opacity: 1;
 			transform: translateX(0px);

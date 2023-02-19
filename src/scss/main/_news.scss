@@ -31,7 +31,6 @@
 			margin-right: 20px;
 			margin-bottom: 20px;
 			height: 150px;
-			// margin-bottom: 20px;
 			padding: 10px;
 			background: #fff;
 			opacity: 0;
@@ -43,29 +42,30 @@
 			flex-direction: column;
 			justify-content: space-evenly;
 			text-align: center;
-			transition: 0.5s;
 			cursor: pointer;
 			&:nth-of-type(3n) {
 				margin-right: 0;
 			}
 			@for $i from 1 through 8 {
 				&:nth-of-type(#{$i}) {
-					transition-delay: 0.2s * $i / 2;
+					transition-delay: 0.2s * ($i - 1);
 				}
 			}
 			&:hover {
-				transition: 0.1s;
+				transition: 0s;
 				@for $i from 1 through 8 {
 					&:nth-of-type(#{$i}) {
-						transition-delay: 0s * $i;
-						transition-duration: 0.1s;
+						transition-delay: 0s;
+						// box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 					}
 				}
+				// @for $i from 1 through 8 {
+				// 	&:nth-of-type(#{$i}) {
+				// 		transition-delay: 0s * $i;
+				// 	}
+				// }
 				background: rgba(0, 0, 0, 0.5);
 				color: #fff;
-			}
-			h2 {
-				// font-size: 200px;
 			}
 		}
 	}

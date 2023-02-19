@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-//실행이 될때
+
 function Modal(props) {
 	useEffect(() => {
 		//모발 컴포넌트 마운트시에 스크롤 비활성화
@@ -21,7 +21,6 @@ function Modal(props) {
 				}}
 			>
 				<FontAwesomeIcon icon={faCircleXmark} />
-				{/* Close */}
 			</span>
 		</aside>
 	);

@@ -34,5 +34,4 @@ function Main() {
 		</main>
 	);
 }
-//  변경된 값받는다 pos/scrolled
 export default Main;
