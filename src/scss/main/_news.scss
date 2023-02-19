@@ -56,14 +56,8 @@
 				@for $i from 1 through 8 {
 					&:nth-of-type(#{$i}) {
 						transition-delay: 0s;
-						// box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 					}
 				}
-				// @for $i from 1 through 8 {
-				// 	&:nth-of-type(#{$i}) {
-				// 		transition-delay: 0s * $i;
-				// 	}
-				// }
 				background: rgba(0, 0, 0, 0.5);
 				color: #fff;
 			}

@@ -67,11 +67,11 @@ header {
 		background: transparent;
 		.inner {
 			@include innerWid;
-			height: 60px;
-			position: fixed;
-			top: 0;
-			left: 50%;
-			transform: translateX(-50%);
+			// height: 60px;
+			// position: fixed;
+			// top: 0;
+			// left: 50%;
+			// transform: translateX(-50%);
 			h1 {
 				left: 5vw;
 				a {
