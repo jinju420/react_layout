@@ -1,34 +1,24 @@
 {
     "members": [
         {
-            "name": "Julia",
-            "position": "President",
+            "name": "Kim Nam-Gil",
+            "position": "COMPANY CEO",
             "pic": "member1.jpg"
         },
         {
-            "name": "David",
-            "position": "Vice President",
+            "name": "Lee Da-Hee",
+            "position": "MANAGER",
             "pic": "member2.jpg"
         },
         {
-            "name": "Emily",
-            "position": "UI Designer",
+            "name": "Cha Eun-Woo",
+            "position": "EXHIBITION MANAGER",
             "pic": "member3.jpg"
         },
         {
-            "name": "Paul",
-            "position": "Front-end Engineer",
+            "name": "Sung Jun",
+            "position": "PRODUCT PLANNER",
             "pic": "member4.jpg"
-        },
-        {
-            "name": "Sara",
-            "position": "Back-end Engineer",
-            "pic": "member5.jpg"
-        },
-        {
-            "name": "Michael",
-            "position": "Project Manager",
-            "pic": "member6.jpg"
         }
     ]
 }
