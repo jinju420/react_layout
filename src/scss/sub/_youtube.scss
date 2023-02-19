@@ -1,8 +1,6 @@
 .Youtube {
 	figure {
 		background: url('../../../public/sub/visual/youtube.jpg') no-repeat bottom/cover;
-		// background-position: 0 100%;
-		// background-size: cover;
 	}
 	.sub_con {
 		> .inner {
@@ -40,7 +38,7 @@
 					h3 {
 						margin-bottom: 50px;
 						font-weight: bold;
-						font-size: 35px;
+						font-size: 30px;
 						font-family: $krFont;
 						margin-bottom: 50px;
 						overflow: hidden;
@@ -100,43 +98,6 @@
 			}
 		}
 	}
-	// .Youtube {
-	// 	.sub_con {
-	// 		> .inner {
-	// 			article {
-	// 				.txt {
-	// 					p {
-	// 						overflow: hidden;
-	// 						text-overflow: ellipsis;
-
-	// 						display: -webkit-box;
-	// 						-webkit-line-clamp: 2;
-	// 						-webkit-box-orient: vertical;
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// .Youtube {
-	// 	.sub_con {
-	// 		.inner {
-	// 			article {
-	// 				h3 {
-	// 					width: 48%;
-	// 				}
-	// 				.txt {
-	// 					width: 50%;
-	// 				}
-	// 				.pic {
-	// 					width: 100%;
-	// 					margin-bottom: 50px;
-	// 					margin-top: 80px;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
 @media screen and (max-width: $mobile) {
 	.Youtube {
@@ -170,32 +131,4 @@
 			}
 		}
 	}
-	// .Youtube {
-	// 	.sub_con {
-	// 		> .inner {
-	// 			padding: 120px 30px;
-	// 			article {
-	// 				width: 100%;
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// .Youtube {
-	// 	.sub_con {
-	// 		.inner {
-	// 			article {
-	// 				h3 {
-	// 					width: 100%;
-	// 				}
-	// 				.txt {
-	// 					width: 100%;
-	// 				}
-	// 				.pic {
-	// 					margin-bottom: 30px;
-	// 					margin-top: 40px;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
