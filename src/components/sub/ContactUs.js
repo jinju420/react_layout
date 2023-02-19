@@ -24,7 +24,8 @@ function ContactUs() {
 		marker.setMap(mapInstance);
 	}, []);
 	return (
-		<Layout name={'Contact'}>
+		<Layout name={'CONTACT'}>
+			<h2>LOCATION</h2>
 			<div id='map' ref={container}></div>
 			{/* <span className='address'></span>
 			<span className='line'></span>

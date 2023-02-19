@@ -1,7 +1,7 @@
-.Youtube {
-	figure {
-		background: url('../../../public/sub/visual/youtube.jpg') no-repeat bottom/cover;
-	}
+.YOUTUBE {
+	// figure {
+	// 	background: url('../../../public/sub/visual/youtube.jpg') no-repeat bottom/cover;
+	// }
 	.sub_con {
 		> .inner {
 			@include clear;
@@ -65,7 +65,7 @@
 }
 
 @media screen and (max-width: $tablet) {
-	.Youtube {
+	.YOUTUBE {
 		.sub_con {
 			> .inner {
 				article {
@@ -100,7 +100,7 @@
 	}
 }
 @media screen and (max-width: $mobile) {
-	.Youtube {
+	.YOUTUBE {
 		.sub_con {
 			> .inner {
 				article {

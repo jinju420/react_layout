@@ -10,7 +10,7 @@ function Layout(props) {
 	return (
 		// //frame안에 sec들어온것
 		<section className={`content ${props.name}`} ref={frame}>
-			<figure></figure>
+			{/* <figure></figure> */}
 			<div className='sub_con'>
 				<div className='inner'>
 					<h1>{props.name}</h1>

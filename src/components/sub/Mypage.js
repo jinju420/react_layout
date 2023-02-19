@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 
 function Mypage() {
 	return (
-		<Layout name={'Join'}>
+		<Layout name={'JOIN'}>
 			<form action='result.html' method='get'>
 				<fieldset></fieldset>
 				<legend className='hide'></legend>

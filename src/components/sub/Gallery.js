@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 
 function Gallery() {
 	return (
-		<Layout name={'Gallery'}>
+		<Layout name={'GALLERY'}>
 			{/* <div className='tab_cont'>
 				<div className='cont vids'>
 					<article>1</article>

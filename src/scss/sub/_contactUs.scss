@@ -1,6 +1,14 @@
-.Contact {
+.CONTACT {
 	figure {
 		background: url('../../../public/sub/visual/contact.jpg') no-repeat center/cover;
+	}
+	h1 {
+		display: none;
+	}
+	h2 {
+		font-size: 60px;
+		font-family: $titleFont;
+		margin-bottom: 50px;
 	}
 	.sub_con {
 		> .inner {

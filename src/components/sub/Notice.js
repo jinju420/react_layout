@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 
 function Notice() {
 	return (
-		<Layout name={'Notice'}>
+		<Layout name={'NOTICE'}>
 			<div className='wrap'>
 				<article>
 					<table>
