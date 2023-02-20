@@ -1,18 +1,39 @@
 .CONTACT {
-	figure {
-		background: url('../../../public/sub/visual/contact.jpg') no-repeat center/cover;
-	}
+	// figure {
+	// 	background: url('../../../public/sub/visual/contact.jpg') no-repeat center/cover;
+	// }
 	h1 {
 		display: none;
 	}
-	h2 {
-		font-size: 60px;
-		font-family: $titleFont;
-		margin-bottom: 50px;
-	}
+
 	.sub_con {
+		@include clear;
 		> .inner {
 			@include innerWid;
+			.title {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 20px;
+				h2 {
+					font-size: 60px;
+					font-family: $titleFont;
+				}
+				button {
+					display: block;
+					float: right;
+					width: 16vw;
+					height: 40px;
+					background: $strongColor;
+					font: bold 12px/1 $titleFont;
+					color: #fff;
+					border-radius: 5px;
+					border: none;
+					cursor: pointer;
+					letter-spacing: 1px;
+					// margin-bottom: 30px;
+				}
+			}
 			#map {
 				width: 100%;
 				height: 500px;
@@ -20,39 +41,59 @@
 				border: 1px solid #333;
 				margin-bottom: 30px;
 				margin-top: 10px;
-				filter: saturate(0.3);
+				filter: saturate(0);
 				transition: filter 0.5s;
 				&:hover {
 					filter: saturate(1);
 				}
 			}
-			.map_guide {
-				> span {
-				}
-				.sns {
-					span {
-					}
-				}
-				display: flex;
-				justify-content: space-between;
-				.traffic {
+			nav {
+				width: 100%;
+				margin-bottom: 30px;
+				.branch {
 					display: flex;
+					gap: 30px;
 					li {
-						margin-right: 20px;
-						border: 1px solid salmon;
-						// padding: 10px 30px;
-						width: 150px;
-						height: 30px;
-					}
-				}
-				.store {
-					display: flex;
-					li {
-						margin-right: 20px;
-						border: 1px solid salmon;
-						padding: 10px 30px;
-						&:last-child {
-							margin-right: 0;
+						position: relative;
+						width: 30vw;
+						height: 32px;
+						font: bold 18px/1 $krFont;
+						margin-top: 30px;
+						color: #333;
+						display: flex;
+						flex-direction: column;
+						align-content: flex-start;
+						cursor: pointer;
+						&::before {
+							content: '';
+							display: block;
+							position: absolute;
+							bottom: -5px;
+							left: 0;
+							width: 100%;
+							height: 1px;
+							background: #333;
+							margin-bottom: 3px;
+						}
+						&.on {
+							color: $strongColor;
+							p,
+							span {
+								color: #333;
+							}
+							&::before {
+								background: $strongColor;
+							}
+						}
+						p {
+							margin-top: 25px;
+							margin-bottom: 5px;
+							font: bold 14px/1.5 $krFont;
+							margin-bottom: 10px;
+							word-break: keep-all;
+						}
+						span {
+							font: 12px/1 $krFont;
 						}
 					}
 				}
@@ -66,39 +107,6 @@
 		.sub_con {
 			> .inner {
 				width: 100%;
-				> span {
-				}
-				.sns {
-					span {
-					}
-				}
-				#map {
-				}
-				.map_guide {
-					display: flex;
-					justify-content: space-between;
-					.traffic {
-						display: flex;
-						li {
-							margin-right: 20px;
-							border: 1px solid salmon;
-							// padding: 10px 30px;
-							width: 150px;
-							height: 30px;
-						}
-					}
-					.store {
-						display: flex;
-						li {
-							margin-right: 20px;
-							border: 1px solid salmon;
-							padding: 10px 30px;
-							&:last-child {
-								margin-right: 0;
-							}
-						}
-					}
-				}
 			}
 		}
 	}
@@ -107,27 +115,48 @@
 	.CONTACT {
 		.sub_con {
 			> .inner {
-				.map_guide {
-					display: flex;
-					justify-content: space-between;
-					.traffic {
-						display: flex;
-						li {
-							margin-right: 20px;
-							border: 1px solid salmon;
-							// padding: 10px 30px;
-							width: 150px;
-							height: 30px;
-						}
+				.title {
+					flex-direction: column;
+					align-items: flex-start;
+					h2 {
+						margin-bottom: 20px;
 					}
-					.store {
-						display: flex;
+					button {
+						width: 100%;
+					}
+				}
+				nav {
+					.branch {
+						flex-direction: column;
 						li {
-							margin-right: 20px;
-							border: 1px solid salmon;
-							padding: 10px 30px;
-							&:last-child {
-								margin-right: 0;
+							width: 100%;
+							margin-top: 50px;
+							&:first-child {
+								margin-top: 30px;
+							}
+							&.on {
+								color: $strongColor;
+							}
+							&::before {
+								content: none;
+							}
+							p {
+								margin-top: 10px;
+								margin-bottom: 5px;
+							}
+							span {
+								position: relative;
+								&::before {
+									content: '';
+									display: block;
+									position: absolute;
+									bottom: -15px;
+									left: 0;
+									width: 100%;
+									height: 1px;
+									background: #333;
+									margin-bottom: 3px;
+								}
 							}
 						}
 					}

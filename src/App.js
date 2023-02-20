@@ -13,6 +13,7 @@ import Gallery from './components/sub/Gallery';
 import Mypage from './components/sub/Mypage';
 import Notice from './components/sub/Notice';
 import Youtube from './components/sub/Youtube';
+import About from './components/sub/About';
 
 import './scss/style.scss';
 // switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
@@ -24,29 +25,19 @@ function App() {
 				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>
 
-			<Route path='/brand'>
-				<Brand />
-			</Route>
+			{/* 2depth줄때 */}
+			{/* <Switch>
+				<Route path='brand/about' component={About} />
+				<Route path='/brand' component={Brand} />
+			</Switch> */}
+			{/* <Route path='brand/about' component={About} /> */}
+			<Route path='/brand' component={Brand} />
+			<Route path='/gallery' component={Gallery} />
+			<Route path='/youtube' component={Youtube} />
+			<Route path='/mypage' component={Mypage} />
+			<Route path='/notice' component={Notice} />
 
-			<Route path='/gallery'>
-				<Gallery />
-			</Route>
-
-			<Route path='/youtube'>
-				<Youtube />
-			</Route>
-
-			<Route path='/mypage'>
-				<Mypage />
-			</Route>
-
-			<Route path='/notice'>
-				<Notice />
-			</Route>
-
-			<Route path='/contact'>
-				<ContactUs />
-			</Route>
+			<Route path='/contact' component={ContactUs} />
 
 			<Footer />
 		</>
