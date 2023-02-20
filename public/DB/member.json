@@ -2,23 +2,31 @@
     "members": [
         {
             "name": "Kim Nam-Gil",
-            "position": "COMPANY CEO",
-            "pic": "member1.jpg"
+            "position": "COMPANY CEO |",
+            "pic": "member1.jpg",
+            "mail": "namgildaro@naver.com",
+            "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi,Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi."
         },
         {
             "name": "Lee Da-Hee",
-            "position": "MANAGER",
-            "pic": "member2.jpg"
+            "position": "MANAGER |",
+            "pic": "member2.jpg",
+            "mail": "dahee@gmail.com",
+            "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi,Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi."
         },
         {
             "name": "Cha Eun-Woo",
-            "position": "EXHIBITION MANAGER",
-            "pic": "member3.jpg"
+            "position": "EXHIBITION MANAGER |",
+            "pic": "member3.jpg",
+            "mail": "eunwoo@gmail.com",
+            "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi,Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi."
         },
         {
             "name": "Sung Jun",
-            "position": "PRODUCT PLANNER",
-            "pic": "member4.jpg"
+            "position": "PRODUCT PLANNER |",
+            "pic": "member4.jpg",
+            "mail": "sungjun@naver.com",
+            "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi,Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi."
         }
     ]
 }

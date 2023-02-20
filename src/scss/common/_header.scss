@@ -61,10 +61,14 @@ header {
 	&.main {
 		width: 100%;
 		z-index: 2;
-		position: absolute;
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		position: fixed;
 		top: 0;
 		left: 0;
-		background: transparent;
+		background: rgba(0, 0, 0, 0.3);
+		// background: transparent;
 		.inner {
 			@include innerWid;
 			// height: 60px;
