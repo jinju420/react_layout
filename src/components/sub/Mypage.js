@@ -10,10 +10,11 @@ function Mypage() {
 		pwd1: '',
 		pwd2: '',
 		email: '',
-		gender: false,
-		interests: false,
+		sns: false,
+		perfume: false,
 		comments: '',
-		edu: '',
+		age: '',
+		mail: '',
 	};
 
 	/* 실시간 담아둘 공ㅏ*/
@@ -52,22 +53,28 @@ function Mypage() {
 		if (value.pwd1 !== value.pwd2 || !value.pwd2) {
 			errs.pwd2 = '두개의 비밀번호를 동일하게 입력하세요';
 		}
-		if (value.email.length < 8 || !/@/.test(value.email)) {
-			errs.email = '이메일은 8글자 이상 @를 포함하세요';
+		if (value.email === '' || value.mail === '') {
+			errs.email = '이메일 주소를 입력하세요';
 		}
+		if (value.mail === '') {
+			errs.mail = '이메일 주소를 입력하세요';
+		}
+		// if (value.email.length < 8 || !/@/.test(value.email)) {
+		// 	errs.email = '이메일은 8글자 이상 @를 포함하세요';
+		// }
 		//true가 아니면 === false일때
 		if (!value.gender) {
-			errs.gender = '성별을 선택하세요';
+			errs.gender = '성별을 선택하세요.';
 		}
 		//true가 아니면 === false일때
-		if (!value.interests) {
-			errs.interests = '관심사를 하나만 선택해주세요';
+		if (!value.perfume) {
+			errs.perfume = '좋아하는 종류를 하나만 선택해주세요';
 		}
 		if (value.comments.length < 20) {
 			errs.comments = '20글자 이상 입력하세요';
 		}
-		if (value.edu === '') {
-			errs.edu = '최종학력을 선택하세요';
+		if (value.age === '') {
+			errs.age = '연령을 선택하세요';
 		}
 		//4.조건에 부합하지 않으면 errs빈환
 		return errs;
@@ -134,7 +141,7 @@ function Mypage() {
 	}, [Err]);
 
 	return (
-		<Layout name={'JOIN'}>
+		<Layout name={'MEMBERS'}>
 			<form onSubmit={handleSubmit}>
 				<fieldset></fieldset>
 				<legend className='hide'>회원가입 폼 양식</legend>
@@ -208,7 +215,13 @@ function Mypage() {
 									onChange={handleChange}
 									value={Val.email}
 								/>
-								<span className='err'>{Err.email}</span>
+								<select name='mail' id='mail' onChange={handleSelect}>
+									<option value=''>이메일 주소를 선택해주세요</option>
+									<option value='naver'>@naver.com</option>
+									<option value='gmail'>@gmail.com</option>
+									<option value='nate'>@nate.com</option>
+								</select>
+								<span className='err'>{Err.mail}</span>
 							</td>
 						</tr>
 
@@ -217,17 +230,15 @@ function Mypage() {
 							<th scope='row'>GENDER</th>
 							<td>
 								<label htmlFor='male'>Male</label>
-
 								<input
 									type='radio'
 									name='gender'
 									value='male'
-									id='male'
+									id='mail'
 									onChange={handleRadio}
 								/>
 
 								<label htmlFor='female'>Female</label>
-
 								<input
 									type='radio'
 									name='gender'
@@ -235,59 +246,69 @@ function Mypage() {
 									id='female'
 									onChange={handleRadio}
 								/>
+
 								<span className='err'>{Err.gender}</span>
 							</td>
 						</tr>
 
 						{/* interest */}
 						<tr>
-							<th scope='row'>INTERESTS</th>
+							<th scope='row'>KIND OF</th>
 							<td>
-								<label htmlFor='sports'>Sports</label>
+								<label htmlFor='citrus'>Citrus</label>
 								<input
 									type='checkbox'
-									name='interests'
-									value='sports'
-									id='sports'
+									name='perfume'
+									value='citrus'
+									id='citrus'
 									onChange={handleCheck}
 								/>
 
-								<label htmlFor='music'>Music</label>
+								<label htmlFor='floral'>Floral</label>
 								<input
 									type='checkbox'
-									name='interests'
-									value='music'
-									id='music'
+									name='perfume'
+									value='floral'
+									id='floral'
 									onChange={handleCheck}
 								/>
 
-								<label htmlFor='game'>Game</label>
+								<label htmlFor='marine'>Marine</label>
 								<input
 									type='checkbox'
-									name='interests'
-									value='game'
-									id='game'
+									name='perfume'
+									value='marine'
+									id='marine'
 									onChange={handleCheck}
 								/>
 
-								<span className='err'>{Err.interests}</span>
+								<label htmlFor='musk'>Musk</label>
+								<input
+									type='checkbox'
+									name='perfume'
+									value='musk'
+									id='musk'
+									onChange={handleCheck}
+								/>
+
+								<span className='err'>{Err.perfume}</span>
 							</td>
 						</tr>
 
-						{/* edu */}
+						{/* age */}
 						<tr>
 							<th scope='row'>
-								<label htmlFor='edu'>EDUCATION</label>
+								<label htmlFor='age'>Age</label>
 							</th>
 							<td>
-								<select name='edu' id='edu' onChange={handleSelect}>
-									<option value=''>학력을 선택하세요</option>
-									<option value='elementary-school'>초등학교 졸업</option>
-									<option value='middle-school'>중학교 졸업</option>
-									<option value='hight-school'>고등학교 졸업</option>
-									<option value='college'>대학교 졸업</option>
+								<select name='age' id='age' onChange={handleSelect}>
+									<option value=''>연령을 선택하세요</option>
+									<option value='teenage'>10대</option>
+									<option value='twenties'>20대</option>
+									<option value='thirties'>30대</option>
+									<option value='forties'>40대 이상</option>
 								</select>
-								<span className='err'>{Err.edu}</span>
+								<span className='err'>{Err.age}</span>
 							</td>
 						</tr>
 
@@ -331,16 +352,6 @@ function Mypage() {
 						</tr>
 					</tbody>
 				</table>
-				{/* <table>
-					<caption className='hide'>
-						회원가입을 위한 아이디, 비밀번호, 이메일, 나이 입력 테이블
-					</caption>
-				</table>
-				<table>
-					<caption className='hide'>
-						회원가입을 위한 아이디, 비밀번호, 이메일, 나이 입력 테이블
-					</caption>
-				</table> */}
 			</form>
 		</Layout>
 	);

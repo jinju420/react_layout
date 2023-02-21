@@ -1,5 +1,7 @@
 import Layout from '../common/Layout';
 import { useRef, useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faTwitter, faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function ContactUs() {
 	//실제 윈도우객체에서 카카오객체를 비구조화할당으로 바로 할당
@@ -7,31 +9,31 @@ function ContactUs() {
 	const { kakao } = window;
 	const info = [
 		{
-			title: '홍대 본점',
-			latlng: new kakao.maps.LatLng(37.5116827, 127.0591512),
+			title: '마포 본점',
+			latlng: new kakao.maps.LatLng(37.5559436, 126.9302956),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker1.png`,
 			imgSize: new kakao.maps.Size(88, 108),
 			imgPos: { offset: new kakao.maps.Point(44, 54) },
-			add: '서울특별시 마포구 와우산로35길 13',
-			tel: '02-3144-7738',
+			add: '서울 마포구 와우산로37길 9',
+			tel: '02-333-6525',
 		},
 		{
-			title: '삼청 지점',
-			latlng: new kakao.maps.LatLng(37.5793944, 126.9846224),
+			title: '서촌 지점',
+			latlng: new kakao.maps.LatLng(37.5771945, 126.9730108),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker2.png`,
 			imgSize: new kakao.maps.Size(88, 108),
 			imgPos: { offset: new kakao.maps.Point(44, 54) },
-			add: '서울특별시 종로구 북촌로5길 6 1층',
-			tel: '070-4829-9008',
+			add: '서울 종로구 자하문로4길 14-2',
+			tel: '02-333-6525',
 		},
 		{
-			title: '부산 지점',
-			latlng: new kakao.maps.LatLng(35.1553121, 129.0644697),
+			title: '남산 지점',
+			latlng: new kakao.maps.LatLng(37.5489259, 126.9822293),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker3.png`,
 			imgSize: new kakao.maps.Size(88, 108),
 			imgPos: { offset: new kakao.maps.Point(44, 54) },
-			add: '부산 부산진구 전포대로209번길 11',
-			tel: '051-808-7747',
+			add: '서울 용산구 후암동 358-194',
+			tel: '02-333-6525',
 		},
 	];
 	//지도 정보가 담길 가상돔 참조 객체
@@ -99,8 +101,26 @@ function ContactUs() {
 	return (
 		//클릭할때마다 변경 =. usestate
 		<Layout name={'CONTACT'}>
-			<div className='title'>
-				<h2>LOCATION</h2>
+			<h2>LOCATION</h2>
+			<div className='sub'>
+				<div className='sub_box'>
+					<h3>On the way to Lorem ipsum dolor</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor
+						sit amet consectetur adipisicing elit.
+					</p>
+					<div className='sns'>
+						<span>
+							<FontAwesomeIcon icon={faFacebookF} />
+						</span>
+						<span>
+							<FontAwesomeIcon icon={faTwitter} />
+						</span>
+						<span>
+							<FontAwesomeIcon icon={faSquareInstagram} />
+						</span>
+					</div>
+				</div>
 				<button onClick={() => setTraffic(!Traffic)}>
 					{Traffic ? 'Traffic OFF' : 'Traffic ON'}
 				</button>

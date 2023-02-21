@@ -29,6 +29,23 @@ input[type='radio'] {
 	margin-right: 20px;
 	margin-left: 5px;
 }
-// body {
-// 	overflow: hidden;
+textarea,
+// select {
+// 	appearance: none;
+// 	-moz-appearance: none;
+// 	-webkit-appearance: none;
+// 	border: none;
+// 	border-radius: 0;
+// 	-webkit-border-radius: 0;
+// 	-moz-border-radius: 0;
+// }
+input {
+	border: none;
+	outline: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+// select::-ms-expand {
+// 	display: none;
 // }

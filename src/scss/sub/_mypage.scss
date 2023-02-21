@@ -1,79 +1,105 @@
-.JOIN {
+.MEMBERS {
 	// figure {
 	// 	background: url('../../../public/sub/visual/mypage.jpg') no-repeat top/cover;
 	// }
 	.sub_con {
 		> .inner {
+			@include clear;
+			h1 {
+				margin-left: 335px;
+			}
 			form {
 				display: flex;
-				background: #a0613833;
-				padding: 50px;
-				height: auto;
-				// table {
-				// 	width: 50%;
-				// 	height: 400px;
-				// 	margin-right: 50px;
-				// }
+				width: 80%;
+				margin: 0 auto;
 				table {
 					width: 100%;
 					border: none;
-					border-top: 2px solid #333;
-					border-bottom: 2px solid #333;
 					th {
 						width: 20%;
 						border: none;
-						border-bottom: 1px solid #777;
 						padding: 15px 30px;
-						text-align: left;
-						font-size: 18px;
+						text-align: right;
 						font-family: $titleFont;
 						&:last-child {
-							text-align: center;
 							input[type='submit'],
 							input[type='reset'] {
-								// border: 1px solid #aaa;
 								border: none;
-								width: 150px;
-								height: 30px;
+								font-size: 18px;
+								width: 30%;
+								height: 45px;
 								display: inline-flex;
 								justify-content: center;
 								align-items: center;
 								margin: 0 10px;
 								font-family: $titleFont;
+								background: #445870;
 								cursor: pointer;
+								transition: background 0.5s;
+								color: #fff;
+								// &:hover {
+								// 	color: #fff;
+								// 	background: #fa8072;
+								// }
 							}
 						}
 					}
 					td {
-						border: none;
-						border-left: 1px solid #777;
 						padding: 15px 30px;
-						border-bottom: 1px solid #777;
-
 						label {
 							font-family: $contentFont;
 						}
 						input::placeholder {
 							font-size: 13px;
 						}
+						input[type='checkbox'],
+						input[type='radio'] {
+							accent-color: #eec1c1;
+							vertical-align: middle;
+							border: none;
+							outline: none;
+						}
+						textarea,
+						select {
+							border: none;
+						}
+						select {
+							// appearance: none;
+							// background: url('../../../public/img/arrow.png') no-repeat 96% 50%;
+							// width: 100%;
+							// height: 100%;
+							// background-size: 10px 7px;
+						}
+
 						input[type='text'],
 						input[type='password'],
 						textarea,
 						select {
-							width: 40%;
-							border: none;
-							// border: 1px solid #777;
-							padding: 6px 10px;
+							width: 100%;
+							border: 1px solid #333;
+							padding: 10px;
 							resize: none;
-							background: rgb(230, 252, 252);
-							// &:focus {
-							// 	outline: 1px solid $strongColor;
-							// }
+							font-family: $krFont;
+							background: transparent;
+							// background: #e2e2e2;
+							&:focus {
+								background: #effaff;
+							}
+						}
+						input[id='email'],
+						select[name='mail'] {
+							width: 49%;
+							margin-right: 10px;
+						}
+						select[name='mail'] {
+							margin-right: 0;
 						}
 						span.err {
+							width: 100%;
+							display: block;
 							font: 12px/1 $krFont;
-							color: hotpink;
-							margin-left: 20px;
+							color: #fd6c6c;
+							margin-top: 10px;
 						}
 					}
 				}
@@ -83,26 +109,12 @@
 }
 
 @media screen and (max-width: $tablet) {
-	.JOIN {
+	.MEMBERS {
 		.sub_con {
 			> .inner {
 				form {
+					width: 90%;
 					table {
-						// th {
-						// 	&:last-child {
-						// 		input[type='submit'],
-						// 		input[type='reset'] {
-						// 			border: none;
-						// 			width: 150px;
-						// 			height: 30px;
-						// 			display: inline-flex;
-						// 			justify-content: center;
-						// 			align-items: center;
-						// 			margin: 0 10px;
-						// 			cursor: pointer;
-						// 		}
-						// 	}
-						// }
 						td {
 							input::placeholder {
 								font-size: 12px;
@@ -112,7 +124,16 @@
 							input[type='password'],
 							textarea,
 							select {
-								width: 80%;
+								width: 100%;
+							}
+							input[id='email'],
+							select[name='mail'] {
+								width: 100%;
+								margin-right: 10px;
+							}
+							select[name='mail'] {
+								margin-right: 0;
+								margin-top: 10px;
 							}
 							span.err {
 								font: 12px/1 $krFont;
@@ -130,10 +151,11 @@
 	}
 }
 @media screen and (max-width: $mobile) {
-	.JOIN {
+	.MEMBERS {
 		.sub_con {
 			> .inner {
 				form {
+					width: 100%;
 					table {
 						th {
 							display: none;
