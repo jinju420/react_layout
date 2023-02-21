@@ -1,32 +1,43 @@
 import Layout from '../common/Layout';
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 function Mypage() {
+	const history = useHistory();
 	//name이라는 프로퍼티로 불러오기 위해
 	const initVal = {
 		userid: '',
 		pwd1: '',
 		pwd2: '',
 		email: '',
+		gender: false,
+		interests: false,
+		comments: '',
+		edu: '',
 	};
 
-	/* */
+	/* 실시간 담아둘 공ㅏ*/
 	const [Val, setVal] = useState(initVal);
 	const [Err, setErr] = useState({});
 	// console.log(Err);
 	const [Sumbit, setSumbit] = useState(false);
 
+	/*
+ 	매개변수(파라미터) - 특정 값을 함수 내부로 전달해주는 통로명 = (value)
+	인수(argument)- 해당 통로를 통해서 전달되는 값 = Val
+	*/
+
 	//인증체크함수value값은 check(Val)에서 Val 값을 뜻함
 	//value값으로 Val state가 전달되고 있음/파라미터로 전달되고 있는 Val == value값에
 	const check = (value) => {
-		//errs가 담길 빈 객체를 지역변수 errs로 만들어놓고
+		//3. errs가 담길 빈 객체를 지역변수 errs로 만들어놓고
 		const errs = {};
-		console.log(errs);
 		const eng = /[a-zA-Z]/;
 		const num = /[0-9]/;
 		const spc = /[~!@#$%^&*()]/;
 		//Val.userid.length < 5와 같음
 		if (value.userid.length < 5) {
-			//errs라는 빈 객체에 userid라는 키값(property를 만들어서)으로 해당 에러 메세지를 담고 조건에 부합되지 않으면 메시지를 errs객체에 담아놓고 errs객체를 리턴
+			//errs라는 빈 객체에 userid라는 키값(property를 만들어서)으로 해당 에러 메세지를 담고 조건에 부합되지 않으면 메시지를 errs객체에 담아놓고 errs객체를 리턴 init
 			errs.userid = '아이디를 5글자 이상 입력하세요';
 		}
 		if (
@@ -44,7 +55,21 @@ function Mypage() {
 		if (value.email.length < 8 || !/@/.test(value.email)) {
 			errs.email = '이메일은 8글자 이상 @를 포함하세요';
 		}
-
+		//true가 아니면 === false일때
+		if (!value.gender) {
+			errs.gender = '성별을 선택하세요';
+		}
+		//true가 아니면 === false일때
+		if (!value.interests) {
+			errs.interests = '관심사를 하나만 선택해주세요';
+		}
+		if (value.comments.length < 20) {
+			errs.comments = '20글자 이상 입력하세요';
+		}
+		if (value.edu === '') {
+			errs.edu = '최종학력을 선택하세요';
+		}
+		//4.조건에 부합하지 않으면 errs빈환
 		return errs;
 	};
 	//인풋 요소에 변화가 생길때마다 val state업데이트 함수
@@ -52,26 +77,62 @@ function Mypage() {
 		const { name, value } = e.target;
 		//현재 val값을 deep copy한 다음에 그중에 userid라는 키값의 value값만 계속 갱신
 		/*문자,숫자,boolean값 같은 원시형 자료를 바꿀때에는 바로 값을 바꾸면 되지만
-		참조형(배열,객체)같은 값은 원본이 바뀌기때문에 copy 꼭 하기!원본 유지/복사본 변경위해 deep copy*/
+		참조형(배열,객체)같은 값은 원본이 바뀌기때문에 copy 꼭 하기!원본 유지/복사본 변경위해 deep copy/ 덮어쓰기 실시간으로*/
 		setVal({ ...Val, [name]: value });
 	};
-	//전송 버튼 클릭시 handleSubmit실행 => 인증 체크호출하고 에러메시지 생성 함수
+
+	//라디오버튼 체크시 Val state업데이트 함수
+	const handleRadio = (e) => {
+		const { name } = e.target;
+		//체크가 되면 checked가 된다.
+		//둘중에 무조건 하나만 선택이기 때문에 초기값에 false넣어놓는것 반복돌릴 필요가 없어서
+		//체크박스처럼 false로 해 놓으면 체크를 풀었을 때 에러가 생겼음
+		const isChecked = e.target.checked;
+		//false값이 들어가 있어서 착각할 수 있지만
+		//객체값(initVal)에 들어가 있기 떄문에 deep copy
+		setVal({ ...Val, [name]: isChecked });
+	};
+
+	//체크박스 체크 시 Val state업데이트 함수
+	const handleCheck = (e) => {
+		const { name } = e.target;
+		let isChecked = false;
+		const inputs = e.target.parentElement.querySelectorAll('input');
+
+		//모든 체크박스 반복을 돌면서 하나라도 체크된게 있으면 true값으로 변경 후 리턴
+		//&&뒤에 대입 연산자 있음 안됨()로묶음 체크가 되어있는거 확인해야돼서
+		inputs.forEach((el, idx) => el.checked && (isChecked = true));
+		setVal({ ...Val, [name]: isChecked });
+	};
+
+	//select요소 선택시 Val state 업데이트 함수
+	const handleSelect = (e) => {
+		const { name } = e.target;
+		const selected = e.target.value;
+		setVal({ ...Val, [name]: selected });
+	};
+	//1. 전송 버튼 클릭시 handleSubmit실행 => 인증 체크호출하고 에러메시지 생성 함수
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		// console.log(check(Val));
 		//errs객체가 만들어진 return값을 setErr변경 스테이트 함수에 담아서 조건에 부합하지 않으면 Err스테이트 나타남
+		//2.전송 버튼 클릭시 체크함수 실행
 		setErr(check(Val));
+		//옮겨담음 에러문구 출력해야돼서 스테이트값에 담는다
 	};
+	//5.Err문구가 뜰때마다 실행
 	useEffect(() => {
 		//객체의 키값 반복돌기
 		//객체의 키값이 하나도 없으면 인증 통과
 		const len = Object.keys(Err).length;
 		//len의 키값이 0이고 submit값이 true여아지만 인증통과/send버튼을 한번 이상 클릭했을 때
 		if (len === 0 && Sumbit) {
-			alert('모든 인증을 통과했습니다');
+			alert('회원가입이 완료되었습니다.');
 			setVal(initVal);
+			history.push('/');
 		}
 	}, [Err]);
+
 	return (
 		<Layout name={'JOIN'}>
 			<form onSubmit={handleSubmit}>
@@ -148,6 +209,104 @@ function Mypage() {
 									value={Val.email}
 								/>
 								<span className='err'>{Err.email}</span>
+							</td>
+						</tr>
+
+						{/* gender */}
+						<tr>
+							<th scope='row'>GENDER</th>
+							<td>
+								<label htmlFor='male'>Male</label>
+
+								<input
+									type='radio'
+									name='gender'
+									value='male'
+									id='male'
+									onChange={handleRadio}
+								/>
+
+								<label htmlFor='female'>Female</label>
+
+								<input
+									type='radio'
+									name='gender'
+									value='female'
+									id='female'
+									onChange={handleRadio}
+								/>
+								<span className='err'>{Err.gender}</span>
+							</td>
+						</tr>
+
+						{/* interest */}
+						<tr>
+							<th scope='row'>INTERESTS</th>
+							<td>
+								<label htmlFor='sports'>Sports</label>
+								<input
+									type='checkbox'
+									name='interests'
+									value='sports'
+									id='sports'
+									onChange={handleCheck}
+								/>
+
+								<label htmlFor='music'>Music</label>
+								<input
+									type='checkbox'
+									name='interests'
+									value='music'
+									id='music'
+									onChange={handleCheck}
+								/>
+
+								<label htmlFor='game'>Game</label>
+								<input
+									type='checkbox'
+									name='interests'
+									value='game'
+									id='game'
+									onChange={handleCheck}
+								/>
+
+								<span className='err'>{Err.interests}</span>
+							</td>
+						</tr>
+
+						{/* edu */}
+						<tr>
+							<th scope='row'>
+								<label htmlFor='edu'>EDUCATION</label>
+							</th>
+							<td>
+								<select name='edu' id='edu' onChange={handleSelect}>
+									<option value=''>학력을 선택하세요</option>
+									<option value='elementary-school'>초등학교 졸업</option>
+									<option value='middle-school'>중학교 졸업</option>
+									<option value='hight-school'>고등학교 졸업</option>
+									<option value='college'>대학교 졸업</option>
+								</select>
+								<span className='err'>{Err.edu}</span>
+							</td>
+						</tr>
+
+						{/* comments */}
+						<tr>
+							<th scope='row'>
+								<label htmlFor='comments'>COMMENTS</label>
+							</th>
+							<td>
+								<textarea
+									name='comments'
+									id='comments'
+									cols='30'
+									rows='5'
+									placeholder='남기는 말을 입력하세요'
+									onChange={handleChange}
+									value={Val.comments}
+								></textarea>
+								<span className='err'>{Err.comments}</span>
 							</td>
 						</tr>
 

@@ -8,7 +8,7 @@
 				display: flex;
 				background: #a0613833;
 				padding: 50px;
-				height: 400px;
+				height: auto;
 				// table {
 				// 	width: 50%;
 				// 	height: 400px;
@@ -25,6 +25,8 @@
 						border-bottom: 1px solid #777;
 						padding: 15px 30px;
 						text-align: left;
+						font-size: 18px;
+						font-family: $titleFont;
 						&:last-child {
 							text-align: center;
 							input[type='submit'],
@@ -37,6 +39,7 @@
 								justify-content: center;
 								align-items: center;
 								margin: 0 10px;
+								font-family: $titleFont;
 								cursor: pointer;
 							}
 						}
@@ -47,15 +50,22 @@
 						padding: 15px 30px;
 						border-bottom: 1px solid #777;
 
+						label {
+							font-family: $contentFont;
+						}
 						input::placeholder {
 							font-size: 13px;
 						}
 						input[type='text'],
-						input[type='password'] {
+						input[type='password'],
+						textarea,
+						select {
 							width: 40%;
 							border: none;
 							// border: 1px solid #777;
 							padding: 6px 10px;
+							resize: none;
+							background: rgb(230, 252, 252);
 							// &:focus {
 							// 	outline: 1px solid $strongColor;
 							// }
@@ -64,6 +74,88 @@
 							font: 12px/1 $krFont;
 							color: hotpink;
 							margin-left: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.JOIN {
+		.sub_con {
+			> .inner {
+				form {
+					table {
+						// th {
+						// 	&:last-child {
+						// 		input[type='submit'],
+						// 		input[type='reset'] {
+						// 			border: none;
+						// 			width: 150px;
+						// 			height: 30px;
+						// 			display: inline-flex;
+						// 			justify-content: center;
+						// 			align-items: center;
+						// 			margin: 0 10px;
+						// 			cursor: pointer;
+						// 		}
+						// 	}
+						// }
+						td {
+							input::placeholder {
+								font-size: 12px;
+								font-family: $krFont;
+							}
+							input[type='text'],
+							input[type='password'],
+							textarea,
+							select {
+								width: 80%;
+							}
+							span.err {
+								font: 12px/1 $krFont;
+								color: rgb(245, 63, 100);
+								margin-left: 20px;
+								display: block;
+								margin-top: 10px;
+								margin-left: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	.JOIN {
+		.sub_con {
+			> .inner {
+				form {
+					table {
+						th {
+							display: none;
+							&:last-child {
+								display: flex;
+								width: 100%;
+								justify-content: space-between;
+								input[type='submit'],
+								input[type='reset'] {
+									display: inline-block;
+									width: 48%;
+								}
+							}
+						}
+						td {
+							border-left: none;
+							input[type='text'],
+							input[type='password'],
+							textarea,
+							select {
+								width: 100%;
+							}
 						}
 					}
 				}

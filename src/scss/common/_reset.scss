@@ -24,6 +24,11 @@ fieldset {
 table {
 	border-collapse: collapse;
 }
+input[type='checkbox'],
+input[type='radio'] {
+	margin-right: 20px;
+	margin-left: 5px;
+}
 // body {
 // 	overflow: hidden;
 // }

@@ -22,9 +22,9 @@ function Brand() {
 	}, [Members]); //member가 바뀔때마다 렌더링
 	return (
 		<Layout name={'Brand'}>
-			<h2>
+			{/* <h2>
 				about<span> Object</span>
-			</h2>
+			</h2> */}
 			<p>
 				오브젝트 브랜드는 [생각에서 비롯된 사물] 이라는 접근을 통해 일상에서 사용하는 사물을
 				재해석해 소비자의 행동에 작은 변화를 이끌어냅니다. 또한 물건을 오랫동안 사용할 수
@@ -52,7 +52,7 @@ function Brand() {
 								/>
 							</div>
 							<h3>{el.name}</h3>
-							<p>{el.position}</p>
+							<span>{el.position}</span>
 						</div>
 					</article>
 				);
