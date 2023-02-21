@@ -105,10 +105,7 @@ function ContactUs() {
 			<div className='sub'>
 				<div className='sub_box'>
 					<h3>On the way to Lorem ipsum dolor</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor
-						sit amet consectetur adipisicing elit.
-					</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 					<div className='sns'>
 						<span>
 							<FontAwesomeIcon icon={faFacebookF} />

@@ -38,8 +38,8 @@
 					.sns {
 						span {
 							display: inline-block;
-							width: 20px;
-							height: 20px;
+							width: 25px;
+							height: 25px;
 							margin-right: 10px;
 							background: #445870;
 							border-radius: 2px;
@@ -48,13 +48,13 @@
 								font-size: 12px;
 								cursor: pointer;
 								color: #fff;
+								vertical-align: sub;
 							}
 						}
 					}
 				}
 				button {
 					display: block;
-					float: right;
 					width: 18vw;
 					height: 40px;
 					background: #445870;
@@ -148,13 +148,15 @@
 	.CONTACT {
 		.sub_con {
 			> .inner {
-				.title {
-					flex-direction: column;
+				.sub {
+					justify-content: space-between;
 					align-items: flex-start;
-					h2 {
-						margin-bottom: 20px;
+					flex-direction: column;
+					.sub_box {
+						margin-bottom: 50px;
 					}
 					button {
+						display: block;
 						width: 100%;
 					}
 				}
