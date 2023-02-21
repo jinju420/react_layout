@@ -229,7 +229,6 @@ function Mypage() {
 						<tr>
 							<th scope='row'>GENDER</th>
 							<td>
-								<label htmlFor='male'>Male</label>
 								<input
 									type='radio'
 									name='gender'
@@ -237,8 +236,8 @@ function Mypage() {
 									id='mail'
 									onChange={handleRadio}
 								/>
+								<label htmlFor='male'>Male</label>
 
-								<label htmlFor='female'>Female</label>
 								<input
 									type='radio'
 									name='gender'
@@ -246,6 +245,7 @@ function Mypage() {
 									id='female'
 									onChange={handleRadio}
 								/>
+								<label htmlFor='female'>Female</label>
 
 								<span className='err'>{Err.gender}</span>
 							</td>
@@ -255,7 +255,6 @@ function Mypage() {
 						<tr>
 							<th scope='row'>KIND OF</th>
 							<td>
-								<label htmlFor='citrus'>Citrus</label>
 								<input
 									type='checkbox'
 									name='perfume'
@@ -263,8 +262,8 @@ function Mypage() {
 									id='citrus'
 									onChange={handleCheck}
 								/>
+								<label htmlFor='citrus'>Citrus</label>
 
-								<label htmlFor='floral'>Floral</label>
 								<input
 									type='checkbox'
 									name='perfume'
@@ -272,8 +271,8 @@ function Mypage() {
 									id='floral'
 									onChange={handleCheck}
 								/>
+								<label htmlFor='floral'>Floral</label>
 
-								<label htmlFor='marine'>Marine</label>
 								<input
 									type='checkbox'
 									name='perfume'
@@ -281,8 +280,8 @@ function Mypage() {
 									id='marine'
 									onChange={handleCheck}
 								/>
+								<label htmlFor='marine'>Marine</label>
 
-								<label htmlFor='musk'>Musk</label>
 								<input
 									type='checkbox'
 									name='perfume'
@@ -290,6 +289,7 @@ function Mypage() {
 									id='musk'
 									onChange={handleCheck}
 								/>
+								<label htmlFor='musk'>Musk</label>
 
 								<span className='err'>{Err.perfume}</span>
 							</td>

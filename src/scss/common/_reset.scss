@@ -26,8 +26,11 @@ table {
 }
 input[type='checkbox'],
 input[type='radio'] {
-	margin-right: 20px;
-	margin-left: 5px;
+	margin-right: 5px;
+	margin-left: 15px;
+	&:first-child {
+		margin-left: 0;
+	}
 }
 textarea,
 // select {

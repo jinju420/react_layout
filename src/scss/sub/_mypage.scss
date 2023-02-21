@@ -6,7 +6,8 @@
 		> .inner {
 			@include clear;
 			h1 {
-				margin-left: 335px;
+				width: 43%;
+				margin: 0 auto 70px;
 			}
 			form {
 				display: flex;
@@ -154,6 +155,11 @@
 	.MEMBERS {
 		.sub_con {
 			> .inner {
+				h1 {
+					text-align: center;
+					width: 100%;
+					margin: 0 auto 30px;
+				}
 				form {
 					width: 100%;
 					table {
