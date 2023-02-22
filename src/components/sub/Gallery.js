@@ -5,9 +5,14 @@ import Masonry from 'react-masonry-component';
 
 function Gallery() {
 	const frame = useRef(null);
+	const btn = useRef(null);
+	const [Btn, setBtn] = useState(false);
 	const [Items, setItems] = useState([]);
 	const [Loading, setLoading] = useState(true);
 
+	const BtnClick = () => {
+		btn.current.querSelectorAll('button');
+	};
 	const getFlickr = async (opt) => {
 		//객체 타입을 opt로 받아서
 		const baseURL = 'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
@@ -52,19 +57,25 @@ function Gallery() {
 	return (
 		<Layout name={'GALLERY'}>
 			<div className='inner'>
-				<div className='btnSet'>
+				<div className='btnSet' ref={btn}>
 					<button
+						// className={btn ? 'on' : ''}
 						onClick={() => {
 							frame.current.classList.remove('on');
-							setLoading(true);
+							// btn.current.classList.add('on');
+							setBtn(!Btn);
 							getFlickr({ type: 'interest' });
+							setBtn(true);
 						}}
 					>
 						Interest Gallery
 					</button>
 					<button
+						// className={btn ? 'on' : ''}
 						onClick={() => {
 							frame.current.classList.remove('on');
+							// btn.current.classList.add('on');
+							setBtn(!Btn);
 							setLoading(true);
 							getFlickr({ type: 'user', user: '195427004@N07' });
 						}}

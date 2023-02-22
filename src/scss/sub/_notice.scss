@@ -5,27 +5,40 @@
 	.sub_con {
 		> .inner {
 			.inputBox {
+				display: flex;
+				justify-content: space-between;
 				width: 100%;
 				border: 1px solid #bbb;
 				padding: 50px;
 				margin-bottom: 50px;
-
-				input[type='text'],
-				textarea {
+				.txt_box {
 					width: 50%;
-					padding: 8px 10px;
-					border: 1px solid #aaa;
-					resize: none;
-					margin-bottom: 10px;
-					background: rgb(238, 250, 250);
+					input[type='text'],
+					textarea {
+						width: 100%;
+						padding: 8px 10px;
+						border: 1px solid #aaa;
+						resize: none;
+						margin-bottom: 10px;
+						background: #eaf0f7;
+					}
+					textarea {
+						height: 80px;
+						margin-bottom: 0;
+					}
 				}
+
 				.btnSet {
 					button {
-						width: 150px;
-						height: 30px;
+						width: 18vw;
+						height: 40px;
+						background: #445870;
+						font: bold 15px/1 $titleFont;
+						// width: 150px;
+						// height: 30px;
 						display: inline-block;
 						border: none;
-						background: #555;
+						// background: #555;
 						margin-right: 20px;
 						color: #fff;
 						cursor: pointer;
@@ -34,29 +47,50 @@
 			}
 			.showBox {
 				width: 100%;
-				border: 1px solid #bbb;
-				padding: 50px;
+				// border: 1px solid #333;
+				// padding: 50px;
+				> p {
+					width: 100%;
+					padding: 15px 20px;
+					// height: 50px;
+					background: #445870;
+					// line-height: 50px;
+					color: #fff;
+					font: bold 18px/1 $titleFont;
+					letter-spacing: 1px;
+					margin-bottom: 40px;
+				}
 				article {
-					background: #fff;
-					padding: 30px;
+					// background: #fff;
+					padding: 0 30px 30px 20px;
 					margin-bottom: 40px;
 					display: flex;
 					justify-content: space-between;
 					align-content: center;
 					flex-wrap: wrap;
+					border-bottom: 1px solid #333;
+					// border: 1px solid #aaa;
+					// background: #ebf4ff;
 					.txt {
 						width: 80%;
 						h2 {
-							margin-bottom: 10px;
+							margin-bottom: 20px;
+							// border-bottom: 1px solid #445870;
+							color: #445870;
+							display: inline-block;
+							font-family: $titleFont;
+						}
+						p {
+							font-family: $contentFont;
 						}
 						input,
 						textarea {
 							width: 100%;
 							padding: 8px 10px;
-							border: 1px solid lightblue;
+							border: 1px solid #445870;
 							margin-bottom: 10px;
 							resize: none;
-							background: #eefafa;
+							background: #eaf0f7;
 						}
 						textarea {
 							margin-bottom: 0;
@@ -71,7 +105,9 @@
 						button {
 							border: none;
 							background: transparent;
+							font-family: $contentFont;
 							cursor: pointer;
+							font-weight: 500;
 							&:nth-of-type(1) {
 								color: orange;
 							}
@@ -91,29 +127,56 @@
 		.sub_con {
 			> .inner {
 				.inputBox {
-					width: 100%;
-
-					input[type='text'],
-					textarea {
+					flex-direction: column;
+					.txt_box {
 						width: 100%;
+						input[type='text'],
+						textarea {
+							width: 100%;
+						}
 					}
 					.btnSet {
 						display: flex;
-						flex-wrap: wrap;
+						justify-content: flex-end;
+						button {
+							width: 200px;
+							&:last-child {
+								margin-right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	.NOTICE {
+		.sub_con {
+			> .inner {
+				.inputBox {
+					flex-direction: column;
+					padding: 0;
+					border: none;
+					.btnSet {
 						justify-content: space-between;
 						button {
-							width: 47%;
-							background: #555;
-							margin-right: 0;
+							width: 200px;
+							&:last-child {
+								margin-right: 0;
+							}
 						}
 					}
 				}
 				.showBox {
 					article {
-						.txt,
+						padding: 0 15px 15px;
+						.txt {
+							width: 100%;
+							margin-bottom: 15px;
+						}
 						.btnSet {
 							width: 100%;
-							margin-top: 20px;
 						}
 					}
 				}

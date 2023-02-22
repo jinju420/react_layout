@@ -115,14 +115,17 @@ function Notice() {
 	return (
 		<Layout name={'NOTICE'}>
 			<div className='inputBox'>
-				<input type='text' placeholder='제목을 입력하세요' ref={input} />
-				<br />
-				<textarea
-					cols='30'
-					rows='3'
-					placeholder='본문을 입력하세요'
-					ref={textarea}
-				></textarea>
+				<div className='txt_box'>
+					<input type='text' placeholder='제목을 입력하세요' ref={input} />
+					<br />
+					<textarea
+						cols='30'
+						rows='3'
+						placeholder='본문을 입력하세요'
+						ref={textarea}
+					></textarea>
+				</div>
+
 				<br />
 
 				<div className='btnSet'>
@@ -132,6 +135,7 @@ function Notice() {
 			</div>
 
 			<div className='showBox'>
+				<p>The Newest</p>
 				{Posts.map((post, idx) => {
 					return (
 						<article key={idx}>
