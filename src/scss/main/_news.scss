@@ -27,23 +27,20 @@
 		flex-wrap: wrap;
 		align-content: center;
 		article {
-			width: calc((100% - 40px) / 3);
+			width: calc((100% - 40px) / 4);
 			margin-right: 20px;
 			margin-bottom: 20px;
 			height: 150px;
-			padding: 10px;
+			padding: 15px 10px;
 			background: #fff;
 			opacity: 0;
 			transform: rotateY(180deg) translateY(100px);
 			transition-duration: 0.5s;
 			border-radius: 6px;
 			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-			display: flex;
-			flex-direction: column;
-			justify-content: space-evenly;
 			text-align: center;
 			cursor: pointer;
-			&:nth-of-type(3n) {
+			&:nth-of-type(4) {
 				margin-right: 0;
 			}
 			@for $i from 1 through 8 {
@@ -51,16 +48,23 @@
 					transition-delay: 0.2s * ($i - 1);
 				}
 			}
-			&:hover {
-				transition: 0s;
-				@for $i from 1 through 8 {
-					&:nth-of-type(#{$i}) {
-						transition-delay: 0s;
-					}
-				}
-				background: rgba(0, 0, 0, 0.5);
-				color: #fff;
+			h3 {
+				padding-bottom: 10px;
+				border-bottom: 1px solid #333;
 			}
+			p {
+				margin-top: 15px;
+			}
+			// &:hover {
+			// 	transition: 0s;
+			// 	@for $i from 1 through 8 {
+			// 		&:nth-of-type(#{$i}) {
+			// 			transition-delay: 0s;
+			// 		}
+			// 	}
+			// 	background: rgba(0, 0, 0, 0.5);
+			// 	color: #fff;
+			// }
 		}
 	}
 }

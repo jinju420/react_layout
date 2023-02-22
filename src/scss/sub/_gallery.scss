@@ -1,59 +1,162 @@
 .GALLERY {
-	figure {
-		background: url('../../../public/sub/visual/gallery.jpg') no-repeat center/cover;
-	}
+	// figure {
+	// 	background: url('../../../public/sub/visual/gallery.jpg') no-repeat center/cover;
+	// }
 	.sub_con {
-		.inner {
-			height: 1000px;
-			.tab_title {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				text-align: center;
-				margin-bottom: 50px;
-				h2 {
-					width: 50%;
-					margin-right: 40px;
-					padding: 20px 0;
-					font-family: 'Montserrat';
-					font-weight: 500;
-					// &:hover {
-					// 	color: #a06138;
-					// 	font-weight: 500;
-					// 	border-bottom: 2px solid #a06138;
-					// }
+		> .inner {
+			.loader {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.btnSet {
+				width: 100%;
+				button {
+					width: 150px;
+					// height: 30px;
+					padding: 15px 20px;
+					background: #445870;
+					color: #fff;
+					border: none;
+					border-radius: 5px;
+					margin-right: 15px;
+					font: normal 12px/1 $titleFont;
+					margin-bottom: 30px;
+					letter-spacing: 1px;
+					cursor: pointer;
 				}
 			}
-			.tab_cont {
-				position: relative;
-				.cont {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					display: none;
-					@include clear;
-				}
-				.vids {
-					width: 100%;
-					article {
-						float: left;
-						width: calc((100% - 40px) / 2);
-						margin-bottom: 30px;
-						margin-right: 20px;
-						height: 150px;
-						border: 1px solid pink;
+			.frame {
+				opacity: 0;
+				transform: translateY(200px);
+				transition: opacity 0.5s, transform 0.5s;
+				padding: 10px;
+				@include clear;
+				article {
+					width: 25%;
+					padding: 10px;
+					float: left;
+					&:hover {
+						// background: #445870;
+						.inner {
+							background: #445870;
+							img {
+								border: 5px solid #fff;
+							}
+							h2 {
+								color: #fff;
+								border-top: 2px solid #fff;
+								border-bottom: 1px solid #fff;
+							}
+						}
+					}
+					.inner {
+						width: 100%;
+						background: #fff;
+						padding: 14px;
+						box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+						transition: 1s;
+
+						.pic {
+							width: 100%;
+							overflow: hidden;
+							img {
+								width: 100%;
+							}
+						}
+						h2 {
+							font: normal 20px/1.2 $titleFont;
+							color: #333;
+							margin-top: 10px;
+							margin-bottom: 30px;
+							padding: 10px 0 50px;
+							border-top: 2px solid #333;
+							border-bottom: 1px solid #333;
+						}
 					}
 				}
-				.gal {
-					display: flex;
-					article {
-						float: left;
-						width: calc((100% - 80px) / 4);
-						margin-right: 20px;
+				&.on {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.GALLERY {
+		.sub_con {
+			> .inner {
+				.loader {
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+				.btnSet {
+					width: 100%;
+					button {
+						width: 150px;
+						// height: 30px;
+						padding: 15px 20px;
+						background: #445870;
+						color: #fff;
+						border: none;
+						border-radius: 5px;
+						margin-right: 15px;
+						font: normal 12px/1 $titleFont;
 						margin-bottom: 30px;
-						height: 50px;
-						border: 1px solid pink;
+						letter-spacing: 1px;
+						cursor: pointer;
+					}
+				}
+				.frame {
+					article {
+						width: 33%;
+						.inner {
+							h2 {
+								font: normal 16px/1.2 $titleFont;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	.GALLERY {
+		.sub_con {
+			> .inner {
+				.loader {
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+				.btnSet {
+					width: 100%;
+					button {
+						width: 100%;
+						margin-bottom: 10px;
+						&:last-child {
+							margin-bottom: 50px;
+						}
+					}
+				}
+				.frame {
+					padding: 0;
+					article {
+						width: 100%;
+						padding: 0;
+						margin-bottom: 30px;
+						.inner {
+							h2 {
+								font: normal 20px/1.2 $titleFont;
+							}
+						}
 					}
 				}
 			}
