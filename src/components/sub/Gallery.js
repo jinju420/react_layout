@@ -5,14 +5,10 @@ import Masonry from 'react-masonry-component';
 
 function Gallery() {
 	const frame = useRef(null);
-	const btn = useRef(null);
 	const [Btn, setBtn] = useState(false);
 	const [Items, setItems] = useState([]);
 	const [Loading, setLoading] = useState(true);
 
-	const BtnClick = () => {
-		btn.current.querSelectorAll('button');
-	};
 	const getFlickr = async (opt) => {
 		//객체 타입을 opt로 받아서
 		const baseURL = 'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
@@ -57,25 +53,19 @@ function Gallery() {
 	return (
 		<Layout name={'GALLERY'}>
 			<div className='inner'>
-				<div className='btnSet' ref={btn}>
+				<div className='btnSet'>
 					<button
-						// className={btn ? 'on' : ''}
 						onClick={() => {
 							frame.current.classList.remove('on');
-							// btn.current.classList.add('on');
-							setBtn(!Btn);
+							setLoading(true);
 							getFlickr({ type: 'interest' });
-							setBtn(true);
 						}}
 					>
 						Interest Gallery
 					</button>
 					<button
-						// className={btn ? 'on' : ''}
 						onClick={() => {
 							frame.current.classList.remove('on');
-							// btn.current.classList.add('on');
-							setBtn(!Btn);
 							setLoading(true);
 							getFlickr({ type: 'user', user: '195427004@N07' });
 						}}
@@ -87,7 +77,7 @@ function Gallery() {
 				{Loading && (
 					<img
 						className='loader'
-						src={`${process.env.PUBLIC_URL}/img/loading.gif`}
+						src={`${process.env.PUBLIC_URL}/img/load.gif`}
 						alt='loading'
 					/>
 				)}

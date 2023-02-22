@@ -27,21 +27,22 @@
 						margin-bottom: 0;
 					}
 				}
-
 				.btnSet {
+					display: flex;
+					justify-content: space-between;
 					button {
-						width: 18vw;
+						width: 13vw;
 						height: 40px;
 						background: #445870;
 						font: bold 15px/1 $titleFont;
-						// width: 150px;
-						// height: 30px;
 						display: inline-block;
 						border: none;
-						// background: #555;
 						margin-right: 20px;
 						color: #fff;
 						cursor: pointer;
+						&:last-child {
+							margin-right: 0;
+						}
 					}
 				}
 			}
