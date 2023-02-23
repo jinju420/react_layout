@@ -7,8 +7,9 @@ import { useEffect, useRef, useState } from 'react';
 
 function Youtube() {
 	//앞부분은 결과적으로 보여 주는 값
-	const [Vids, setVids] = useState([]); //가지고 오는 값에 따라 초기값 뭐 넣을건지 구분
-	const [Open, setOpen] = useState(false);
+	const open = useRef(null);
+	//가지고 오는 값에 따라 초기값 뭐 넣을건지 구분
+	const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
 
 	useEffect(() => {
@@ -18,12 +19,11 @@ function Youtube() {
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
 
 		axios.get(url).then((json) => {
-			console.log(json);
 			setVids(json.data.items); //빈 배열(Vids)에 배열을 (setVids)에 담아서 Vids로 보내주기 때문에 setVids에 담는다.
 		});
 	}, []);
 	useEffect(() => {
-		console.log(Vids);
+		// console.log(Vids);
 	}, [Vids]);
 	return (
 		<>
@@ -38,7 +38,7 @@ function Youtube() {
 							<div
 								className='pic'
 								onClick={() => {
-									setOpen(true);
+									open.current.setOpen();
 									setIndex(idx);
 								}}
 							>
@@ -52,20 +52,15 @@ function Youtube() {
 						</article>
 					);
 				})}
-				{/* <div className='wrap'></div> */}
 			</Layout>
-			{Open && (
-				<Modal setOpen={setOpen}>
-					{/*setOpen이라는 props에 setOpen함수를 담았다.자식 Modal에 props전달하기위해 */}
-					<iframe
-						title={Vids[0].id}
-						src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}
-					></iframe>
-					{/* Modal.js의 props.children으로 들어가는 값 
-						youtube안에서 불러오는 모달이기 때문에 youtube가 부모고 modal이 자식					
-					*/}
-				</Modal>
-			)}
+			{/* 모달 여는 함수를 open참조객체에 연결 */}
+			<Modal ref={open}>
+				{/* Youtube컴포넌트 첨 마운트시 Modal컴포넌트 자체는 동작되기 때문에 첫번째 랜더링 싸이클일떄 Vids[Index]값이 비어있으므로 에러 따라서 Optional Chaining으로 해당 객체값이 비어있을때는 id값을 읽지않고 값이 담겨 있을떄에만 실행 */}
+				<iframe
+					title={Vids[Index]?.id}
+					src={`https://www.youtube.com/embed/${Vids[Index]?.snippet.resourceId.videoId}`}
+				></iframe>
+			</Modal>
 			{/* open이 참이면 &&뒤의 부분이 실행 */}
 		</>
 	);
