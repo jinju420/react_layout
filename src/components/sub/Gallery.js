@@ -76,12 +76,6 @@ function Gallery() {
 		setLoading(true);
 		//tags=result는 내가 검색한 value의 값
 		getFlickr({ type: 'search', tags: result });
-
-		// if (result != '') {
-		// 	getFlickr({ type: 'search', tags: result });
-		// } else {
-		// 	alert('검색어를 입력하세요');
-		// }
 	};
 
 	let handleKeyUp = (e) => {
@@ -155,6 +149,7 @@ function Gallery() {
 												}}
 											>
 												<img
+													className='flickr_img'
 													src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
 													alt={item.title}
 												/>
@@ -169,10 +164,12 @@ function Gallery() {
 			</Layout>
 
 			<Modal ref={open}>
-				<img
-					src={`https://live.staticflickr.com/${Items[Index]?.server}/${Items[Index]?.id}_${Items[Index]?.secret}_b.jpg`}
-					alt={Items[Index]?.title}
-				/>
+				<div className='flickr_img'>
+					<img
+						src={`https://live.staticflickr.com/${Items[Index]?.server}/${Items[Index]?.id}_${Items[Index]?.secret}_b.jpg`}
+						alt={Items[Index]?.title}
+					/>
+				</div>
 			</Modal>
 		</>
 	);

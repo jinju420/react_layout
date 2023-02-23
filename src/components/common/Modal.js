@@ -9,7 +9,7 @@ const Modal = forwardRef((props, ref) => {
 
 	//모달을 여는 setOpen이라는 객체로 state변경함수를 부모 컴포넌트로 전달
 	useImperativeHandle(ref, () => {
-		//객체 키값으로 전달해준
+		//객체 키값으로 전달해준 부모 ref에 담긴 값
 		return { setOpen: () => setOpen(true) };
 	});
 
@@ -27,7 +27,6 @@ const Modal = forwardRef((props, ref) => {
 				>
 					<motion.div
 						className='con'
-						id='pic'
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1, transition: { delay: 0.5 } }}
 						exit={{ opacity: 0 }}
