@@ -5,6 +5,7 @@ import Masonry from 'react-masonry-component';
 
 function Gallery() {
 	const frame = useRef(null);
+	const input = useRef(null);
 	const [Btn, setBtn] = useState(false);
 	const [Items, setItems] = useState([]);
 	const [Loading, setLoading] = useState(true);
@@ -17,7 +18,6 @@ function Gallery() {
 		// const method_favorite= 'flickr.favorites.getList';
 		const method_search = 'flickr.photos.search';
 		const method_user = 'flickr.people.getPhotos';
-		// const user_id = '195427004@N07';
 		const num = 20;
 		let url = '';
 
@@ -25,53 +25,82 @@ function Gallery() {
 			url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
 		if (opt.type === 'search')
 			url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
-
 		if (opt.type === 'user')
 			url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
-		//동기 == 순서가 정해져 있는 순서대로 일의 진행이 끝난다.
-		//비동기 == 순서는 정해가 있지만 어떤 업무가 먼저 끝날지 모른다.
-		//브러우저가 실행함
-		//async await /promise객체를 반환하는 앞에 await붙이면 다음코드 동기화 실행됨
 		const result = await axios.get(url);
-		console.log(result.data.photos.photo);
+		//flickr로 반환한 데이터 배열값이 0개일때 (결과 이미지가 없을때) 기존 Items state를 변경하지 않고 이전 갤러리화면 다시 보이게처리
+		if (result.data.photos.photo.length === 0) {
+			frame.current.classList.add('on');
+			setLoading(false);
+			return alert('해당 검색어의 결과 이미지가 없습니다.');
+		}
 		setItems(result.data.photos.photo);
+		//0.5초 뒤에 실행 로딩 안보이게
 		setTimeout(() => {
 			setLoading(false);
 			frame.current.classList.add('on');
-		}, 1000);
+		}, 500);
 
 		//promise, then방식보다 async await가 코드 가독성이 더 좋음 (두 방식의 성능, 결과차이는 없음)
 	};
 
+	const showInterest = () => {
+		frame.current.classList.remove('on');
+		setLoading(true);
+		getFlickr({ type: 'interest' });
+	};
+	const showMine = () => {
+		frame.current.classList.remove('on');
+		setLoading(true);
+		getFlickr({ type: 'user', user: '195427004@N07' });
+	};
+	const showUser = (e) => {
+		frame.current.classList.remove('on');
+		setLoading(true);
+		getFlickr({ type: 'user', user: e.target.innerText });
+	};
+
+	const showSearch = () => {
+		const result = input.current.value.trim();
+		if (!result) return alert('검색어를 입력하세요.');
+		input.current.value = '';
+		frame.current.classList.remove('on');
+		setLoading(true);
+		//tags=result는 내가 검색한 value의 값
+		getFlickr({ type: 'search', tags: result });
+
+		// if (result != '') {
+		// 	getFlickr({ type: 'search', tags: result });
+		// } else {
+		// 	alert('검색어를 입력하세요');
+		// }
+	};
+
+	//마운트됐을 때 기본 interest가 실행
 	useEffect(() => {
 		getFlickr({ type: 'interest' });
-		// getFlickr({ type: 'user', user: '195427004@N07' });
-		//getFlickr({ type: 'search', tags: '바다' });
 	}, []);
-	// const url1 = `${base}method=${method}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&user_id=${user_id}`;
 
 	return (
 		<Layout name={'GALLERY'}>
 			<div className='inner'>
 				<div className='btnSet'>
-					<button
-						onClick={() => {
-							frame.current.classList.remove('on');
-							setLoading(true);
-							getFlickr({ type: 'interest' });
-						}}
-					>
-						Interest Gallery
-					</button>
-					<button
-						onClick={() => {
-							frame.current.classList.remove('on');
-							setLoading(true);
-							getFlickr({ type: 'user', user: '195427004@N07' });
-						}}
-					>
-						My Gallery
-					</button>
+					<div className='controls'>
+						<nav>
+							<button onClick={showInterest}>Interest Gallery</button>
+							<button onClick={showMine}>My Gallery</button>
+						</nav>
+					</div>
+					<div className='searchBox'>
+						{/* 키보드 이벤트 발생시 이벤트가 발생한 키보드 이름이 enter면 함수호출 */}
+						<input
+							type='text'
+							ref={input}
+							onKeyUp={(e) => e.key === 'Enter' && showSearch()}
+							placeholder='검색어를 입력하세요'
+						/>
+						<button onClick={showSearch}>Search</button>
+					</div>
 				</div>
 
 				{Loading && (
@@ -83,12 +112,28 @@ function Gallery() {
 				)}
 				<div className='frame' ref={frame}>
 					{/* 감싸주고 싶은 태그 넣기 elementType*/}
-					<Masonry elementType={'div'} options={{ transitionDuration: '1s' }}>
+					<Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
 						{Items.map((item, idx) => {
 							return (
 								<article key={idx}>
 									<div className='inner'>
-										<h2>{item.title}</h2>
+										<div className='picTitle'>
+											<h2>{item.title}</h2>
+											<div className='profile'>
+												<img
+													src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
+													alt={item.owner}
+													onError={(e) => {
+														e.target.setAttribute(
+															'src',
+															`${process.env.PUBLIC_URL}/img/icon.jpeg`
+														);
+													}}
+												/>
+												<span onClick={showUser}>{item.owner}</span>
+											</div>
+										</div>
+
 										<div className='pic'>
 											<img
 												src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}

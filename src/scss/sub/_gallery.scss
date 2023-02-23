@@ -10,24 +10,71 @@
 			.btnSet {
 				width: 100%;
 				padding-left: 20px;
-				button {
-					// width: 15vw;
-					padding: 15px 20px;
-					background: transparent;
-					color: #445870;
-					border: none;
-					margin-right: 50px;
-					font: normal 16px/1 $titleFont;
-					margin-bottom: 30px;
-					letter-spacing: 1px;
-					cursor: pointer;
-					padding-bottom: 15px;
-					&.on {
+				.searchBox {
+					width: 100%;
+					font-size: 0;
+					text-align: right;
+					margin-bottom: 20px;
+					padding-right: 20px;
+					input[type='text'] {
+						width: 300px;
+						height: 35px;
+						outline: none;
+						background: #eee;
+						padding-left: 15px;
+						border: none;
+						&::placeholder {
+							color: #aaa;
+							font-size: 12px;
+						}
+						&:focus {
+							background: #ebf3fc;
+						}
+					}
+					button {
+						width: 80px;
+						height: 35px;
 						color: #fff;
-						// border-bottom: 2px solid #1d66be;
-						background: #445870;
 						border-radius: 5px;
-						padding: 15px 20px;
+						// line-height: 1;
+						background: #445870;
+						font-size: 12px;
+						font-family: $contentFont;
+						cursor: pointer;
+						margin-left: 15px;
+						border: none;
+						letter-spacing: 0.5px;
+						// background: $mainBg;
+						vertical-align: top;
+						transition: 0.5s;
+						// &:hover {
+						// 	background: $strongColor;
+						// 	color: #fff;
+						// }
+					}
+				}
+				.controls {
+					nav {
+						button {
+							// width: 15vw;
+							padding: 15px 20px;
+							background: transparent;
+							color: #445870;
+							border: none;
+							margin-right: 50px;
+							font: normal 16px/1 $titleFont;
+							margin-bottom: 20px;
+							letter-spacing: 1px;
+							cursor: pointer;
+							padding-bottom: 15px;
+							&.on {
+								color: #fff;
+								// border-bottom: 2px solid #1d66be;
+								background: #445870;
+								border-radius: 5px;
+								padding: 15px 20px;
+							}
+						}
 					}
 				}
 			}
@@ -43,15 +90,19 @@
 					float: left;
 					&:hover {
 						// background: #445870;
-						.inner {
+						> .inner {
 							background: #445870;
-							img {
-								border: 5px solid #fff;
+							.pic {
+								img {
+									border: 5px solid #fff;
+								}
 							}
-							h2 {
-								color: #fff;
+							.picTitle {
 								border-top: 2px solid #fff;
 								border-bottom: 1px solid #fff;
+								h2 {
+									color: #fff;
+								}
 							}
 						}
 					}
@@ -61,22 +112,45 @@
 						padding: 14px;
 						box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 						transition: 1s;
-
+						.picTitle {
+							border-bottom: 1px solid #333;
+							border-top: 2px solid #333;
+							margin-top: 10px;
+							margin-bottom: 20px;
+							h2 {
+								font: normal 20px/1.2 $titleFont;
+								color: #333;
+								margin-bottom: 30px;
+								padding: 10px 0 50px;
+							}
+							.profile {
+								width: 100%;
+								display: flex;
+								gap: 10px;
+								align-items: center;
+								margin-bottom: 15px;
+								> img {
+									width: 30px;
+									border-radius: 50%;
+								}
+								span {
+									cursor: pointer;
+									letter-spacing: 0.5px;
+									font-size: 12px;
+									color: orange;
+									transition: color 0.5s;
+									&:hover {
+										color: #fff;
+									}
+								}
+							}
+						}
 						.pic {
 							width: 100%;
 							overflow: hidden;
 							img {
 								width: 100%;
 							}
-						}
-						h2 {
-							font: normal 20px/1.2 $titleFont;
-							color: #333;
-							margin-top: 10px;
-							margin-bottom: 30px;
-							padding: 10px 0 50px;
-							border-top: 2px solid #333;
-							border-bottom: 1px solid #333;
 						}
 					}
 				}
@@ -101,19 +175,23 @@
 				}
 				.btnSet {
 					width: 100%;
-					button {
-						width: 150px;
-						// height: 30px;
-						padding: 15px 20px;
-						background: #445870;
-						color: #fff;
-						border: none;
-						border-radius: 5px;
-						margin-right: 15px;
-						font: normal 12px/1 $titleFont;
-						margin-bottom: 30px;
-						letter-spacing: 1px;
-						cursor: pointer;
+					.controls {
+						nav {
+							button {
+								width: 150px;
+								// height: 30px;
+								padding: 15px 20px;
+								background: #445870;
+								color: #fff;
+								border: none;
+								border-radius: 5px;
+								margin-right: 15px;
+								font: normal 12px/1 $titleFont;
+								margin-bottom: 30px;
+								letter-spacing: 1px;
+								cursor: pointer;
+							}
+						}
 					}
 				}
 				.frame {
@@ -142,11 +220,26 @@
 				}
 				.btnSet {
 					width: 100%;
-					button {
-						width: 100%;
-						margin-bottom: 10px;
-						&:last-child {
-							margin-bottom: 50px;
+					padding-left: 0;
+					.searchBox {
+						display: flex;
+						padding-right: 0;
+						input[type='text'] {
+							width: 70vw;
+							padding-left: 15px;
+						}
+					}
+					.controls {
+						nav {
+							button {
+								// width: 32vw;
+								width: 48%;
+								margin-bottom: 10px;
+								&:last-child {
+									margin-bottom: 50px;
+									margin-right: 0;
+								}
+							}
 						}
 					}
 				}
