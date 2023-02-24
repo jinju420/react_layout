@@ -12,7 +12,7 @@ function Youtube() {
 
 	useEffect(() => {
 		const key = 'AIzaSyBGee4MUXU3jusXj7YwDBzdXI5Sn3gAkIA';
-		const playlistId = 'PLY0voYdGZtAgPCRyH8libB1_TbuzvCR_a';
+		const playlistId = 'PLY0voYdGZtAipraMUx-_pnepD9KKaUDdm';
 		const num = 8;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
 

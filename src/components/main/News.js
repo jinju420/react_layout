@@ -8,11 +8,19 @@ function News({ Scrolled, Pos }) {
 	*/
 	const getLocalData = () => {
 		const dummys = [
-			{ title: 'Hello3', content: 'Here comes description in detail.' },
-			{ title: 'Hello3', content: 'Here comes description in detail.' },
-			{ title: 'Hello3', content: 'Here comes description in detail.' },
-			{ title: 'Hello3', content: 'Here comes description in detail.' },
+			{
+				title: 'New Arrival: Perfume Line',
+				content: '2년 만에 그랑핸드에서 새로운 향과 제품을 선보입니다.',
+			},
+			{ title: 'Susie Salmon', content: '달콤한 과일을 먹은 뒤의 낮잠' },
+			{
+				title: 'NOLL',
+				content:
+					'NOLL, 놀, MUNAKI 모나키, NUBE 누베로 구성된 세가지 퍼퓸 라인의 향을 만나보세요.',
+			},
+			{ title: 'Slogan Milk Glass', content: 'Sometimes you win, Sometimes you learn.' },
 		];
+
 		const data = localStorage.getItem('post');
 		if (data) return JSON.parse(data);
 		else return dummys;

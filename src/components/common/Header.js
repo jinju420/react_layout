@@ -16,7 +16,7 @@ function Header(props) {
 			<header className={props.type}>
 				<div className='inner'>
 					<h1>
-						<Link to='/'>Obj</Link>
+						<Link to='/'>GRANHAND.</Link>
 					</h1>
 					<ul id='gnb'>
 						<li>

@@ -12,8 +12,8 @@ function ContactUs() {
 			title: '마포 본점',
 			latlng: new kakao.maps.LatLng(37.5559436, 126.9302956),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker1.png`,
-			imgSize: new kakao.maps.Size(88, 108),
-			imgPos: { offset: new kakao.maps.Point(44, 54) },
+			imgSize: new kakao.maps.Size(232, 73),
+			imgPos: { offset: new kakao.maps.Point(116, 36) },
 			add: '서울 마포구 와우산로37길 9',
 			tel: '02-333-6525',
 		},
@@ -21,8 +21,8 @@ function ContactUs() {
 			title: '서촌 지점',
 			latlng: new kakao.maps.LatLng(37.5771945, 126.9730108),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker2.png`,
-			imgSize: new kakao.maps.Size(88, 108),
-			imgPos: { offset: new kakao.maps.Point(44, 54) },
+			imgSize: new kakao.maps.Size(232, 73),
+			imgPos: { offset: new kakao.maps.Point(116, 36) },
 			add: '서울 종로구 자하문로4길 14-2',
 			tel: '02-333-6525',
 		},
@@ -30,8 +30,8 @@ function ContactUs() {
 			title: '남산 지점',
 			latlng: new kakao.maps.LatLng(37.5489259, 126.9822293),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker3.png`,
-			imgSize: new kakao.maps.Size(88, 108),
-			imgPos: { offset: new kakao.maps.Point(44, 54) },
+			imgSize: new kakao.maps.Size(232, 73),
+			imgPos: { offset: new kakao.maps.Point(116, 36) },
 			add: '서울 용산구 후암동 358-194',
 			tel: '02-333-6525',
 		},
@@ -104,8 +104,8 @@ function ContactUs() {
 			<h2>LOCATION</h2>
 			<div className='sub'>
 				<div className='sub_box'>
-					<h3>On the way to Lorem ipsum dolor</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+					<h3>On the way to GRANHAND</h3>
+					<p>- NUBE, Perfume, GRANHAND.</p>
 					<div className='sns'>
 						<span>
 							<FontAwesomeIcon icon={faFacebookF} />
