@@ -144,6 +144,16 @@
 						}
 					}
 				}
+				.showBox {
+					article {
+						.txt {
+							margin-bottom: 35px;
+						}
+						.btnSet {
+							align-items: flex-end;
+						}
+					}
+				}
 			}
 		}
 	}

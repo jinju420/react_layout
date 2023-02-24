@@ -6,9 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 //useEffect 효과주는 내용들을 코드에 넣고 효과를 줄지 정하는 거죠
 
 function Youtube() {
-	//앞부분은 결과적으로 보여 주는 값
 	const open = useRef(null);
-	//가지고 오는 값에 따라 초기값 뭐 넣을건지 구분
 	const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
 
@@ -22,9 +20,7 @@ function Youtube() {
 			setVids(json.data.items); //빈 배열(Vids)에 배열을 (setVids)에 담아서 Vids로 보내주기 때문에 setVids에 담는다.
 		});
 	}, []);
-	useEffect(() => {
-		// console.log(Vids);
-	}, [Vids]);
+	useEffect(() => {}, [Vids]);
 	return (
 		<>
 			<Layout name={'YOUTUBE'}>
@@ -63,7 +59,6 @@ function Youtube() {
 					></iframe>
 				</div>
 			</Modal>
-			{/* open이 참이면 &&뒤의 부분이 실행 */}
 		</>
 	);
 }
