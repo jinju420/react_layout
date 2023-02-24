@@ -1,9 +1,10 @@
 import Layout from '../common/Layout';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 function Mypage() {
 	const history = useHistory();
+	// const submit=useRef(null);
 	//name이라는 프로퍼티로 불러오기 위해
 	const initVal = {
 		userid: '',
@@ -17,11 +18,16 @@ function Mypage() {
 		mail: '',
 	};
 
-	/* 실시간 담아둘 공ㅏ*/
+	/* 실시간 담아둘 공간*/
 	const [Val, setVal] = useState(initVal);
 	const [Err, setErr] = useState({});
-	// console.log(Err);
-	const [Sumbit, setSumbit] = useState(false);
+	/*
+	Submit버튼을 클릭했는지 확인하는 Submit정보를 기존처럼 State로 처리하면
+	아래 useEFfect에 의존성 배열로 등록을 해야되고 의존성 배열 등록시 처음 컴포넌트 마운트시에 호출되며 전송버튼 클릭전에 회원가입 성공 경고창이 뜸
+	해당 문제를 막기위해 Sumbit을 의존성 배열에 등록하지 않아도 되도록 useRef로 값 지정
+	 */
+	const Submit = useRef(false);
+	// const [Sumbit, setSumbit] = useState(false);
 
 	/*
  	매개변수(파라미터) - 특정 값을 함수 내부로 전달해주는 통로명 = (value)
@@ -56,7 +62,7 @@ function Mypage() {
 		if (value.email === '' || value.mail === '') {
 			errs.email = '이메일 주소를 입력하세요';
 		}
-		if (value.mail === '') {
+		if (value.email === '' || value.mail === '') {
 			errs.mail = '이메일 주소를 입력하세요';
 		}
 		// if (value.email.length < 8 || !/@/.test(value.email)) {
@@ -133,12 +139,12 @@ function Mypage() {
 		//객체의 키값이 하나도 없으면 인증 통과
 		const len = Object.keys(Err).length;
 		//len의 키값이 0이고 submit값이 true여아지만 인증통과/send버튼을 한번 이상 클릭했을 때
-		if (len === 0 && Sumbit) {
+		if (len === 0 && Submit.current) {
 			alert('회원가입이 완료되었습니다.');
-			setVal(initVal);
+			// setVal(initVal);
 			history.push('/');
 		}
-	}, [Err]);
+	}, [Err, history]);
 
 	return (
 		<Layout name={'MEMBERS'}>
@@ -345,7 +351,7 @@ function Mypage() {
 									type='submit'
 									value='send'
 									onClick={() => {
-										setSumbit(true);
+										Submit.current = true;
 									}}
 								/>
 							</th>

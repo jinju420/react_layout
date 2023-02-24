@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import Anim from '../../asset/anime';
 // 스크롤에 대한 기능으로 따로 떼어놓은 것
 function Btns({ setScrolled, setPos }) {
@@ -7,15 +7,16 @@ function Btns({ setScrolled, setPos }) {
 	const btnRef = useRef(null);
 	const speed = useRef(500);
 
-	//세로 위치값 갱신 함수
-	const getPos = () => {
+	//세로 위치값 갱신 함수(useCallback으로 메모이제이션)
+	const getPos = useCallback(() => {
 		pos.current = [];
 		const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
 		for (const sec of secs) pos.current.push(sec.offsetTop);
 		setPos(pos.current);
-	};
-	//버튼 활성화함수
-	const activation = () => {
+	}, [setPos]);
+
+	//버튼 활성화함수(useCallback으로 메모이제이션)
+	const activation = useCallback(() => {
 		const btns = btnRef.current.children;
 		const scroll = window.scrollY;
 		const base = -window.innerHeight / 2;
@@ -30,7 +31,8 @@ function Btns({ setScrolled, setPos }) {
 				secs[idx].classList.add('on');
 			}
 		});
-	};
+	}, [setScrolled]);
+
 	//보통 한번만 호출되는 useEffecct안쪽에는 이벤트 연결문이 들어감
 	useEffect(() => {
 		getPos();
@@ -44,7 +46,8 @@ function Btns({ setScrolled, setPos }) {
 			window.removeEventListener('resize', getPos);
 			window.removeEventListener('scroll', activation);
 		};
-	}, []);
+	}, [getPos, activation]); //getpos,activation을 그냥 의존성 배열에 등록하면 무한루프에 빠지지만 해당 함수를 usecallback으로 메모이제이션 처리해서 반복호출되지 않아서 무한루프 문제 해결
+
 	return (
 		//동적으로 li를 생성시 현재 생성되는 li의 순번이 0일때만 on클래스 추가(삼항연산자)
 		<ul className='scroll_navi' ref={btnRef}>

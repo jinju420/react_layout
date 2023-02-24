@@ -19,12 +19,12 @@ import { useState, useRef } from 'react';
 	순서2 - Btns에 state변경함수를 전달해서 Btns 내부적으로 만들어지는 값을 부모 State에 저장
 	순서3 - 그렇게 저장된 State값을 다시 자식인 News컴포넌트에 전달
 */
-function Main() {
+function Main(props) {
 	const [Scrolled, setScrolled] = useState(0);
 	const [Pos, setPos] = useState([]);
 	return (
 		<main>
-			<Header type={'main'} />
+			<Header type={'main'} menu={props.menu} />
 			<Visual Scrolled={Scrolled} Pos={Pos[0]} />
 			<News Scrolled={Scrolled} Pos={Pos[1]} />
 			<Pics Scrolled={Scrolled} Pos={Pos[2]} />

@@ -1,8 +1,9 @@
 import { Route, Switch } from 'react-router-dom';
+import { useRef } from 'react';
 //common
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
-
+import Menu from './components/common/Menu';
 //main
 import Main from './components/main/Main';
 
@@ -18,11 +19,12 @@ import About from './components/sub/About';
 import './scss/style.scss';
 // switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
 function App() {
+	const menu = useRef(null);
 	return (
 		<>
 			<Switch>
-				<Route exact path='/' component={Main} />
-				<Route path='/' render={() => <Header type={'sub'} />} />
+				<Route exact path='/' render={() => <Main menu={menu} />} />
+				<Route path='/' render={() => <Header type={'sub'} menu={menu} />} />
 			</Switch>
 
 			{/* 2depth줄때 */}
@@ -36,10 +38,11 @@ function App() {
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/mypage' component={Mypage} />
 			<Route path='/notice' component={Notice} />
-
 			<Route path='/contact' component={ContactUs} />
 
 			<Footer />
+
+			<Menu ref={menu} />
 		</>
 	);
 }

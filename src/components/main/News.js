@@ -21,7 +21,7 @@ function News({ Scrolled, Pos }) {
 
 	useEffect(() => {
 		localStorage.setItem('post', JSON.stringify(Posts));
-	}, []);
+	}, [Posts]);
 
 	const base = -window.innerHeight / 3;
 	let scroll = Scrolled - base - Pos || 0;
