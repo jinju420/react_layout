@@ -11,7 +11,7 @@ function ContactUs() {
 		{
 			title: '마포 본점',
 			latlng: new kakao.maps.LatLng(37.5559436, 126.9302956),
-			imgUrl: `${process.env.PUBLIC_URL}/img/marker1.png`,
+			imgUrl: `${process.env.PUBLIC_URL}/img/contact/marker1.png`,
 			imgSize: new kakao.maps.Size(232, 73),
 			imgPos: { offset: new kakao.maps.Point(116, 36) },
 			add: '서울 마포구 와우산로37길 9',
@@ -20,7 +20,7 @@ function ContactUs() {
 		{
 			title: '서촌 지점',
 			latlng: new kakao.maps.LatLng(37.5771945, 126.9730108),
-			imgUrl: `${process.env.PUBLIC_URL}/img/marker2.png`,
+			imgUrl: `${process.env.PUBLIC_URL}/img/contact/marker2.png`,
 			imgSize: new kakao.maps.Size(232, 73),
 			imgPos: { offset: new kakao.maps.Point(116, 36) },
 			add: '서울 종로구 자하문로4길 14-2',
@@ -29,7 +29,7 @@ function ContactUs() {
 		{
 			title: '남산 지점',
 			latlng: new kakao.maps.LatLng(37.5489259, 126.9822293),
-			imgUrl: `${process.env.PUBLIC_URL}/img/marker3.png`,
+			imgUrl: `${process.env.PUBLIC_URL}/img/contact/marker3.png`,
 			imgSize: new kakao.maps.Size(232, 73),
 			imgPos: { offset: new kakao.maps.Point(116, 36) },
 			add: '서울 용산구 후암동 358-194',

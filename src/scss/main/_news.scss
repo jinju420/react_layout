@@ -1,7 +1,7 @@
 #news {
 	width: 100%;
 	height: 100vh;
-	background: lightgreen;
+	background: #fefbf4;
 	position: relative;
 	padding: 10vw;
 	overflow: hidden;
@@ -27,11 +27,11 @@
 		flex-wrap: wrap;
 		align-content: center;
 		article {
-			width: calc((100% - 40px) / 4);
-			margin-right: 20px;
+			width: calc((100% - 30px) / 2);
+			margin-right: 30px;
 			margin-bottom: 20px;
-			height: 150px;
-			padding: 15px 10px;
+			height: 200px;
+			padding: 30px;
 			background: #fff;
 			opacity: 0;
 			transform: rotateY(180deg) translateY(100px);
@@ -40,7 +40,7 @@
 			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 			text-align: center;
 			cursor: pointer;
-			&:nth-of-type(4) {
+			&:nth-of-type(2n) {
 				margin-right: 0;
 			}
 			@for $i from 1 through 8 {
@@ -49,11 +49,11 @@
 				}
 			}
 			h3 {
-				padding-bottom: 10px;
+				padding-bottom: 20px;
 				border-bottom: 1px solid #333;
 			}
 			p {
-				margin-top: 15px;
+				margin-top: 30px;
 			}
 			// &:hover {
 			// 	transition: 0s;

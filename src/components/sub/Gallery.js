@@ -113,7 +113,7 @@ function Gallery() {
 					{Loading && (
 						<img
 							className='loader'
-							src={`${process.env.PUBLIC_URL}/img/load.gif`}
+							src={`${process.env.PUBLIC_URL}/img/gallery/load.gif`}
 							alt='loading'
 						/>
 					)}
@@ -133,7 +133,7 @@ function Gallery() {
 														onError={(e) => {
 															e.target.setAttribute(
 																'src',
-																`${process.env.PUBLIC_URL}/img/icon.jpeg`
+																`${process.env.PUBLIC_URL}/img/gallery/icon.jpeg`
 															);
 														}}
 													/>

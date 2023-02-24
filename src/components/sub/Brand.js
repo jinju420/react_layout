@@ -44,7 +44,7 @@ function Brand() {
 							<div className='inner'>
 								<div className='pic'>
 									<img
-										src={`${process.env.PUBLIC_URL}/img/${el.pic}`}
+										src={`${process.env.PUBLIC_URL}/img/brand/${el.pic}`}
 										alt={el.name}
 									/>
 								</div>

@@ -6,7 +6,7 @@ function Visual({ Scrolled, Pos }) {
 	useEffect(() => {}, []);
 	return (
 		<figure id='visual' className='myScroll'>
-			<img src={`${process.env.PUBLIC_URL}/sub/main.jpg`} alt='화장품' />
+			<img src={`${process.env.PUBLIC_URL}/img/mainVis.jpeg`} alt='화장품' />
 			<div className='inner'>
 				{/* <div className='title_txt'>
 					<h1>LEEJINJU'S</h1>
