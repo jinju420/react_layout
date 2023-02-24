@@ -31,7 +31,7 @@ const Menu = forwardRef((props, ref) => {
 				>
 					<div className='icons'>
 						<h1>
-							<Link to='/'>GRANHAND</Link>
+							<Link to='/'>GRANHAND.</Link>
 						</h1>
 
 						<ul className='brands'>
@@ -75,7 +75,7 @@ const Menu = forwardRef((props, ref) => {
 						</li>
 						<li>
 							<NavLink to='/contact' activeStyle={active}>
-								Contact Us
+								Contact
 							</NavLink>
 						</li>
 					</ul>

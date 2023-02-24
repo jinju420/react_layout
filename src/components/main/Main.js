@@ -3,6 +3,7 @@ import News from './News';
 import Pics from './Pics';
 import Vids from './Vids';
 import Visual from './Visual';
+import Slider from './Slider';
 import Btns from './Btns';
 import { useState, useRef } from 'react';
 
@@ -25,9 +26,10 @@ function Main(props) {
 	return (
 		<main>
 			<Header type={'main'} menu={props.menu} />
-			<Visual Scrolled={Scrolled} Pos={Pos[0]} />
+			<Visual />
 			<News Scrolled={Scrolled} Pos={Pos[1]} />
 			<Pics Scrolled={Scrolled} Pos={Pos[2]} />
+			<Slider />
 			<Vids />
 			{/* setScrolled state변경함수를 btns컴포넌트 전달 */}
 			<Btns setScrolled={setScrolled} setPos={setPos} />

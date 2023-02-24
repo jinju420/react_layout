@@ -1,11 +1,7 @@
 .CONTACT {
-	// figure {
-	// 	background: url('../../../public/sub/visual/contact.jpg') no-repeat center/cover;
-	// }
 	h1 {
 		display: none;
 	}
-
 	.sub_con {
 		@include clear;
 		> .inner {
@@ -25,10 +21,8 @@
 				.sub_box {
 					h3 {
 						color: #445870;
-						// color: salmon;
 						line-height: 1.3;
 						font-family: $titleFont;
-						// text-align: center;
 					}
 
 					p {

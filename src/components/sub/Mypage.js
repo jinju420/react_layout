@@ -239,7 +239,7 @@ function Mypage() {
 									type='radio'
 									name='gender'
 									value='male'
-									id='mail'
+									id='male'
 									onChange={handleRadio}
 								/>
 								<label htmlFor='male'>Male</label>

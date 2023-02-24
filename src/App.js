@@ -9,7 +9,7 @@ import Main from './components/main/Main';
 
 //sub
 import Brand from './components/sub/Brand';
-import ContactUs from './components/sub/ContactUs';
+import Contact from './components/sub/Contact';
 import Gallery from './components/sub/Gallery';
 import Mypage from './components/sub/Mypage';
 import Notice from './components/sub/Notice';
@@ -38,7 +38,7 @@ function App() {
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/mypage' component={Mypage} />
 			<Route path='/notice' component={Notice} />
-			<Route path='/contact' component={ContactUs} />
+			<Route path='/contact' component={Contact} />
 
 			<Footer />
 

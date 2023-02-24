@@ -4,6 +4,7 @@
 	background: $basicColor2;
 	position: relative;
 	z-index: 1;
+	margin-top: 60px;
 	img {
 		@include imgFit;
 	}

@@ -46,7 +46,7 @@ function Header(props) {
 						</li>
 						<li>
 							<NavLink to='/contact' activeStyle={active}>
-								CONTACT US
+								CONTACT
 							</NavLink>
 						</li>
 					</ul>

@@ -18,12 +18,12 @@ function Pics({ Scrolled, Pos }) {
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, inventore.
 					</h2>
 				</div>
-				<div className='pic_box'>
+				{/* <div className='pic_box'>
 					<article></article>
 					<article></article>
 					<article></article>
 					<article></article>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);
