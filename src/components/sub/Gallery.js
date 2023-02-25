@@ -12,7 +12,6 @@ function Gallery() {
 	const open = useRef(null);
 	const frame = useRef(null);
 	const input = useRef(null);
-	const [Btn, setBtn] = useState(false);
 	const [Items, setItems] = useState([]);
 	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);
