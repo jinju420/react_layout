@@ -99,7 +99,6 @@ function ContactUs() {
 			: Location?.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
 	}, [Traffic]);
 	return (
-		//클릭할때마다 변경 =. usestate
 		<Layout name={'CONTACT'}>
 			<h2>LOCATION</h2>
 			<div className='sub'>
