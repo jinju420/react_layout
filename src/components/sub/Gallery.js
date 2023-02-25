@@ -16,7 +16,6 @@ function Gallery() {
 	const [Items, setItems] = useState([]);
 	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);
-	// const intervals = intervalCall(1000);
 
 	const getFlickr = async (opt) => {
 		//객체 타입을 opt로 받아서
@@ -81,7 +80,6 @@ function Gallery() {
 	let handleKeyUp = (e) => {
 		e.key === 'Enter' && showSearch();
 	};
-	// handleKeyUp = intervals(handleKeyUp);
 	//마운트됐을 때 기본 interest가 실행
 	useEffect(() => {
 		getFlickr({ type: 'user', user: '195427004@N07' });
