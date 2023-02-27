@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react';
 
 function News({ Scrolled, Pos }) {
-	/*
-	로컬스토리지의 데이터를 반환하는 함수
-	로컬스토리지의 값이 있으면 해당 값을 다시 json형태로 변경해서 반환
-	로컬스토리지의 값이 없으면 빈 배열을 반환
-	*/
 	const getLocalData = () => {
 		const dummys = [
 			{
@@ -29,8 +24,7 @@ function News({ Scrolled, Pos }) {
 			{
 				num: '04',
 				title: 'Slogan Milk Glass',
-				content:
-					'Sometimes you win, Sometimes you learn. New Renewal Oepn: GRANHAND Sogyeok',
+				content: 'Sometimes you win, Sometimes you learn. New Renewal Oepn: GRANHAND Sogyeok',
 			},
 		];
 

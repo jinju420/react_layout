@@ -14,16 +14,8 @@ function Pics({ Scrolled, Pos }) {
 					>
 						Flickr
 					</h1>
-					<h2>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, inventore.
-					</h2>
+					<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, inventore.</h2>
 				</div>
-				{/* <div className='pic_box'>
-					<article></article>
-					<article></article>
-					<article></article>
-					<article></article>
-				</div> */}
 			</div>
 		</section>
 	);

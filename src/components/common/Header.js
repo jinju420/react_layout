@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { memo } from 'react';
 /*
 Link는 컴포넌트를 이용한 페이지 이동을 해준다
 하지만 url개념이 아니라 path의 개념이다
@@ -64,4 +65,4 @@ function Header(props) {
 	);
 }
 
-export default Header;
+export default memo(Header);

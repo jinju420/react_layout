@@ -2,7 +2,6 @@ import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import Masonry from 'react-masonry-component';
-import intervalCall from 'interval-call';
 import Modal from '../common/Modal';
 //npm i react-masonry-component
 //npm i interval-call (일정시간동안 중복되는 요청을 무시하고 첫번째 이벤트요청만 발생시켜주는 라이브러리)
@@ -34,20 +33,18 @@ function Gallery() {
 		if (opt.type === 'user')
 			url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
 		const result = await axios.get(url);
-		//flickr로 반환한 데이터 배열값이 0개일때 (결과 이미지가 없을때) 기존 Items state를 변경하지 않고 이전 갤러리화면 다시 보이게처리
+
 		if (result.data.photos.photo.length === 0) {
 			frame.current.classList.add('on');
 			setLoading(false);
 			return alert('해당 검색어의 결과 이미지가 없습니다.');
 		}
 		setItems(result.data.photos.photo);
-		//0.5초 뒤에 실행 로딩 안보이게
+
 		setTimeout(() => {
 			setLoading(false);
 			frame.current.classList.add('on');
 		}, 500);
-
-		//promise, then방식보다 async await가 코드 가독성이 더 좋음 (두 방식의 성능, 결과차이는 없음)
 	};
 
 	const showInterest = () => {
@@ -72,14 +69,13 @@ function Gallery() {
 		input.current.value = '';
 		frame.current.classList.remove('on');
 		setLoading(true);
-		//tags=result는 내가 검색한 value의 값
 		getFlickr({ type: 'search', tags: result });
 	};
 
 	let handleKeyUp = (e) => {
 		e.key === 'Enter' && showSearch();
 	};
-	//마운트됐을 때 기본 interest가 실행
+
 	useEffect(() => {
 		getFlickr({ type: 'user', user: '195427004@N07' });
 	}, []);
@@ -96,7 +92,6 @@ function Gallery() {
 							</nav>
 						</div>
 						<div className='searchBox'>
-							{/* 키보드 이벤트 발생시 이벤트가 발생한 키보드 이름이 enter면 함수호출 */}
 							<input
 								type='text'
 								ref={input}

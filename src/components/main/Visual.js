@@ -1,12 +1,9 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { memo } from 'react';
 
-function Visual({ Scrolled, Pos }) {
-	const [Opacity, setOpacity] = useState(false);
-	useEffect(() => {}, []);
+function Visual() {
 	return (
 		<figure id='visual' className='myScroll'>
-			<img src={`${process.env.PUBLIC_URL}/img/main.jpg`} alt='granhand' />
+			<img src={`${process.env.PUBLIC_URL}/img/main.jpeg`} alt='granhand' />
 			<div className='inner'>
 				{/* <div className='title_txt'>
 					<h1>LEEJINJU'S</h1>
@@ -28,4 +25,4 @@ function Visual({ Scrolled, Pos }) {
 	);
 }
 
-export default Visual;
+export default memo(Visual);

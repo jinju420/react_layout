@@ -1,7 +1,6 @@
 import { forwardRef, useState, useImperativeHandle, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, NavLink } from 'react-router-dom';
-// import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
 
@@ -9,7 +8,6 @@ const Menu = forwardRef((props, ref) => {
 	const [Open, setOpen] = useState(false);
 	const active = { color: '#fddd7d' };
 	useImperativeHandle(ref, () => {
-		//부모의 토글버튼 클릭시 기존 Open state값이 계속 반전되야 하므로 !Open으로 설정
 		return { setToggle: () => setOpen(!Open) };
 	});
 	useEffect(() => {

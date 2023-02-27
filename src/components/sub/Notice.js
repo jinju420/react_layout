@@ -118,12 +118,7 @@ function Notice() {
 				<div className='txt_box'>
 					<input type='text' placeholder='제목을 입력하세요' ref={input} />
 					<br />
-					<textarea
-						cols='30'
-						rows='3'
-						placeholder='본문을 입력하세요'
-						ref={textarea}
-					></textarea>
+					<textarea cols='30' rows='3' placeholder='본문을 입력하세요' ref={textarea}></textarea>
 				</div>
 
 				<br />
@@ -140,15 +135,9 @@ function Notice() {
 					return (
 						<article key={idx}>
 							{post.enableUpdate ? (
-								//현재 반복도는 post가 enableUpdate값이 true면
-								//수정모드 렌더링
 								<>
 									<div className='txt'>
-										<input
-											type='text'
-											defaultValue={post.title}
-											ref={inputEdit}
-										/>
+										<input type='text' defaultValue={post.title} ref={inputEdit} />
 										<br />
 										<textarea
 											cols='30'
