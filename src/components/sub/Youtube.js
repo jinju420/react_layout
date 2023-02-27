@@ -1,11 +1,16 @@
 import Layout from '../common/Layout';
 import Modal from '../common/Modal';
 import axios from 'axios';
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Youtube() {
+	//reducer에 데이터변경 요청을 위해 **action객체를 전달해주는 함수
+	const dispatch = useDispatch();
+	//store 전역 데이터를 가져올때 쓰는 함수 store라는 객체로 store.youtubeReducer.youtube데어터 가져옴
+	const Vids = useSelector((store) => store.youtubeReducer.youtube);
 	const open = useRef(null);
-	const [Vids, setVids] = useState([]);
+	// const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
 
 	useEffect(() => {
@@ -15,11 +20,11 @@ function Youtube() {
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
 
 		axios.get(url).then((json) => {
-			setVids(json.data.items);
+			// setVids(json.data.items);
+			dispatch({ type: 'SET_YOUTUBE', payload: json.data.items });
 		});
-	}, []);
+	}, [dispatch]);
 
-	useEffect(() => {}, [Vids]);
 	return (
 		<>
 			<Layout name={'YOUTUBE'}>

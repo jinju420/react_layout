@@ -57,5 +57,5 @@ export default App;
 	action : 컴포넌트에서 reducer에 데이터 변경 요청을 할때 쓰이는 특별한 객체
 	--- react-redux ---
 	useSelector : 컴포넌트에서 store 전역 데이터를 가져올때 쓰는 함수
-	useDispatch : 컴포넌트에서 reducer에 데이터변경 요청을 위히 action객체를 전달해주는 함수
+	useDispatch : 컴포넌트에서 reducer에 데이터변경 요청을 위해 action객체를 전달해주는 함수
 */
