@@ -62,6 +62,7 @@ function ContactUs() {
 	const mapTypeControl = useMemo(() => new kakao.maps.MapTypeControl(), [kakao]);
 	const zoomControl = useMemo(() => new kakao.maps.ZoomControl(), [kakao]);
 
+	//화살표뒤에 {}가 생략되어있으면 화살표 다음에 있는 값을 **무조건 리턴!한다는 뜻({}가 생략되어있으면 자동적으로 내보냄)/{}return생략한게 =>뒤에 바로 있는 코드임/만약에 {}가 있다면 return을 써줘야 반환됨
 	const marker = useMemo(
 		() =>
 			new kakao.maps.Marker({

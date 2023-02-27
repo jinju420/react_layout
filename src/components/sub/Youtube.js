@@ -7,7 +7,12 @@ import { useSelector, useDispatch } from 'react-redux';
 function Youtube() {
 	//reducer에 데이터변경 요청을 위해 **action객체를 전달해주는 함수
 	const dispatch = useDispatch();
-	//store 전역 데이터를 가져올때 쓰는 함수 store라는 객체로 store.youtubeReducer.youtube데어터 가져옴
+	/*
+	store 전역 데이터를 가져올때 쓰는 함수 store라는 객체로 store.youtubeReducer.youtube데어터 가져옴
+	컴포넌트 마운트시 일단 전역 state에 있는 빈 배열값을 가져옴
+	추후 useEffect의 axios가 유튜브 데이터를 가져오면 dispatch로 데이터가 리듀서로 전달되고
+	두번째 렌더링 사이클에서 해당 데이터로 유튜브 데이터 랜더링
+	*/
 	const Vids = useSelector((store) => store.youtubeReducer.youtube);
 	const open = useRef(null);
 	// const [Vids, setVids] = useState([]);

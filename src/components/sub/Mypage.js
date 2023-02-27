@@ -104,6 +104,7 @@ function Mypage() {
 	//1. 전송 버튼 클릭시 handleSubmit실행 => 인증 체크호출하고 에러메시지 생성 함수
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		setErr(check(Val));
 	};
 
 	useEffect(() => {
