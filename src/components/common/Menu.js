@@ -7,7 +7,7 @@ import { faFacebookF, faTwitter, faSquareInstagram } from '@fortawesome/free-bra
 
 const Menu = forwardRef((props, ref) => {
 	const [Open, setOpen] = useState(false);
-	const active = { color: '#eec1c1' };
+	const active = { color: '#fddd7d' };
 	useImperativeHandle(ref, () => {
 		//부모의 토글버튼 클릭시 기존 Open state값이 계속 반전되야 하므로 !Open으로 설정
 		return { setToggle: () => setOpen(!Open) };
