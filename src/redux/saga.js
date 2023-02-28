@@ -35,10 +35,10 @@ function* returnYoutube() {
 function* callFlickr() {
 	yield takeLatest(types.FLICKR.start, returnFlickr);
 }
-function* returnFlickr() {
+function* returnFlickr(action) {
 	try {
-		const response = yield call(fetchFlickr);
-
+		//fetchFlcker에는 인수로 Opt객체가 전달되야 되기 때문에 컴포넌트에서 {type: 'FLICKR_START', Opt: {type: 'user', user:'사용자아이디'}}
+		const response = yield call(fetchFlickr, action.Opt);
 		yield put({ type: types.FLICKR.success, payload: response.data.photos.photo });
 	} catch (err) {
 		yield put({ type: types.FLICKR.fail, payload: err });
