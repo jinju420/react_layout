@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 function Slider() {
 	return (
 		<section id='slider' className='myScroll'>
@@ -7,4 +9,4 @@ function Slider() {
 	);
 }
 
-export default Slider;
+export default memo(Slider);

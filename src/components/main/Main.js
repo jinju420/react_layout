@@ -5,7 +5,7 @@ import Vids from './Vids';
 import Visual from './Visual';
 import Slider from './Slider';
 import Btns from './Btns';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 /*
 	useRef사용 이유

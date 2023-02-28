@@ -1,26 +1,18 @@
 import Layout from '../common/Layout';
 import Modal from '../common/Modal';
-import axios from 'axios';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 // usestate 스테이는 변경을 원할하게 관리하도록 하는 것
 //useEffect 효과주는 내용들을 코드에 넣고 효과를 줄지 정하는 거죠
 
 function Youtube() {
 	const open = useRef(null);
-	const [Vids, setVids] = useState([]);
+	const Vids = useSelector((store) => store.youtubeReducer.youtube);
+	// const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
 
-	useEffect(() => {
-		const key = 'AIzaSyBGee4MUXU3jusXj7YwDBzdXI5Sn3gAkIA';
-		const playlistId = 'PLY0voYdGZtAipraMUx-_pnepD9KKaUDdm';
-		const num = 8;
-		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
-
-		axios.get(url).then((json) => {
-			setVids(json.data.items); //빈 배열(Vids)에 배열을 (setVids)에 담아서 Vids로 보내주기 때문에 setVids에 담는다.
-		});
-	}, []);
-	useEffect(() => {}, [Vids]);
+	// useEffect(() => {}, []);
+	// useEffect(() => {}, [Vids]);
 	return (
 		<>
 			<Layout name={'YOUTUBE'}>

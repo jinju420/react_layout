@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { useState, useEffect, useRef } from 'react';
+// import axios from 'axios';
+import { useEffect, useRef } from 'react';
 
 function Layout(props) {
 	//props는 부모로부터 전달받은 인수값

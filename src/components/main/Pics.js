@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 function Pics({ Scrolled, Pos }) {
 	const base = -window.innerHeight / 3;
 	let scroll = Scrolled - base - Pos || 0;
@@ -14,9 +16,7 @@ function Pics({ Scrolled, Pos }) {
 					>
 						Flickr
 					</h1>
-					<h2>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, inventore.
-					</h2>
+					<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, inventore.</h2>
 				</div>
 				{/* <div className='pic_box'>
 					<article></article>
@@ -29,4 +29,4 @@ function Pics({ Scrolled, Pos }) {
 	);
 }
 
-export default Pics;
+export default memo(Pics);
