@@ -29,7 +29,7 @@
 			position: relative;
 			display: flex;
 			flex-wrap: wrap;
-			width: 60%;
+			// width: 60%;
 			article {
 				width: calc((100% - 30px) / 2);
 				margin-right: 30px;
@@ -65,12 +65,14 @@
 			.pic {
 				width: 100%;
 				article {
-					width: calc((100% - 30px) / 2);
-					height: 100%;
-					margin-right: 30px;
+					width: calc((100% - 60px) / 4);
+					margin-right: 20px;
 					margin-bottom: 30px;
-					&:nth-of-type(2n) {
+					&:last-child {
 						margin-right: 0;
+					}
+					&:nth-of-type(2) {
+						margin-right: 20px;
 					}
 					img {
 						@include imgFit;
