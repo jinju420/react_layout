@@ -1,5 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
+
 //common
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
@@ -19,7 +22,28 @@ import Youtube from './components/sub/Youtube';
 import './scss/style.scss';
 // switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
 function App() {
+	const dispatch = useDispatch();
 	const menu = useRef(null);
+
+	/*useEffect의 axios가 유튜브 데이터를 가져오면 dispatch로 데이터가 리듀서로 전달되고
+	두번째 렌더링 사이클에서 해당 데이터로 유튜브 데이터 랜더링
+	전역 데이터를 효율적으로 관리하기 위해서 해당 프로젝트에서 필요한 데이터는 모두 루트 컴포넌트인 App에서 데이터를 받아서
+	dispatch로 리듀서에 전달하고 전역 store 에 저장
+	장점 : 루트 컴포넌트에서 한눈에 해당 프로젝트에서 관리되는 전역 데이터들을 효율적으로 관리
+	
+	*/
+	useEffect(() => {
+		const key = 'AIzaSyBGee4MUXU3jusXj7YwDBzdXI5Sn3gAkIA';
+		const playlistId = 'PLY0voYdGZtAipraMUx-_pnepD9KKaUDdm';
+		const num = 8;
+		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
+
+		axios.get(url).then((json) => {
+			// setVids(json.data.items);
+			dispatch({ type: 'SET_YOUTUBE', payload: json.data.items });
+		});
+	}, [dispatch]);
+
 	return (
 		<>
 			<Switch>
