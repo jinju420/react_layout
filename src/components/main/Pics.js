@@ -4,8 +4,10 @@ import { useSelector } from 'react-redux';
 function Pics({ Scrolled, Pos }) {
 	const { flickr } = useSelector((store) => store.flickrReducer);
 	const base = -window.innerHeight / 3;
+
 	let scroll = Scrolled - base - Pos || 0;
 	scroll < 0 && (scroll = 0);
+
 	return (
 		<section id='pics' className='myScroll'>
 			<div className='inner'>
