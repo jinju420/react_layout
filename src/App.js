@@ -26,6 +26,7 @@ function App() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		//순서1 - dispatch로 액션객체를 리듀서에 전달 {type: 'YOUTUBE_START'}
 		dispatch({ type: types.YOUTUBE.start });
 	}, [dispatch]);
 

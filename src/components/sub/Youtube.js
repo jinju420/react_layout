@@ -3,16 +3,13 @@ import Modal from '../common/Modal';
 import { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 // usestate 스테이는 변경을 원할하게 관리하도록 하는 것
-//useEffect 효과주는 내용들을 코드에 넣고 효과를 줄지 정하는 거죠
+//useEffect 효과주는 내용들을 코드에 넣고 효과를 줄지 정하는 거
 
 function Youtube() {
 	const open = useRef(null);
 	const Vids = useSelector((store) => store.youtubeReducer.youtube);
-	// const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
 
-	// useEffect(() => {}, []);
-	// useEffect(() => {}, [Vids]);
 	return (
 		<>
 			<Layout name={'YOUTUBE'}>

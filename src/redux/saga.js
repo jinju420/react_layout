@@ -3,6 +3,7 @@ import { fetchYoutube } from './api';
 import * as types from './actionType';
 
 /*
+saga = 비동기를 동기처리하기위한 것
 takeLatest(제일 마지막에 들어온 요청만 수행), takeEvery(들어오는 모든 요청을 수행)
   put (saga에서 만들어진 액션객체를 리듀서에 전달, saga가 전용 dispatch함수라고 이해해도 무방)
   call (saga에서 api관련 axios함수를 호출할때 쓰는 함수, 두번째 파라미터로 인수값 전달 가능)
@@ -11,14 +12,18 @@ takeLatest(제일 마지막에 들어온 요청만 수행), takeEvery(들어오�
 
 */
 //1- 컴포넌트로 들어온 YOUTUBE_START라는 액션요청을 리듀서 함수를 통해서 전달 받으면 유튜브 호출함수를 실행해주는 함수
+
+//순서3 - takeLatest로 'YOUTUBE_START'액션타입이 들어오면 returnYoutube호출
 function* callYoutube() {
 	yield takeLatest(types.YOUTUBE.start, returnYoutube);
 }
 //2- 유튜브 데이터 호출한뒤 결과값을 가지고 다시 새로운 액션객체를 반환해서 리듀서로 전달해주는 함수
+//순서4- api.js에서 가져온 fetchYoutube함수를 호출해서 응답 성공 유무에 따라서 액션객체를 다시 리듀서에 전달
 function* returnYoutube() {
 	try {
 		//데이터 응답에 성공하면 성공 액션객체를 put으로 리듀서에 전달
-		const response = yield call(fetchYoutube);
+		const response = yield call(fetchYoutube); //call == axios랑 비슷
+		//put == dispatch랑 비슷
 		yield put({ type: types.YOUTUBE.success, payload: response.data.items });
 	} catch (err) {
 		//데이터 응답에 실패하면 에러 액션객체를 put으로 리듀서에 전달

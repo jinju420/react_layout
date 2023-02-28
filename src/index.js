@@ -8,6 +8,7 @@ import store from './redux/store';
 ReactDOM.render(
 	<React.StrictMode>
 		<HashRouter>
+			{/* 순서7- stroe데이터가 App컴포넌트를 통해서 전역에 전달됨 */}
 			<Provider store={store}>
 				<App />
 			</Provider>
