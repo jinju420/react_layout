@@ -14,6 +14,7 @@
 		position: relative;
 		display: flex;
 		.title {
+			margin-right: 30px;
 			h1 {
 				color: #fff;
 				margin-bottom: 50px;
@@ -29,6 +30,7 @@
 			position: relative;
 			display: flex;
 			flex-wrap: wrap;
+			align-content: center;
 			// width: 60%;
 			article {
 				width: calc((100% - 30px) / 2);
