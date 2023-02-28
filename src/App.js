@@ -14,7 +14,7 @@ import Gallery from './components/sub/Gallery';
 import Mypage from './components/sub/Mypage';
 import Notice from './components/sub/Notice';
 import Youtube from './components/sub/Youtube';
-import About from './components/sub/About';
+// import About from './components/sub/About';
 
 import './scss/style.scss';
 // switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리

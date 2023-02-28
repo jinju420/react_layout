@@ -60,12 +60,13 @@ function ContactUs() {
 	const imageOption = info.current[Index].imgPos;
 
 	//마커위치 인스턴스 생성
-	const markerPosition = option.center;
+	const markerPosition = option.current.center;
 	//마커 이미지 인스턴스 생성
 	const markerImage = useMemo(
 		() => new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
 		[kakao, imageOption, imageSrc, imageSize]
 	);
+
 	//타입 컨트롤 인스턴스 생성
 	const mapTypeControl = useMemo(() => new kakao.maps.MapTypeControl(), [kakao]);
 	//줌컨트롤 인스턴스 생성
@@ -79,7 +80,6 @@ function ContactUs() {
 			}),
 		[kakao, markerImage, markerPosition]
 	);
-
 	//Index state변경될때마다 지도 인스턴스 새로 갱신 및 렌더링
 	useEffect(() => {
 		container.current.innerHTML = '';
