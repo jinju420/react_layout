@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
@@ -30,19 +30,22 @@ function App() {
 	전역 데이터를 효율적으로 관리하기 위해서 해당 프로젝트에서 필요한 데이터는 모두 루트 컴포넌트인 App에서 데이터를 받아서
 	dispatch로 리듀서에 전달하고 전역 store 에 저장
 	장점 : 루트 컴포넌트에서 한눈에 해당 프로젝트에서 관리되는 전역 데이터들을 효율적으로 관리
-	
 	*/
-	useEffect(() => {
+	//fetchYoutube함수를 useCallback으로 메모이제이션 처리한뒤
+	//useEffect에 의존성 배열에 등록후 호출
+	const fetcchYoutube = useCallback(async () => {
 		const key = 'AIzaSyBGee4MUXU3jusXj7YwDBzdXI5Sn3gAkIA';
 		const playlistId = 'PLY0voYdGZtAipraMUx-_pnepD9KKaUDdm';
 		const num = 8;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
-
-		axios.get(url).then((json) => {
-			// setVids(json.data.items);
-			dispatch({ type: 'SET_YOUTUBE', payload: json.data.items });
-		});
+		const result = await axios.get(url);
+		// setVids(json.data.items);
+		dispatch({ type: 'SET_YOUTUBE', payload: result.data.items });
 	}, [dispatch]);
+
+	useEffect(() => {
+		fetcchYoutube();
+	}, [fetcchYoutube]);
 
 	return (
 		<>
