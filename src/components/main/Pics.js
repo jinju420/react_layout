@@ -26,12 +26,13 @@ function Pics({ Scrolled, Pos }) {
 					{flickr.map((pic, idx) => {
 						if (idx >= 4) return null;
 						return (
-							<img
-								key={idx}
-								className='flickr_img'
-								src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
-								alt={pic.title}
-							/>
+							<article key={idx}>
+								<img
+									className='flickr_img'
+									src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_b.jpg`}
+									alt={pic.title}
+								/>
+							</article>
 						);
 					})}
 				</div>

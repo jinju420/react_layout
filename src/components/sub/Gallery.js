@@ -18,57 +18,20 @@ function Gallery() {
 	const [Loading, setLoading] = useState(true);
 	const [Opt, setOpt] = useState({ type: 'user', user: '195427004@N07' });
 
-	// const getFlickr = async (opt) => {
-	// 	//객체 타입을 opt로 받아서
-	// 	const baseURL = 'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
-	// 	const key = '8dfeab6f923483f4b3694e700652632a';
-	// 	const method_interest = 'flickr.interestingness.getList';
-	// 	// const method_favorite= 'flickr.favorites.getList';
-	// 	const method_search = 'flickr.photos.search';
-	// 	const method_user = 'flickr.people.getPhotos';
-	// 	const num = 20;
-	// 	let url = '';
-
-	// 	if (opt.type === 'interest')
-	// 		url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
-	// 	if (opt.type === 'search')
-	// 		url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
-	// 	if (opt.type === 'user')
-	// 		url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
-	// 	const result = await axios.get(url);
-	// 	//flickr로 반환한 데이터 배열값이 0개일때 (결과 이미지가 없을때) 기존 Items state를 변경하지 않고 이전 갤러리화면 다시 보이게처리
-	// 	if (result.data.photos.photo.length === 0) {
-	// 		frame.current.classList.add('on');
-	// 		setLoading(false);
-	// 		return alert('해당 검색어의 결과 이미지가 없습니다.');
-	// 	}
-	// 	setItems(result.data.photos.photo);
-	// 	//0.5초 뒤에 실행 로딩 안보이게
-	// 	setTimeout(() => {
-	// 		setLoading(false);
-	// 		frame.current.classList.add('on');
-	// 	}, 500);
-
-	// 	//promise, then방식보다 async await가 코드 가독성이 더 좋음 (두 방식의 성능, 결과차이는 없음)
-	// };
-
 	const showInterest = () => {
 		frame.current.classList.remove('on');
 		setLoading(true);
 		setOpt({ type: 'interest' });
-		// getFlickr({ type: 'interest' });
 	};
 	const showMine = () => {
 		frame.current.classList.remove('on');
 		setLoading(true);
 		setOpt({ type: 'user', user: '195427004@N07' });
-		// getFlickr({ type: 'user', user: '195427004@N07' });
 	};
 	const showUser = (e) => {
 		frame.current.classList.remove('on');
 		setLoading(true);
 		setOpt({ type: 'user', user: e.target.innerText });
-		// getFlickr({ type: 'user', user: e.target.innerText });
 	};
 
 	const showSearch = () => {
@@ -79,7 +42,6 @@ function Gallery() {
 		setLoading(true);
 		setOpt({ type: 'search', tags: result });
 		//tags=result는 내가 검색한 value의 값
-		// getFlickr({ type: 'search', tags: result });
 	};
 
 	let handleKeyUp = (e) => {
@@ -88,7 +50,6 @@ function Gallery() {
 	//마운트됐을 때 기본 interest가 실행
 	useEffect(() => {
 		dispatch({ type: types.FLICKR.start, Opt });
-		// getFlickr({ type: 'user', user: '195427004@N07' });
 	}, [Opt, dispatch]);
 
 	useEffect(() => {

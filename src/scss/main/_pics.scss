@@ -25,7 +25,7 @@
 			align-items: flex-start;
 			justify-content: center;
 		}
-		.pic_box {
+		.pic {
 			position: relative;
 			display: flex;
 			flex-wrap: wrap;
@@ -34,10 +34,17 @@
 				width: calc((100% - 30px) / 2);
 				margin-right: 30px;
 				margin-bottom: 30px;
-				height: 200px;
-				background: pink;
+				height: 250px;
 				&:nth-of-type(2n) {
 					margin-right: 0;
+				}
+				img {
+					@include imgFit;
+					filter: saturate(30%) brightness(80%);
+					transition: 0.5s;
+					&:hover {
+						filter: saturate(100%) brightness(100%);
+					}
 				}
 			}
 		}
@@ -55,11 +62,18 @@
 					margin-bottom: 30px;
 				}
 			}
-			.pic_box {
+			.pic {
 				width: 100%;
 				article {
+					width: calc((100% - 30px) / 2);
+					height: 100%;
+					margin-right: 30px;
+					margin-bottom: 30px;
 					&:nth-of-type(2n) {
 						margin-right: 0;
+					}
+					img {
+						@include imgFit;
 					}
 				}
 			}
@@ -77,10 +91,11 @@
 					margin-bottom: 30px;
 				}
 			}
-			.pic_box {
+			.pic {
 				article {
 					width: 100%;
 					margin-right: 0;
+					height: 100%;
 				}
 			}
 		}
