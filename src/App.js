@@ -1,9 +1,13 @@
 import { Route, Switch } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import * as types from './redux/actionType';
+
 //common
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import Menu from './components/common/Menu';
+
 //main
 import Main from './components/main/Main';
 
@@ -15,12 +19,18 @@ import Mypage from './components/sub/Mypage';
 import Notice from './components/sub/Notice';
 import Youtube from './components/sub/Youtube';
 // import About from './components/sub/About';
-
 import './scss/style.scss';
-// switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
+
 function App() {
 	const menu = useRef(null);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch({ type: types.YOUTUBE.start });
+	}, [dispatch]);
+
 	return (
+		// switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
 		<>
 			<Switch>
 				<Route exact path='/' render={() => <Main menu={menu} />} />

@@ -12,7 +12,7 @@ takeLatest(제일 마지막에 들어온 요청만 수행), takeEvery(들어오�
 */
 //1- 컴포넌트로 들어온 YOUTUBE_START라는 액션요청을 리듀서 함수를 통해서 전달 받으면 유튜브 호출함수를 실행해주는 함수
 function* callYoutube() {
-	yield takeLatest('types.YOUTUBE.start', returnYoutube);
+	yield takeLatest(types.YOUTUBE.start, returnYoutube);
 }
 //2- 유튜브 데이터 호출한뒤 결과값을 가지고 다시 새로운 액션객체를 반환해서 리듀서로 전달해주는 함수
 function* returnYoutube() {
