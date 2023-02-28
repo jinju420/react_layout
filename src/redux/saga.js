@@ -1,5 +1,5 @@
 import { takeLatest, put, call, fork, all } from 'redux-saga/effects';
-import { fetchYoutube } from './api';
+import { fetchYoutube, fetchFlickr } from './api';
 import * as types from './actionType';
 
 /*
@@ -30,7 +30,21 @@ function* returnYoutube() {
 		yield put({ type: types.YOUTUBE.fail, payload: err });
 	}
 }
+
+//flickr
+function* callFlickr() {
+	yield takeLatest(types.FLICKR.start, returnFlickr);
+}
+function* returnFlickr() {
+	try {
+		const response = yield call(fetchFlickr);
+
+		yield put({ type: types.FLICKR.success, payload: response.data.photos.photo });
+	} catch (err) {
+		yield put({ type: types.FLICKR.fail, payload: err });
+	}
+}
 //3- 위의 최종적으로 호출해주는 함수를 만든뒤 최종 export
 export default function* rootSaga() {
-	yield all([fork(callYoutube)]);
+	yield all([fork(callYoutube), fork(callFlickr)]);
 }
