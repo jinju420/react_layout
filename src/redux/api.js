@@ -13,7 +13,6 @@ export const fetchFlickr = async (opt) => {
 	const baseURL = 'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
 	const key = '8dfeab6f923483f4b3694e700652632a';
 	const method_interest = 'flickr.interestingness.getList';
-	// const method_favorite= 'flickr.favorites.getList';
 	const method_search = 'flickr.photos.search';
 	const method_user = 'flickr.people.getPhotos';
 	const num = 20;
