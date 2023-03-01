@@ -22,7 +22,8 @@ function* callYoutube() {
 function* returnYoutube() {
 	try {
 		//데이터 응답에 성공하면 성공 액션객체를 put으로 리듀서에 전달
-		const response = yield call(fetchYoutube); //call == axios랑 비슷
+		//call == axios랑 비슷
+		const response = yield call(fetchYoutube);
 		//put == dispatch랑 비슷
 		yield put({ type: types.YOUTUBE.success, payload: response.data.items });
 	} catch (err) {

@@ -5,8 +5,9 @@ const youtubeReducer = (state = { youtube: [] }, action) => {
 	switch (action.type) {
 		/*
     컴포넌트에서 넘어오는 action type ('YOUTUBE_START')
-		해당 요청이 넘어오면 작업을 saga.js로 넘김
-		saga가 해당 액션요청을 받아서 비동기 서버통신 함수 호출해서
+		해당 요청이 넘어오면 작업을 
+		1. saga.js로 넘김
+		2. saga가 해당 액션요청을 받아서 비동기 서버통신 함수 호출해서
 		결과값에 따라 액션객체를 다시 리듀서에 전달해줌
     */
 		//순서2 - 컴포넌트로부터 'YOUTUBE_START'액션타입이 넘어오면 middleware로 연결된 saga.js에 해당 액션전달
