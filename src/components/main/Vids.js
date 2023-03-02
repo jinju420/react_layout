@@ -1,12 +1,46 @@
-import { memo } from 'react';
+import { memo, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { EffectCoverflow } from 'swiper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
 // import 'swiper/css/effect-coverflow';
+
+function BtnRolling() {
+	const swiper = useSwiper();
+	const btnStart = useRef(null);
+	const btnPause = useRef(null);
+
+	return (
+		<nav className='controls'>
+			<FontAwesomeIcon
+				className='on'
+				ref={btnStart}
+				icon={faPlay}
+				onClick={() => {
+					if (!swiper.autoplay.paused) return;
+					swiper.autoplay.run();
+					btnStart.current.classList.add('on');
+					btnPause.current.classList.remove('on');
+				}}
+			/>
+			<FontAwesomeIcon
+				ref={btnPause}
+				icon={faPause}
+				onClick={() => {
+					if (swiper.autoplay.paused) return;
+					swiper.autoplay.pause();
+					btnStart.current.classList.remove('on');
+					btnPause.current.classList.add('on');
+				}}
+			/>
+		</nav>
+	);
+}
 
 function Vids() {
 	const Vids = useSelector((store) => store.youtube.data);
@@ -41,6 +75,7 @@ function Vids() {
 					slideShadows: false,
 				}}
 			>
+				<BtnRolling />
 				{Vids.map((vid, idx) => {
 					if (idx >= 6) return null;
 					return (
