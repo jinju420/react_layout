@@ -3,11 +3,13 @@ import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import Masonry from 'react-masonry-component';
 import Modal from '../common/Modal';
+// import { useSelector } from 'react-redux';
 //npm i react-masonry-component
 //npm i interval-call (일정시간동안 중복되는 요청을 무시하고 첫번째 이벤트요청만 발생시켜주는 라이브러리)
 //npm i framer-motion@6 //팝업뜰때 모션처리
 
 function Gallery() {
+	// const pics=useSelector(store=>store.flickr.data);
 	const open = useRef(null);
 	const frame = useRef(null);
 	const input = useRef(null);

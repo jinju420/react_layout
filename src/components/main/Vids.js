@@ -25,7 +25,7 @@ function Vids() {
 				pagination={{ clickable: true }}
 				modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
 				autoplay={{
-					// delay: 2000,
+					delay: 2000,
 					disableOnInteraction: true,
 				}}
 				effect={'coverflow'}

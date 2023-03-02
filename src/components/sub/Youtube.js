@@ -6,21 +6,8 @@ import { useSelector } from 'react-redux';
 function Youtube() {
 	const Vids = useSelector((store) => store.youtube.data);
 	const open = useRef(null);
-	// const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
 
-	// useEffect(() => {
-	// 	const key = 'AIzaSyBGee4MUXU3jusXj7YwDBzdXI5Sn3gAkIA';
-	// 	const playlistId = 'PLY0voYdGZtAipraMUx-_pnepD9KKaUDdm';
-	// 	const num = 8;
-	// 	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
-
-	// 	axios.get(url).then((json) => {
-	// 		setVids(json.data.items);
-	// 	});
-	// }, []);
-
-	// useEffect(() => {}, [Vids]);
 	return (
 		<>
 			<Layout name={'YOUTUBE'}>

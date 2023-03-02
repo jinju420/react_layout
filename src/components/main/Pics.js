@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 function Pics({ Scrolled, Pos }) {
-	const Pics = useSelector((store) => store.flickr.data);
+	// const Pics = useSelector((store) => store.flickr.data);
 	const base = -window.innerHeight / 3;
 	let scroll = Scrolled - base - Pos || 0;
 	scroll < 0 && (scroll = 0);
