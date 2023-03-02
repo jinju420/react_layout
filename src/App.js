@@ -19,6 +19,7 @@ import './scss/style.scss';
 import { fetchYoutube } from './redux/youtubeSlice';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+// import { fetchFlickr } from './redux/flickrSlice';
 
 // switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
 function App() {
@@ -27,6 +28,7 @@ function App() {
 
 	useEffect(() => {
 		dispatch(fetchYoutube());
+		// dispatch(fetchFlickr());
 	}, [dispatch]);
 	return (
 		<>
