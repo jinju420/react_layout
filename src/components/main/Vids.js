@@ -20,6 +20,7 @@ function Vids() {
 				spaceBetween={50}
 				loop={true}
 				centeredSlides={true}
+				grabCursor={true}
 				navigation={true}
 				pagination={{ clickable: true }}
 				modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
@@ -33,7 +34,7 @@ function Vids() {
 					stretch: 0,
 					depth: 100,
 					modifier: 1,
-					slideShadows: true,
+					slideShadows: false,
 				}}
 			>
 				{Vids.map((vid, idx) => {
@@ -44,7 +45,16 @@ function Vids() {
 								<div className='pic'>
 									<img src={vid.snippet.thumbnails.maxres.url} alt={vid.snippet.title} />
 								</div>
-								<h2>{vid.snippet.title}</h2>
+								<h2>
+									{vid.snippet.title.length >= 30
+										? vid.snippet.title.substr(0, 35) + '...'
+										: vid.snippet.title}
+								</h2>
+								<p>
+									{vid.snippet.description.length >= 100
+										? vid.snippet.description.substr(0, 150) + '...'
+										: vid.snippet.description}
+								</p>
 							</div>
 						</SwiperSlide>
 					);
