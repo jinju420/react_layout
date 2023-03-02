@@ -13,7 +13,8 @@ function Gallery() {
 	const open = useRef(null);
 	const frame = useRef(null);
 	const input = useRef(null);
-	const [Set, setSet] = useState(0);
+	const btnInt = useRef(null);
+	const btnMy = useRef(null);
 	const [Items, setItems] = useState([]);
 	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);
@@ -90,8 +91,31 @@ function Gallery() {
 					<div className='btnSet'>
 						<div className='controls'>
 							<nav>
-								<button onClick={showInterest}>Interest Gallery</button>
-								<button onClick={showMine}>My Gallery</button>
+								<button
+									ref={btnInt}
+									onClick={() => {
+										showInterest();
+										if (!btnInt.current.classList.contains('on'))
+											btnMy.current.classList.remove('on');
+										btnInt.current.classList.add('on');
+									}}
+								>
+									Interest Gallery
+								</button>
+								<button
+									ref={btnMy}
+									className='on'
+									onClick={() => {
+										showMine();
+										//1. on이 있으면 return으로 아래구문 무시되고 on이 없으면
+										if (btnMy.current.classList.contains('on')) return;
+										//2. on이 없으면 실행
+										btnInt.current.classList.remove('on');
+										btnMy.current.classList.add('on');
+									}}
+								>
+									My Gallery
+								</button>
 							</nav>
 						</div>
 						<div className='searchBox'>
