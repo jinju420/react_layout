@@ -1,14 +1,12 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Navigation } from 'swiper';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { EffectCoverflow } from 'swiper';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
 // import 'swiper/css/effect-coverflow';
-// import 'swiper/css/pagination';
 
 function Vids() {
 	const Vids = useSelector((store) => store.youtube.data);
@@ -16,7 +14,7 @@ function Vids() {
 		<section id='vids' className='myScroll'>
 			{/* <h1>Youtube</h1> */}
 			<Swiper
-				slidesPerView={3}
+				slidesPerView={1}
 				spaceBetween={30}
 				loop={true}
 				centeredSlides={true}
@@ -27,6 +25,12 @@ function Vids() {
 				autoplay={{
 					delay: 2000,
 					disableOnInteraction: true,
+				}}
+				breakpoints={{
+					1180: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+					},
 				}}
 				effect={'coverflow'}
 				coverflowEffect={{

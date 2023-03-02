@@ -112,17 +112,20 @@
 
 @media screen and (max-width: $tablet) {
 	#vids {
-		height: auto;
-		.inner {
-			width: 100%;
-			flex-wrap: wrap;
-			article {
-				width: calc((100% - 30px) / 2);
-				p {
-					width: 100%;
-				}
-			}
+		// height: auto;
+		.swiper {
+			padding: 12vw 10vw;
 		}
+		// .inner {
+		// 	width: 100%;
+		// 	flex-wrap: wrap;
+		// 	article {
+		// 		width: calc((100% - 30px) / 2);
+		// 		p {
+		// 			width: 100%;
+		// 		}
+		// 	}
+		// }
 	}
 }
 @media screen and (max-width: $mobile) {
