@@ -17,7 +17,7 @@ function Vids() {
 			{/* <h1>Youtube</h1> */}
 			<Swiper
 				slidesPerView={3}
-				spaceBetween={50}
+				spaceBetween={30}
 				loop={true}
 				centeredSlides={true}
 				grabCursor={true}
@@ -25,7 +25,7 @@ function Vids() {
 				pagination={{ clickable: true }}
 				modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
 				autoplay={{
-					delay: 2000,
+					// delay: 2000,
 					disableOnInteraction: true,
 				}}
 				effect={'coverflow'}
