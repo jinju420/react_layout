@@ -16,15 +16,18 @@ const youtubeSlice = createSlice({
 	name: 'youtube',
 	initialState: {
 		data: [],
+		//요청에 대한 로딩
 		isLoading: false,
 	},
 	extraReducers: {
 		//데이터 요청시작에 대한 데이터 상태처리 =>응답받기전
 		[fetchYoutube.pending]: (state) => {
+			//로딩중
 			state.isLoading = true;
 		},
 		//데이터응답성공
 		[fetchYoutube.fulfilled]: (state, action) => {
+			//데이터가 받아져서 로딩이 끝났으니 false
 			state.isLoading = false;
 			state.data = action.payload;
 		},
