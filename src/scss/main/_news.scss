@@ -3,7 +3,7 @@
 	height: auto;
 	background: #fefbf4;
 	position: relative;
-	padding: 10vw 0;
+	padding: 10vw;
 	overflow: hidden;
 	display: flex;
 	flex-wrap: wrap;
@@ -11,8 +11,9 @@
 	perspective: 700px;
 
 	> .inner {
+		width: 100%;
 		height: 100%;
-		@include innerWid;
+		// @include innerWid;
 
 		.title {
 			text-align: center;

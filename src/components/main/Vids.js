@@ -20,10 +20,11 @@ function Vids() {
 					</div>
 					<div className='vid_box'>
 						{youtube.map((vid, idx) => {
-							if (idx >= 5) return null;
+							console.log(vid);
+							if (idx >= 6) return null;
 							const tit = vid.snippet.title;
 							const desc = vid.snippet.description;
-							const date = vid.snippet.publishedAt;
+							// const date = vid.snippet.publishedAt;
 							return (
 								<article key={vid.id}>
 									<div
@@ -38,7 +39,7 @@ function Vids() {
 									<div className='txt'>
 										<h3>{tit.length > 40 ? tit.substr(0, 30) + '...' : tit}</h3>
 										<p>{desc.length > 100 ? desc.substr(0, 80) + '...' : desc}</p>
-										<span>{date.split('T')[0]}</span>
+										{/* <span>{date.split('T')[0]}</span> */}
 									</div>
 								</article>
 							);
