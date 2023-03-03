@@ -1,8 +1,7 @@
 import { memo, useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper';
-import { EffectCoverflow } from 'swiper';
+import { Autoplay, Pagination, Navigation, EffectCoverflow } from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import 'swiper/css/navigation';
@@ -42,21 +41,46 @@ function Pics() {
 		<>
 			<section id='pics' className='myScroll'>
 				<div className='inner'>
-					{/* <div className='title'>
-						<h1
-							style={{
-								transform: `translateX(${scroll}px) scale(${1 + scroll / 60})`,
-								opacity: 1 - scroll / 300,
-							}}
-						>
-							Flickr
+					<div className='title'>
+						<h1>
+							Out latest <br />
+							Interest Photos
 						</h1>
-						<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, inventore.</h2>
-					</div> */}
+						<div className='controls_box'>
+							<span>What's New?</span>
+							<nav className='controls'>
+								<FontAwesomeIcon
+									icon={faPlay}
+									className='on'
+									ref={btnStart}
+									onClick={() => {
+										//pagination, 좌우버튼 클릭시 일지 정지가 되는 것이 아닌 autoplay기능 자체가 비활성화 됨
+										//현재 자동롤링 동작 유무는 swiper.autoplay.running값으로 확인
+										//자동롤링 시작, 정지 함수도 start, stop으로 변경
+										if (Instance.autoplay.running) return;
+										Instance.autoplay.start();
+										btnStart.current.classList.add('on');
+										btnStop.current.classList.remove('on');
+									}}
+								/>
+								<FontAwesomeIcon
+									icon={faPause}
+									ref={btnStop}
+									onClick={() => {
+										if (!Instance.autoplay.running) return;
+										Instance.autoplay.stop();
+										btnStart.current.classList.remove('on');
+										btnStop.current.classList.add('on');
+									}}
+								/>
+							</nav>
+						</div>
+					</div>
 					{/* <div className='pic'> */}
+
 					<Swiper
 						slidesPerView={1}
-						spaceBetween={30}
+						spaceBetween={20}
 						loop={true}
 						centeredSlides={true}
 						grabCursor={true}
@@ -70,45 +94,19 @@ function Pics() {
 						breakpoints={{
 							1180: {
 								slidesPerView: 3,
-								spaceBetween: 30,
+								// spaceBetween: 0,
 							},
 						}}
-						effect={'coverflow'}
-						coverflowEffect={{
-							rotate: 50,
-							stretch: 0,
-							depth: 100,
-							modifier: 1,
-							slideShadows: false,
-						}}
+						// effect={'coverflow'}
+						// coverflowEffect={{
+						// 	rotate: 50,
+						// 	stretch: 0,
+						// 	depth: 100,
+						// 	modifier: 1,
+						// 	slideShadows: false,
+						// }}
 						onSwiper={(swiper) => setInstance(swiper)}
 					>
-						<nav className='controls'>
-							<FontAwesomeIcon
-								className='on'
-								ref={btnStart}
-								icon={faPlay}
-								onClick={() => {
-									//pagination, 좌우버튼 클릭시 일지 정지가 되는 것이 아닌 autoplay기능 자체가 비활성화 됨
-									//현재 자동롤링 동작 유무는 swiper.autoplay.running값으로 확인
-									//자동롤링 시작, 정지 함수도 start, stop으로 변경
-									if (Instance.autoplay.running) return;
-									Instance.autoplay.start();
-									btnStart.current.classList.add('on');
-									btnStop.current.classList.remove('on');
-								}}
-							/>
-							<FontAwesomeIcon
-								ref={btnStop}
-								icon={faPause}
-								onClick={() => {
-									if (!Instance.autoplay.running) return;
-									Instance.autoplay.stop();
-									btnStart.current.classList.remove('on');
-									btnStop.current.classList.add('on');
-								}}
-							/>
-						</nav>
 						{flickr.map((vid, idx) => {
 							if (idx >= 6) return null;
 							return (
@@ -130,6 +128,7 @@ function Pics() {
 												alt={vid.title}
 											/>
 										</div>
+										{/* <h2>{vid.title}</h2> */}
 									</div>
 								</SwiperSlide>
 							);
