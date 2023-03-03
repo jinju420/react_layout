@@ -7,6 +7,8 @@ import Modal from '../common/Modal';
 
 function Gallery() {
 	const dispatch = useDispatch();
+	//검색결과가 없는지 판단시 처음 컴포넌트가 마운트되서 결과값이 없는지 검색후의 결과가 없는지의 구문을 위한 참조객체
+	//초기엔 true, 만약 검색 함수가 실행되면 false로 변경
 	const init = useRef(true);
 	const open = useRef(null);
 	const frame = useRef(null);
@@ -48,6 +50,7 @@ function Gallery() {
 	};
 
 	useEffect(() => {
+		//init.current의 값이 false이고 그와 동시에 검색결과가 없을때만 경고창 출력
 		if (Items.length === 0 && !init.current) {
 			dispatch(fetchFlickr({ type: 'user', user: '195427004@N07' }));
 			frame.current.classList.add('on');
