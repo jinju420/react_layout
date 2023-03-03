@@ -5,21 +5,14 @@
 	background: #445870;
 	position: relative;
 	overflow: hidden;
-	// padding: 5vw 10vw;
 	> .inner {
 		position: relative;
-		padding: 10vw;
-		// @include innerWid;
+		padding: 10vw 10vw 20vw;
 		width: 100%;
 		height: 100%;
-		// border-top: 1px solid #333;
-		// border-bottom: 1px solid #333;
-		// padding: 5vw 0;
+
 		.title {
 			text-align: left;
-			// padding: 5vw 10vw;
-			// background: #445870;
-			// color: #fff;
 			margin-bottom: 70px;
 			color: #fff;
 			h1 {
@@ -66,14 +59,11 @@
 					justify-content: center;
 					align-content: flex-start;
 					color: #333;
-					// padding: 20px;
 					opacity: 0.5;
 					overflow: hidden;
-					// border: 1px solid #333;
 					transform: scale(0.8);
 					border-radius: 150px 150px 0 0;
 					transition: opacity 0.5, transform 0.5s;
-					// box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.2);
 					.pic {
 						width: 100%;
 						height: 350px;
@@ -81,7 +71,6 @@
 						filter: saturate(30%) brightness(70%);
 						&:hover {
 							filter: saturate(100%) brightness(100%);
-							// transform: scale(1.2);
 						}
 						img {
 							@include imgFit;
@@ -108,12 +97,9 @@
 							border-radius: 30px;
 							background: transparent;
 							font: 14px/1.5 $contentFont;
-							// width: 100%;
 							margin: 0 auto;
 							color: #fff;
 							opacity: 0.5;
-
-							// margin-top: 70px;
 						}
 					}
 				}

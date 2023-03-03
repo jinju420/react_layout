@@ -77,7 +77,6 @@ function Pics() {
 							</nav>
 						</div>
 					</div>
-					{/* <div className='pic'> */}
 
 					<Swiper
 						slidesPerView={1}
@@ -86,7 +85,6 @@ function Pics() {
 						centeredSlides={true}
 						grabCursor={true}
 						navigation={true}
-						// pagination={{ clickable: true }}
 						modules={[Navigation, Autoplay, EffectCoverflow]}
 						autoplay={{
 							delay: 2000,
@@ -98,14 +96,6 @@ function Pics() {
 								// spaceBetween: 0,
 							},
 						}}
-						// effect={'coverflow'}
-						// coverflowEffect={{
-						// 	rotate: 50,
-						// 	stretch: 0,
-						// 	depth: 100,
-						// 	modifier: 1,
-						// 	slideShadows: false,
-						// }}
 						onSwiper={(swiper) => setInstance(swiper)}
 					>
 						{flickr.map((vid, idx) => {
@@ -142,10 +132,12 @@ function Pics() {
 			</section>
 
 			<Modal ref={open}>
-				<img
-					src={`https://live.staticflickr.com/${flickr[Index]?.server}/${flickr[Index]?.id}_${flickr[Index]?.secret}_b.jpg`}
-					alt={flickr[Index]?.title}
-				/>
+				<div className='flickr_img'>
+					<img
+						src={`https://live.staticflickr.com/${flickr[Index]?.server}/${flickr[Index]?.id}_${flickr[Index]?.secret}_b.jpg`}
+						alt={flickr[Index]?.title}
+					/>
+				</div>
 			</Modal>
 		</>
 	);
