@@ -32,6 +32,7 @@ function App() {
 	return (
 		<>
 			<Switch>
+				{/* 전역으로 모바일 패널 열고 닫는 state값을 관리하기 때문에 props로 값 전달할 필요없음 */}
 				<Route exact path='/' component={Main} />
 				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>

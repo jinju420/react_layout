@@ -55,6 +55,7 @@ function Header(props) {
 							</NavLink>
 						</li>
 					</ul>
+					{/* 토글 메뉴 클릭시 toggle함수로 기존 전역 state값을 반전시킨뒤 dispatch로 리듀서에 전달 */}
 					<FontAwesomeIcon
 						icon={faBars}
 						onClick={() => {

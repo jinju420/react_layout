@@ -13,12 +13,15 @@ function Menu() {
 
 	useEffect(() => {
 		window.addEventListener('resize', () => {
+			// 브라우저 폭이 늘어나면 close함수로 전역 state값을 false로 변경후 dispatch로 리듀서에 전달
 			if (window.innerWidth >= 1180) dispatch(close());
 		});
 	}, [dispatch]);
 	return (
 		<AnimatePresence>
+			{/* 전역 state값이 true일때만 메뉴패널 호출 */}
 			{menu && (
+				// 해당 패널 클릭시 close함수로 전역 state값을 false로 변경후 dispatch로 리듀서에 전달
 				<motion.nav
 					id='mobilePanel'
 					initial={{ x: -270, opacity: 0 }}
