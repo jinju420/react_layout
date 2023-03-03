@@ -82,7 +82,8 @@
 					li {
 						position: relative;
 						width: 30vw;
-						font: bold 18px/1 $krFont;
+						font-size: 18px;
+						font-weight: bold;
 						margin-top: 30px;
 						color: #333;
 						display: flex;
@@ -115,12 +116,11 @@
 						p {
 							margin-top: 25px;
 							margin-bottom: 5px;
-							font: bold 14px/1.5 $krFont;
+							font-size: 14px;
+							line-height: 1.5;
+							font-weight: bold;
 							margin-bottom: 10px;
 							word-break: keep-all;
-						}
-						span {
-							font: 12px/1 $krFont;
 						}
 					}
 				}

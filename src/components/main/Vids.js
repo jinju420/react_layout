@@ -10,32 +10,40 @@ function Vids() {
 	return (
 		<>
 			<section id='vids' className='myScroll'>
-				<h1>Youtube</h1>
 				<div className='inner'>
-					{youtube.map((vid, idx) => {
-						if (idx >= 4) return null;
-						const tit = vid.snippet.title;
-						const desc = vid.snippet.description;
-						const date = vid.snippet.publishedAt;
-						return (
-							<article key={vid.id}>
-								<div
-									className='pic'
-									onClick={() => {
-										open.current.setOpen();
-										setIndex(idx);
-									}}
-								>
-									<img src={vid.snippet.thumbnails.medium.url} alt={vid.snippet.title} />
-								</div>
-								<div className='txt'>
-									<h3>{tit.length > 40 ? tit.substr(0, 30) + '...' : tit}</h3>
-									<p>{desc.length > 100 ? desc.substr(0, 80) + '...' : desc}</p>
-									<span>{date.split('T')[0]}</span>
-								</div>
-							</article>
-						);
-					})}
+					<div className='title'>
+						<h1>
+							Out latest <br />
+							Interest Photos
+						</h1>
+						<span>What's New?</span>
+					</div>
+					<div className='vid_box'>
+						{youtube.map((vid, idx) => {
+							if (idx >= 5) return null;
+							const tit = vid.snippet.title;
+							const desc = vid.snippet.description;
+							const date = vid.snippet.publishedAt;
+							return (
+								<article key={vid.id}>
+									<div
+										className='pic'
+										onClick={() => {
+											open.current.setOpen();
+											setIndex(idx);
+										}}
+									>
+										<img src={vid.snippet.thumbnails.medium.url} alt={vid.snippet.title} />
+									</div>
+									<div className='txt'>
+										<h3>{tit.length > 40 ? tit.substr(0, 30) + '...' : tit}</h3>
+										<p>{desc.length > 100 ? desc.substr(0, 80) + '...' : desc}</p>
+										<span>{date.split('T')[0]}</span>
+									</div>
+								</article>
+							);
+						})}
+					</div>
 				</div>
 			</section>
 

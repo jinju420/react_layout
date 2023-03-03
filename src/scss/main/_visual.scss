@@ -1,39 +1,98 @@
 #visual {
 	width: 100%;
 	height: 100vh;
-	filter: saturate(0.3);
+	// filter: saturate(0.3);
+	// padding: 15vw 10vw 10vw;
 	transition: filter 0.5s;
-	position: relative;
+	// position: relative;
 	z-index: 1;
 	margin-top: 60px;
-	&:hover {
-		filter: saturate(1);
-	}
-	img {
-		@include imgFit;
-	}
-	.inner {
+	background: #fefbf4;
+	// background: #00a05c;
+	// background: #445870;
+	> .inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		@include innerWid;
-		.title_txt {
-			position: absolute;
-			top: 30px;
-			left: 0;
-			padding-top: 130px;
+		height: 100%;
+		// border-top: 1px solid #333;
+		// border: 1px solid #333;
+		// border-bottom: 1px solid #333;
+		// padding: 0 5vw;
+		.title {
+			height: 100%;
+			width: 40%;
+			// padding: 5vw 0 0;
+			z-index: 2;
+			color: #fff;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			margin-right: 50px;
 			h1 {
-				font-size: 25px;
+				font: 100px/1.2 'Cinzel Decorative', cursive;
+				text-align: center;
 				text-align: left;
-				margin-left: 5px;
-				color: #666;
+				margin-bottom: 25px;
+				letter-spacing: 10px;
+				color: #445870;
+				// text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+				// text-shadow: 4px 3px 3px rgba(0 0 0 / 30%);
 			}
-
-			p {
-				opacity: 1;
-				// transform: rotate(-35deg) translate(-500px, 400px);
+			span {
+				display: block;
 				width: 100%;
-				font-size: 80px;
-				// letter-spacing: 10px;
-				color: #666;
-				font-weight: bold;
+				padding: 20px;
+				border-top: 2px solid #333;
+				border-bottom: 1px solid #333;
+				text-align: center;
+				color: #333;
+				font-family: $titleFont;
+			}
+			.des_txt {
+				color: #333;
+				p {
+					width: 100%;
+					margin-right: 20px;
+					line-height: 1;
+					// letter-spacing: 1px;
+					font-family: $contentFont;
+				}
+			}
+			// .desc {
+			// 	width: 100%;
+			// 	display: flex;
+			// 	p {
+			// 		opacity: 1;
+			// 		font: normal 15px/1.5 $contentFont;
+			// 		// transform: rotate(-35deg) translate(-500px, 400px);
+			// 		width: 25%;
+			// 		text-align: justify;
+			// 		word-break: keep-all;
+			// 		margin-right: 30px;
+			// 		&:last-child {
+			// 			margin-right: 0;
+			// 		}
+			// 	}
+			// }
+		}
+		.img {
+			width: 100%;
+			// position: absolute;
+			// top: 70px;
+			// right: 0;
+			// border-radius: 30px;
+			// border-radius: 800px 800px 0px 0px;
+			// box-shadow: 19px 21px 0px rgba(0, 0, 0, 0.3);
+
+			img {
+				width: 100%;
+				height: 635px;
+				object-fit: cover;
+				display: flex;
+				// border-radius: 30px;
+				// border-radius: 800px 800px 0px 0px;
 			}
 		}
 	}

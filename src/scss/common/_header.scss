@@ -6,7 +6,7 @@ header {
 	background: #fefbf4;
 	// box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
 
-	z-index: 2;
+	z-index: 5;
 	.inner {
 		@include innerWid;
 		height: 60px;
@@ -17,7 +17,7 @@ header {
 		align-items: center;
 		h1 {
 			a {
-				font: bold 24px/1 'arial';
+				font: bold 24px/1 $titleFont;
 				color: #333;
 				letter-spacing: 1px;
 				// text-shadow: 0px 1px 3px rgb(0, 0, 0, 0.7);
@@ -35,7 +35,7 @@ header {
 					display: block;
 					position: relative;
 					color: #333;
-					font-family: 'Montserrat';
+					font-family: $contentFont;
 					letter-spacing: 1px;
 					text-align: center;
 					font-weight: bold;

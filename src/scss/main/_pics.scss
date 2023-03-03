@@ -3,35 +3,33 @@
 	height: auto;
 	background: #fefbf4;
 	position: relative;
-	padding: 10vw;
 	overflow: hidden;
-	border-top: 1px solid #333;
-	border-bottom: 1px solid #333;
+	// border-bottom: 1px solid #333;
 	> .inner {
-		width: 100%;
-		height: 100%;
-		margin: 0 auto;
 		position: relative;
-		// display: flex;
+		@include innerWid;
+		height: 100%;
+		border-top: 1px solid #333;
+		padding: 10vw 0;
 		.title {
-			// margin-right: 30px;
-			position: relative;
-			margin-bottom: 50px;
+			text-align: left;
+			// background: #445870;
+			// color: #fff;
+			margin-bottom: 70px;
 			h1 {
-				font: 35px/1.2 $titleFont;
+				// font: 35px/1.2 $titleFont;
 				margin-bottom: 20px;
+				font: 35px/1.2 $StrongFont;
+				// padding: 20px 0;
 			}
 			.controls_box {
 				display: flex;
-				justify-content: space-between;
 				align-items: flex-end;
 				span {
+					margin-right: 130px;
 					font: 14px/1 $contentFont;
 				}
 				.controls {
-					position: absolute;
-					bottom: 0;
-					left: 180px;
 					display: flex;
 					gap: 15px;
 					font-size: 15px;
@@ -53,49 +51,71 @@
 
 		.swiper {
 			padding: 7vw 0;
-			border: 1px solid #333;
+			// background: #fff;
+			// border: 1px solid #333;
 			.swiper-slide {
 				width: 100%;
 				margin-right: 0;
 				.inner {
 					width: 100%;
 					height: 100%;
-					// background: #fff;
+					// background: #eee;
 					display: flex;
 					flex-wrap: wrap;
 					justify-content: center;
 					align-content: flex-start;
 					color: #333;
-					// padding: 30px;
+					// padding: 20px;
 					opacity: 0.5;
-					border: 1px solid #333;
+					overflow: hidden;
+					// border: 1px solid #333;
 					transform: scale(0.8);
+					border-radius: 150px 150px 0 0;
 					transition: opacity 0.5, transform 0.5s;
 					// box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.2);
 					.pic {
 						width: 100%;
-						height: 200px;
+						height: 350px;
 						transition: filter 0.5s, transform 0.5s;
 						filter: saturate(30%) brightness(70%);
 						&:hover {
 							filter: saturate(100%) brightness(100%);
-							transform: scale(1.2);
+							// transform: scale(1.2);
 						}
 						img {
 							@include imgFit;
+							border-radius: 150px 150px 0 0;
 						}
 					}
-					h2 {
-						font: normal 30px/1.2 $contentFont;
-						color: #333;
-						margin-top: 15px;
-						writing-mode: vertical-lr;
+					.txt {
+						padding: 20px;
 						text-align: center;
-						// vertical-align: middle;
-					}
-					p {
-						font: 16px/1.5 $contentFont;
-						margin-top: 70px;
+
+						h2 {
+							font: 30px/1.2 $StrongFont;
+							width: 100%;
+							margin-bottom: 30px;
+							// font: normal 30px/1.2 $contentFont;
+							color: #333;
+							// margin-top: 15px;
+							// writing-mode: vertical-lr;
+							// padding: 35px;
+							text-align: center;
+							// vertical-align: middle;
+						}
+						a {
+							border: 1px solid #333;
+							display: block;
+							width: 150px;
+							padding: 10px;
+							border-radius: 30px;
+							background: transparent;
+							font: 14px/1.5 $contentFont;
+							// width: 100%;
+							margin: 0 auto;
+
+							// margin-top: 70px;
+						}
 					}
 				}
 			}
@@ -103,10 +123,22 @@
 				.inner {
 					opacity: 1;
 					transform: scale(1);
+					overflow: hidden;
+
+					background: #445870;
+					.txt {
+						h2,
+						a {
+							color: #fff;
+						}
+						a {
+							border: 1px solid #fff;
+						}
+					}
 				}
 			}
 			.swiper-pagination {
-				bottom: 40px;
+				// bottom: 40px;
 				.swiper-pagination-bullet {
 					width: 10px;
 					height: 10px;
@@ -122,14 +154,15 @@
 			.swiper-button-next {
 				color: #445870;
 				top: auto;
-				right: 0;
-				bottom: 0;
-				transform: scale(0.5);
+				left: 65%;
+				bottom: 130px;
+				transform: translateX(-50%) scale(0.7);
+				// transform: scale(0.7);
 				z-index: 2;
 			}
 			.swiper-button-prev {
-				left: auto;
-				right: 40px;
+				left: 35%;
+				// right: 40px;
 			}
 		}
 		// .pic {

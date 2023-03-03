@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-function News({ Scrolled, Pos }) {
+function News() {
 	/*
 	로컬스토리지의 데이터를 반환하는 함수
 	로컬스토리지의 값이 있으면 해당 값을 다시 json형태로 변경해서 반환
@@ -39,22 +39,28 @@ function News({ Scrolled, Pos }) {
 		localStorage.setItem('post', JSON.stringify(Posts));
 	}, [Posts]);
 
-	const base = -window.innerHeight / 3;
-	let scroll = Scrolled - base - Pos || 0;
-	scroll < 0 && (scroll = 0);
+	// const base = -window.innerHeight / 3;
+	// let scroll = Scrolled - base - Pos || 0;
+	// scroll < 0 && (scroll = 0);
 	return (
 		<section id='news' className='myScroll'>
-			<h1 style={{ transform: `translateX(${scroll}px)` }}>News</h1>
+			{/* <h1 style={{ transform: `translateX(${scroll}px)` }}>News</h1> */}
 			<div className='inner'>
-				{Posts.map((post, idx) => {
-					if (idx >= 6) return null;
-					return (
-						<article key={idx}>
-							<h3>{post.title}</h3>
-							<p>{post.content}</p>
-						</article>
-					);
-				})}
+				<div className='title'>
+					<h1>Recent Work</h1>
+					{/* <span>What's New?</span> */}
+				</div>
+				<div className='post_box'>
+					{Posts.map((post, idx) => {
+						if (idx >= 6) return null;
+						return (
+							<article key={idx}>
+								<h3>{post.title}</h3>
+								<p>{post.content}</p>
+							</article>
+						);
+					})}
+				</div>
 			</div>
 		</section>
 	);

@@ -1,7 +1,8 @@
 import { memo, useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation, EffectCoverflow } from 'swiper';
+import { Autoplay, Navigation, EffectCoverflow } from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import 'swiper/css/navigation';
@@ -25,12 +26,12 @@ function Pics() {
 
 	useEffect(() => {
 		//pagination, prev, next버튼을 처음 마운트시 한번 담고
-		const btnPagination = document.querySelector('.swiper-pagination');
+		// const btnPagination = document.querySelector('.swiper-pagination');
 		const btnPrev = document.querySelector('.swiper-button-prev');
 		const btnNext = document.querySelector('.swiper-button-next');
 
 		//위의 버튼을 클릭시 정지버튼 활성화
-		[btnPagination, btnPrev, btnNext].map((el) => {
+		[btnPrev, btnNext].map((el) => {
 			el.addEventListener('click', () => {
 				btnStart.current.classList.remove('on');
 				btnStop.current.classList.add('on');
@@ -43,7 +44,7 @@ function Pics() {
 				<div className='inner'>
 					<div className='title'>
 						<h1>
-							Out latest <br />
+							Our latest <br />
 							Interest Photos
 						</h1>
 						<div className='controls_box'>
@@ -80,20 +81,20 @@ function Pics() {
 
 					<Swiper
 						slidesPerView={1}
-						spaceBetween={20}
+						// spaceBetween={20}
 						loop={true}
 						centeredSlides={true}
 						grabCursor={true}
 						navigation={true}
-						pagination={{ clickable: true }}
-						modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+						// pagination={{ clickable: true }}
+						modules={[Navigation, Autoplay, EffectCoverflow]}
 						autoplay={{
 							delay: 2000,
 							disableOnInteraction: true,
 						}}
 						breakpoints={{
 							1180: {
-								slidesPerView: 3,
+								slidesPerView: 4,
 								// spaceBetween: 0,
 							},
 						}}
@@ -128,7 +129,10 @@ function Pics() {
 												alt={vid.title}
 											/>
 										</div>
-										{/* <h2>{vid.title}</h2> */}
+										<div className='txt'>
+											<h2>{vid.title}</h2>
+											<Link to='/gallery'>View More</Link>
+										</div>
 									</div>
 								</SwiperSlide>
 							);

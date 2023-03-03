@@ -14,6 +14,8 @@ function Gallery() {
 	const open = useRef(null);
 	const frame = useRef(null);
 	const input = useRef(null);
+	const btnInt = useRef(null);
+	const btnMy = useRef(null);
 	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);
 	const [Opt, setOpt] = useState({ type: 'user', user: '195427004@N07' });
@@ -66,8 +68,29 @@ function Gallery() {
 					<div className='btnSet'>
 						<div className='controls'>
 							<nav>
-								<button onClick={showInterest}>Interest Gallery</button>
-								<button onClick={showMine}>My Gallery</button>
+								<button
+									ref={btnInt}
+									onClick={() => {
+										showInterest();
+										if (!btnInt.current.classList.contains('on'))
+											btnMy.current.classList.remove('on');
+										btnInt.current.classList.add('on');
+									}}
+								>
+									Interest Gallery
+								</button>
+								<button
+									ref={btnMy}
+									className='on'
+									onClick={() => {
+										showMine();
+										if (btnMy.current.classList.contains('on')) return;
+										btnInt.current.classList.remove('on');
+										btnMy.current.classList.add('on');
+									}}
+								>
+									My Gallery
+								</button>
 							</nav>
 						</div>
 						<div className='searchBox'>

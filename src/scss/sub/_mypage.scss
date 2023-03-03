@@ -80,7 +80,7 @@
 							border: 1px solid #333;
 							padding: 10px;
 							resize: none;
-							font-family: $krFont;
+							// font-family: $krFont;
 							background: transparent;
 							// background: #e2e2e2;
 							&:focus {
@@ -98,7 +98,7 @@
 						span.err {
 							width: 100%;
 							display: block;
-							font: 12px/1 $krFont;
+							// font: 12px/1 $krFont;
 							color: #fd6c6c;
 							margin-top: 10px;
 						}
@@ -119,7 +119,7 @@
 						td {
 							input::placeholder {
 								font-size: 12px;
-								font-family: $krFont;
+								// font-family: $krFont;
 							}
 							input[type='text'],
 							input[type='password'],
@@ -137,7 +137,7 @@
 								margin-top: 10px;
 							}
 							span.err {
-								font: 12px/1 $krFont;
+								// font: 12px/1 $krFont;
 								color: rgb(245, 63, 100);
 								margin-left: 20px;
 								display: block;

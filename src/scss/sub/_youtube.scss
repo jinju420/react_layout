@@ -1,7 +1,4 @@
 .YOUTUBE {
-	// figure {
-	// 	background: url('../../../public/sub/visual/youtube.jpg') no-repeat bottom/cover;
-	// }
 	.sub_con {
 		> .inner {
 			@include clear;
@@ -44,7 +41,7 @@
 						margin-bottom: 50px;
 						font-weight: bold;
 						font-size: 25px;
-						font-family: $krFont;
+						// font-family: $krFont;
 						margin-bottom: 50px;
 						overflow: hidden;
 						text-overflow: ellipsis;
@@ -54,7 +51,9 @@
 						-webkit-box-orient: vertical;
 					}
 					p {
-						font: 20px/1.5 $krFont;
+						font-size: 20px;
+						line-height: 1.5;
+						// font: 20px/1.5 $krFont;
 						margin-bottom: 70px;
 					}
 					span {
@@ -86,7 +85,9 @@
 							-webkit-line-clamp: 1;
 						}
 						p {
-							font: 2vmin/1.5 $krFont;
+							font-size: 2vmin;
+							line-height: 1.5;
+							// font: 2vmin/1.5 $krFont;
 							margin-bottom: 40px;
 
 							overflow: hidden;
@@ -127,7 +128,9 @@
 							font-size: 5vmin;
 						}
 						p {
-							font: 3vmin/1.5 $krFont;
+							font-size: 3vmin;
+							line-height: 1.5;
+							// font: 3vmin/1.5 $krFont;
 						}
 						span {
 							font: bold 3vmin/1 $contentFont;
