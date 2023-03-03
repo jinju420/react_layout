@@ -4,13 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchFlickr } from '../../redux/flickrSlice';
 import Masonry from 'react-masonry-component';
 import Modal from '../common/Modal';
-// import { useSelector } from 'react-redux';
-//npm i react-masonry-component
-//npm i interval-call (일정시간동안 중복되는 요청을 무시하고 첫번째 이벤트요청만 발생시켜주는 라이브러리)
-//npm i framer-motion@6 //팝업뜰때 모션처리
 
 function Gallery() {
 	const dispatch = useDispatch();
+	const init = useRef(true);
 	const open = useRef(null);
 	const frame = useRef(null);
 	const input = useRef(null);
@@ -19,15 +16,6 @@ function Gallery() {
 	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);
 	const Items = useSelector((store) => store.flickr.data);
-
-	// 	if (result.data.photos.photo.length === 0) {
-	// 		frame.current.classList.add('on');
-	// 		setLoading(false);
-	// 		return alert('해당 검색어의 결과 이미지가 없습니다.');
-	// 	}
-	// 	setItems(result.data.photos.photo);
-
-	// };
 
 	const showInterest = () => {
 		frame.current.classList.remove('on');
@@ -52,6 +40,7 @@ function Gallery() {
 		frame.current.classList.remove('on');
 		setLoading(true);
 		dispatch(fetchFlickr({ type: 'search', tags: result }));
+		init.current = false;
 	};
 
 	let handleKeyUp = (e) => {
@@ -59,11 +48,18 @@ function Gallery() {
 	};
 
 	useEffect(() => {
+		if (Items.length === 0 && !init.current) {
+			dispatch(fetchFlickr({ type: 'user', user: '195427004@N07' }));
+			frame.current.classList.add('on');
+			setLoading(true);
+			return alert('해당 검색어의 결과 이미지가 없습니다.');
+		}
+
 		setTimeout(() => {
 			setLoading(false);
 			frame.current.classList.add('on');
 		}, 500);
-	}, [Items]);
+	}, [Items, dispatch]);
 
 	return (
 		<>
