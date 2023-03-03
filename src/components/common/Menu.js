@@ -1,30 +1,31 @@
-import { forwardRef, useState, useImperativeHandle, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { close } from '../../redux/menuSlice';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
 
-const Menu = forwardRef((props, ref) => {
-	const [Open, setOpen] = useState(false);
+function Menu() {
 	const active = { color: '#fddd7d' };
-	useImperativeHandle(ref, () => {
-		return { setToggle: () => setOpen(!Open) };
-	});
+	const dispatch = useDispatch();
+	const menu = useSelector((store) => store.menu.open);
+
 	useEffect(() => {
 		window.addEventListener('resize', () => {
-			if (window.innerWidth >= 1180) setOpen(false);
+			if (window.innerWidth >= 1180) dispatch(close());
 		});
-	}, []);
+	}, [dispatch]);
 	return (
 		<AnimatePresence>
-			{Open && (
+			{menu && (
 				<motion.nav
 					id='mobilePanel'
 					initial={{ x: -270, opacity: 0 }}
 					animate={{ x: 0, opacity: 1, transition: { duration: 0.3 } }}
 					exit={{ x: -270, opacity: 0 }}
 					onClick={() => {
-						setOpen(false);
+						dispatch(close());
 					}}
 				>
 					<div className='icons'>
@@ -81,6 +82,6 @@ const Menu = forwardRef((props, ref) => {
 			)}
 		</AnimatePresence>
 	);
-});
+}
 
 export default Menu;

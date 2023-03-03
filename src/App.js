@@ -23,7 +23,6 @@ import { useDispatch } from 'react-redux';
 
 // switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
 function App() {
-	const menu = useRef(null);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -33,8 +32,8 @@ function App() {
 	return (
 		<>
 			<Switch>
-				<Route exact path='/' render={() => <Main menu={menu} />} />
-				<Route path='/' render={() => <Header type={'sub'} menu={menu} />} />
+				<Route exact path='/' component={Main} />
+				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>
 
 			{/* 2depth줄때 */}
@@ -52,7 +51,7 @@ function App() {
 
 			<Footer />
 
-			<Menu ref={menu} />
+			<Menu />
 		</>
 	);
 }
