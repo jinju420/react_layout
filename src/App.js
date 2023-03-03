@@ -17,9 +17,9 @@ import Youtube from './components/sub/Youtube';
 // import About from './components/sub/About';
 import './scss/style.scss';
 import { fetchYoutube } from './redux/youtubeSlice';
+import { fetchFlickr } from './redux/flickrSlice';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-// import { fetchFlickr } from './redux/flickrSlice';
 
 // switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
 function App() {
@@ -28,7 +28,7 @@ function App() {
 
 	useEffect(() => {
 		dispatch(fetchYoutube());
-		// dispatch(fetchFlickr());
+		dispatch(fetchFlickr({ type: 'user', user: '195427004@N07' }));
 	}, [dispatch]);
 	return (
 		<>

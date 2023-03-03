@@ -12,19 +12,19 @@ import 'swiper/css';
 
 function BtnRolling() {
 	const swiper = useSwiper();
-	const btnStart = useRef(null);
+	const btnRun = useRef(null);
 	const btnPause = useRef(null);
 
 	return (
 		<nav className='controls'>
 			<FontAwesomeIcon
 				className='on'
-				ref={btnStart}
+				ref={btnRun}
 				icon={faPlay}
 				onClick={() => {
 					if (!swiper.autoplay.paused) return;
 					swiper.autoplay.run();
-					btnStart.current.classList.add('on');
+					btnRun.current.classList.add('on');
 					btnPause.current.classList.remove('on');
 				}}
 			/>
@@ -34,7 +34,7 @@ function BtnRolling() {
 				onClick={() => {
 					if (swiper.autoplay.paused) return;
 					swiper.autoplay.pause();
-					btnStart.current.classList.remove('on');
+					btnRun.current.classList.remove('on');
 					btnPause.current.classList.add('on');
 				}}
 			/>

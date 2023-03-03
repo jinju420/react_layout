@@ -22,6 +22,7 @@ export const fetchFlickr = createAsyncThunk('flickr/requestFlickr', async (opt) 
 	return response.data.photos.photo;
 });
 
+//리듀서로 전달함수 만들기
 const flickrSlice = createSlice({
 	name: 'flickr',
 	initialState: {
@@ -44,4 +45,3 @@ const flickrSlice = createSlice({
 });
 
 export default flickrSlice.reducer;
-//
