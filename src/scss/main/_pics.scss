@@ -10,9 +10,7 @@
 	.inner {
 		width: 100%;
 		height: 100%;
-		margin: 0 auto;
-		position: relative;
-		display: flex;
+		cursor: pointer;
 		.title {
 			h1 {
 				color: #fff;
@@ -25,20 +23,12 @@
 			align-items: flex-start;
 			justify-content: center;
 		}
-		.pic_box {
-			position: relative;
+		.pic {
 			display: flex;
 			flex-wrap: wrap;
-			width: 60%;
+			justify-content: space-between;
+			align-items: center;
 			article {
-				width: calc((100% - 30px) / 2);
-				margin-right: 30px;
-				margin-bottom: 30px;
-				height: 200px;
-				background: pink;
-				&:nth-of-type(2n) {
-					margin-right: 0;
-				}
 			}
 		}
 	}
