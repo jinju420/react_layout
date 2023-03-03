@@ -1,43 +1,150 @@
-import { memo } from 'react';
+import { memo, useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper';
+import { EffectCoverflow } from 'swiper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css';
+import Modal from '../common/Modal';
 
-function Pics({ Scrolled, Pos }) {
+function Pics() {
 	const { flickr } = useSelector((store) => store.flickrReducer);
-	const base = -window.innerHeight / 3;
+	const open = useRef(null);
+	//Swiper 컴포넌트에서 생성되는 인스턴스를 담을 객체
+	const [Instance, setInstance] = useState(null);
+	const [Index, setIndex] = useState(0);
+	const btnStart = useRef(null);
+	const btnStop = useRef(null);
 
-	let scroll = Scrolled - base - Pos || 0;
-	scroll < 0 && (scroll = 0);
+	// const base = -window.innerHeight / 3;
 
+	// let scroll = Scrolled - base - Pos || 0;
+	// scroll < 0 && (scroll = 0);
+
+	useEffect(() => {
+		//pagination, prev, next버튼을 처음 마운트시 한번 담고
+		const btnPagination = document.querySelector('.swiper-pagination');
+		const btnPrev = document.querySelector('.swiper-button-prev');
+		const btnNext = document.querySelector('.swiper-button-next');
+
+		//위의 버튼을 클릭시 정지버튼 활성화
+		[btnPagination, btnPrev, btnNext].map((el) => {
+			el.addEventListener('click', () => {
+				btnStart.current.classList.remove('on');
+				btnStop.current.classList.add('on');
+			});
+		});
+	}, []);
 	return (
-		<section id='pics' className='myScroll'>
-			<div className='inner'>
-				<div className='title'>
-					<h1
-						style={{
-							transform: `translateX(${scroll}px) scale(${1 + scroll / 60})`,
-							opacity: 1 - scroll / 300,
+		<>
+			<section id='pics' className='myScroll'>
+				<div className='inner'>
+					{/* <div className='title'>
+						<h1
+							style={{
+								transform: `translateX(${scroll}px) scale(${1 + scroll / 60})`,
+								opacity: 1 - scroll / 300,
+							}}
+						>
+							Flickr
+						</h1>
+						<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, inventore.</h2>
+					</div> */}
+					{/* <div className='pic'> */}
+					<Swiper
+						slidesPerView={1}
+						spaceBetween={30}
+						loop={true}
+						centeredSlides={true}
+						grabCursor={true}
+						navigation={true}
+						pagination={{ clickable: true }}
+						modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+						autoplay={{
+							delay: 2000,
+							disableOnInteraction: true,
 						}}
+						breakpoints={{
+							1180: {
+								slidesPerView: 3,
+								spaceBetween: 30,
+							},
+						}}
+						effect={'coverflow'}
+						coverflowEffect={{
+							rotate: 50,
+							stretch: 0,
+							depth: 100,
+							modifier: 1,
+							slideShadows: false,
+						}}
+						onSwiper={(swiper) => setInstance(swiper)}
 					>
-						Flickr
-					</h1>
-					<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, inventore.</h2>
+						<nav className='controls'>
+							<FontAwesomeIcon
+								className='on'
+								ref={btnStart}
+								icon={faPlay}
+								onClick={() => {
+									//pagination, 좌우버튼 클릭시 일지 정지가 되는 것이 아닌 autoplay기능 자체가 비활성화 됨
+									//현재 자동롤링 동작 유무는 swiper.autoplay.running값으로 확인
+									//자동롤링 시작, 정지 함수도 start, stop으로 변경
+									if (Instance.autoplay.running) return;
+									Instance.autoplay.start();
+									btnStart.current.classList.add('on');
+									btnStop.current.classList.remove('on');
+								}}
+							/>
+							<FontAwesomeIcon
+								ref={btnStop}
+								icon={faPause}
+								onClick={() => {
+									if (!Instance.autoplay.running) return;
+									Instance.autoplay.stop();
+									btnStart.current.classList.remove('on');
+									btnStop.current.classList.add('on');
+								}}
+							/>
+						</nav>
+						{flickr.map((vid, idx) => {
+							if (idx >= 6) return null;
+							return (
+								<SwiperSlide key={idx}>
+									<div className='inner'>
+										<div
+											className='pic'
+											onClick={() => {
+												setIndex(idx);
+												open.current.setOpen();
+												Instance.autoplay.stop();
+												document.querySelector('.fa-play').classList.remove('on');
+												document.querySelector('.fa-pause').classList.add('on');
+											}}
+										>
+											<img
+												className='flickr_img'
+												src={`https://live.staticflickr.com/${vid.server}/${vid.id}_${vid.secret}_b.jpg`}
+												alt={vid.title}
+											/>
+										</div>
+									</div>
+								</SwiperSlide>
+							);
+						})}
+					</Swiper>
 				</div>
-				<div className='pic'>
-					{flickr.map((pic, idx) => {
-						if (idx >= 4) return null;
-						return (
-							<article key={idx}>
-								<img
-									className='flickr_img'
-									src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_b.jpg`}
-									alt={pic.title}
-								/>
-							</article>
-						);
-					})}
-				</div>
-			</div>
-		</section>
+			</section>
+
+			<Modal ref={open}>
+				<img
+					src={`https://live.staticflickr.com/${flickr[Index]?.server}/${flickr[Index]?.id}_${flickr[Index]?.secret}_b.jpg`}
+					alt={flickr[Index]?.title}
+				/>
+			</Modal>
+		</>
 	);
 }
 

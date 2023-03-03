@@ -2,7 +2,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import Anim from '../../asset/anime';
 // 스크롤에 대한 기능으로 따로 떼어놓은 것
 function Btns({ setScrolled, setPos }) {
-	const num = useRef(5);
+	const num = useRef(4);
 	const pos = useRef([]);
 	const btnRef = useRef(null);
 	const speed = useRef(500);
