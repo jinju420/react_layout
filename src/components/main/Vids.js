@@ -13,8 +13,9 @@ function Vids() {
 				<div className='inner'>
 					<div className='title'>
 						<h1>
-							Out latest <br />
-							Interest Photos
+							about perfume
+							<br />
+							collection
 						</h1>
 						<span>What's New?</span>
 					</div>

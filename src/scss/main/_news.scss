@@ -19,7 +19,7 @@
 			color: #fff;
 			margin-bottom: 70px;
 			h1 {
-				font: 35px/1.2 'Cinzel Decorative', cursive;
+				font: 35px/1.2 $StrongFont;
 				padding: 20px 0;
 			}
 			span {
@@ -35,16 +35,15 @@
 				height: 400px;
 				margin-right: 20px;
 				margin-bottom: 20px;
-				padding: 20px;
 				border: 1px solid #333;
 				text-align: center;
 				cursor: pointer;
-				transition: 0.5s;
 				text-align: left;
 				&:hover {
-					background: #445870;
-					color: #fff;
 					h3 {
+						background: #445870;
+						width: 100%;
+						color: #fff;
 						border-bottom: 1px solid #fff;
 					}
 				}
@@ -57,7 +56,9 @@
 				// 	}
 				// }
 				h3 {
-					padding-top: 20px;
+					transition: 0.5s;
+					padding-top: 50px;
+					text-align: center;
 					padding-bottom: 15px;
 					border-bottom: 1px solid #333;
 					overflow: hidden;
@@ -68,7 +69,8 @@
 					font-family: $titleFont;
 				}
 				p {
-					margin-top: 100px;
+					margin-top: 80px;
+					padding: 20px;
 					line-height: 1.5;
 					overflow: hidden;
 					text-overflow: ellipsis;
