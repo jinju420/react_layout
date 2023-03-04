@@ -167,7 +167,7 @@
 					.inner {
 						border-radius: 300px 300px 0 0;
 						.pic {
-							height: 100vh;
+							height: 70vh;
 						}
 						.txt {
 							width: 100%;
@@ -205,13 +205,7 @@
 			.swiper {
 				.swiper-slide {
 					.inner {
-						border-radius: 300px 300px 0 0;
-						.pic {
-							height: 70vh;
-						}
 						.txt {
-							width: 100%;
-
 							h2 {
 								font: 30px/1.2 $StrongFont;
 							}
