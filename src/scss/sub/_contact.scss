@@ -1,7 +1,4 @@
-.CONTACT {
-	h1 {
-		display: none;
-	}
+.LOCATION {
 	.sub_con {
 		@include clear;
 		> .inner {
@@ -128,7 +125,7 @@
 }
 
 @media screen and (max-width: $tablet) {
-	.CONTACT {
+	.LOCATION {
 		.sub_con {
 			> .inner {
 				width: 100%;
@@ -137,7 +134,7 @@
 	}
 }
 @media screen and (max-width: $mobile) {
-	.CONTACT {
+	.LOCATION {
 		.sub_con {
 			> .inner {
 				.sub {

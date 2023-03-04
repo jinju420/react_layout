@@ -12,8 +12,8 @@ function Layout(props) {
 		<section className={`content ${props.name}`} ref={frame}>
 			{/* <figure></figure> */}
 			<div className='sub_con'>
+				<h1>{props.name}</h1>
 				<div className='inner'>
-					<h1>{props.name}</h1>
 					{props.children}
 					{/* 공통 레이아웃 이외의 것들 */}
 				</div>

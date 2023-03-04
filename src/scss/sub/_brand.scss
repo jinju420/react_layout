@@ -83,10 +83,14 @@
 								text-align: right;
 								margin-top: 30px;
 								margin-bottom: 30px;
+								font-family: $contentFont;
+								font-size: 14px;
 							}
 							p {
 								line-height: 1.3;
 								text-align: right;
+								letter-spacing: 0.5px;
+								font-family: $contentFont;
 							}
 						}
 					}

@@ -108,8 +108,8 @@ function ContactUs() {
 			: mapInstance.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
 	}, [Traffic, kakao]);
 	return (
-		<Layout name={'CONTACT'}>
-			<h2>LOCATION</h2>
+		<Layout name={'LOCATION'}>
+			{/* <h1>LOCATION</h1> */}
 			<div className='sub'>
 				<div className='sub_box'>
 					<h3>On the way to GRANHAND</h3>

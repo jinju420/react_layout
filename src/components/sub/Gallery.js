@@ -64,97 +64,95 @@ function Gallery() {
 	return (
 		<>
 			<Layout name={'GALLERY'}>
-				<div className='inner'>
-					<div className='btnSet'>
-						<div className='controls'>
-							<nav>
-								<button
-									ref={btnInt}
-									onClick={() => {
-										showInterest();
-										if (!btnInt.current.classList.contains('on'))
-											btnMy.current.classList.remove('on');
-										btnInt.current.classList.add('on');
-									}}
-								>
-									Interest Gallery
-								</button>
-								<button
-									ref={btnMy}
-									className='on'
-									onClick={() => {
-										showMine();
-										if (btnMy.current.classList.contains('on')) return;
-										btnInt.current.classList.remove('on');
-										btnMy.current.classList.add('on');
-									}}
-								>
-									My Gallery
-								</button>
-							</nav>
-						</div>
-						<div className='searchBox'>
-							{/* 키보드 이벤트 발생시 이벤트가 발생한 키보드 이름이 enter면 함수호출 */}
-							<input
-								type='text'
-								ref={input}
-								onKeyPress={handleKeyUp}
-								placeholder='검색어를 입력하세요.'
-							/>
-							<button onClick={showSearch}>Search</button>
-						</div>
+				<div className='btnSet'>
+					<div className='controls'>
+						<nav>
+							<button
+								ref={btnInt}
+								onClick={() => {
+									showInterest();
+									if (!btnInt.current.classList.contains('on'))
+										btnMy.current.classList.remove('on');
+									btnInt.current.classList.add('on');
+								}}
+							>
+								Interest Gallery
+							</button>
+							<button
+								ref={btnMy}
+								className='on'
+								onClick={() => {
+									showMine();
+									if (btnMy.current.classList.contains('on')) return;
+									btnInt.current.classList.remove('on');
+									btnMy.current.classList.add('on');
+								}}
+							>
+								My Gallery
+							</button>
+						</nav>
 					</div>
-
-					{Loading && (
-						<img
-							className='loader'
-							src={`${process.env.PUBLIC_URL}/img/gallery/load.gif`}
-							alt='loading'
+					<div className='searchBox'>
+						{/* 키보드 이벤트 발생시 이벤트가 발생한 키보드 이름이 enter면 함수호출 */}
+						<input
+							type='text'
+							ref={input}
+							onKeyPress={handleKeyUp}
+							placeholder='검색어를 입력하세요.'
 						/>
-					)}
-					<div className='frame' ref={frame}>
-						{/* 감싸주고 싶은 태그 넣기 elementType*/}
-						<Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
-							{Items.map((item, idx) => {
-								return (
-									<article key={idx}>
-										<div className='inner'>
-											<div className='picTitle'>
-												<h2>{item.title}</h2>
-												<div className='profile'>
-													<img
-														src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
-														alt={item.owner}
-														onError={(e) => {
-															e.target.setAttribute(
-																'src',
-																`${process.env.PUBLIC_URL}/img/gallery/icon.jpeg`
-															);
-														}}
-													/>
-													<span onClick={showUser}>{item.owner}</span>
-												</div>
-											</div>
+						<button onClick={showSearch}>Search</button>
+					</div>
+				</div>
 
-											<div
-												className='pic'
-												onClick={() => {
-													open.current.setOpen();
-													setIndex(idx);
-												}}
-											>
+				{Loading && (
+					<img
+						className='loader'
+						src={`${process.env.PUBLIC_URL}/img/gallery/load.gif`}
+						alt='loading'
+					/>
+				)}
+				<div className='frame' ref={frame}>
+					{/* 감싸주고 싶은 태그 넣기 elementType*/}
+					<Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
+						{Items.map((item, idx) => {
+							return (
+								<article key={idx}>
+									<div className='inner'>
+										<div className='picTitle'>
+											<h2>{item.title}</h2>
+											<div className='profile'>
 												<img
-													className='flickr_img'
-													src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
-													alt={item.title}
+													src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
+													alt={item.owner}
+													onError={(e) => {
+														e.target.setAttribute(
+															'src',
+															`${process.env.PUBLIC_URL}/img/gallery/icon.jpeg`
+														);
+													}}
 												/>
+												<span onClick={showUser}>{item.owner}</span>
 											</div>
 										</div>
-									</article>
-								);
-							})}
-						</Masonry>
-					</div>
+
+										<div
+											className='pic'
+											onClick={() => {
+												open.current.setOpen();
+												setIndex(idx);
+											}}
+										>
+											<img
+												className='flickr_img'
+												src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
+												alt={item.title}
+											/>
+										</div>
+									</div>
+								</article>
+							);
+						})}
+					</Masonry>
 				</div>
 			</Layout>
 

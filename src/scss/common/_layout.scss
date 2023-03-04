@@ -1,8 +1,17 @@
 .content {
 	color: #333;
 	background: $bgMain;
-	padding: 250px 0 180px;
+	padding: 60px 0 180px;
 	.sub_con {
+		> h1 {
+			font: bold 60px/1 $titleFont;
+			margin-bottom: 150px;
+			background: $bgSub;
+			color: #fff;
+			padding: 50px 0;
+			text-align: center;
+			letter-spacing: 2px;
+		}
 		> .inner {
 			position: relative;
 			@include innerWid;
@@ -11,10 +20,6 @@
 			transition-property: transform, opacity;
 			transition-duration: 1s;
 			transform: translateY(100px);
-			> h1 {
-				font: bold 60px/1 $titleFont;
-				margin-bottom: 70px;
-			}
 		}
 	}
 	&.on {
@@ -30,27 +35,27 @@
 
 @media screen and (max-width: $tablet) {
 	.content {
-		padding: 80px 0 100px;
+		padding: 60px 0 100px;
 		.sub_con {
+			> h1 {
+				font: bold 40px/1 'Poppins';
+				padding: 20px 0;
+				margin-bottom: 0;
+			}
 			> .inner {
 				width: 100%;
-				padding: 120px 50px;
+				padding: 100px 50px;
 			}
 		}
 	}
 }
 @media screen and (max-width: $mobile) {
 	.content {
-		figure {
-		}
-		padding: 50px 0;
+		// padding: 50px 0;
 		.sub_con {
 			> .inner {
 				width: 100%;
-				padding: 80px 30px;
-				h1 {
-					margin-bottom: 50px;
-				}
+				padding: 100px 30px;
 			}
 		}
 	}

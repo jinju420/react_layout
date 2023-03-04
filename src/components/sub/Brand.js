@@ -21,14 +21,13 @@ function Brand() {
 	return (
 		<Layout name={'BRAND'}>
 			<div className='about'>
-				<h2>ABOUT US</h2>
+				{/* <h2>ABOUT US</h2> */}
 				<p>
-					'Inside the drawer, which had never been opened, there was a familiar smell of
-					minutes between scarves, accessories, and various miscellaneous things. When I
-					opened an old notebook with a coated four-leaf clover, there were names and
-					phone numbers of my acquaintances written on one side, and a faded photo next to
-					it showed a young woman who looked just like me in high heels in a sheep's
-					clothing smiling broadly.'
+					'Inside the drawer, which had never been opened, there was a familiar smell of minutes
+					between scarves, accessories, and various miscellaneous things. When I opened an old
+					notebook with a coated four-leaf clover, there were names and phone numbers of my
+					acquaintances written on one side, and a faded photo next to it showed a young woman who
+					looked just like me in high heels in a sheep's clothing smiling broadly.'
 					<span>- NUBE, Perfume, GRANHAND.</span>
 				</p>
 			</div>
@@ -39,10 +38,7 @@ function Brand() {
 						<article key={idx}>
 							<div className='inner'>
 								<div className='pic'>
-									<img
-										src={`${process.env.PUBLIC_URL}/img/brand/${el.pic}`}
-										alt={el.name}
-									/>
+									<img src={`${process.env.PUBLIC_URL}/img/brand/${el.pic}`} alt={el.name} />
 								</div>
 								<div className='txt'>
 									<h2>
