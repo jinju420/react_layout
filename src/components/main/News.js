@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function News() {
 	/*
@@ -48,18 +51,26 @@ function News() {
 			<div className='inner'>
 				<div className='title'>
 					<h1>Recent Work</h1>
-					{/* <span>What's New?</span> */}
 				</div>
 				<div className='post_box'>
-					{Posts.map((post, idx) => {
-						if (idx >= 6) return null;
-						return (
-							<article key={idx}>
-								<h3>{post.title}</h3>
-								<p>{post.content}</p>
-							</article>
-						);
-					})}
+					<Link to='/notice'>
+						View More
+						<FontAwesomeIcon icon={faArrowRightLong} />
+					</Link>
+					<div className='postContainer'>
+						{Posts.map((post, idx) => {
+							if (idx >= 6) return null;
+							return (
+								<article key={idx}>
+									<h1>{'0' + (idx + 1)}</h1>
+									<h3>{post.title}</h3>
+									<p>
+										{post.content.length > 50 ? post.content.substr(0, 35) + '...' : post.content}
+									</p>
+								</article>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</section>
