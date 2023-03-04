@@ -109,6 +109,7 @@
 }
 @media screen and (max-width: $mobile) {
 	#visual {
+		padding: 10vw 5vw;
 		> .inner {
 			position: relative;
 			.title {

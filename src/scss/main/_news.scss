@@ -97,15 +97,6 @@
 		}
 	}
 }
-//활성화 모션
-#news.on {
-	.post_box {
-		article {
-			opacity: 1;
-			transform: rotateY(0deg) translateY(0px);
-		}
-	}
-}
 
 @media screen and (max-width: $tablet) {
 	#news {
@@ -139,6 +130,7 @@
 	#news {
 		> .inner {
 			.post_box {
+				padding: 5vw 5vw 20vw;
 				.postContainer {
 					article {
 						width: 100%;

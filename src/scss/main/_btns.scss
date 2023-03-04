@@ -16,7 +16,13 @@
 		cursor: pointer;
 		&.on {
 			height: 100px;
-			background: #445870;
+			background: #333;
 		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.scroll_navi {
+		display: none;
 	}
 }

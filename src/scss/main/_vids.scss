@@ -75,36 +75,11 @@
 
 @media screen and (max-width: $tablet) {
 	#vids {
-		.inner {
-			width: 100%;
-			flex-wrap: wrap;
-			article {
-				width: calc((100% - 30px) / 2);
-				&:nth-of-type(2n) {
-					margin-right: 0;
-				}
-				.txt {
-					h3 {
-						margin-bottom: 50px;
-						font-size: 3vmin;
-						margin-bottom: 30px;
-
-						-webkit-line-clamp: 1;
-					}
-					p {
-						font-size: 2vmin;
-						line-height: 1.5;
-						margin-bottom: 40px;
-
-						overflow: hidden;
-						text-overflow: ellipsis;
-
-						display: -webkit-box;
-						-webkit-line-clamp: 2;
-						-webkit-box-orient: vertical;
-					}
-					span {
-						font: bold 14px/1 $contentFont;
+		> .inner {
+			.vid_box {
+				article {
+					.txt {
+						display: none;
 					}
 				}
 			}
@@ -113,26 +88,14 @@
 }
 @media screen and (max-width: $mobile) {
 	#vids {
-		h1 {
-			margin-bottom: 50px;
-		}
-		.inner {
-			article {
-				width: 100%;
-				margin-right: 0;
-				.txt {
+		padding: 20vw 5vw 20vw;
+		> .inner {
+			.title {
+				text-align: center;
+			}
+			.vid_box {
+				article {
 					width: 100%;
-					padding: 20px;
-					h3 {
-						font-size: 5vmin;
-					}
-					p {
-						font-size: 3vmin;
-						line-height: 1.5;
-					}
-					span {
-						font: bold 3vmin/1 $contentFont;
-					}
 				}
 			}
 		}
