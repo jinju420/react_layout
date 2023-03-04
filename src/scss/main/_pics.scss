@@ -167,7 +167,7 @@
 					.inner {
 						border-radius: 300px 300px 0 0;
 						.pic {
-							height: 70vh;
+							height: 100vh;
 						}
 						.txt {
 							width: 100%;
@@ -196,6 +196,9 @@
 	#pics {
 		> .inner {
 			padding: 20vw 5vw 20vw;
+			.pic {
+				height: 70vh;
+			}
 			.title {
 				text-align: center;
 				.controls_box {
