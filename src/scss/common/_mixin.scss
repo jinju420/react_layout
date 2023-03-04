@@ -18,9 +18,3 @@
 	height: 100%;
 	object-fit: cover;
 }
-
-//img좌우반전
-@mixin imgScale {
-	transform: rotate(90deg);
-	transform: scaleX(-1);
-}

@@ -1,15 +1,13 @@
 #vids {
 	width: 100%;
 	height: auto;
-	background: #fefbf4;
+	background: $bgMain;
 	position: relative;
 	padding: 10vw 10vw 20vw;
 	> .inner {
 		width: 100%;
 		.title {
 			text-align: right;
-			// background: #445870;
-			// color: #fff;
 			margin-bottom: 70px;
 			h1 {
 				font: 35px/1.2 $StrongFont;
@@ -32,6 +30,7 @@
 					margin-right: 0;
 				}
 				.pic {
+					// position: relative;
 					width: 100%;
 					cursor: pointer;
 					transition: 0.5s;
@@ -42,6 +41,13 @@
 					img {
 						@include imgFit;
 					}
+					// svg {
+					// 	display: none;
+					// 	position: absolute;
+					// 	top: 50%;
+					// 	left: 50%;
+					// 	transform: translate(-50%, -50%);
+					// }
 				}
 				.txt {
 					width: 100%;
@@ -64,7 +70,7 @@
 					span {
 						display: block;
 						font: bold 12px/1 $contentFont;
-						color: #445870;
+						color: $bgSub;
 						text-align: left;
 					}
 				}
@@ -81,6 +87,22 @@
 					.txt {
 						display: none;
 					}
+					// .pic {
+					// 	svg {
+					// 		display: block;
+					// 		position: absolute;
+					// 		top: 50%;
+					// 		left: 50%;
+					// 		transform: translate(-50%, -50%);
+					// 		font-size: 8vmin;
+					// 		color: #445870;
+					// 	}
+					// 	&:hover {
+					// 		svg {
+					// 			color: red;
+					// 		}
+					// 	}
+					// }
 				}
 			}
 		}
@@ -96,6 +118,11 @@
 			.vid_box {
 				article {
 					width: 100%;
+					// .pic {
+					// 	svg {
+					// 		font-size: 15vmin;
+					// 	}
+					// }
 				}
 			}
 		}

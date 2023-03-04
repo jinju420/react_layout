@@ -26,8 +26,8 @@ function Main(props) {
 		<main>
 			<Header type={'main'} menu={props.menu} />
 			<Visual />
-			<News Scrolled={Scrolled} Pos={Pos[1]} />
-			<Pics Scrolled={Scrolled} Pos={Pos[2]} />
+			<News />
+			<Pics />
 			<Vids />
 			{/* setScrolled state변경함수를 btns컴포넌트 전달 */}
 			<Btns setScrolled={setScrolled} setPos={setPos} />

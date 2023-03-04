@@ -1,7 +1,7 @@
 #pics {
 	width: 100%;
 	height: auto;
-	background: #445870;
+	background: $bgSub;
 	position: relative;
 	overflow: hidden;
 	> .inner {
@@ -28,7 +28,7 @@
 					display: flex;
 					gap: 15px;
 					font-size: 15px;
-					color: #445870;
+					color: $bgSub;
 					z-index: 10;
 					svg {
 						cursor: pointer;
@@ -101,7 +101,7 @@
 							opacity: 0.5;
 							&:hover {
 								background: #fff;
-								color: #445870;
+								color: $bgSub;
 							}
 						}
 					}

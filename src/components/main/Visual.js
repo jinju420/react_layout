@@ -38,12 +38,12 @@ function Visual() {
 							type: 'progressbar',
 						}}
 						loop={true}
+						grabCursor={true}
 						modules={[Autoplay, Pagination]}
 						autoplay={{
 							delay: 2000,
-							disableOnInteraction: false,
+							disableOnInteraction: true,
 						}}
-						className='mySwiper'
 					>
 						{Img.map((img, idx) => {
 							return (

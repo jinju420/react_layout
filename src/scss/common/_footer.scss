@@ -1,8 +1,5 @@
 footer {
 	width: 100%;
-	// background: $basicColor1;
-	// border-top: 1px solid #333;
-	// background: #efe5e4;
 	.inner {
 		@include innerWid;
 		.wrap {
@@ -83,14 +80,14 @@ footer {
 				article {
 					float: left;
 					width: calc(100% / 3);
-					margin-right: 60px;
+					margin-right: 0;
 					a {
 						.svg-inline--fa {
-							font-size: 40px;
+							font-size: 35px;
 						}
 					}
 					span {
-						font-size: 14px;
+						font-size: 12px;
 					}
 				}
 			}

@@ -43,10 +43,8 @@
 						letter-spacing: 0.5px;
 						vertical-align: top;
 						transition: 0.5s;
-						&.on {
-							background: #445870;
-							color: #fff;
-						}
+						background: $bgSub;
+						color: #fff;
 					}
 				}
 				.controls {
@@ -64,7 +62,7 @@
 							padding-bottom: 15px;
 							&.on {
 								color: #fff;
-								background: #445870;
+								background: $bgSub;
 								border-radius: 5px;
 								padding: 15px 20px;
 							}

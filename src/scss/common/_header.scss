@@ -3,8 +3,7 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: #fefbf4;
-	// box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+	background: $bgMain;
 
 	z-index: 5;
 	.inner {
@@ -20,7 +19,6 @@ header {
 				font: bold 24px/1 $titleFont;
 				color: #333;
 				letter-spacing: 1px;
-				// text-shadow: 0px 1px 3px rgb(0, 0, 0, 0.7);
 			}
 		}
 		#gnb {
@@ -40,21 +38,20 @@ header {
 					text-align: center;
 					font-weight: bold;
 					font-size: 14px;
-					// text-shadow: 0px 1px 3px rgb(0, 0, 0, 0.7);
-					&::after {
-						content: '';
-						display: block;
-						position: absolute;
-						bottom: 0;
-						left: 0;
-						width: 0%;
-						height: 2px;
-						transition: width 0.5s;
-						background: #f8f8f8;
-					}
-					&:hover::after {
-						width: 100%;
-					}
+					// &::after {
+					// 	content: '';
+					// 	display: block;
+					// 	position: absolute;
+					// 	bottom: 0;
+					// 	left: 0;
+					// 	width: 0%;
+					// 	height: 2px;
+					// 	transition: width 0.5s;
+					// 	background: #333;
+					// }
+					// &:hover::after {
+					// 	width: 100%;
+					// }
 				}
 			}
 		}

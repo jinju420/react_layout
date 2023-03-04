@@ -1,7 +1,7 @@
 $tablet: 1179px;
 $mobile: 539px;
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@400;500;600&family=Philosopher&family=Poppins:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Philosopher&family=Poppins:wght@300;500&display=swap');
 
 //common
 @import 'common/reset';
@@ -20,9 +20,6 @@ $mobile: 539px;
 @import 'main/pics';
 @import 'main/vids';
 @import 'main/btns';
-// @import 'main/list';
-// @import 'main/banner';
-// @import 'main/content';
 
 //sub
 @import 'sub/brand';
@@ -30,4 +27,4 @@ $mobile: 539px;
 @import 'sub/youtube';
 @import 'sub/notice';
 @import 'sub/mypage';
-@import 'sub/contactUs';
+@import 'sub/contact';

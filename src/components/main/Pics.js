@@ -19,14 +19,7 @@ function Pics() {
 	const btnStart = useRef(null);
 	const btnStop = useRef(null);
 
-	// const base = -window.innerHeight / 3;
-
-	// let scroll = Scrolled - base - Pos || 0;
-	// scroll < 0 && (scroll = 0);
-
 	useEffect(() => {
-		//pagination, prev, next버튼을 처음 마운트시 한번 담고
-		// const btnPagination = document.querySelector('.swiper-pagination');
 		const btnPrev = document.querySelector('.swiper-button-prev');
 		const btnNext = document.querySelector('.swiper-button-next');
 

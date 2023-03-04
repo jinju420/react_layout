@@ -1,7 +1,4 @@
 .BRAND {
-	// figure {
-	// 	background: url('../../../public/sub/visual/brand.jpg') no-repeat center/cover;
-	// }
 	.sub_con {
 		> .inner {
 			@include clear;
@@ -73,7 +70,7 @@
 								font-family: $titleFont;
 								line-height: 1.2;
 								margin-bottom: 5px;
-								color: #445870;
+								color: $bgSub;
 							}
 							em {
 								font-style: normal;

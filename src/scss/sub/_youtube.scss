@@ -57,7 +57,7 @@
 					span {
 						display: block;
 						font: bold 16px/1 $contentFont;
-						color: #445870;
+						color: $bgSub;
 						text-align: left;
 					}
 				}
@@ -85,7 +85,6 @@
 						p {
 							font-size: 2vmin;
 							line-height: 1.5;
-							// font: 2vmin/1.5 $krFont;
 							margin-bottom: 40px;
 
 							overflow: hidden;
@@ -128,7 +127,6 @@
 						p {
 							font-size: 3vmin;
 							line-height: 1.5;
-							// font: 3vmin/1.5 $krFont;
 						}
 						span {
 							font: bold 3vmin/1 $contentFont;
