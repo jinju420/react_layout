@@ -1,11 +1,8 @@
 #visual {
 	width: 100%;
 	height: 100vh;
-	// filter: saturate(0.3);
-	// padding: 15vw 10vw 10vw;
 	transition: filter 0.5s;
 	padding: 10vw;
-	// position: relative;
 	z-index: 1;
 	margin-top: 60px;
 	background: #fefbf4;
@@ -27,8 +24,6 @@
 			margin-right: 50px;
 			h1 {
 				font: bold 100px/1.2 $StrongFont;
-				// font-size: 100px;
-				// font-family: 'Philosopher', sans-serif;
 				text-align: center;
 				text-align: left;
 				margin-bottom: 25px;
@@ -44,6 +39,7 @@
 				text-align: center;
 				color: #333;
 				font-family: $titleFont;
+				letter-spacing: 1px;
 			}
 			.des_txt {
 				color: #333;
@@ -52,43 +48,30 @@
 					margin-top: 50px;
 					margin-right: 20px;
 					line-height: 1.3;
-					// letter-spacing: 1px;
 					font-family: $contentFont;
 				}
 			}
-			// .desc {
-			// 	width: 100%;
-			// 	display: flex;
-			// 	p {
-			// 		opacity: 1;
-			// 		font: normal 15px/1.5 $contentFont;
-			// 		// transform: rotate(-35deg) translate(-500px, 400px);
-			// 		width: 25%;
-			// 		text-align: justify;
-			// 		word-break: keep-all;
-			// 		margin-right: 30px;
-			// 		&:last-child {
-			// 			margin-right: 0;
-			// 		}
-			// 	}
-			// }
 		}
 		.img {
+			display: flex;
+			// width: 600px;
 			width: 100%;
-			// position: absolute;
-			// top: 70px;
-			// right: 0;
-			// border-radius: 30px;
-			// border-radius: 800px 800px 0px 0px;
-			// box-shadow: 19px 21px 0px rgba(0, 0, 0, 0.3);
+			height: 600px;
+			overflow: hidden;
+			.swiper {
+				.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+					background: #445870;
+				}
+
+				.swiper-pagination-progressbar.swiper-pagination-horizontal {
+					top: auto;
+					left: 0;
+					bottom: 0;
+				}
+			}
 
 			img {
-				width: 100%;
-				height: 635px;
-				object-fit: cover;
-				display: flex;
-				// border-radius: 30px;
-				// border-radius: 800px 800px 0px 0px;
+				@include imgFit;
 			}
 		}
 	}

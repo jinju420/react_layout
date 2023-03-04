@@ -99,7 +99,12 @@
 							font: 14px/1.5 $contentFont;
 							margin: 0 auto;
 							color: #fff;
+							transition: background 0.5s;
 							opacity: 0.5;
+							&:hover {
+								background: #fff;
+								color: #445870;
+							}
 						}
 					}
 				}
@@ -146,7 +151,6 @@
 				left: 65%;
 				bottom: 50px;
 				transform: translateX(-50%) scale(0.7);
-				// transform: scale(0.7);
 				z-index: 2;
 			}
 			.swiper-button-prev {
@@ -154,30 +158,6 @@
 				// right: 40px;
 			}
 		}
-		// .pic {
-		// 	position: relative;
-		// 	display: flex;
-		// 	flex-wrap: wrap;
-		// 	align-content: center;
-		// 	// width: 60%;
-		// 	article {
-		// 		width: calc((100% - 30px) / 2);
-		// 		margin-right: 30px;
-		// 		margin-bottom: 30px;
-		// 		height: 250px;
-		// 		&:nth-of-type(2n) {
-		// 			margin-right: 0;
-		// 		}
-		// 		img {
-		// 			@include imgFit;
-		// 			filter: saturate(30%) brightness(80%);
-		// 			transition: 0.5s;
-		// 			&:hover {
-		// 				filter: saturate(100%) brightness(100%);
-		// 			}
-		// 		}
-		// 	}
-		// }
 	}
 }
 
