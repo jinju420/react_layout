@@ -41,7 +41,6 @@
 						margin-left: 15px;
 						border: none;
 						letter-spacing: 0.5px;
-						// background: $mainBg;
 						vertical-align: top;
 						transition: 0.5s;
 						&.on {
@@ -53,10 +52,7 @@
 				.controls {
 					nav {
 						button {
-							// width: 15vw;
 							padding: 15px 20px;
-							// background: transparent;
-							// background: #445870;
 							color: #333;
 							border: none;
 							border-radius: 5px;
@@ -68,7 +64,6 @@
 							padding-bottom: 15px;
 							&.on {
 								color: #fff;
-								// border-bottom: 2px solid #1d66be;
 								background: #445870;
 								border-radius: 5px;
 								padding: 15px 20px;
@@ -89,7 +84,6 @@
 					float: left;
 					cursor: default;
 					&:hover {
-						// background: #445870;
 						> .inner {
 							background: #445870;
 							.pic {
@@ -168,28 +162,13 @@
 	.GALLERY {
 		.sub_con {
 			> .inner {
-				.loader {
-					position: absolute;
-					top: 0;
-					left: 50%;
-					transform: translateX(-50%);
-				}
 				.btnSet {
-					width: 100%;
 					.controls {
 						nav {
 							button {
 								width: 150px;
-								// height: 30px;
-								padding: 15px 20px;
-								background: #445870;
-								color: #fff;
-								border: none;
-								border-radius: 5px;
 								font: normal 12px/1 $titleFont;
 								margin-bottom: 30px;
-								letter-spacing: 1px;
-								cursor: pointer;
 							}
 						}
 					}
@@ -212,14 +191,7 @@
 	.GALLERY {
 		.sub_con {
 			> .inner {
-				.loader {
-					position: absolute;
-					top: 0;
-					left: 50%;
-					transform: translateX(-50%);
-				}
 				.btnSet {
-					width: 100%;
 					padding-left: 0;
 					.searchBox {
 						display: flex;
@@ -234,11 +206,9 @@
 							display: flex;
 							margin-bottom: 15px;
 							button {
-								// width: 32vw;
 								width: 48%;
 								margin-bottom: 10px;
 								&:last-child {
-									// margin-bottom: 50px;
 									margin-right: 0;
 								}
 							}

@@ -46,21 +46,16 @@
 			}
 			.showBox {
 				width: 100%;
-				// border: 1px solid #333;
-				// padding: 50px;
 				> p {
 					width: 100%;
 					padding: 15px 20px;
-					// height: 50px;
 					background: #445870;
-					// line-height: 50px;
 					color: #fff;
 					font: bold 18px/1 $titleFont;
 					letter-spacing: 1px;
 					margin-bottom: 40px;
 				}
 				article {
-					// background: #fff;
 					padding: 0 30px 30px 20px;
 					margin-bottom: 40px;
 					display: flex;
@@ -68,8 +63,6 @@
 					align-content: center;
 					flex-wrap: wrap;
 					border-bottom: 1px solid #333;
-					// border: 1px solid #aaa;
-					// background: #ebf4ff;
 					.txt {
 						width: 80%;
 						h2 {

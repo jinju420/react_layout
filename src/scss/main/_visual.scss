@@ -1,6 +1,6 @@
 #visual {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	transition: filter 0.5s;
 	padding: 10vw;
 	z-index: 1;
@@ -23,7 +23,7 @@
 			justify-content: space-evenly;
 			margin-right: 50px;
 			h1 {
-				font: bold 100px/1.2 $StrongFont;
+				font: 100px/1.2 $StrongFont;
 				text-align: center;
 				text-align: left;
 				margin-bottom: 25px;
@@ -72,6 +72,11 @@
 
 			img {
 				@include imgFit;
+				transition: filter 0.5s;
+				filter: saturate(0.3) brightness(70%);
+				&:hover {
+					filter: saturate(1) brightness(100%);
+				}
 			}
 		}
 	}
@@ -79,19 +84,51 @@
 
 @media screen and (max-width: $tablet) {
 	#visual {
-		.inner {
-			width: 100%;
-			.title_txt {
-				left: 50px;
+		> .inner {
+			.title {
 				h1 {
-					font-size: 3vmin;
-					margin-left: 5px;
+					font: 10vmin/1.2 $StrongFont;
 				}
-				.intoTxt {
-					span {
-						font-size: 10vmin;
+
+				.des_txt {
+					p {
+						overflow: hidden;
+						text-overflow: ellipsis;
+
+						display: -webkit-box;
+						-webkit-line-clamp: 5;
+						-webkit-box-orient: vertical;
 					}
 				}
+			}
+			.img {
+				height: 65vh;
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	#visual {
+		> .inner {
+			position: relative;
+			.title {
+				justify-content: flex-start;
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				h1 {
+					color: #fff;
+					font: bold 6vmin/1.2 $StrongFont;
+				}
+				span {
+					display: none;
+				}
+				.des_txt {
+					display: none;
+				}
+			}
+			.img {
+				height: 65vh;
 			}
 		}
 	}

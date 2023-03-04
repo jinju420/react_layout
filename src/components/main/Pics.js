@@ -2,7 +2,7 @@ import { memo, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, EffectCoverflow } from 'swiper';
+import { Autoplay, Navigation } from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import 'swiper/css/navigation';
@@ -85,7 +85,7 @@ function Pics() {
 						centeredSlides={true}
 						grabCursor={true}
 						navigation={true}
-						modules={[Navigation, Autoplay, EffectCoverflow]}
+						modules={[Navigation, Autoplay]}
 						autoplay={{
 							delay: 2000,
 							disableOnInteraction: true,

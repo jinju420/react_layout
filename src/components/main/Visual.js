@@ -45,9 +45,9 @@ function Visual() {
 						}}
 						className='mySwiper'
 					>
-						{Img.map((img) => {
+						{Img.map((img, idx) => {
 							return (
-								<SwiperSlide>
+								<SwiperSlide key={idx}>
 									<img src={`${process.env.PUBLIC_URL}/img/swiper/${img.pic}`} alt={img.pic} />
 								</SwiperSlide>
 							);
