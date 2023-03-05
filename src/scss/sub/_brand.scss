@@ -2,15 +2,7 @@
 	.sub_con {
 		> .inner {
 			@include clear;
-			h1 {
-				display: none;
-			}
 			.about {
-				h2 {
-					font-size: 60px;
-					font-family: $titleFont;
-					margin-bottom: 20px;
-				}
 				p {
 					font-family: $contentFont;
 					font-size: 20px;
