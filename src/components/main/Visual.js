@@ -42,7 +42,7 @@ function Visual() {
 						modules={[Autoplay, Pagination]}
 						autoplay={{
 							delay: 2000,
-							disableOnInteraction: true,
+							disableOnInteraction: false,
 						}}
 					>
 						{Img.map((img, idx) => {
