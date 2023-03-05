@@ -19,7 +19,7 @@ function Visual() {
 					<h1>
 						FIND
 						<br />
-						YOUT
+						YOUR
 						<br />
 						STYLE
 					</h1>
