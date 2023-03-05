@@ -200,13 +200,32 @@
 	#pics {
 		> .inner {
 			padding: 20vw 5vw 20vw;
-			.pic {
-				height: 70vh;
-			}
 			.title {
 				text-align: center;
 				.controls_box {
 					justify-content: center;
+				}
+			}
+			.swiper {
+				.swiper-slide {
+					.inner {
+						.pic {
+							height: 70vh;
+						}
+
+						.txt {
+							h2 {
+								font: 30px/1.2 $StrongFont;
+							}
+							a {
+								font: 16px/1.5 $contentFont;
+							}
+						}
+					}
+				}
+				.swiper-button-prev,
+				.swiper-button-next {
+					bottom: 110px;
 				}
 			}
 		}
