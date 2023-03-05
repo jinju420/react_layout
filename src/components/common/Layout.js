@@ -6,6 +6,7 @@ function Layout(props) {
 	const frame = useRef(null); //queryselector 느낌/만들어지지않은 걸 선택
 	useEffect(() => {
 		frame.current.classList.add('on');
+		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 	}, []);
 	return (
 		// //frame안에 sec들어온것
