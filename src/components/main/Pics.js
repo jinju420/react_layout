@@ -113,7 +113,7 @@ function Pics() {
 											/>
 										</div>
 										<div className='txt'>
-											<h2>{vid.title.length > 15 ? vid.title.substr(0, 10) + '...' : vid.title}</h2>
+											<h2>{vid.title.length > 10 ? vid.title.substr(0, 7) + '...' : vid.title}</h2>
 											<Link to='/gallery'>View More</Link>
 										</div>
 									</div>
