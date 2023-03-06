@@ -39,7 +39,7 @@ function Vids() {
 										<img src={vid.snippet.thumbnails.medium.url} alt={vid.snippet.title} />
 									</div>
 									<div className='txt'>
-										<h3>{tit.length > 40 ? tit.substr(0, 30) + '...' : tit}</h3>
+										<h3>{tit.length > 40 ? tit.substr(0, 15) + '...' : tit}</h3>
 										<p>{desc.length > 100 ? desc.substr(0, 80) + '...' : desc}</p>
 									</div>
 								</article>

@@ -19,7 +19,7 @@ function News() {
 			{
 				title: 'Susie Salmon',
 				content:
-					'달콤한 과일을 먹은 뒤의 낮잠, 그랑핸드는 향의 가치를 믿으며, 이를 매개로 한 끊임없는 시도를 통해 향의 일상화를 꿈꿉니다.',
+					'달콤한 과일을 먹은 뒤의 낮잠, 그랑핸드는 향의 가치를 믿으며, 이를 매개로 한 끊임없는 시도를 통해 향의 일상화를 꿈꿉니다. 수많은 기억과 감정을 각인시키고, 나아가 우리 삶 속에서 많은 부분을 결정합니다',
 			},
 			{
 				title: 'NOLL',
@@ -42,15 +42,12 @@ function News() {
 		localStorage.setItem('post', JSON.stringify(Posts));
 	}, [Posts]);
 
-	// const base = -window.innerHeight / 3;
-	// let scroll = Scrolled - base - Pos || 0;
-	// scroll < 0 && (scroll = 0);
 	return (
 		<section id='news' className='myScroll'>
-			{/* <h1 style={{ transform: `translateX(${scroll}px)` }}>News</h1> */}
 			<div className='inner'>
 				<div className='title'>
 					<h1>Recent Work</h1>
+					<span>GRANHAND. Perfume Line</span>
 				</div>
 				<div className='post_box'>
 					<Link to='/notice'>
@@ -65,7 +62,7 @@ function News() {
 									<h1>{'0' + (idx + 1)}</h1>
 									<h3>{post.title}</h3>
 									<p>
-										{post.content.length > 50 ? post.content.substr(0, 35) + '...' : post.content}
+										{post.content.length > 100 ? post.content.substr(0, 80) + '...' : post.content}
 									</p>
 								</article>
 							);
