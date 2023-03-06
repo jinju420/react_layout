@@ -1,7 +1,12 @@
 import Layout from '../common/Layout';
 import { useRef, useEffect, useState, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
+import {
+	faLocationDot,
+	faEnvelope,
+	faPhoneVolume,
+	faClock,
+} from '@fortawesome/free-solid-svg-icons';
 
 function ContactUs() {
 	//실제 윈도우객체에서 카카오객체를 비구조화할당으로 바로 할당
@@ -109,27 +114,57 @@ function ContactUs() {
 	}, [Traffic, kakao]);
 	return (
 		<Layout name={'LOCATION'}>
-			{/* <h1>LOCATION</h1> */}
-			<div className='sub'>
-				<div className='sub_box'>
-					<h3>On the way to GRANHAND</h3>
-					<p>- NUBE, Perfume, GRANHAND.</p>
-					<div className='sns'>
-						<span>
-							<FontAwesomeIcon icon={faFacebookF} />
-						</span>
-						<span>
-							<FontAwesomeIcon icon={faTwitter} />
-						</span>
-						<span>
-							<FontAwesomeIcon icon={faSquareInstagram} />
-						</span>
+			<div className='touch'>
+				<div className='left'>
+					<article>
+						<FontAwesomeIcon icon={faLocationDot} />
+						<h2>ADDRESS</h2>
+						<p>서울 마포구 와우산로37길 9</p>
+					</article>
+					<article>
+						<FontAwesomeIcon icon={faClock} />
+						<h2>OPENING TIME</h2>
+						<p>Mon - Fri / 9 to 6</p>
+					</article>
+					<article>
+						<FontAwesomeIcon icon={faEnvelope} />
+						<h2>E-MAIL</h2>
+						<p>hello@granhand.com</p>
+					</article>
+					<article>
+						<FontAwesomeIcon icon={faPhoneVolume} />
+						<h2>PHONE</h2>
+						<p>02-333-6525</p>
+					</article>
+				</div>
+				<div className='right'>
+					<div className='title'>
+						<h1>Get In Touch</h1>
+						<button>SEND</button>
+					</div>
+
+					<div className='input_box'>
+						<div className='input_left'>
+							<div className='input'>
+								<label htmlFor='name'>NAME</label>
+								<input type='text' id='name' />
+
+								<div className='input'>
+									<label htmlFor='email'>E-MAIL</label>
+									<input type='text' id='email' />
+								</div>
+							</div>
+
+							<div className='txtarea'>
+								<h2>MESSAGE</h2>
+								<textarea cols='30' rows='10' placeholder='Comments'></textarea>
+							</div>
+						</div>
 					</div>
 				</div>
-				<button onClick={() => setTraffic(!Traffic)}>
-					{Traffic ? 'Traffic OFF' : 'Traffic ON'}
-				</button>
 			</div>
+			<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic OFF' : 'Traffic ON'}</button>
+
 			<div id='map' ref={container}></div>
 			<nav>
 				{/* info배열의 정보값에 따라 지점 보기 버튼을 생성 

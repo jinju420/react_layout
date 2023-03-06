@@ -2,14 +2,14 @@
 	.sub_con {
 		> .inner {
 			.inputBox {
-				display: flex;
-				justify-content: space-between;
+				// display: flex;
+				// justify-content: space-between;
 				width: 100%;
 				border: 1px solid #bbb;
 				padding: 50px;
 				margin-bottom: 50px;
 				.txt_box {
-					width: 50%;
+					width: 100%;
 					input[type='text'],
 					textarea {
 						width: 100%;
@@ -26,16 +26,15 @@
 				}
 				.btnSet {
 					display: flex;
-					justify-content: space-between;
+					justify-content: flex-end;
 					button {
-						width: 13vw;
+						width: 15vw;
 						height: 40px;
 						background: $bgSub;
 						font: bold 15px/1 $titleFont;
 						display: inline-block;
 						border: none;
 						margin-right: 20px;
-						border-radius: 5px;
 						color: #fff;
 						cursor: pointer;
 						&:last-child {

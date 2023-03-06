@@ -36,7 +36,7 @@ function Vids() {
 										}}
 									>
 										{/* <FontAwesomeIcon icon={faYoutube} /> */}
-										<img src={vid.snippet.thumbnails.medium.url} alt={vid.snippet.title} />
+										<img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
 									</div>
 									<div className='txt'>
 										<h3>{tit.length > 40 ? tit.substr(0, 15) + '...' : tit}</h3>

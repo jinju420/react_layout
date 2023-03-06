@@ -67,17 +67,12 @@
 					text-align: left;
 					cursor: pointer;
 					h1 {
-						font: 60px/1 $StrongFont;
+						font: 7vmin/1 $StrongFont;
 						color: $basicColor1;
 						border-bottom: 1px solid #eee;
 						padding: 25px 0;
 						transition: background 0.5s;
 					}
-					// &:hover {
-					// 	h1 {
-					// 		background: $bgSub;
-					// 	}
-					// }
 					&:nth-of-type(3n) {
 						margin-right: 0;
 					}
@@ -89,7 +84,6 @@
 						font-family: $titleFont;
 					}
 					p {
-						// padding: 20px;
 						line-height: 1.5;
 						word-break: keep-all;
 						font-family: $contentFont;
@@ -100,49 +94,48 @@
 	}
 }
 
-// @media screen and (max-width: $tablet) {
-// 	#news {
-// 		> .inner {
-// 			.title {
-// 				margin-bottom: 40px;
-// 				h1 {
-// 					font: 35px/1.2 $StrongFont;
-// 					padding: 20px 0;
-// 				}
-// 			}
-// 			.post_box {
-// 				.postContainer {
-// 					article {
-// 						width: calc((100% - 40px) / 2);
-// 						h1 {
-// 							font: 40px/1 $StrongFont;
-// 						}
+@media screen and (max-width: $tablet) {
+	#news {
+		> .inner {
+			.title {
+				margin-bottom: 40px;
+				h1 {
+					font: 35px/1.2 $StrongFont;
+					padding: 20px 0;
+				}
+			}
+			.post_box {
+				.postContainer {
+					article {
+						width: calc((100% - 40px) / 2);
+						margin-bottom: 150px;
 
-// 						&:nth-of-type(2n),
-// 						&:nth-of-type(3n) {
-// 							margin-right: 0;
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-// @media screen and (max-width: $mobile) {
-// 	#news {
-// 		> .inner {
-// 			.post_box {
-// 				padding: 5vw 5vw 20vw;
-// 				.postContainer {
-// 					article {
-// 						width: 100%;
-// 						margin-right: 0;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+						&:nth-of-type(2n),
+						&:nth-of-type(3n) {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	#news {
+		> .inner {
+			.post_box {
+				padding: 5vw 5vw 20vw;
+				.postContainer {
+					article {
+						width: 100%;
+						margin-right: 0;
+						margin-bottom: 80px;
+					}
+				}
+			}
+		}
+	}
+}
 
 @keyframes arrow {
 	0% {

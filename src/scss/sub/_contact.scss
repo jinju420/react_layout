@@ -4,120 +4,166 @@
 		> .inner {
 			@include innerWid;
 
-			h2 {
-				font-size: 60px;
-				font-family: $titleFont;
-				margin-bottom: 20px;
-			}
-			.sub {
-				margin-top: 13px;
+			.touch {
 				display: flex;
 				justify-content: space-between;
-				align-items: flex-end;
-				margin-bottom: 30px;
-				.sub_box {
-					h3 {
-						color: $bgSub;
-						line-height: 1.3;
-						font-family: $titleFont;
-					}
-
-					p {
-						margin: 5px 0 20px;
-						font: normal 12px/1.2 $contentFont;
-					}
-					.sns {
-						span {
-							display: inline-block;
-							width: 25px;
-							height: 25px;
-							margin-right: 10px;
-							background: $bgSub;
-							border-radius: 2px;
-							text-align: center;
-							.svg-inline--fa {
-								font-size: 12px;
-								cursor: pointer;
-								color: #fff;
-								vertical-align: sub;
-							}
-						}
-					}
-				}
-				button {
-					display: block;
-					width: 18vw;
-					height: 40px;
-					background: $bgSub;
-					font: bold 15px/1 $titleFont;
-					color: #fff;
-					border-radius: 5px;
-					border: none;
-					cursor: pointer;
-					letter-spacing: 1px;
-				}
-			}
-			#map {
-				width: 100%;
-				height: 500px;
-				background: #111;
-				border: 1px solid #333;
-				margin-bottom: 30px;
-				margin-top: 10px;
-				filter: saturate(0);
-				transition: filter 0.5s;
-				&:hover {
-					filter: saturate(1);
-				}
-			}
-			nav {
-				width: 100%;
-				margin-bottom: 30px;
-				.branch {
+				margin-top: 100px;
+				margin-bottom: 120px;
+				border-bottom: 1px solid #aaa;
+				padding-bottom: 50px;
+				@include clear;
+				.left {
 					display: flex;
-					gap: 30px;
-					font-family: $contentFont;
-					li {
-						position: relative;
-						width: 30vw;
-						font-size: 18px;
-						font-weight: bold;
-						margin-top: 30px;
-						color: #333;
-						display: flex;
-						flex-direction: column;
-						align-content: flex-start;
-						cursor: pointer;
-						&::before {
-							content: '';
-							display: block;
-							position: absolute;
-							top: 28px;
-							left: 0;
-							width: 100%;
-							height: 1px;
-							background: #333;
-							margin-bottom: 3px;
+					flex-wrap: wrap;
+					article {
+						margin-bottom: 50px;
+						width: calc((100% - 50px) / 2);
+						&:nth-of-type(3),
+						&:nth-of-type(4) {
+							margin-bottom: 0;
 						}
-						&.on {
-							color: $activeColor;
-							p,
-							span {
-								color: #333;
-							}
-							&::before {
-								background: $activeColor;
-							}
+						h2 {
+							font: 14px/1 $contentFont;
+							padding: 20px 0 10px;
 						}
 						p {
-							margin-top: 25px;
-							margin-bottom: 5px;
-							font-size: 14px;
-							line-height: 1.5;
-							font-weight: bold;
-							margin-bottom: 10px;
-							word-break: keep-all;
+							font: 12px/1 $contentFont;
+							color: #888;
 						}
+					}
+				}
+				.right {
+					width: 70%;
+					.title {
+						display: flex;
+						justify-content: space-between;
+						h1 {
+							font: bold 5vmin/1 $titleFont;
+							margin-bottom: 30px;
+						}
+						button {
+							float: right;
+							margin-top: 0;
+							background: $basicColor1;
+						}
+					}
+
+					.input_box {
+						.input_left {
+							display: flex;
+							align-items: center;
+							.input {
+								width: 100%;
+								margin-right: 30px;
+								label {
+									font: 14px/1 $contentFont;
+								}
+								input {
+									width: 100%;
+									padding: 10px;
+									border-bottom: 1px solid #ddd;
+									background: transparent;
+									margin-bottom: 20px;
+									&:last-child {
+										margin-bottom: 0;
+									}
+								}
+							}
+						}
+						.txtarea {
+							width: 100%;
+							h2 {
+								font: 14px/1 $contentFont;
+							}
+							textarea {
+								&::placeholder {
+									color: #bbb;
+								}
+								width: 100%;
+								height: 100px;
+								margin-top: 30px;
+								resize: none;
+								border: 1px solid #ddd;
+								padding: 10px;
+								background: #f8f8f8;
+							}
+						}
+					}
+				}
+			}
+
+			button {
+				display: block;
+				width: 13vw;
+				height: 35px;
+				background: $bgSub;
+				font: bold 12px/1 $titleFont;
+				color: #fff;
+				border: none;
+				cursor: pointer;
+				letter-spacing: 1px;
+			}
+		}
+		#map {
+			width: 100%;
+			height: 500px;
+			background: #111;
+			border: 1px solid #333;
+			margin-bottom: 30px;
+			margin-top: 10px;
+			filter: saturate(0);
+			transition: filter 0.5s;
+			&:hover {
+				filter: saturate(1);
+			}
+		}
+		nav {
+			width: 100%;
+			margin-bottom: 30px;
+			.branch {
+				display: flex;
+				gap: 30px;
+				font-family: $contentFont;
+				li {
+					position: relative;
+					width: 30vw;
+					font-size: 18px;
+					font-weight: bold;
+					margin-top: 30px;
+					color: #333;
+					display: flex;
+					flex-direction: column;
+					align-content: flex-start;
+					cursor: pointer;
+					&::before {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 28px;
+						left: 0;
+						width: 100%;
+						height: 1px;
+						background: #333;
+						margin-bottom: 3px;
+					}
+					&.on {
+						color: $activeColor;
+						p,
+						span {
+							color: #333;
+						}
+						&::before {
+							background: $activeColor;
+						}
+					}
+					p {
+						margin-top: 25px;
+						margin-bottom: 5px;
+						font-size: 14px;
+						line-height: 1.5;
+						font-weight: bold;
+						margin-bottom: 10px;
+						word-break: keep-all;
 					}
 				}
 			}
@@ -138,50 +184,49 @@
 	.LOCATION {
 		.sub_con {
 			> .inner {
-				.sub {
-					justify-content: space-between;
-					align-items: flex-start;
-					flex-direction: column;
-					.sub_box {
-						margin-bottom: 50px;
-					}
-					button {
-						display: block;
-						width: 100%;
-					}
+				// .sub {
+				// 	justify-content: space-between;
+				// 	align-items: flex-start;
+				// 	flex-direction: column;
+				// 	.sub_box {
+				// 		margin-bottom: 50px;
+				// 	}
+				button {
+					display: block;
+					width: 100%;
 				}
-				nav {
-					.branch {
-						flex-direction: column;
-						li {
-							width: 100%;
-							margin-top: 50px;
-							&:first-child {
-								margin-top: 30px;
-							}
-							&.on {
-								color: $activeColor;
-							}
+			}
+			nav {
+				.branch {
+					flex-direction: column;
+					li {
+						width: 100%;
+						margin-top: 50px;
+						&:first-child {
+							margin-top: 30px;
+						}
+						&.on {
+							color: $activeColor;
+						}
+						&::before {
+							content: none;
+						}
+						p {
+							margin-top: 10px;
+							margin-bottom: 5px;
+						}
+						span {
+							position: relative;
 							&::before {
-								content: none;
-							}
-							p {
-								margin-top: 10px;
-								margin-bottom: 5px;
-							}
-							span {
-								position: relative;
-								&::before {
-									content: '';
-									display: block;
-									position: absolute;
-									bottom: -15px;
-									left: 0;
-									width: 100%;
-									height: 1px;
-									background: #333;
-									margin-bottom: 3px;
-								}
+								content: '';
+								display: block;
+								position: absolute;
+								bottom: -15px;
+								left: 0;
+								width: 100%;
+								height: 1px;
+								background: #333;
+								margin-bottom: 3px;
 							}
 						}
 					}
@@ -189,4 +234,5 @@
 			}
 		}
 	}
+	// }
 }

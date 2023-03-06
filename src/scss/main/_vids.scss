@@ -32,7 +32,7 @@
 				}
 				.pic {
 					width: 100%;
-					height: 250px;
+					height: 21vmax;
 					cursor: pointer;
 					transition: 0.5s;
 					filter: saturate(30%) brightness(80%);
@@ -76,64 +76,66 @@
 						-webkit-line-clamp: 2;
 						-webkit-box-orient: vertical;
 					}
-					span {
-						display: block;
-						font: bold 12px/1 $contentFont;
-						color: $bgSub;
-						text-align: left;
-					}
 				}
 			}
 		}
 	}
 }
 
-// @media screen and (max-width: $tablet) {
-// 	#vids {
-// 		> .inner {
-// 			.vid_box {
-// 				article {
-// 					.txt {
-// 						display: none;
-// 					}
-// 					// .pic {
-// 					// 	svg {
-// 					// 		display: block;
-// 					// 		position: absolute;
-// 					// 		top: 50%;
-// 					// 		left: 50%;
-// 					// 		transform: translate(-50%, -50%);
-// 					// 		font-size: 8vmin;
-// 					// 		color: #445870;
-// 					// 	}
-// 					// 	&:hover {
-// 					// 		svg {
-// 					// 			color: red;
-// 					// 		}
-// 					// 	}
-// 					// }
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-// @media screen and (max-width: $mobile) {
-// 	#vids {
-// 		padding: 20vw 5vw 20vw;
-// 		> .inner {
-// 			.title {
-// 				text-align: center;
-// 			}
-// 			.vid_box {
-// 				article {
-// 					width: 100%;
-// 					// .pic {
-// 					// 	svg {
-// 					// 		font-size: 15vmin;
-// 					// 	}
-// 					// }
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+@media screen and (max-width: $tablet) {
+	#vids {
+		> .inner {
+			.title {
+				h1 {
+					font: 35px/1.2 $StrongFont;
+				}
+				span {
+					font: 14px/1 $contentFont;
+				}
+			}
+			.vid_box {
+				flex-direction: column;
+				article {
+					width: 100%;
+					margin-right: 0;
+					.pic {
+						width: 100%;
+						height: 44vmax;
+						img {
+							@include imgFit;
+						}
+					}
+					.txt {
+						h3 {
+							font: bold 14px/1.5 $contentFont;
+						}
+						p {
+							font: 12px/1.5 $contentFont;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	#vids {
+		> .inner {
+			.title {
+				h1 {
+					font: 35px/1.2 $StrongFont;
+				}
+				span {
+					font: 14px/1 $contentFont;
+				}
+			}
+			.vid_box {
+				article {
+					.pic {
+						height: 26vmax;
+					}
+				}
+			}
+		}
+	}
+}

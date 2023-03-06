@@ -1,6 +1,8 @@
 import Layout from '../common/Layout';
 import { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faTwitter, faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function Mypage() {
 	const history = useHistory();
@@ -27,12 +29,6 @@ function Mypage() {
 	해당 문제를 막기위해 Sumbit을 의존성 배열에 등록하지 않아도 되도록 useRef로 값 지정
 	 */
 	const Submit = useRef(false);
-	// const [Sumbit, setSumbit] = useState(false);
-
-	/*
- 	매개변수(파라미터) - 특정 값을 함수 내부로 전달해주는 통로명 = (value)
-	인수(argument)- 해당 통로를 통해서 전달되는 값 = Val
-	*/
 
 	//인증체크함수value값은 check(Val)에서 Val 값을 뜻함
 	//value값으로 Val state가 전달되고 있음/파라미터로 전달되고 있는 Val == value값에
@@ -65,10 +61,6 @@ function Mypage() {
 		if (value.email === '' || value.mail === '') {
 			errs.mail = '이메일 주소를 입력하세요';
 		}
-		// if (value.email.length < 8 || !/@/.test(value.email)) {
-		// 	errs.email = '이메일은 8글자 이상 @를 포함하세요';
-		// }
-		//true가 아니면 === false일때
 		if (!value.gender) {
 			errs.gender = '성별을 선택하세요.';
 		}
@@ -148,217 +140,236 @@ function Mypage() {
 
 	return (
 		<Layout name={'MEMBERS'}>
-			<form onSubmit={handleSubmit}>
-				<fieldset></fieldset>
-				<legend className='hide'>회원가입 폼 양식</legend>
-				<table>
-					<tbody>
-						{/* userid */}
-						<tr>
-							<th scope='row'>
-								<label htmlFor='userid'>USER ID</label>
-							</th>
-							<td>
-								{/* 해당 input요소에 onchange이벤트가 발생할때마다 handleCnange함수 호출 */}
-								<input
-									type='text'
-									name='userid'
-									id='userid'
-									placeholder='아이디를 입력하세요'
-									onChange={handleChange}
-									value={Val.userid}
-								/>
-								<span className='err'>{Err.userid}</span>
-							</td>
-						</tr>
+			<div className='mypage'>
+				<div className='aside'>
+					<h3>
+						The first step is
+						<br />
+						just to reach out.
+					</h3>
+					<p>
+						NUBE, Perfume, GRANHAND.
+						<br />
+						Join with GRANHAND.
+					</p>
+					<div className='sns'>
+						<span>
+							<FontAwesomeIcon icon={faFacebookF} />
+						</span>
+						<span>
+							<FontAwesomeIcon icon={faTwitter} />
+						</span>
+						<span>
+							<FontAwesomeIcon icon={faSquareInstagram} />
+						</span>
+					</div>
+				</div>
+				<form onSubmit={handleSubmit}>
+					<fieldset></fieldset>
+					<legend className='hide'>회원가입 폼 양식</legend>
+					<table>
+						<tbody>
+							{/* userid */}
+							<tr>
+								<th scope='row'>
+									<label htmlFor='userid'>USER ID</label>
+								</th>
+								<td>
+									{/* 해당 input요소에 onchange이벤트가 발생할때마다 handleCnange함수 호출 */}
+									<input
+										type='text'
+										name='userid'
+										id='userid'
+										placeholder='아이디를 입력하세요'
+										onChange={handleChange}
+										value={Val.userid}
+									/>
+									<span className='err'>{Err.userid}</span>
+								</td>
+							</tr>
 
-						{/* password */}
-						<tr>
-							<th scope='row'>
-								<label htmlFor='pwd1'>PASSWORD</label>
-							</th>
-							<td>
-								<input
-									type='password'
-									name='pwd1'
-									id='pwd1'
-									placeholder='비밀번호를 입력하세요'
-									onChange={handleChange}
-									value={Val.pwd1}
-								/>
-								<span className='err'>{Err.pwd1}</span>
-							</td>
-						</tr>
-						{/* re-password */}
-						<tr>
-							<th scope='row'>
-								<label htmlFor='pwd2'>RE-PASSWORD</label>
-							</th>
-							<td>
-								<input
-									type='password'
-									name='pwd2'
-									id='pwd2'
-									placeholder='비밀번호를 재입력하세요'
-									onChange={handleChange}
-									value={Val.pwd2}
-								/>
-								<span className='err'>{Err.pwd2}</span>
-							</td>
-						</tr>
+							{/* password */}
+							<tr>
+								<th scope='row'>
+									<label htmlFor='pwd1'>PASSWORD</label>
+								</th>
+								<td>
+									<input
+										type='password'
+										name='pwd1'
+										id='pwd1'
+										placeholder='비밀번호를 입력하세요'
+										onChange={handleChange}
+										value={Val.pwd1}
+									/>
+									<span className='err'>{Err.pwd1}</span>
+								</td>
+							</tr>
+							{/* re-password */}
+							<tr>
+								<th scope='row'>
+									<label htmlFor='pwd2'>RE-PASSWORD</label>
+								</th>
+								<td>
+									<input
+										type='password'
+										name='pwd2'
+										id='pwd2'
+										placeholder='비밀번호를 재입력하세요'
+										onChange={handleChange}
+										value={Val.pwd2}
+									/>
+									<span className='err'>{Err.pwd2}</span>
+								</td>
+							</tr>
 
-						{/* email */}
-						<tr>
-							<th scope='row'>
-								<label htmlFor='email'>E-MAIL</label>
-							</th>
-							<td>
-								<input
-									type='text'
-									name='email'
-									id='email'
-									placeholder='이메일 주소를 입력하세요'
-									onChange={handleChange}
-									value={Val.email}
-								/>
-								<select name='mail' id='mail' onChange={handleSelect}>
-									<option value=''>이메일 주소를 선택해주세요</option>
-									<option value='naver'>@naver.com</option>
-									<option value='gmail'>@gmail.com</option>
-									<option value='nate'>@nate.com</option>
-								</select>
-								<span className='err'>{Err.mail}</span>
-							</td>
-						</tr>
+							{/* email */}
+							<tr>
+								<th scope='row'>
+									<label htmlFor='email'>E-MAIL</label>
+								</th>
+								<td>
+									<input
+										type='text'
+										name='email'
+										id='email'
+										placeholder='이메일 주소를 입력하세요'
+										onChange={handleChange}
+										value={Val.email}
+									/>
+									<select name='mail' id='mail' onChange={handleSelect}>
+										<option value=''>이메일 주소를 선택해주세요</option>
+										<option value='naver'>@naver.com</option>
+										<option value='gmail'>@gmail.com</option>
+										<option value='nate'>@nate.com</option>
+									</select>
+									<span className='err'>{Err.mail}</span>
+								</td>
+							</tr>
 
-						{/* gender */}
-						<tr>
-							<th scope='row'>GENDER</th>
-							<td>
-								<input
-									type='radio'
-									name='gender'
-									value='male'
-									id='male'
-									onChange={handleRadio}
-								/>
-								<label htmlFor='male'>Male</label>
+							{/* gender */}
+							<tr>
+								<th scope='row'>GENDER</th>
+								<td>
+									<input type='radio' name='gender' value='male' id='male' onChange={handleRadio} />
+									<label htmlFor='male'>Male</label>
 
-								<input
-									type='radio'
-									name='gender'
-									value='female'
-									id='female'
-									onChange={handleRadio}
-								/>
-								<label htmlFor='female'>Female</label>
+									<input
+										type='radio'
+										name='gender'
+										value='female'
+										id='female'
+										onChange={handleRadio}
+									/>
+									<label htmlFor='female'>Female</label>
 
-								<span className='err'>{Err.gender}</span>
-							</td>
-						</tr>
+									<span className='err'>{Err.gender}</span>
+								</td>
+							</tr>
 
-						{/* interest */}
-						<tr>
-							<th scope='row'>KIND OF</th>
-							<td>
-								<input
-									type='checkbox'
-									name='perfume'
-									value='citrus'
-									id='citrus'
-									onChange={handleCheck}
-								/>
-								<label htmlFor='citrus'>Citrus</label>
+							{/* interest */}
+							<tr>
+								<th scope='row'>KIND OF</th>
+								<td>
+									<input
+										type='checkbox'
+										name='perfume'
+										value='citrus'
+										id='citrus'
+										onChange={handleCheck}
+									/>
+									<label htmlFor='citrus'>Citrus</label>
 
-								<input
-									type='checkbox'
-									name='perfume'
-									value='floral'
-									id='floral'
-									onChange={handleCheck}
-								/>
-								<label htmlFor='floral'>Floral</label>
+									<input
+										type='checkbox'
+										name='perfume'
+										value='floral'
+										id='floral'
+										onChange={handleCheck}
+									/>
+									<label htmlFor='floral'>Floral</label>
 
-								<input
-									type='checkbox'
-									name='perfume'
-									value='marine'
-									id='marine'
-									onChange={handleCheck}
-								/>
-								<label htmlFor='marine'>Marine</label>
+									<input
+										type='checkbox'
+										name='perfume'
+										value='marine'
+										id='marine'
+										onChange={handleCheck}
+									/>
+									<label htmlFor='marine'>Marine</label>
 
-								<input
-									type='checkbox'
-									name='perfume'
-									value='musk'
-									id='musk'
-									onChange={handleCheck}
-								/>
-								<label htmlFor='musk'>Musk</label>
+									<input
+										type='checkbox'
+										name='perfume'
+										value='musk'
+										id='musk'
+										onChange={handleCheck}
+									/>
+									<label htmlFor='musk'>Musk</label>
 
-								<span className='err'>{Err.perfume}</span>
-							</td>
-						</tr>
+									<span className='err'>{Err.perfume}</span>
+								</td>
+							</tr>
 
-						{/* age */}
-						<tr>
-							<th scope='row'>
-								<label htmlFor='age'>Age</label>
-							</th>
-							<td>
-								<select name='age' id='age' onChange={handleSelect}>
-									<option value=''>연령을 선택하세요</option>
-									<option value='teenage'>10대</option>
-									<option value='twenties'>20대</option>
-									<option value='thirties'>30대</option>
-									<option value='forties'>40대 이상</option>
-								</select>
-								<span className='err'>{Err.age}</span>
-							</td>
-						</tr>
+							{/* age */}
+							<tr>
+								<th scope='row'>
+									<label htmlFor='age'>Age</label>
+								</th>
+								<td>
+									<select name='age' id='age' onChange={handleSelect}>
+										<option value=''>연령을 선택하세요</option>
+										<option value='teenage'>10대</option>
+										<option value='twenties'>20대</option>
+										<option value='thirties'>30대</option>
+										<option value='forties'>40대 이상</option>
+									</select>
+									<span className='err'>{Err.age}</span>
+								</td>
+							</tr>
 
-						{/* comments */}
-						<tr>
-							<th scope='row'>
-								<label htmlFor='comments'>COMMENTS</label>
-							</th>
-							<td>
-								<textarea
-									name='comments'
-									id='comments'
-									cols='30'
-									rows='5'
-									placeholder='남기는 말을 입력하세요'
-									onChange={handleChange}
-									value={Val.comments}
-								></textarea>
-								<span className='err'>{Err.comments}</span>
-							</td>
-						</tr>
+							{/* comments */}
+							<tr>
+								<th scope='row'>
+									<label htmlFor='comments'>COMMENTS</label>
+								</th>
+								<td>
+									<textarea
+										name='comments'
+										id='comments'
+										cols='30'
+										rows='5'
+										placeholder='남기는 말을 입력하세요'
+										onChange={handleChange}
+										value={Val.comments}
+									></textarea>
+									<span className='err'>{Err.comments}</span>
+								</td>
+							</tr>
 
-						{/* btnSet */}
-						<tr>
-							<th colSpan='2'>
-								<input
-									type='reset'
-									value='cancel'
-									onClick={() => {
-										setVal(initVal);
-									}}
-								/>
-								<input
-									type='submit'
-									value='send'
-									onClick={() => {
-										Submit.current = true;
-									}}
-								/>
-							</th>
-						</tr>
-					</tbody>
-				</table>
-			</form>
+							{/* btnSet */}
+							<tr>
+								<th colSpan='2'>
+									<input
+										type='reset'
+										value='cancel'
+										onClick={() => {
+											setVal(initVal);
+										}}
+									/>
+									<input
+										type='submit'
+										value='send'
+										onClick={() => {
+											Submit.current = true;
+										}}
+									/>
+								</th>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
 		</Layout>
 	);
 }

@@ -159,75 +159,71 @@
 	}
 }
 
-// @media screen and (max-width: $tablet) {
-// 	#pics {
-// 		> .inner {
-// 			.swiper {
-// 				.swiper-slide {
-// 					.inner {
-// 						border-radius: 300px 300px 0 0;
-// 						.pic {
-// 							height: 100vh;
-// 						}
-// 						.txt {
-// 							width: 100%;
+@media screen and (max-width: $tablet) {
+	#pics {
+		> .inner {
+			.swiper {
+				.swiper-slide {
+					.inner {
+						border-radius: 300px 300px 0 0;
+						.pic {
+							height: 100vh;
+						}
+						.txt {
+							width: 100%;
 
-// 							h2 {
-// 								font: 50px/1.2 $StrongFont;
-// 								margin-top: 30px;
-// 								margin-bottom: 50px;
-// 							}
-// 							a {
-// 								font: 20px/1.5 $contentFont;
-// 								width: 100%;
-// 							}
-// 						}
-// 					}
-// 				}
-// 				.swiper-button-prev,
-// 				.swiper-button-next {
-// 					left: 98%;
-// 					bottom: 130px;
-// 				}
-// 				.swiper-button-prev {
-// 					left: 10px;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-// @media screen and (max-width: $mobile) {
-// 	#pics {
-// 		> .inner {
-// 			padding: 20vw 5vw 20vw;
-// 			.title {
-// 				text-align: center;
-// 				.controls_box {
-// 					justify-content: center;
-// 				}
-// 			}
-// 			.swiper {
-// 				.swiper-slide {
-// 					.inner {
-// 						.pic {
-// 							height: 70vh;
-// 						}
-
-// 						.txt {
-// 							h2 {
-// 								font: 30px/1.2 $StrongFont;
-// 							}
-// 							a {
-// 								font: 16px/1.5 $contentFont;
-// 							}
-// 						}
-// 					}
-// 				}
-// 				.swiper-button-prev,
-// 				.swiper-button-next {
-// 					bottom: 115px;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+							h2 {
+								font: 4vmin/1.2 $StrongFont;
+								margin-top: 30px;
+								margin-bottom: 50px;
+							}
+							a {
+								font: 2vmin/1.5 $contentFont;
+								width: 100%;
+							}
+						}
+					}
+				}
+				.swiper-button-prev,
+				.swiper-button-next {
+					left: 98%;
+					bottom: 110px;
+				}
+				.swiper-button-prev {
+					left: 10px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	#pics {
+		> .inner {
+			padding: 20vw 5vw 20vw;
+			.title {
+				text-align: center;
+				.controls_box {
+					justify-content: center;
+				}
+			}
+			.swiper {
+				.swiper-slide {
+					.inner {
+						.txt {
+							h2 {
+								font: 30px/1.2 $StrongFont;
+							}
+							a {
+								font: 16px/1.5 $contentFont;
+							}
+						}
+					}
+				}
+				.swiper-button-prev,
+				.swiper-button-next {
+					bottom: 115px;
+				}
+			}
+		}
+	}
+}

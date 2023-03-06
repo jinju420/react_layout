@@ -3,32 +3,17 @@
 	background: $bgMain;
 	padding: 60px 0 180px;
 	.sub_con {
-		> h1 {
-			font: bold 60px/1 $titleFont;
-			margin-bottom: 150px;
-			background: $bgSub;
-			color: #fff;
-			padding: 50px 0;
-			text-align: center;
-			letter-spacing: 2px;
-		}
 		> .inner {
 			position: relative;
 			@include innerWid;
-			min-height: 400px;
-			opacity: 0;
-			transition-property: transform, opacity;
-			transition-duration: 1s;
-			transform: translateY(100px);
-		}
-	}
-	&.on {
-		figure {
-			opacity: 1;
-		}
-		.inner {
-			opacity: 1;
-			transform: translateX(0px);
+			padding-top: 10vw;
+			> h1 {
+				font: bold 22px/1 $titleFont;
+				margin-bottom: 30px;
+				text-align: left;
+				color: #333;
+				letter-spacing: 2px;
+			}
 		}
 	}
 }
@@ -37,14 +22,14 @@
 	.content {
 		padding: 60px 0 100px;
 		.sub_con {
-			> h1 {
-				font: bold 40px/1 $titleFont;
-				padding: 20px 0;
-				margin-bottom: 0;
-			}
 			> .inner {
 				width: 100%;
 				padding: 100px 50px;
+				> h1 {
+					font: bold 40px/1 $titleFont;
+					padding: 20px 0;
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
