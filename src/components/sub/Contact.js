@@ -35,8 +35,6 @@ function ContactUs() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setErr(check(Val));
-		setVal(initVal);
-		alert('전송이 완료되었습니다');
 	};
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -118,6 +116,14 @@ function ContactUs() {
 			}),
 		[kakao, markerImage, markerPosition]
 	);
+
+	useEffect(() => {
+		const len = Object.keys(Err).length;
+		if (len === 0 && Submit.current) {
+			setVal(initVal);
+			alert('전송이 완료되었습니다');
+		}
+	}, [Err]);
 
 	//Index state변경될때마다 지도 인스턴스 새로 갱신 및 렌더링
 	useEffect(() => {
