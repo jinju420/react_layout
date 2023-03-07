@@ -103,15 +103,6 @@ footer {
 					&:nth-of-type(2) {
 						width: 40%;
 					}
-					h1 {
-						font: bold 2.2vmin/1 $titleFont;
-					}
-					p {
-						font: bold 2vmin/1.5 $contentFont;
-					}
-					a {
-						font: bold 2vmin/1 $contentFont;
-					}
 				}
 			}
 			.ft_txt {
@@ -122,10 +113,12 @@ footer {
 					}
 					span {
 						margin-bottom: 30px;
+						font: 13px/1.5 $contentFont;
 					}
 					> p {
 						width: 100%;
 						margin-bottom: 30px;
+						font: 13px/1.5 $contentFont;
 					}
 				}
 			}

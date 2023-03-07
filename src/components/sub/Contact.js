@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 function ContactUs() {
+	const init = useRef(true);
 	//get in touch
 	const initVal = {
 		username: '',
@@ -35,6 +36,7 @@ function ContactUs() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setErr(check(Val));
+		init.current = false;
 	};
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -205,17 +207,17 @@ function ContactUs() {
 									/>
 									<span className='err'>{Err.username}</span>
 
-									<div className='input'>
-										<label htmlFor='email'>E-MAIL</label>
-										<input
-											type='text'
-											id='email'
-											name='email'
-											value={Val.email}
-											onChange={handleChange}
-										/>
-										<span className='err'>{Err.email}</span>
-									</div>
+									{/* <div className='input'> */}
+									<label htmlFor='email'>E-MAIL</label>
+									<input
+										type='text'
+										id='email'
+										name='email'
+										value={Val.email}
+										onChange={handleChange}
+									/>
+									<span className='err'>{Err.email}</span>
+									{/* </div> */}
 								</div>
 
 								<div className='txtarea'>

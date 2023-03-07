@@ -70,7 +70,6 @@
 							.input {
 								width: 100%;
 								margin-right: 30px;
-								// margin-top: 20px;
 								input {
 									width: 100%;
 									padding: 10px;
@@ -185,6 +184,85 @@
 		.sub_con {
 			> .inner {
 				width: 100%;
+				.touch {
+					.left {
+						flex-direction: column;
+						article {
+							width: 100%;
+							&:nth-of-type(3),
+							&:nth-of-type(4) {
+								margin-bottom: 50px;
+							}
+							p {
+								font: 12px/1 $contentFont;
+							}
+						}
+					}
+					.right {
+						width: 50%;
+						height: 100%;
+						.title {
+							h1 {
+								margin-bottom: 30px;
+							}
+						}
+
+						.input_box {
+							input[type='submit'] {
+								position: absolute;
+								top: 100%;
+								right: 0;
+								color: #fff;
+								font: 14px/1 $titleFont;
+								margin-top: 0;
+								background: $basicColor1;
+								width: 100%;
+								cursor: pointer;
+								padding: 10px 15px;
+							}
+							.input_touch {
+								flex-direction: column;
+								label {
+									font: 14px/1 $contentFont;
+								}
+								.err {
+									display: block;
+									color: $basicColor1;
+									font: 10px/1 $contentFont;
+									margin: 10px 0 20px;
+								}
+								.input {
+									width: 100%;
+									margin-right: 0;
+									input {
+										width: 100%;
+										padding: 10px;
+										border-bottom: 1px solid #ddd;
+										background: transparent;
+										&:last-child {
+											margin-bottom: 0;
+										}
+									}
+								}
+							}
+							.txtarea {
+								width: 100%;
+								textarea {
+									&::placeholder {
+										color: #bbb;
+									}
+									width: 100%;
+									height: 100px;
+									margin-top: 30px;
+									resize: none;
+									border: 1px solid #ddd;
+									padding: 10px;
+									background: #f8f8f8;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -193,13 +271,25 @@
 	.LOCATION {
 		.sub_con {
 			> .inner {
-				// .sub {
-				// 	justify-content: space-between;
-				// 	align-items: flex-start;
-				// 	flex-direction: column;
-				// 	.sub_box {
-				// 		margin-bottom: 50px;
-				// 	}
+				.touch {
+					margin-top: 30px;
+					margin-bottom: 50px;
+					flex-direction: column;
+					.left {
+						// display: none;
+					}
+					.right {
+						width: 100%;
+
+						.input_box {
+							input[type='submit'] {
+								top: 0;
+								font: 10px/1 $titleFont;
+								width: 20vw;
+							}
+						}
+					}
+				}
 				button {
 					display: block;
 					width: 100%;
