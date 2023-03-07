@@ -37,12 +37,10 @@
 					width: 45%;
 					float: left;
 					color: #333;
-					font-family: $contentFont;
 					h3 {
 						margin-bottom: 50px;
-						font-weight: bold;
-						font-size: 25px;
-						margin-bottom: 50px;
+						font: bold 3vmin/1 $titleFont;
+						margin-bottom: 20px;
 						overflow: hidden;
 						text-overflow: ellipsis;
 
@@ -51,15 +49,14 @@
 						-webkit-box-orient: vertical;
 					}
 					p {
-						font-size: 20px;
-						line-height: 1.5;
+						font: 16px/1.5 $contentFont;
 						margin-bottom: 20px;
 					}
 					span {
 						display: block;
-						font: bold 16px/1 $contentFont;
+						font: bold 13px/1 $contentFont;
 						color: $bgSub;
-						text-align: left;
+						text-align: right;
 					}
 				}
 			}
@@ -127,14 +124,16 @@
 						padding: 20px;
 						border: 1px solid #666;
 						h3 {
-							font-size: 5vmin;
+							font-size: 3.5vmin;
+							margin-bottom: 20px;
 						}
 						p {
 							font-size: 3vmin;
 							line-height: 1.5;
+							margin-bottom: 15px;
 						}
 						span {
-							font: bold 3vmin/1 $contentFont;
+							font: bold 2.2vmin/1 $contentFont;
 						}
 					}
 				}

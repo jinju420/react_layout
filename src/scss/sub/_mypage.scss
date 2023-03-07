@@ -134,34 +134,60 @@
 	.MEMBERS {
 		.sub_con {
 			> .inner {
-				form {
-					width: 90%;
-					table {
-						td {
-							input::placeholder {
-								font-size: 12px;
+				.mypage {
+					flex-direction: column;
+					.aside {
+						margin-bottom: 30px;
+						h3 {
+							color: $bgSub;
+							font-size: 20px;
+							line-height: 1.3;
+							font-family: $titleFont;
+							margin-bottom: 10px;
+						}
+
+						p {
+							margin: 0 0 30px;
+							font: normal 12px/1.2 $contentFont;
+						}
+					}
+					form {
+						width: 100%;
+						table {
+							label {
+								font-size: 14px;
 							}
-							input[type='text'],
-							input[type='password'],
-							textarea,
-							select {
-								width: 100%;
+							th {
+								&:last-child {
+									input[type='submit'],
+									input[type='reset'] {
+										font-size: 15px;
+									}
+								}
 							}
-							input[id='email'],
-							select[name='mail'] {
-								width: 100%;
-								margin-right: 10px;
-							}
-							select[name='mail'] {
-								margin-right: 0;
-								margin-top: 10px;
-							}
-							span.err {
-								color: rgb(245, 63, 100);
-								margin-left: 20px;
-								display: block;
-								margin-top: 10px;
-								margin-left: 0;
+							td {
+								input::placeholder {
+									font-size: 12px;
+								}
+
+								input[type='text'],
+								input[type='password'],
+								textarea,
+								select {
+									font-size: 12px;
+								}
+								input[id='email'],
+								select[name='mail'] {
+									width: 100%;
+									margin-bottom: 10px;
+									margin-right: 0;
+								}
+								select[name='mail'] {
+									margin-right: 0;
+								}
+								span.err {
+									font-size: 12px;
+								}
 							}
 						}
 					}
@@ -177,31 +203,46 @@
 				h1 {
 					text-align: center;
 					width: 100%;
-					margin: 0 auto 30px;
+					margin: 0;
+					text-align: left;
 				}
-				form {
-					width: 100%;
-					table {
-						th {
-							display: none;
-							&:last-child {
-								display: flex;
-								width: 100%;
-								justify-content: space-between;
-								input[type='submit'],
-								input[type='reset'] {
-									display: inline-block;
-									width: 48%;
+				.mypage {
+					.aside {
+						h3 {
+							font-size: 16px;
+						}
+
+						p {
+							margin: 0 0 10px;
+							font: normal 10px/1.2 $contentFont;
+						}
+					}
+					form {
+						table {
+							label {
+								font-size: 14px;
+							}
+							th {
+								display: none;
+								&:last-child {
+									display: flex;
+									width: 100%;
+									justify-content: space-between;
+									input[type='submit'],
+									input[type='reset'] {
+										display: inline-block;
+										width: 48%;
+									}
 								}
 							}
-						}
-						td {
-							border-left: none;
-							input[type='text'],
-							input[type='password'],
-							textarea,
-							select {
-								width: 100%;
+							td {
+								padding: 10px 0;
+								input[type='text'],
+								input[type='password'],
+								textarea,
+								select {
+									width: 100%;
+								}
 							}
 						}
 					}

@@ -29,7 +29,7 @@ function Youtube() {
 							</div>
 							<div className='txt'>
 								<h3>{tit.length > 40 ? tit.substr(0, 30) + '...' : tit}</h3>
-								<p>{desc.length > 100 ? desc.substr(0, 80) + '...' : desc}</p>
+								<p>{desc.length > 150 ? desc.substr(0, 130) + '...' : desc}</p>
 								<span>{date.split('T')[0]}</span>
 							</div>
 						</article>
