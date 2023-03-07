@@ -9,6 +9,39 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 function ContactUs() {
+	//get in touch
+	const initVal = {
+		username: '',
+		email: '',
+		comments: '',
+	};
+	const [Val, setVal] = useState(initVal);
+	const [Err, setErr] = useState({});
+	const Submit = useRef(false);
+
+	const check = (value) => {
+		const errs = {};
+		if (value.username === '') {
+			errs.username = '이름을 입력하세요';
+		}
+		if (value.email === '' || !/@/.test(value.email)) {
+			errs.email = '이메일 주소를 입력하세요';
+		}
+		if (value.comments.length < 10) {
+			errs.comments = '10글자 이상 입력하세요';
+		}
+		return errs;
+	};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setErr(check(Val));
+		setVal(initVal);
+		alert('전송이 완료되었습니다');
+	};
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setVal({ ...Val, [name]: value });
+	};
 	//실제 윈도우객체에서 카카오객체를 비구조화할당으로 바로 할당
 	//윈도우 객체 안에 kakao라는 키값을 변수로 활용하여 뽑아냄
 	const { kakao } = window;
@@ -85,6 +118,7 @@ function ContactUs() {
 			}),
 		[kakao, markerImage, markerPosition]
 	);
+
 	//Index state변경될때마다 지도 인스턴스 새로 갱신 및 렌더링
 	useEffect(() => {
 		container.current.innerHTML = '';
@@ -140,27 +174,60 @@ function ContactUs() {
 				<div className='right'>
 					<div className='title'>
 						<h1>Get In Touch</h1>
-						<button>SEND</button>
 					</div>
 
-					<div className='input_box'>
-						<div className='input_left'>
-							<div className='input'>
-								<label htmlFor='name'>NAME</label>
-								<input type='text' id='name' />
-
+					<form onSubmit={handleSubmit}>
+						<fieldset></fieldset>
+						<legend className='hide'>찾아오시는 길 폼 양식</legend>
+						<div className='input_box'>
+							<input
+								type='submit'
+								value='SEND'
+								onClick={() => {
+									Submit.current = true;
+								}}
+							/>
+							<div className='input_touch'>
 								<div className='input'>
-									<label htmlFor='email'>E-MAIL</label>
-									<input type='text' id='email' />
+									<label htmlFor='username'>NAME</label>
+									<input
+										type='text'
+										id='username'
+										name='username'
+										value={Val.username}
+										onChange={handleChange}
+									/>
+									<span className='err'>{Err.username}</span>
+
+									<div className='input'>
+										<label htmlFor='email'>E-MAIL</label>
+										<input
+											type='text'
+											id='email'
+											name='email'
+											value={Val.email}
+											onChange={handleChange}
+										/>
+										<span className='err'>{Err.email}</span>
+									</div>
+								</div>
+
+								<div className='txtarea'>
+									<label htmlFor='comments'>MESSAGE</label>
+									<textarea
+										cols='30'
+										rows='5'
+										placeholder='comments'
+										name='comments'
+										id='comments'
+										onChange={handleChange}
+										value={Val.comments}
+									></textarea>
+									<span className='err'>{Err.comments}</span>
 								</div>
 							</div>
-
-							<div className='txtarea'>
-								<h2>MESSAGE</h2>
-								<textarea cols='30' rows='10' placeholder='Comments'></textarea>
-							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 			<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic OFF' : 'Traffic ON'}</button>

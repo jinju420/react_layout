@@ -140,7 +140,6 @@
 						td {
 							input::placeholder {
 								font-size: 12px;
-								// font-family: $krFont;
 							}
 							input[type='text'],
 							input[type='password'],
@@ -158,7 +157,6 @@
 								margin-top: 10px;
 							}
 							span.err {
-								// font: 12px/1 $krFont;
 								color: rgb(245, 63, 100);
 								margin-left: 20px;
 								display: block;
