@@ -1,5 +1,7 @@
 import Layout from '../common/Layout';
 import { useState, useRef, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 /*
 	localStorage
 	-각 브라우저에 있는 로컬 저장공간
@@ -118,12 +120,7 @@ function Notice() {
 				<div className='txt_box'>
 					<input type='text' placeholder='제목을 입력하세요' ref={input} />
 					<br />
-					<textarea
-						cols='30'
-						rows='3'
-						placeholder='본문을 입력하세요'
-						ref={textarea}
-					></textarea>
+					<textarea cols='30' rows='3' placeholder='본문을 입력하세요' ref={textarea}></textarea>
 				</div>
 
 				<br />
@@ -136,62 +133,64 @@ function Notice() {
 
 			<div className='showBox'>
 				<p>The Newest</p>
-				{Posts.map((post, idx) => {
-					return (
-						<article key={idx}>
-							{post.enableUpdate ? (
-								//현재 반복도는 post가 enableUpdate값이 true면
-								//수정모드 렌더링
-								<>
-									<div className='txt'>
-										<input
-											type='text'
-											defaultValue={post.title}
-											ref={inputEdit}
-										/>
-										<br />
-										<textarea
-											cols='30'
-											rows='3'
-											defaultValue={post.content}
-											ref={textareaEdit}
-										></textarea>
-									</div>
+				<div className='txt_box'>
+					{Posts.map((post, idx) => {
+						return (
+							<article key={idx}>
+								{post.enableUpdate ? (
+									//현재 반복도는 post가 enableUpdate값이 true면
+									//수정모드 렌더링
+									<>
+										<div className='txt'>
+											<input type='text' defaultValue={post.title} ref={inputEdit} />
+											<br />
+											<textarea
+												cols='30'
+												rows='3'
+												defaultValue={post.content}
+												ref={textareaEdit}
+											></textarea>
+										</div>
 
-									<div className='btnSet'>
-										<button onClick={() => disableUpdate(idx)}>CANCEL</button>
-										<button
-											onClick={() => {
-												updatePost(idx);
-											}}
-										>
-											UPDATE
-										</button>
-									</div>
-								</>
-							) : (
-								//현재 반복도는 post에 enableUpdate값이 없거나 false면
-								//출력모드 렌더링
-								<>
-									<div className='txt'>
-										<h2>{post.title}</h2>
-										<p>{post.content}</p>
-									</div>
+										<div className='btnSet'>
+											<button onClick={() => disableUpdate(idx)}>CANCEL</button>
+											<button
+												onClick={() => {
+													updatePost(idx);
+												}}
+											>
+												UPDATE
+											</button>
+										</div>
+									</>
+								) : (
+									//현재 반복도는 post에 enableUpdate값이 없거나 false면
+									//출력모드 렌더링
+									<>
+										<div className='txt'>
+											<span>
+												{'0' + (idx + 1)}
+												{/* <FontAwesomeIcon icon={faCircleCheck} /> */}
+											</span>
+											<h2>{post.title}</h2>
+											<p>{post.content}</p>
+										</div>
 
-									<div className='btnSet'>
-										{/* 수정 버튼 클릭시 수정할 글의 순번을 enableUpdate함수의 인수로 전달 */}
-										<button onClick={() => enableUpdate(idx)}>EDIT</button>
-										{/* deletePost(idx) 이렇게 쓰면 클릭하기도 전에 함수 호출되기때문에 랩핑함수로 감싸서 쓴다.
+										<div className='btnSet'>
+											{/* 수정 버튼 클릭시 수정할 글의 순번을 enableUpdate함수의 인수로 전달 */}
+											<button onClick={() => enableUpdate(idx)}>EDIT</button>
+											{/* deletePost(idx) 이렇게 쓰면 클릭하기도 전에 함수 호출되기때문에 랩핑함수로 감싸서 쓴다.
 									삭제버튼 클릭 시 삭제할 글의 순번을 deletePost함수에 전달
 									idx === delIndex 와 동일
 								*/}
-										<button onClick={() => deletePost(idx)}>DELETE</button>
-									</div>
-								</>
-							)}
-						</article>
-					);
-				})}
+											<button onClick={() => deletePost(idx)}>DELETE</button>
+										</div>
+									</>
+								)}
+							</article>
+						);
+					})}
+				</div>
 			</div>
 		</Layout>
 	);

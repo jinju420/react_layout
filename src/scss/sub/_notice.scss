@@ -2,12 +2,10 @@
 	.sub_con {
 		> .inner {
 			.inputBox {
-				// display: flex;
-				// justify-content: space-between;
 				width: 100%;
 				border: 1px solid #bbb;
 				padding: 50px;
-				margin-bottom: 50px;
+				margin-bottom: 100px;
 				.txt_box {
 					width: 100%;
 					input[type='text'],
@@ -44,65 +42,94 @@
 				}
 			}
 			.showBox {
+				display: flex;
+				justify-content: space-between;
 				width: 100%;
 				> p {
 					width: 100%;
-					padding: 15px 20px;
-					background: $bgSub;
-					color: #fff;
 					font: bold 18px/1 $titleFont;
 					letter-spacing: 1px;
-					margin-bottom: 40px;
 				}
-				article {
-					padding: 0 30px 30px 20px;
-					margin-bottom: 40px;
+				.txt_box {
 					display: flex;
-					justify-content: space-between;
-					align-content: center;
 					flex-wrap: wrap;
-					border-bottom: 1px solid #333;
-					.txt {
-						width: 80%;
-						h2 {
-							margin-bottom: 20px;
-							color: $bgSub;
-							display: inline-block;
-							font-family: $titleFont;
+					article {
+						width: calc((100% - 30px) / 2);
+						margin-right: 30px;
+						margin-bottom: 40px;
+						align-items: end;
+						padding-bottom: 15px;
+						&:nth-of-type(2n) {
+							margin-right: 0;
 						}
-						p {
-							font-family: $contentFont;
-						}
-						input,
-						textarea {
+
+						.txt {
+							display: flex;
+							flex-direction: column;
 							width: 100%;
-							padding: 8px 10px;
-							border: 1px solid $bgSub;
+							height: 100%;
 							margin-bottom: 10px;
-							resize: none;
-							background: #eaf0f7;
-						}
-						textarea {
-							margin-bottom: 0;
-						}
-					}
-					.btnSet {
-						width: 10%;
-						display: flex;
-						align-items: center;
-						justify-content: flex-end;
-						gap: 20px;
-						button {
-							border: none;
-							background: transparent;
-							font-family: $contentFont;
-							cursor: pointer;
-							font-weight: 500;
-							&:nth-of-type(1) {
-								color: #333;
+							span {
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								width: 30px;
+								height: 30px;
+								margin-bottom: 10px;
+								line-height: 20px;
+								border-radius: 50%;
+								background: $bgSub;
+								color: #fff;
+								font: 14px/1 $titleFont;
 							}
-							&:nth-of-type(2) {
-								color: $basicColor1;
+							h2 {
+								border-top: 1px solid #ddd;
+								padding-top: 10px;
+								font: bold 18px/1 $titleFont;
+								margin-bottom: 15px;
+								margin-top: 20px;
+								color: $bgSub;
+								display: flex;
+								align-items: center;
+								justify-content: space-between;
+								// svg {
+								// 	font-size: 25px;
+								// 	color: $activeColor;
+								// }
+							}
+							p {
+								font: 15px/1.5 $contentFont;
+								word-break: keep-all;
+							}
+							input,
+							textarea {
+								width: 100%;
+								padding: 8px 10px;
+								border: 1px solid $bgSub;
+								resize: none;
+								background: #eaf0f7;
+							}
+							textarea {
+								margin-bottom: 0;
+							}
+						}
+						.btnSet {
+							display: flex;
+							align-items: center;
+							justify-content: flex-end;
+							gap: 20px;
+							button {
+								border: none;
+								font: 12px/1 $contentFont;
+								background: transparent;
+								cursor: pointer;
+								font-weight: 500;
+								&:nth-of-type(1) {
+									color: #333;
+								}
+								&:nth-of-type(2) {
+									color: $basicColor1;
+								}
 							}
 						}
 					}
