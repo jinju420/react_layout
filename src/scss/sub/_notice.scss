@@ -47,7 +47,7 @@
 				width: 100%;
 				> p {
 					width: 100%;
-					font: bold 18px/1 $titleFont;
+					font: bold 24px/1 $titleFont;
 					letter-spacing: 1px;
 				}
 				.txt_box {
@@ -144,32 +144,18 @@
 		.sub_con {
 			> .inner {
 				.inputBox {
-					flex-direction: column;
-					.txt_box {
-						width: 100%;
-						input[type='text'],
-						textarea {
-							width: 100%;
-						}
-					}
 					.btnSet {
-						display: flex;
-						justify-content: flex-end;
 						button {
-							width: 200px;
-							&:last-child {
-								margin-right: 0;
-							}
+							width: 50%;
 						}
 					}
 				}
 				.showBox {
-					article {
-						.txt {
-							margin-bottom: 35px;
-						}
-						.btnSet {
-							align-items: flex-end;
+					.txt_box {
+						flex-direction: column;
+						article {
+							width: 100%;
+							margin-right: 0;
 						}
 					}
 				}
@@ -196,14 +182,12 @@
 					}
 				}
 				.showBox {
-					article {
-						padding: 0 15px 15px;
-						.txt {
+					flex-direction: column;
+					.txt_box {
+						margin-top: 50px;
+						article {
 							width: 100%;
-							margin-bottom: 15px;
-						}
-						.btnSet {
-							width: 100%;
+							margin-right: 0;
 						}
 					}
 				}
