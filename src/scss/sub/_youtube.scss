@@ -39,7 +39,7 @@
 					color: #333;
 					h3 {
 						margin-bottom: 50px;
-						font: bold 3vmin/1 $titleFont;
+						font: bold 22px/1.3 $titleFont;
 						margin-bottom: 20px;
 						overflow: hidden;
 						text-overflow: ellipsis;
@@ -72,16 +72,15 @@
 				article {
 					border: none;
 					border-top: 1px solid #666;
+
 					.txt {
 						h3 {
 							margin-bottom: 50px;
-							font-size: 3vmin;
+							font-size: 20px;
 							margin-bottom: 30px;
-
-							-webkit-line-clamp: 1;
 						}
 						p {
-							font-size: 2vmin;
+							font-size: 16px;
 							line-height: 1.5;
 							margin-bottom: 40px;
 
@@ -124,11 +123,11 @@
 						padding: 20px;
 						border: 1px solid #666;
 						h3 {
-							font-size: 3.5vmin;
+							font-size: 18px;
 							margin-bottom: 20px;
 						}
 						p {
-							font-size: 3vmin;
+							font-size: 14px;
 							line-height: 1.5;
 							margin-bottom: 15px;
 						}

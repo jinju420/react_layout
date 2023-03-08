@@ -28,7 +28,7 @@ function Youtube() {
 								<img src={el.snippet.thumbnails.high.url} alt={el.snippet.title} />
 							</div>
 							<div className='txt'>
-								<h3>{tit.length > 40 ? tit.substr(0, 30) + '...' : tit}</h3>
+								<h3>{tit.length > 100 ? tit.substr(0, 60) + '...' : tit}</h3>
 								<p>{desc.length > 150 ? desc.substr(0, 130) + '...' : desc}</p>
 								<span>{date.split('T')[0]}</span>
 							</div>
