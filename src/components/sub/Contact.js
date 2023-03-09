@@ -10,12 +10,16 @@ import {
 
 function ContactUs() {
 	const init = useRef(true);
+
 	//get in touch
-	const initVal = {
-		username: '',
-		email: '',
-		comments: '',
-	};
+	const initVal = useMemo(() => {
+		return {
+			username: '',
+			email: '',
+			comments: '',
+		};
+	}, []);
+
 	const [Val, setVal] = useState(initVal);
 	const [Err, setErr] = useState({});
 	const Submit = useRef(false);
@@ -125,7 +129,7 @@ function ContactUs() {
 			setVal(initVal);
 			alert('전송이 완료되었습니다');
 		}
-	}, [Err]);
+	}, [Err, initVal]);
 
 	//Index state변경될때마다 지도 인스턴스 새로 갱신 및 렌더링
 	useEffect(() => {
