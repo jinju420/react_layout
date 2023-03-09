@@ -42,7 +42,8 @@ select::-ms-expand {
 	display: none;
 }
 
-input,
+input[type='submit'],
+input[type='reset'],
 textarea,
 button,
 select {
