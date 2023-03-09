@@ -102,9 +102,6 @@
 								padding: 10px;
 								resize: none;
 								background: transparent;
-								&:focus {
-									background: #effaff;
-								}
 							}
 							input[id='email'],
 							select[name='mail'] {
