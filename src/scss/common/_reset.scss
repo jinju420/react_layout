@@ -33,18 +33,7 @@ input[type='radio'] {
 	}
 }
 textarea,
-// select {
-// 	appearance: none;
-// 	-moz-appearance: none;
-// 	-webkit-appearance: none;
-// 	border: none;
-// 	border-radius: 0;
-// 	-webkit-border-radius: 0;
-// 	-moz-border-radius: 0;
-// }
 input {
-	border: none;
-	outline: none;
 	border-radius: 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
@@ -52,3 +41,16 @@ input {
 // select::-ms-expand {
 // 	display: none;
 // }
+input,
+textarea,
+button,
+select {
+	border: none;
+	outline: none;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}

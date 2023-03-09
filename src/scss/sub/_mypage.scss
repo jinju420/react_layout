@@ -109,10 +109,20 @@
 							input[id='email'],
 							select[name='mail'] {
 								width: 49%;
-								margin-right: 10px;
+								margin-right: 13px;
 							}
 							select[name='mail'] {
 								margin-right: 0;
+								background: url('../../../public/img/arrow.png') no-repeat 96% 50%;
+								height: 100%;
+								background-size: 10px 7px;
+							}
+							select {
+								background: url('../../../public/img/arrow.png') no-repeat 98% 50%;
+								width: 100%;
+								height: 100%;
+								background-size: 10px 7px;
+								color: #333;
 							}
 							span.err {
 								width: 100%;
