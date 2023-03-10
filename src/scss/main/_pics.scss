@@ -63,8 +63,14 @@
 					transition: opacity 0.5, transform 0.5s;
 					.pic {
 						width: 100%;
-						height: 50vh;
-						border-radius: 50% 50% 0 0;
+						height: 55vh;
+						// clip-path: polygon(50% 50%, 50%, 100% 38%, 100% 100%, 0 99%, 0% 38%);
+						border-radius: 50% 50% 0% 0%;
+						// border-top-left-radius: 2px 0.5px;
+						// border-top-right-radius: 1px 3px;
+						// clip-path: polygon(50% 50%, 50%, 100% 38%, 100% 100%, 0 99%, 0% 38%);
+						// clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 99%, 0% 38%);
+						// border-radius: 50% 50% 0 0;
 						transition: filter 0.5s, transform 0.5s;
 						filter: saturate(30%) brightness(70%);
 						&:hover {
@@ -72,7 +78,11 @@
 						}
 						img {
 							@include imgFit;
-							border-radius: 50% 50% 0 0;
+							border-radius: 50% 50% 0% 0%;
+							// clip-path: polygon(50% 50%, 50%, 100% 38%, 100% 100%, 0 99%, 0% 38%);
+							// border-top-left-radius: 2px 0.5px;
+							// border-top-right-radius: 1px 3px;
+							// border-radius: 50% 50% 0 0;
 						}
 					}
 					.txt {
