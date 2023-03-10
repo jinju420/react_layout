@@ -3,7 +3,7 @@ import axios from 'axios';
 export const fetchYoutube = async () => {
 	const key = 'AIzaSyBGee4MUXU3jusXj7YwDBzdXI5Sn3gAkIA';
 	const playlistId = 'PLY0voYdGZtAipraMUx-_pnepD9KKaUDdm';
-	const num = 8;
+	const num = 9;
 	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
 
 	return await axios.get(url);

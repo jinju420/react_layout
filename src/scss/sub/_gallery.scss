@@ -45,7 +45,7 @@
 						letter-spacing: 0.5px;
 						vertical-align: top;
 						transition: 0.5s;
-						background: $bgSub;
+						background: $basicColor1;
 						color: #fff;
 					}
 				}
@@ -107,7 +107,7 @@
 						width: 100%;
 						background: #fff;
 						padding: 14px;
-						box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+						border: 2px solid #eee;
 						transition: 1s;
 						.picTitle {
 							border-bottom: 1px solid #333;

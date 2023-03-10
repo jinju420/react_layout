@@ -104,12 +104,18 @@
 				display: block;
 				width: 13vw;
 				height: 35px;
-				background: $bgSub;
+				border: 1px solid #888;
+				background: transparent;
 				font: bold 12px/1 $titleFont;
-				color: #fff;
-				border: none;
+				color: #333;
+				border: 2px solid $bgSub;
 				cursor: pointer;
 				letter-spacing: 1px;
+				transition: 0.5s;
+				&:hover {
+					background: $bgSub;
+					color: #fff;
+				}
 			}
 		}
 		#map {

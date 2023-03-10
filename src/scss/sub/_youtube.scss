@@ -3,24 +3,41 @@
 		> .inner {
 			@include clear;
 			article {
-				width: 100%;
-				float: left;
+				width: calc((100% - 40px) / 3);
 				margin-right: 20px;
+				flex-direction: column;
+				float: left;
 				border-top: 1px solid #666;
-				padding: 30px 0;
+				padding: 15px 0 30px;
 				display: flex;
-				align-items: center;
 				justify-content: space-between;
 				@include clear;
-				&:nth-of-type(2n) {
+				&:nth-of-type(3n) {
 					margin-right: 0;
 				}
-				&:last-child {
-					border-bottom: 1px solid #666;
+				&:nth-of-type(n + 3) {
+					margin-bottom: 20px;
+				}
+				h3 {
+					margin-bottom: 50px;
+					font: bold 14px/1.3 $titleFont;
+					margin-bottom: 7px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+
+					display: -webkit-box;
+					-webkit-line-clamp: 1;
+					-webkit-box-orient: vertical;
+				}
+				> span {
+					font: bold 10px/1 $contentFont;
+					color: #888;
+					display: block;
+					margin-bottom: 5px;
 				}
 				.pic {
-					width: 45%;
-					height: 250px;
+					width: 100%;
+					height: 200px;
 					float: left;
 					margin-right: 50px;
 					cursor: pointer;
@@ -34,29 +51,21 @@
 					}
 				}
 				.txt {
-					width: 45%;
+					width: 100%;
 					float: left;
+					margin-top: 15px;
 					color: #333;
-					h3 {
-						margin-bottom: 50px;
-						font: bold 22px/1.3 $titleFont;
-						margin-bottom: 20px;
-						overflow: hidden;
-						text-overflow: ellipsis;
 
-						display: -webkit-box;
-						-webkit-line-clamp: 2;
-						-webkit-box-orient: vertical;
-					}
 					p {
-						font: 16px/1.5 $contentFont;
+						font: 12px/1.5 $contentFont;
 						margin-bottom: 20px;
 					}
 					span {
 						display: block;
-						font: bold 13px/1 $contentFont;
-						color: $bgSub;
-						text-align: right;
+						font: bold 10px/1 $contentFont;
+						color: #888;
+						opacity: 0.5;
+						// text-align: right;
 					}
 				}
 			}
