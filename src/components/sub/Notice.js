@@ -116,18 +116,28 @@ function Notice() {
 
 	return (
 		<Layout name={'NOTICE'}>
-			<div className='inputBox'>
-				<div className='txt_box'>
-					<input type='text' placeholder='제목을 입력하세요' ref={input} />
-					<br />
-					<textarea cols='30' rows='3' placeholder='본문을 입력하세요' ref={textarea}></textarea>
+			<div className='wrap'>
+				<div className='notice_title'>
+					<h2>
+						Inside the drawer, which had never been opened, there was a familiar smell of minutes between scarves, accessories,
+						and various miscellaneous things.
+					</h2>
 				</div>
+				<div className='notice_box'>
+					<div className='inputBox'>
+						<div className='txt_box'>
+							<input type='text' placeholder='제목을 입력하세요' ref={input} />
+							<br />
+							<textarea cols='30' rows='3' placeholder='본문을 입력하세요' ref={textarea}></textarea>
+						</div>
 
-				<br />
+						<br />
 
-				<div className='btnSet'>
-					<button onClick={resetForm}>CANCEL</button>
-					<button onClick={createPost}>WRITE</button>
+						<div className='btnSet'>
+							<button onClick={resetForm}>CANCEL</button>
+							<button onClick={createPost}>WRITE</button>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -144,12 +154,7 @@ function Notice() {
 										<div className='txt'>
 											<input type='text' defaultValue={post.title} ref={inputEdit} />
 											<br />
-											<textarea
-												cols='30'
-												rows='3'
-												defaultValue={post.content}
-												ref={textareaEdit}
-											></textarea>
+											<textarea cols='30' rows='3' defaultValue={post.content} ref={textareaEdit}></textarea>
 										</div>
 
 										<div className='btnSet'>

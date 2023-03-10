@@ -1,46 +1,62 @@
 .NOTICE {
 	.sub_con {
 		> .inner {
-			.inputBox {
-				width: 100%;
-				border: 1px solid #bbb;
-				padding: 50px;
+			.wrap {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
 				margin-bottom: 100px;
-				.txt_box {
-					width: 100%;
-					input[type='text'],
-					textarea {
-						width: 100%;
-						padding: 8px 10px;
-						border: 1px solid #aaa;
-						resize: none;
-						margin-bottom: 10px;
-						background: #eaf0f7;
-					}
-					textarea {
-						height: 80px;
-						margin-bottom: 0;
+				border-bottom: 1px solid #888;
+				.notice_title {
+					width: 50%;
+
+					h2 {
+						font: normal 14px/1.5 $contentFont;
 					}
 				}
-				.btnSet {
-					display: flex;
-					justify-content: flex-end;
-					button {
-						width: 15vw;
-						height: 40px;
-						background: $bgSub;
-						font: bold 15px/1 $titleFont;
-						display: inline-block;
-						border: none;
-						margin-right: 20px;
-						color: #fff;
-						cursor: pointer;
-						&:last-child {
-							margin-right: 0;
+				.notice_box {
+					width: 38%;
+					.inputBox {
+						width: 100%;
+						padding: 0 0 30px;
+						.txt_box {
+							width: 100%;
+							input[type='text'],
+							textarea {
+								width: 100%;
+								padding: 8px 10px;
+								border-bottom: 1px solid #aaa;
+								resize: none;
+								margin-bottom: 10px;
+								background: transparent;
+							}
+							textarea {
+								height: 80px;
+								margin-bottom: 0;
+							}
+						}
+						.btnSet {
+							display: flex;
+							justify-content: flex-end;
+							button {
+								width: 7vw;
+								height: 25px;
+								background: $basicColor1;
+								font: 11px/1 $titleFont;
+								display: inline-block;
+								border: none;
+								margin-right: 20px;
+								color: #fff;
+								cursor: pointer;
+								&:last-child {
+									margin-right: 0;
+								}
+							}
 						}
 					}
 				}
 			}
+
 			.showBox {
 				display: flex;
 				justify-content: space-between;
@@ -143,13 +159,25 @@
 	.NOTICE {
 		.sub_con {
 			> .inner {
-				.inputBox {
-					.btnSet {
-						button {
-							width: 50%;
+				.wrap {
+					flex-direction: column;
+					border: none;
+					.notice_title {
+						width: 100%;
+						margin-bottom: 50px;
+					}
+					.notice_box {
+						width: 100%;
+						.inputBox {
+							.btnSet {
+								button {
+									width: 10vw;
+								}
+							}
 						}
 					}
 				}
+
 				.showBox {
 					.txt_box {
 						flex-direction: column;
@@ -167,20 +195,36 @@
 	.NOTICE {
 		.sub_con {
 			> .inner {
-				.inputBox {
-					flex-direction: column;
-					padding: 0;
-					border: none;
-					.btnSet {
-						justify-content: space-between;
-						button {
-							width: 200px;
-							&:last-child {
-								margin-right: 0;
+				.wrap {
+					.notice_title {
+						width: 100%;
+						margin-bottom: 50px;
+					}
+					.notice_box {
+						width: 100%;
+						.inputBox {
+							.btnSet {
+								button {
+									width: 50%;
+								}
 							}
 						}
 					}
 				}
+				// .inputBox {
+				// 	flex-direction: column;
+				// 	padding: 0;
+				// 	border: none;
+				// 	.btnSet {
+				// 		justify-content: space-between;
+				// 		button {
+				// 			width: 200px;
+				// 			&:last-child {
+				// 				margin-right: 0;
+				// 			}
+				// 		}
+				// 	}
+				// }
 				.showBox {
 					flex-direction: column;
 					.txt_box {

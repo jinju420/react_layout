@@ -105,9 +105,10 @@
 					}
 					.inner {
 						width: 100%;
-						background: #fff;
+						// background: transparent;
+						background: #eee;
 						padding: 14px;
-						border: 2px solid #eee;
+						// border: 1px solid #888;
 						transition: 1s;
 						.picTitle {
 							border-bottom: 1px solid #333;
@@ -135,7 +136,7 @@
 									cursor: pointer;
 									letter-spacing: 0.5px;
 									font-size: 12px;
-									color: orange;
+									color: $basicColor1;
 									transition: color 0.5s;
 									font-family: $contentFont;
 									&:hover {
