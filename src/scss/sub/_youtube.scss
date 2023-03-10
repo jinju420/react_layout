@@ -39,7 +39,7 @@
 					width: 100%;
 					height: 200px;
 					float: left;
-					margin-right: 50px;
+					// margin-right: 50px;
 					cursor: pointer;
 					transition: filter 1s;
 					filter: saturate(30%) brightness(80%);
@@ -59,13 +59,13 @@
 					p {
 						font: 12px/1.5 $contentFont;
 						margin-bottom: 20px;
+						word-break: keep-all;
 					}
 					span {
 						display: block;
 						font: bold 10px/1 $contentFont;
 						color: #888;
 						opacity: 0.5;
-						// text-align: right;
 					}
 				}
 			}
@@ -79,20 +79,18 @@
 			> .inner {
 				width: 100%;
 				article {
-					border: none;
-					border-top: 1px solid #666;
-
+					width: calc((100% - 20px) / 2);
+					&:nth-of-type(2n) {
+						margin-right: 0;
+					}
+					&:nth-of-type(3n) {
+						margin-right: 20px;
+					}
+					&:nth-of-type(n + 3) {
+						margin-bottom: 0;
+					}
 					.txt {
-						h3 {
-							margin-bottom: 50px;
-							font-size: 20px;
-							margin-bottom: 30px;
-						}
 						p {
-							font-size: 16px;
-							line-height: 1.5;
-							margin-bottom: 40px;
-
 							overflow: hidden;
 							text-overflow: ellipsis;
 
@@ -115,10 +113,13 @@
 			> .inner {
 				article {
 					width: 100%;
-					padding: 0 0 50px;
+					padding: 15px 0 30px;
 					display: block;
 					&:last-child {
 						border: none;
+					}
+					h3 {
+						font-size: 18px;
 					}
 					.pic {
 						width: 100%;
@@ -129,21 +130,6 @@
 					}
 					.txt {
 						width: 100%;
-						padding: 20px;
-						border: 1px solid #666;
-						h3 {
-							font-size: 18px;
-							margin-bottom: 20px;
-						}
-						p {
-							font-size: 14px;
-							line-height: 1.5;
-							margin-bottom: 15px;
-						}
-						span {
-							display: none;
-							font: bold 2.2vmin/1 $contentFont;
-						}
 					}
 				}
 			}
