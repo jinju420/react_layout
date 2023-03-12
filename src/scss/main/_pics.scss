@@ -65,15 +65,8 @@
 						width: 100%;
 						min-width: 240px;
 						height: 55vh;
-						// shape-outside: ellipse(closest-side farthest-side at 30%);
-						// clip-path: polygon(100px 0px, 200px 200px, 0 200px);
-						// clip-path: polygon(50% 50%, 50%, 100% 38%, 100% 100%, 0 99%, 0% 38%);
-						border-radius: 50% 50% 0% 0%;
-						// border-top-left-radius: 2px 0.5px;
-						// border-top-right-radius: 1px 3px;
-						// clip-path: polygon(50% 50%, 50%, 100% 38%, 100% 100%, 0 99%, 0% 38%);
-						// clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 99%, 0% 38%);
-						// border-radius: 50% 50% 0 0;
+						overflow: hidden;
+						// border-radius: 50% 50% 0% 0%;
 						transition: filter 0.5s, transform 0.5s;
 						filter: saturate(30%) brightness(70%);
 						&:hover {
@@ -81,13 +74,7 @@
 						}
 						img {
 							@include imgFit;
-							// shape-outside: ellipse(closest-side farthest-side at 30%);
-							// clip-path: polygon(100px 0px, 200px 200px, 0 200px);
 							border-radius: 50% 50% 0% 0%;
-							// clip-path: polygon(50% 50%, 50%, 100% 38%, 100% 100%, 0 99%, 0% 38%);
-							// border-top-left-radius: 2px 0.5px;
-							// border-top-right-radius: 1px 3px;
-							// border-radius: 50% 50% 0 0;
 						}
 					}
 					.txt {

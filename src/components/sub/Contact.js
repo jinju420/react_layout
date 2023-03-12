@@ -1,16 +1,11 @@
 import Layout from '../common/Layout';
 import { useRef, useEffect, useState, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faLocationDot,
-	faEnvelope,
-	faPhoneVolume,
-	faClock,
-} from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faEnvelope, faPhoneVolume, faClock } from '@fortawesome/free-solid-svg-icons';
 
 function ContactUs() {
 	const init = useRef(true);
-
+	const txt = useRef(false);
 	//get in touch
 	const initVal = useMemo(() => {
 		return {
@@ -157,7 +152,9 @@ function ContactUs() {
 		Traffic
 			? mapInstance.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
 			: mapInstance.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+		Traffic ? txt.current.classList.add('on') : txt.current.classList.remove('on');
 	}, [Traffic, kakao]);
+
 	return (
 		<Layout name={'LOCATION'}>
 			<div className='touch'>
@@ -202,24 +199,12 @@ function ContactUs() {
 							<div className='input_touch'>
 								<div className='input'>
 									<label htmlFor='username'>NAME</label>
-									<input
-										type='text'
-										id='username'
-										name='username'
-										value={Val.username}
-										onChange={handleChange}
-									/>
+									<input type='text' id='username' name='username' value={Val.username} onChange={handleChange} />
 									<span className='err'>{Err.username}</span>
 
 									{/* <div className='input'> */}
 									<label htmlFor='email'>E-MAIL</label>
-									<input
-										type='text'
-										id='email'
-										name='email'
-										value={Val.email}
-										onChange={handleChange}
-									/>
+									<input type='text' id='email' name='email' value={Val.email} onChange={handleChange} />
 									<span className='err'>{Err.email}</span>
 									{/* </div> */}
 								</div>
@@ -242,7 +227,9 @@ function ContactUs() {
 					</form>
 				</div>
 			</div>
-			<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic OFF' : 'Traffic ON'}</button>
+			<button ref={txt} onClick={() => setTraffic(!Traffic)}>
+				{Traffic ? 'Traffic ON' : 'Traffic OFF'}
+			</button>
 
 			<div id='map' ref={container}></div>
 			<nav>

@@ -35,7 +35,6 @@ function Vids() {
 											setIndex(idx);
 										}}
 									>
-										{/* <FontAwesomeIcon icon={faYoutube} /> */}
 										<img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
 									</div>
 									<div className='txt'>

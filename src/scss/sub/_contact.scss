@@ -104,18 +104,23 @@
 				display: block;
 				width: 13vw;
 				height: 35px;
-				border: 1px solid #888;
+				border-bottom: 1px solid #888;
 				background: transparent;
-				font: bold 12px/1 $titleFont;
+				// color: #fff;
+				text-align: left;
+				font: bold 16px/1 $titleFont;
 				color: #333;
-				border: 1px solid $bgSub;
+				// border: 1px solid $bgSub;
 				cursor: pointer;
 				letter-spacing: 1px;
 				transition: 0.5s;
-				&:hover {
-					background: $bgSub;
-					color: #fff;
+				&.on {
+					color: $basicColor1;
 				}
+				// &:hover {
+				// 	// background: $bgSub;
+				// 	color: $basicColor1;
+				// }
 			}
 		}
 		#map {
