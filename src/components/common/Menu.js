@@ -16,7 +16,9 @@ const Menu = forwardRef((props, ref) => {
 		window.addEventListener('resize', () => {
 			if (window.innerWidth >= 1180) setOpen(false);
 		});
-	}, []);
+
+		Open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto');
+	}, [Open]);
 	return (
 		<AnimatePresence>
 			{Open && (
