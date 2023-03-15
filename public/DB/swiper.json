@@ -1,42 +1,55 @@
 {
   "swiper": [
     {
+      "title": "GRANHAND",
       "pic": "swiper1.jpeg"
     },
     {
+      "title": "VIOLETTE",
       "pic": "swiper2.jpeg"
     },
     {
+      "title": "SUSIE SALMON",
       "pic": "swiper3.jpeg"
     },
     {
+      "title": "ROSEWOOD",
       "pic": "swiper4.jpeg"
     },
     {
+      "title": "DRAWER",
       "pic": "swiper5.jpeg"
     },
     {
+      "title": "FAMILIAR",
       "pic": "swiper6.jpeg"
     },
     {
+      "title": "NUBE",
       "pic": "swiper7.jpeg"
     },
     {
+      "title": "MUNAKI",
       "pic": "swiper8.jpeg"
     },
     {
+      "title": "SLOGAN MILK",
       "pic": "swiper9.jpeg"
     },
     {
+      "title": "DROPPER",
       "pic": "swiper10.jpeg"
     },
     {
+      "title": "MULTI CREAM",
       "pic": "swiper11.jpeg"
     },
     {
+      "title": "MARINE",
       "pic": "swiper12.jpeg"
     },
     {
+      "title": "ROLAND",
       "pic": "swiper13.jpeg"
     }
   ]

@@ -18,6 +18,8 @@ const Menu = forwardRef((props, ref) => {
 		});
 
 		Open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto');
+
+		Open ? document.body.classList.add('on') : document.body.classList.remove('on');
 	}, [Open]);
 	return (
 		<AnimatePresence>

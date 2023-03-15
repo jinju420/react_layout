@@ -4,6 +4,7 @@
 	background: $bgSub;
 	position: relative;
 	overflow: hidden;
+	z-index: 1;
 	> .inner {
 		position: relative;
 		padding: 10vw;
@@ -170,6 +171,9 @@
 						border-radius: 300px 300px 0 0;
 						.pic {
 							height: 100vh;
+							img {
+								border-radius: none;
+							}
 						}
 						.txt {
 							width: 100%;
