@@ -7,13 +7,21 @@ function ContactUs() {
 	const init = useRef(true);
 	const txt = useRef(false);
 	//get in touch
-	const initVal = useMemo(() => {
-		return {
+	const initVal = useMemo(
+		() => ({
 			username: '',
 			email: '',
 			comments: '',
-		};
-	}, []);
+		}),
+		[]
+	);
+	// const initVal = useMemo(() => {
+	// 	return {
+	// 		username: '',
+	// 		email: '',
+	// 		comments: '',
+	// 	};
+	// }, []);
 
 	const [Val, setVal] = useState(initVal);
 	const [Err, setErr] = useState({});
