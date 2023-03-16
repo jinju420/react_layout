@@ -40,12 +40,12 @@ function Visual() {
 							<li key={idx} ref={li}>
 								<div className='inner' ref={inner}>
 									<img src={`${process.env.PUBLIC_URL}/img/swiper/${img.pic}`} alt={img.pic} />
+
 									<h2>
 										{Txt}
 										<br />
 										{setTxt}
 									</h2>
-									{/* <h2>{img.title}</h2> */}
 								</div>
 							</li>
 						);
