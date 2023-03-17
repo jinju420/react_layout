@@ -3,7 +3,7 @@
 		> .inner {
 			@include clear;
 			h1 {
-				width: 43%;
+				width: 40%;
 				margin: 0 auto 70px;
 			}
 			.mypage {
@@ -42,16 +42,24 @@
 				}
 				form {
 					display: flex;
-					width: 80%;
+					width: 60%;
 					margin: 0 auto;
 					table {
 						width: 100%;
 						border: none;
+						tr {
+							&:last-child {
+								th {
+									text-align: right;
+								}
+							}
+						}
+
 						th {
 							width: 20%;
 							border: none;
 							padding: 15px 30px;
-							text-align: right;
+							text-align: left;
 							font-family: $titleFont;
 							&:last-child {
 								input[type='submit'],
@@ -106,8 +114,8 @@
 							}
 							input[id='email'],
 							select[name='mail'] {
-								width: 49%;
-								margin-right: 13px;
+								width: 48%;
+								margin-right: 19px;
 							}
 							select[name='mail'] {
 								margin-right: 0;

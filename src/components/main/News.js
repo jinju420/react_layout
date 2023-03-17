@@ -56,14 +56,12 @@ function News() {
 					</Link>
 					<div className='postContainer'>
 						{Posts.map((post, idx) => {
-							if (idx >= 6) return null;
+							if (idx >= 7) return null;
 							return (
 								<article key={idx}>
 									<h1>{'0' + (idx + 1)}</h1>
 									<h3>{post.title}</h3>
-									<p>
-										{post.content.length > 100 ? post.content.substr(0, 80) + '...' : post.content}
-									</p>
+									<p>{post.content.length > 100 ? post.content.substr(0, 80) + '...' : post.content}</p>
 								</article>
 							);
 						})}

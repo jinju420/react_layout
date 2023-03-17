@@ -57,6 +57,10 @@ function Header(props) {
 							props.menu.current.setToggle();
 						}}
 					/>
+
+					{/* <div onClick={() => {
+							props.menu.current.setToggle();
+						}} className={props.menu.current? 'on toggleMenu' : 'toggleMenu'}></div> */}
 				</div>
 			</header>
 

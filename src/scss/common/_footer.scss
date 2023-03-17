@@ -20,6 +20,7 @@ footer {
 				p {
 					padding: 20px 0;
 					font: bold 14px/1.5 $contentFont;
+					color: #888;
 				}
 				a {
 					display: block;
@@ -64,7 +65,7 @@ footer {
 				justify-content: space-between;
 				align-items: flex-start;
 				margin-bottom: 50px;
-				border-top: 1px solid #eee;
+				border-top: 1px solid #888;
 				padding-top: 30px;
 				font: 14px/1 $contentFont;
 				letter-spacing: 0.5px;

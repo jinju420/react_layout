@@ -64,6 +64,53 @@ header {
 			cursor: pointer;
 			color: #333;
 		}
+
+		.toggleMenu {
+			width: 30px;
+			height: 24px;
+			border: 1px solid pink;
+			position: absolute;
+			bottom: 20px;
+			right: 5vw;
+			display: none;
+			cursor: pointer;
+			span,
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				background: #fff;
+				position: absolute;
+				left: 0;
+				transform-origin: center center;
+			}
+			&::before {
+				top: 0;
+			}
+			span {
+				top: 11px;
+			}
+			&::after {
+				bottom: 0;
+			}
+		}
+		//toggle 할성화
+		.toggleMenu.on {
+			span {
+				left: 50px;
+				opacity: 0;
+			}
+			&::before {
+				top: 11px;
+				transform: rotate(45deg);
+			}
+			&::after {
+				bottom: 11px;
+				// transform: ;
+			}
+		}
 	}
 	&.sub {
 		#gnb {

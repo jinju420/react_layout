@@ -12,14 +12,24 @@ function Youtube() {
 		<>
 			<Layout name={'YOUTUBE'}>
 				{Vids.map((el, idx) => {
+					console.log(Vids);
 					const tit = el.snippet.title;
 					const desc = el.snippet.description;
 					// const date = el.snippet.publishedAt;
 
 					return (
 						<article key={el.id}>
-							<h3>{tit.length > 100 ? tit.substr(0, 20) + '...' : tit}</h3>
-							<span>GRANHAND.</span>
+							<div className='main_txt'>
+								<h3>{tit.length > 100 ? tit.substr(0, 20) + '...' : tit}</h3>
+								<div className='sub_txt'>
+									<span>GRANHAND.</span>
+									<div className='txt'>
+										<p>{desc.length > 150 ? desc.substr(0, 130) + '...' : desc}</p>
+										{/* <span>{date.split('T')[0]}</span> */}
+									</div>
+								</div>
+							</div>
+
 							<div
 								className='pic'
 								onClick={() => {
@@ -28,10 +38,6 @@ function Youtube() {
 								}}
 							>
 								<img src={el.snippet.thumbnails.high.url} alt={el.snippet.title} />
-							</div>
-							<div className='txt'>
-								<p>{desc.length > 150 ? desc.substr(0, 130) + '...' : desc}</p>
-								{/* <span>{date.split('T')[0]}</span> */}
 							</div>
 						</article>
 					);
