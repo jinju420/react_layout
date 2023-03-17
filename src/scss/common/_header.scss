@@ -68,12 +68,13 @@ header {
 		.toggleMenu {
 			width: 30px;
 			height: 24px;
-			border: 1px solid pink;
 			position: absolute;
 			bottom: 20px;
 			right: 5vw;
 			display: none;
 			cursor: pointer;
+			transform: scale(0.8);
+
 			span,
 			&::before,
 			&::after {
@@ -81,22 +82,22 @@ header {
 				display: block;
 				width: 100%;
 				height: 2px;
-				background: #fff;
+				background: #333;
 				position: absolute;
 				left: 0;
 				transform-origin: center center;
-			}
-			&::before {
-				top: 0;
+				transition: 0.5s;
 			}
 			span {
 				top: 11px;
+			}
+			&::before {
+				top: 0;
 			}
 			&::after {
 				bottom: 0;
 			}
 		}
-		//toggle 할성화
 		.toggleMenu.on {
 			span {
 				left: 50px;
@@ -104,11 +105,11 @@ header {
 			}
 			&::before {
 				top: 11px;
-				transform: rotate(45deg);
+				transform: rotate(405deg);
 			}
 			&::after {
 				bottom: 11px;
-				// transform: ;
+				transform: rotate(-405deg);
 			}
 		}
 	}
@@ -140,6 +141,9 @@ header {
 			.fa-bars {
 				display: block;
 				color: #333;
+			}
+			.toggleMenu {
+				display: block;
 			}
 		}
 		&.main {

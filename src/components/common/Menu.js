@@ -1,7 +1,6 @@
 import { forwardRef, useState, useImperativeHandle, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, NavLink } from 'react-router-dom';
-// import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
 
