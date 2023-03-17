@@ -12,7 +12,6 @@ function Youtube() {
 		<>
 			<Layout name={'YOUTUBE'}>
 				{Vids.map((el, idx) => {
-					console.log(Vids);
 					const tit = el.snippet.title;
 					const desc = el.snippet.description;
 					// const date = el.snippet.publishedAt;

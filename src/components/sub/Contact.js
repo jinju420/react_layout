@@ -15,13 +15,6 @@ function ContactUs() {
 		}),
 		[]
 	);
-	// const initVal = useMemo(() => {
-	// 	return {
-	// 		username: '',
-	// 		email: '',
-	// 		comments: '',
-	// 	};
-	// }, []);
 
 	const [Val, setVal] = useState(initVal);
 	const [Err, setErr] = useState({});

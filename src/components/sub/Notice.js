@@ -1,7 +1,5 @@
 import Layout from '../common/Layout';
 import { useState, useRef, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 /*
 	localStorage
 	-각 브라우저에 있는 로컬 저장공간
@@ -142,7 +140,7 @@ function Notice() {
 			</div>
 
 			<div className='showBox'>
-				<p>The Newest</p>
+				<p>Newest</p>
 				<div className='txt_box'>
 					{Posts.map((post, idx) => {
 						return (

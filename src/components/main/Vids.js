@@ -23,7 +23,6 @@ function Vids() {
 					</div>
 					<div className='vid_box'>
 						{youtube.map((vid, idx) => {
-							console.log(youtube);
 							if (idx >= 6) return null;
 							const tit = vid.snippet.title;
 							const desc = vid.snippet.description;

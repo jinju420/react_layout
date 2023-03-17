@@ -3,9 +3,8 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: $bgMain;
-
-	z-index: 5;
+	// background: $bgMain;
+	z-index: 4;
 	.inner {
 		@include innerWid;
 		height: 60px;
@@ -17,7 +16,8 @@ header {
 		h1 {
 			a {
 				font: bold 24px/1 $titleFont;
-				color: #333;
+				color: #fff;
+				// color: #333;
 				letter-spacing: 1px;
 			}
 		}
@@ -32,7 +32,8 @@ header {
 				> a {
 					display: block;
 					position: relative;
-					color: #333;
+					color: #fff;
+					// color: #333;
 					font-family: $contentFont;
 					letter-spacing: 1px;
 					text-align: center;
@@ -47,7 +48,7 @@ header {
 						width: 0%;
 						height: 2px;
 						transition: width 0.5s;
-						background: #333;
+						background: #fff;
 					}
 					&:hover::after {
 						width: 100%;
@@ -90,6 +91,7 @@ header {
 			}
 			span {
 				top: 11px;
+				width: 20px;
 			}
 			&::before {
 				top: 0;
@@ -99,28 +101,38 @@ header {
 			}
 		}
 		.toggleMenu.on {
+			// opacity: 0;
 			span {
 				left: 50px;
 				opacity: 0;
 			}
 			&::before {
 				top: 11px;
-				transform: rotate(405deg);
+				transform: rotate(225deg);
 			}
 			&::after {
 				bottom: 11px;
-				transform: rotate(-405deg);
+				transform: rotate(-225deg);
 			}
 		}
 	}
-	&.sub {
-		#gnb {
-			> li {
-				> a {
-					&::after {
-						content: none;
-					}
-				}
+	&.main .toggleMenu {
+		span,
+		&::before,
+		&::after {
+			background: #fff;
+		}
+	}
+	&.sub .inner {
+		background: $bgMain;
+		h1 a {
+			color: #333;
+		}
+		#gnb li a {
+			color: #333;
+
+			&::after {
+				content: none;
 			}
 		}
 	}

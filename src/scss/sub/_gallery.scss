@@ -78,31 +78,8 @@
 				@include clear;
 				article {
 					width: 25%;
-					padding: 10px;
 					float: left;
 					cursor: default;
-					// &:hover {
-					// 	> .inner {
-					// 		background: $basicColor1;
-					// 		.pic {
-					// 			img {
-					// 				border: 5px solid #fff;
-					// 			}
-					// 		}
-					// 		.picTitle {
-					// 			border-top: 2px solid #fff;
-					// 			border-bottom: 1px solid #fff;
-					// 			h2 {
-					// 				color: #fff;
-					// 			}
-					// 			.profile {
-					// 				span {
-					// 					color: #fff;
-					// 				}
-					// 			}
-					// 		}
-					// 	}
-					// }
 					.inner {
 						width: 100%;
 						padding: 14px;
