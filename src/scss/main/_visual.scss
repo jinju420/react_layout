@@ -363,16 +363,15 @@ $initPos: 25%;
 }
 
 @media screen and (max-width: $mobile) {
-	$wid: 50vw;
-	$initPos: 20px;
+	$wid: 60vw;
+	$initPos: 10%;
 	#visual {
 		> .inner {
 			.list {
 				li {
 					width: $wid;
 					height: 160px;
-					top: 60%;
-					left: 5%;
+					left: $initPos;
 				}
 				h2 {
 					left: 10%;
@@ -416,6 +415,7 @@ $initPos: 25%;
 			}
 			.navi {
 				left: 5%;
+				bottom: 28%;
 				.prev,
 				.next {
 					width: 45px;

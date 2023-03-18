@@ -8,6 +8,7 @@ function Visual() {
 	const next = useRef(null);
 	const li = useRef(null);
 	const inner = useRef(true);
+	const enableClick = useRef(true);
 
 	useEffect(() => {
 		axios.get(`${process.env.PUBLIC_URL}/DB/swiper.json`).then((json) => {
@@ -16,15 +17,24 @@ function Visual() {
 	}, []);
 
 	useEffect(() => {
-		prev.current.addEventListener('click', (e) => {
-			console.log(e.currentTarget);
-			list.current.append(list.current.firstElementChild);
-			prev.current.classList.add('on');
-			setTimeout(() => prev.current.classList.remove('on'), 500);
-		});
+		prev.current.addEventListener(
+			'click',
+			(e) => {
+				if (enableClick.current) {
+					enableClick.current = false;
+					list.current.append(list.current.firstElementChild);
+					// enableClick.current = true;
+					prev.current.classList.add('on');
+
+					setTimeout(() => prev.current.classList.remove('on'), 500);
+				}
+			}
+			// enableClick.current = true
+		);
 
 		next.current.addEventListener('click', () => {
-			list.current.prepend(list.current.lastElementChild);
+			enableClick.current = false;
+			list.current.prepend(list.current.lastElementChild, (enableClick.current = true));
 			next.current.classList.add('on');
 			setTimeout(() => next.current.classList.remove('on'), 500);
 		});
@@ -48,18 +58,6 @@ function Visual() {
 									</h2> */}
 								</div>
 							</li>
-							// <li key={idx} ref={li}>
-							// 	<div className='inner' ref={inner}>
-							// 		<img src={`${process.env.PUBLIC_URL}/img/swiper/${img.pic}`} alt={img.pic} />
-							// 		<h2>{img.title}</h2>
-
-							// 		{/* <h2>
-							// 			{Txt}
-							// 			<br />
-							// 			{setTxt}
-							// 		</h2> */}
-							// 	</div>
-							// </li>
 						);
 					})}
 				</ul>
