@@ -16,9 +16,8 @@ function Header(props) {
 	const icon = useRef(null);
 	const active = { color: '#1d66be' };
 	useEffect(() => {
-		window.addEventListener('resize', () => {
-			if (window.innerWidth >= 1180) setIcon(false);
-		});
+		window.addEventListener('resize', () => window.innerWidth >= 1180 && setIcon(false));
+		return () => window.removeEventListener('resize', () => window.innerWidth >= 1180 && setIcon(false));
 	}, [Icon]);
 
 	const handleScroll = useCallback(() => {
@@ -30,9 +29,7 @@ function Header(props) {
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
+		return () => window.removeEventListener('scroll', handleScroll);
 	}, [handleScroll]);
 
 	return (
