@@ -3,9 +3,8 @@ footer {
 	background: $bgMain;
 	border-top: 1px solid #ddd;
 	padding-top: 50px;
-	padding: 10vw;
+	padding: 10vw 10vw 2vw;
 	.inner {
-		// @include innerWid;
 		width: 100%;
 		.wrap {
 			display: flex;
@@ -25,7 +24,7 @@ footer {
 				a {
 					display: block;
 					color: #888;
-					font: bold 14px/1 $contentFont;
+					font: bold 13px/1 $contentFont;
 					.svg-inline--fa {
 						font-size: 16px;
 						color: #888;
