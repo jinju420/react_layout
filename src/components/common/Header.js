@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { memo } from 'react';
 import { useEffect, useState } from 'react';
@@ -11,6 +11,7 @@ activeStyle, activeClassName속성을 이용해서 스타일을 적용해주는�
 */
 function Header(props) {
 	const [Icon, setIcon] = useState(true);
+	const [Scrolled, setScrolled] = useState(0);
 	const hd = useRef(null);
 	const icon = useRef(null);
 	const active = { color: '#1d66be' };
@@ -21,14 +22,20 @@ function Header(props) {
 		});
 	}, [Icon]);
 
-	useEffect(() => {
-		window.addEventListener('scroll', () => {
-			const scroll = window.scrollY;
-			if (scroll > 0) hd.current.classList.add('on');
-			else hd.current.classList.remove('on');
-		});
-	}, []);
+	const handleScroll = useCallback(() => {
+		const scrollPos = window.scrollY;
+		setScrolled(Scrolled);
+		if (scrollPos > 0) hd.current.classList.add('on');
+		else hd.current.classList.remove('on');
+	}, [Scrolled]);
 
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [handleScroll]);
 	return (
 		<>
 			<header className={props.type} ref={hd}>

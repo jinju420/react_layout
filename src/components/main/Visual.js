@@ -17,24 +17,14 @@ function Visual() {
 	}, []);
 
 	useEffect(() => {
-		prev.current.addEventListener(
-			'click',
-			(e) => {
-				if (enableClick.current) {
-					enableClick.current = false;
-					list.current.append(list.current.firstElementChild);
-					// enableClick.current = true;
-					prev.current.classList.add('on');
-
-					setTimeout(() => prev.current.classList.remove('on'), 500);
-				}
-			}
-			// enableClick.current = true
-		);
+		prev.current.addEventListener('click', () => {
+			list.current.append(list.current.firstElementChild);
+			prev.current.classList.add('on');
+			setTimeout(() => prev.current.classList.remove('on'), 500);
+		});
 
 		next.current.addEventListener('click', () => {
-			enableClick.current = false;
-			list.current.prepend(list.current.lastElementChild, (enableClick.current = true));
+			list.current.prepend(list.current.lastElementChild);
 			next.current.classList.add('on');
 			setTimeout(() => next.current.classList.remove('on'), 500);
 		});

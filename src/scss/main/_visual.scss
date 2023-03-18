@@ -21,7 +21,8 @@ $initPos: 25%;
 				bottom: 5%;
 				left: $initPos;
 				transition: 1s;
-				transition-timing-function: cubic-bezier(0.89, -0.01, 0.28, 1.02);
+				// transition-timing-function: cubic-bezier(0.26, 1.39, 1, -0.86);
+				transition-timing-function: cubic-bezier(0, 1.72, 0.99, -1.96);
 				z-index: 3;
 				padding: 0 20px 0 0;
 
@@ -121,7 +122,7 @@ $initPos: 25%;
 						&::before {
 							background: #fff;
 							height: 6px;
-							width: 6vw;
+							width: 10vw;
 							margin-bottom: 20px;
 						}
 					}

@@ -1,48 +1,40 @@
 {
   "swiper": [
     {
-      "title": "SUSIE SALMON",
-      "pic": "swiper1.jpeg"
+      "title": "ACCA KAPPA",
+      "pic": "swiper1.jpg"
     },
     {
       "title": "VIOLETTE",
-      "pic": "swiper2.jpeg"
+      "pic": "swiper2.jpg"
     },
     {
       "title": "MUNAKI",
-      "pic": "swiper3.jpeg"
+      "pic": "swiper3.jpg"
     },
     {
       "title": "ROSE WOODY",
-      "pic": "swiper4.jpeg"
+      "pic": "swiper4.jpg"
     },
     {
-      "title": "DRAWER",
-      "pic": "swiper5.jpeg"
+      "title": "GIOIA",
+      "pic": "swiper5.jpg"
     },
     {
-      "title": "FAMILIAR",
-      "pic": "swiper6.jpeg"
+      "title": "COCO",
+      "pic": "swiper6.jpg"
     },
     {
-      "title": "NUBE",
-      "pic": "swiper8.jpeg"
+      "title": "LAVERNE",
+      "pic": "swiper8.jpg"
     },
     {
-      "title": "SLOGAN MILK",
-      "pic": "swiper9.jpeg"
+      "title": "GABRIELLE",
+      "pic": "swiper9.jpg"
     },
     {
-      "title": "WHITE MUSK",
-      "pic": "swiper11.jpeg"
-    },
-    {
-      "title": "MARINE",
-      "pic": "swiper12.jpeg"
-    },
-    {
-      "title": "ROLAND",
-      "pic": "swiper13.jpeg"
+      "title": "MUSK MALLOW",
+      "pic": "swiper11.jpg"
     }
   ]
 }
