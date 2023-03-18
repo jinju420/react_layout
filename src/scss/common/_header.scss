@@ -3,8 +3,33 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	// background: $bgMain;
+	background: transparent;
+	transition: 0.5s;
 	z-index: 4;
+	&.on {
+		background: $bgMain;
+		.inner {
+			h1 {
+				a {
+					color: #333;
+				}
+			}
+			#gnb {
+				> li {
+					a {
+						color: #333;
+					}
+				}
+			}
+		}
+		&.main .toggleMenu {
+			span,
+			&::before,
+			&::after {
+				background: #333;
+			}
+		}
+	}
 	.inner {
 		@include innerWid;
 		height: 60px;
@@ -17,7 +42,6 @@ header {
 			a {
 				font: bold 24px/1 $titleFont;
 				color: #fff;
-				// color: #333;
 				letter-spacing: 1px;
 			}
 		}
@@ -71,7 +95,7 @@ header {
 			height: 24px;
 			position: absolute;
 			bottom: 20px;
-			right: 5vw;
+			right: 50px;
 			display: none;
 			cursor: pointer;
 			transform: scale(0.8);
@@ -116,13 +140,6 @@ header {
 			}
 		}
 	}
-	&.main .toggleMenu {
-		span,
-		&::before,
-		&::after {
-			background: #fff;
-		}
-	}
 	&.sub .inner {
 		background: $bgMain;
 		h1 a {
@@ -158,9 +175,11 @@ header {
 				display: block;
 			}
 		}
-		&.main {
-			.inner {
-				width: 100%;
+		&.main .toggleMenu {
+			span,
+			&::before,
+			&::after {
+				background: #fff;
 			}
 		}
 	}

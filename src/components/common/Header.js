@@ -11,7 +11,7 @@ activeStyle, activeClassName속성을 이용해서 스타일을 적용해주는�
 */
 const Header = forwardRef((props, ref) => {
 	const [Icon, setIcon] = useState(true);
-	const li = useRef(null);
+	const hd = useRef(null);
 	const icon = useRef(null);
 	const active = { color: '#1d66be' };
 	useImperativeHandle(ref, () => {
@@ -22,42 +22,45 @@ const Header = forwardRef((props, ref) => {
 		window.addEventListener('resize', () => {
 			if (window.innerWidth >= 1180) setIcon(false);
 		});
-		// icon.current.style.display = 'none';
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 0) hd.current.classList.add('on');
+			else hd.current.classList.remove('on');
+		});
 	}, [Icon]);
 	return (
 		<>
-			<header className={props.type}>
+			<header className={props.type} ref={hd}>
 				<div className='inner'>
 					<h1>
 						<Link to='/'>GRANHAND.</Link>
 					</h1>
 					<ul id='gnb'>
-						<li ref={li} onClick={() => setIcon(false)}>
+						<li>
 							<NavLink to='/brand' activeStyle={active}>
 								BRAND
 							</NavLink>
 						</li>
-						<li ref={li}>
+						<li>
 							<NavLink to='/gallery' activeStyle={active}>
 								GALLERY
 							</NavLink>
 						</li>
-						<li ref={li}>
+						<li>
 							<NavLink to='/youtube' activeStyle={active}>
 								YOUTUBE
 							</NavLink>
 						</li>
-						<li ref={li}>
+						<li>
 							<NavLink to='/mypage' activeStyle={active}>
 								MYPAGE
 							</NavLink>
 						</li>
-						<li ref={li}>
+						<li>
 							<NavLink to='/notice' activeStyle={active}>
 								NOTICE
 							</NavLink>
 						</li>
-						<li ref={li}>
+						<li>
 							<NavLink to='/contact' activeStyle={active}>
 								CONTACT
 							</NavLink>
