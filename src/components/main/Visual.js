@@ -31,23 +31,35 @@ function Visual() {
 	}, []);
 
 	return (
-		<figure id='visual' className='myScroll'>
+		<div id='visual' className='myScroll'>
 			<div className='inner'>
 				<ul className='list' ref={list}>
 					{Img.map((img, idx) => {
-						const [Txt, setTxt] = img.title.split(' ');
+						// const [Txt, setTxt] = img.title.split(' ');
 						return (
 							<li key={idx} ref={li}>
 								<div className='inner' ref={inner}>
 									<img src={`${process.env.PUBLIC_URL}/img/swiper/${img.pic}`} alt={img.pic} />
-
-									<h2>
+									<h2>{img.title}</h2>
+									{/* <h2>
 										{Txt}
 										<br />
 										{setTxt}
-									</h2>
+									</h2> */}
 								</div>
 							</li>
+							// <li key={idx} ref={li}>
+							// 	<div className='inner' ref={inner}>
+							// 		<img src={`${process.env.PUBLIC_URL}/img/swiper/${img.pic}`} alt={img.pic} />
+							// 		<h2>{img.title}</h2>
+
+							// 		{/* <h2>
+							// 			{Txt}
+							// 			<br />
+							// 			{setTxt}
+							// 		</h2> */}
+							// 	</div>
+							// </li>
 						);
 					})}
 				</ul>
@@ -61,7 +73,7 @@ function Visual() {
 					</p>
 				</nav>
 			</div>
-		</figure>
+		</div>
 	);
 }
 

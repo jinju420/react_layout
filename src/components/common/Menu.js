@@ -68,8 +68,6 @@ const Menu = forwardRef((props, ref) => {
 							ref={li}
 							onClick={() => {
 								setOpen(false);
-
-								console.log(Open);
 							}}
 						>
 							<NavLink to='/gallery' activeStyle={active}>

@@ -1,4 +1,4 @@
-import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import { useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { memo } from 'react';
 import { useEffect, useState } from 'react';
@@ -9,24 +9,26 @@ NavLink는  LInk에다가 special version으로  특정 링크에 스타일을 �
 activeStyle, activeClassName속성을 이용해서 스타일을 적용해주는것
 리액트 웹의 현재 url과 to가 가르키는 링크가 일치하면 활성화 되면서 적용되고, 그렇지 않으면 비활성화 되는 식의 적용방식
 */
-const Header = forwardRef((props, ref) => {
+function Header(props) {
 	const [Icon, setIcon] = useState(true);
 	const hd = useRef(null);
 	const icon = useRef(null);
 	const active = { color: '#1d66be' };
-	useImperativeHandle(ref, () => {
-		return { setIcon: () => setIcon(true) };
-	});
 
 	useEffect(() => {
 		window.addEventListener('resize', () => {
 			if (window.innerWidth >= 1180) setIcon(false);
 		});
+	}, [Icon]);
+
+	useEffect(() => {
 		window.addEventListener('scroll', () => {
-			if (window.scrollY > 0) hd.current.classList.add('on');
+			const scroll = window.scrollY;
+			if (scroll > 0) hd.current.classList.add('on');
 			else hd.current.classList.remove('on');
 		});
-	}, [Icon]);
+	}, []);
+
 	return (
 		<>
 			<header className={props.type} ref={hd}>
@@ -96,6 +98,6 @@ const Header = forwardRef((props, ref) => {
 			{/* setToggle함수 받음 */}
 		</>
 	);
-});
+}
 
 export default memo(Header);

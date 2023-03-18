@@ -57,7 +57,6 @@ header {
 					display: block;
 					position: relative;
 					color: #fff;
-					// color: #333;
 					font-family: $contentFont;
 					letter-spacing: 1px;
 					text-align: center;
@@ -95,7 +94,7 @@ header {
 			height: 24px;
 			position: absolute;
 			bottom: 20px;
-			right: 50px;
+			right: 5vw;
 			display: none;
 			cursor: pointer;
 			transform: scale(0.8);
@@ -125,7 +124,6 @@ header {
 			}
 		}
 		.toggleMenu.on {
-			// opacity: 0;
 			span {
 				left: 50px;
 				opacity: 0;
@@ -140,16 +138,24 @@ header {
 			}
 		}
 	}
-	&.sub .inner {
-		background: $bgMain;
-		h1 a {
-			color: #333;
-		}
-		#gnb li a {
-			color: #333;
+	&.sub {
+		.inner {
+			background: $bgMain;
+			h1 {
+				a {
+					color: #333;
+				}
+			}
+			#gnb {
+				> li {
+					> a {
+						color: #333;
 
-			&::after {
-				content: none;
+						&::after {
+							content: none;
+						}
+					}
+				}
 			}
 		}
 	}
