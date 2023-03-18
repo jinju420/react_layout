@@ -53,63 +53,38 @@ const Menu = forwardRef((props, ref) => {
 						<Link to='/'>GRANHAND.</Link>
 					</h1>
 
-					<ul id='gnbMo'>
-						<li
-							ref={li}
-							onClick={() => {
-								setOpen(false);
-							}}
-						>
+					<ul
+						id='gnbMo'
+						onClick={() => {
+							setOpen(false);
+						}}
+					>
+						<li ref={li}>
 							<NavLink to='/brand' activeStyle={active}>
 								Brand
 							</NavLink>
 						</li>
-						<li
-							ref={li}
-							onClick={() => {
-								setOpen(false);
-							}}
-						>
+						<li ref={li}>
 							<NavLink to='/gallery' activeStyle={active}>
 								Gallery
 							</NavLink>
 						</li>
-						<li
-							ref={li}
-							onClick={() => {
-								setOpen(false);
-							}}
-						>
+						<li ref={li}>
 							<NavLink to='/youtube' activeStyle={active}>
 								Youtube
 							</NavLink>
 						</li>
-						<li
-							ref={li}
-							onClick={() => {
-								setOpen(false);
-							}}
-						>
+						<li ref={li}>
 							<NavLink to='/mypage' activeStyle={active}>
 								Mypage
 							</NavLink>
 						</li>
-						<li
-							ref={li}
-							onClick={() => {
-								setOpen(false);
-							}}
-						>
+						<li ref={li}>
 							<NavLink to='/notice' activeStyle={active}>
 								Notice
 							</NavLink>
 						</li>
-						<li
-							ref={li}
-							onClick={() => {
-								setOpen(false);
-							}}
-						>
+						<li ref={li}>
 							<NavLink to='/contact' activeStyle={active}>
 								Contact
 							</NavLink>

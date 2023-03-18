@@ -71,27 +71,12 @@ function Header(props) {
 							</NavLink>
 						</li>
 					</ul>
-
-					{/* <div
-						ref={icon}
-						onClick={() => {
-							console.log(Icon);
-							props.menu.current.setToggle();
-							Icon ? (icon.current.style.display = 'block') : (icon.current.style.display = 'none');
-							props.menu.current.setToggle() && (icon.current.style.display = 'block');
-						}}
-						className={Icon ? 'on toggleMenu' : 'toggleMenu'}
-					>
-						<span></span>
-					</div> */}
 					<div
 						ref={icon}
 						onClick={() => {
 							props.menu.current.setToggle();
-							// setIcon(false);
 						}}
 						className='toggleMenu'
-						// className={Icon ? 'toggleMenu' : 'on toggleMenu'}
 					>
 						<span></span>
 					</div>

@@ -24,6 +24,7 @@ function Main(props) {
 	const [Pos, setPos] = useState([]);
 	return (
 		<main>
+			{/* 특정 값을 직계자식이 아닌 자손 컴포넌트에 전달하기 위해 불필요하게 중간 컴포넌트에 props를 전달 : Prop drilling */}
 			<Header type={'main'} menu={props.menu} />
 			<Visual />
 			<News />

@@ -18,7 +18,6 @@ import Gallery from './components/sub/Gallery';
 import Mypage from './components/sub/Mypage';
 import Notice from './components/sub/Notice';
 import Youtube from './components/sub/Youtube';
-// import About from './components/sub/About';
 import './scss/style.scss';
 
 function App() {
@@ -35,7 +34,9 @@ function App() {
 		// switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
 		<>
 			<Switch>
+				{/* menu컴포넌트에서 전달된 참조객체를 다시 메인 전용 Header컴포넌트에 전달하기 위해 우선 Main 컴포넌트 props로 전달 */}
 				<Route exact path='/' render={() => <Main menu={menu} />} />
+				{/* menu컴포넌트에서 전달된 참조객체를 다시 Header컴포넌트에 props로 전달 */}
 				<Route path='/' render={() => <Header type={'sub'} menu={menu} />} />
 			</Switch>
 
