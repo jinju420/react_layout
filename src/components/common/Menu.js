@@ -14,13 +14,11 @@ const Menu = forwardRef((props, ref) => {
 		// return { setToggle: () => setOpen(!Open) };
 	});
 	useEffect(() => {
-		window.addEventListener('resize', () => {
-			if (window.innerWidth >= 1180) setOpen(false);
-		});
-
 		Open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto');
-
 		Open ? document.body.classList.add('on') : document.body.classList.remove('on');
+
+		window.addEventListener('resize', () => window.innerWidth >= 1180 && setOpen(false));
+		return () => window.removeEventListener('resize', () => window.innerWidth >= 1180 && setOpen(false));
 	}, [Open]);
 	return (
 		<AnimatePresence>

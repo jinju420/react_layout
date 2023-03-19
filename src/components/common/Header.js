@@ -21,11 +21,11 @@ function Header(props) {
 	}, [Icon]);
 
 	const handleScroll = useCallback(() => {
-		const scrollPos = window.scrollY;
-		setScrolled(Scrolled);
+		const scrollPos = parseInt(window.scrollY);
+		setScrolled(scrollPos);
 		if (scrollPos > 0) hd.current.classList.add('on');
 		else hd.current.classList.remove('on');
-	}, [Scrolled]);
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
