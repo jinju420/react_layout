@@ -14,22 +14,32 @@ function News() {
 			{
 				title: 'New Arrival',
 				content:
-					'2년 만에 그랑핸드에서 새로운 향과 제품을 선보입니다. 향은 보이지도, 잡히지도, 않지만, 우리에게 수많은 기억과 감정을 각인시키고, 나아가 우리 삶 속에서 많은 부분을 결정합니다',
+					'Grandhand is introducing a new scent and product for the first time in two years. Fragrance can not be seen, it can not be caught, it imprints on us a lot of memories and emotions, and it determines a lot in our lives.',
 			},
 			{
 				title: 'Susie Salmon',
 				content:
-					'달콤한 과일을 먹은 뒤의 낮잠, 그랑핸드는 향의 가치를 믿으며, 이를 매개로 한 끊임없는 시도를 통해 향의 일상화를 꿈꿉니다. 수많은 기억과 감정을 각인시키고, 나아가 우리 삶 속에서 많은 부분을 결정합니다',
+					'The nap after eating sweet fruits, Grandhand believes in the value of scent, and dreams of becoming a daily life of scent through constant attempts through it. It imprints a lot of memories and emotions, and it further determines a lot of things in our lives.',
 			},
 			{
 				title: 'NOLL',
 				content:
-					'NOLL, 놀, MUNAKI 모나키, NUBE 누베로 구성된 세가지 퍼퓸 라인의 향을 만나보세요. 그랑핸드는 쉽게 소비되고 잊혀질 무언가가 아닌, 보이지 않는 곳에서 뚜력한 존재감으로 모든 사람들에게 우리의 마음과 온기를 전하고 싶습니다.',
+					'Meet the scent of three perfume lines: NOLL, NOL, MUNAKI Monaki, and NUBE Nouve. Grandhand wants to convey our hearts and warmth to everyone with a strong presence in invisible, not something that will be easily',
 			},
-			// {
-			// 	title: 'Slogan Milk Glass',
-			// 	content: 'Sometimes you win, Sometimes you learn. New Renewal Oepn: GRANHAND Sogyeok',
-			// },
+			{
+				title: 'Slogan Milk Glass',
+				content: 'Sometimes you win, Sometimes you learn. New Renewal Oepn: GRANHAND Sogyeok',
+			},
+			{
+				title: 'Susie Salmon',
+				content:
+					'Inside the drawer, which had never been opened, there was a familiar smell of minutes between scarves, accessories, and various miscellaneous things. When I opened an old notebook with a coated four-leaf clover',
+			},
+			{
+				title: 'RoseWood',
+				content:
+					'There were names and phone numbers of my acquaintances written on one side, and a faded photo next to it showed a young woman who looked just like me in high heels in a sheeps clothing smiling broadly',
+			},
 		];
 
 		const data = localStorage.getItem('post');

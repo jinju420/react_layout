@@ -72,7 +72,7 @@ function Pics() {
 					</div>
 
 					<Swiper
-						slidesPerView={1}
+						slidesPerView={'auto'}
 						// spaceBetween={20}
 						loop={true}
 						centeredSlides={true}

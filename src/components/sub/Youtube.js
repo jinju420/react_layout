@@ -14,17 +14,16 @@ function Youtube() {
 				{Vids.map((el, idx) => {
 					const tit = el.snippet.title;
 					const desc = el.snippet.description;
-					// const date = el.snippet.publishedAt;
+					const span = el.snippet.videoOwnerChannelTitle;
 
 					return (
 						<article key={el.id}>
 							<div className='main_txt'>
-								<h3>{tit.length > 100 ? tit.substr(0, 20) + '...' : tit}</h3>
+								<h3>{tit.length > 100 ? tit.substr(0, 50) + '...' : tit}</h3>
 								<div className='sub_txt'>
-									<span>GRANHAND.</span>
+									<span>{span}</span>
 									<div className='txt'>
 										<p>{desc.length > 150 ? desc.substr(0, 130) + '...' : desc}</p>
-										{/* <span>{date.split('T')[0]}</span> */}
 									</div>
 								</div>
 							</div>

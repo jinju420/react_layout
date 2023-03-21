@@ -124,9 +124,9 @@ function Notice() {
 				<div className='notice_box'>
 					<div className='inputBox'>
 						<div className='txt_box'>
-							<input type='text' placeholder='제목을 입력하세요' ref={input} />
+							<input type='text' placeholder='Please enter a title' ref={input} />
 							<br />
-							<textarea cols='30' rows='3' placeholder='본문을 입력하세요' ref={textarea}></textarea>
+							<textarea cols='30' rows='3' placeholder='Please enter the Comments' ref={textarea}></textarea>
 						</div>
 
 						<br />
