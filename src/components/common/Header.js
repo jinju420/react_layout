@@ -15,6 +15,7 @@ function Header(props) {
 	const hd = useRef(null);
 	const icon = useRef(null);
 	const active = { color: '#1d66be' };
+
 	useEffect(() => {
 		window.addEventListener('resize', () => window.innerWidth >= 1180 && setIcon(false));
 		return () => window.removeEventListener('resize', () => window.innerWidth >= 1180 && setIcon(false));

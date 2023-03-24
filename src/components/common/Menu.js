@@ -7,7 +7,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Menu = forwardRef((props, ref) => {
 	const li = useRef(null);
 	const [Open, setOpen] = useState(false);
-	const active = { color: '#fff' };
+	const active = { color: '#d88d51' };
 	useImperativeHandle(ref, () => {
 		//부모의 토글버튼 클릭시 기존 Open state값이 계속 반전되야 하므로 !Open으로 설정
 		return { setToggle: () => setOpen(true) };
