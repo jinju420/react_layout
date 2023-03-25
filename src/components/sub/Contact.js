@@ -163,7 +163,7 @@ function ContactUs() {
 					<article>
 						<FontAwesomeIcon icon={faLocationDot} />
 						<h2>ADDRESS</h2>
-						<p>서울 마포구 와우산로37길 9</p>
+						<p>9, Wausan-ro 37-gil, Mapo-gu, Seoul</p>
 					</article>
 					<article>
 						<FontAwesomeIcon icon={faClock} />
