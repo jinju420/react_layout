@@ -20,7 +20,8 @@ $initPos: 25%;
 				overflow: hidden;
 				position: absolute;
 				bottom: 2%;
-				left: $initPos;
+				left: 1vw;
+				// left: $initPos;
 				transition: 1s;
 				z-index: 3;
 				padding: 0 20px 0 0;
@@ -131,36 +132,42 @@ $initPos: 25%;
 
 			//목록별 순버 패널 위치
 			li:nth-of-type(3) {
-				left: calc($initPos + $wid * 0);
+				left: 1vw;
+				// left: calc($initPos + $wid * 0);
 				transition-delay: 0s;
 			}
 			li:nth-of-type(4) {
-				left: calc($initPos + $wid * 1);
+				left: $wid + 1vw;
+				// left: calc($initPos + $wid * 1);
 				transition-delay: 0.1s;
 			}
 			li:nth-of-type(5) {
-				left: calc($initPos + $wid * 2);
+				left: ($wid * 2)+ 1vw;
+				// left: calc($initPos + $wid * 2);
 				transition-delay: 0.2s;
 			}
 			li:nth-of-type(6) {
-				left: calc($initPos + $wid * 3);
+				left: ($wid * 3)+ 1vw;
+				// left: calc($initPos + $wid * 3);
 				transition-delay: 0.3s;
 			}
 			li:nth-of-type(7) {
-				left: calc($initPos + $wid * 4);
+				left: ($wid * 4)+ 1vw;
+				// left: calc($initPos + $wid * 4);
 				transition-delay: 0.4s;
 			}
 			li:nth-of-type(8) {
-				left: calc($initPos + $wid * 5);
+				left: ($wid * 5)+ 1vw;
+				// left: calc($initPos + $wid * 5);
 				transition-delay: 0.5s;
 			}
 		}
 
 		.navi {
 			position: absolute;
-			left: 13vw;
+			left: 0;
+			bottom: 27%;
 			// left: $initPos;
-			bottom: 16%;
 			// top: calc(40% + $ht + 20px);
 			z-index: 3;
 			padding-left: 20px;
@@ -174,7 +181,7 @@ $initPos: 25%;
 				border-radius: 50%;
 				border: 1px solid #333;
 				cursor: pointer;
-				margin-right: 20px;
+				margin-right: 15px;
 				position: relative;
 				text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
 				&::before,
@@ -257,29 +264,53 @@ $initPos: 25%;
 					width: $wid;
 				}
 				li:nth-of-type(3) {
-					left: calc($initPos + $wid * 0);
+					left: 1vw;
 					transition-delay: 0s;
 				}
 				li:nth-of-type(4) {
-					left: calc($initPos + $wid * 1);
+					left: $wid + 1vw;
 					transition-delay: 0.1s;
 				}
 				li:nth-of-type(5) {
-					left: calc($initPos + $wid * 2);
+					left: ($wid * 2)+ 1vw;
 					transition-delay: 0.2s;
 				}
 				li:nth-of-type(6) {
-					left: calc($initPos + $wid * 3);
+					left: ($wid * 3)+ 1vw;
 					transition-delay: 0.3s;
 				}
 				li:nth-of-type(7) {
-					left: calc($initPos + $wid * 4);
+					left: ($wid * 4)+ 1vw;
 					transition-delay: 0.4s;
 				}
 				li:nth-of-type(8) {
-					left: calc($initPos + $wid * 5);
+					left: ($wid * 5)+ 1vw;
 					transition-delay: 0.5s;
 				}
+				// li:nth-of-type(3) {
+				// 	left: calc($initPos + $wid * 0);
+				// 	transition-delay: 0s;
+				// }
+				// li:nth-of-type(4) {
+				// 	left: calc($initPos + $wid * 1);
+				// 	transition-delay: 0.1s;
+				// }
+				// li:nth-of-type(5) {
+				// 	left: calc($initPos + $wid * 2);
+				// 	transition-delay: 0.2s;
+				// }
+				// li:nth-of-type(6) {
+				// 	left: calc($initPos + $wid * 3);
+				// 	transition-delay: 0.3s;
+				// }
+				// li:nth-of-type(7) {
+				// 	left: calc($initPos + $wid * 4);
+				// 	transition-delay: 0.4s;
+				// }
+				// li:nth-of-type(8) {
+				// 	left: calc($initPos + $wid * 5);
+				// 	transition-delay: 0.5s;
+				// }
 			}
 		}
 	}
@@ -293,85 +324,132 @@ $initPos: 25%;
 			.list {
 				li {
 					width: $wid;
-					left: $initPos;
+					// left: $initPos;
 				}
 				li:nth-of-type(3) {
-					left: calc($initPos + $wid * 0);
+					left: 1vw;
 					transition-delay: 0s;
 				}
 				li:nth-of-type(4) {
-					left: calc($initPos + $wid * 1);
+					left: $wid + 1vw;
 					transition-delay: 0.1s;
 				}
 				li:nth-of-type(5) {
-					left: calc($initPos + $wid * 2);
+					left: ($wid * 2)+ 1vw;
 					transition-delay: 0.2s;
 				}
 				li:nth-of-type(6) {
-					left: calc($initPos + $wid * 3);
+					left: ($wid * 3)+ 1vw;
 					transition-delay: 0.3s;
 				}
 				li:nth-of-type(7) {
-					left: calc($initPos + $wid * 4);
+					left: ($wid * 4)+ 1vw;
 					transition-delay: 0.4s;
 				}
 				li:nth-of-type(8) {
-					left: calc($initPos + $wid * 5);
+					left: ($wid * 5)+ 1vw;
 					transition-delay: 0.5s;
 				}
+				// li:nth-of-type(3) {
+				// 	left: calc($initPos + $wid * 0);
+				// 	transition-delay: 0s;
+				// }
+				// li:nth-of-type(4) {
+				// 	left: calc($initPos + $wid * 1);
+				// 	transition-delay: 0.1s;
+				// }
+				// li:nth-of-type(5) {
+				// 	left: calc($initPos + $wid * 2);
+				// 	transition-delay: 0.2s;
+				// }
+				// li:nth-of-type(6) {
+				// 	left: calc($initPos + $wid * 3);
+				// 	transition-delay: 0.3s;
+				// }
+				// li:nth-of-type(7) {
+				// 	left: calc($initPos + $wid * 4);
+				// 	transition-delay: 0.4s;
+				// }
+				// li:nth-of-type(8) {
+				// 	left: calc($initPos + $wid * 5);
+				// 	transition-delay: 0.5s;
+				// }
 			}
 		}
 	}
 }
 
 @media screen and (max-width: 739px) {
-	$wid: 40vw;
+	$wid: 50vw;
 	$initPos: 45%;
 	#visual {
 		> .inner {
 			.list {
 				li {
 					width: $wid;
-					left: $initPos;
+					// left: $initPos;
 				}
 				li:nth-of-type(3) {
-					left: calc($initPos + $wid * 0);
+					left: 1vw;
 					transition-delay: 0s;
 				}
 				li:nth-of-type(4) {
-					left: calc($initPos + $wid * 1);
+					left: $wid + 1vw;
 					transition-delay: 0.1s;
 				}
 				li:nth-of-type(5) {
-					left: calc($initPos + $wid * 2);
+					left: ($wid * 2)+ 1vw;
 					transition-delay: 0.2s;
 				}
 				li:nth-of-type(6) {
-					left: calc($initPos + $wid * 3);
+					left: ($wid * 3)+ 1vw;
 					transition-delay: 0.3s;
 				}
 				li:nth-of-type(7) {
-					left: calc($initPos + $wid * 4);
+					left: ($wid * 4)+ 1vw;
 					transition-delay: 0.4s;
 				}
 				li:nth-of-type(8) {
-					left: calc($initPos + $wid * 5);
+					left: ($wid * 5)+ 1vw;
 					transition-delay: 0.5s;
 				}
+				// li:nth-of-type(3) {
+				// 	left: calc($initPos + $wid * 0);
+				// 	transition-delay: 0s;
+				// }
+				// li:nth-of-type(4) {
+				// 	left: calc($initPos + $wid * 1);
+				// 	transition-delay: 0.1s;
+				// }
+				// li:nth-of-type(5) {
+				// 	left: calc($initPos + $wid * 2);
+				// 	transition-delay: 0.2s;
+				// }
+				// li:nth-of-type(6) {
+				// 	left: calc($initPos + $wid * 3);
+				// 	transition-delay: 0.3s;
+				// }
+				// li:nth-of-type(7) {
+				// 	left: calc($initPos + $wid * 4);
+				// 	transition-delay: 0.4s;
+				// }
+				// li:nth-of-type(8) {
+				// 	left: calc($initPos + $wid * 5);
+				// 	transition-delay: 0.5s;
+				// }
 			}
 		}
 	}
 }
 
 @media screen and (max-width: $mobile) {
-	$wid: 60vw;
-	$initPos: 10%;
+	$wid: 95vw;
+	$initPos: 3%;
 	#visual {
 		> .inner {
 			.list {
 				li {
 					width: $wid;
-					height: 160px;
 					left: $initPos;
 				}
 				h2 {
@@ -390,33 +468,57 @@ $initPos: 25%;
 					}
 				}
 				li:nth-of-type(3) {
-					left: calc($initPos + $wid * 1);
+					left: 3vw;
 					transition-delay: 0s;
 				}
 				li:nth-of-type(4) {
-					left: calc($initPos + $wid * 2);
+					left: $wid + 3vw;
 					transition-delay: 0.1s;
 				}
 				li:nth-of-type(5) {
-					left: calc($initPos + $wid * 3);
+					left: ($wid * 2)+ 3vw;
 					transition-delay: 0.2s;
 				}
 				li:nth-of-type(6) {
-					left: calc($initPos + $wid * 4);
+					left: ($wid * 3)+ 3vw;
 					transition-delay: 0.3s;
 				}
 				li:nth-of-type(7) {
-					left: calc($initPos + $wid * 5);
+					left: ($wid * 4)+ 3vw;
 					transition-delay: 0.4s;
 				}
 				li:nth-of-type(8) {
-					left: calc($initPos + $wid * 6);
+					left: ($wid * 5)+ 3vw;
 					transition-delay: 0.5s;
 				}
+				// li:nth-of-type(3) {
+				// 	left: calc($initPos + $wid * 1);
+				// 	transition-delay: 0s;
+				// }
+				// li:nth-of-type(4) {
+				// 	left: calc($initPos + $wid * 2);
+				// 	transition-delay: 0.1s;
+				// }
+				// li:nth-of-type(5) {
+				// 	left: calc($initPos + $wid * 3);
+				// 	transition-delay: 0.2s;
+				// }
+				// li:nth-of-type(6) {
+				// 	left: calc($initPos + $wid * 4);
+				// 	transition-delay: 0.3s;
+				// }
+				// li:nth-of-type(7) {
+				// 	left: calc($initPos + $wid * 5);
+				// 	transition-delay: 0.4s;
+				// }
+				// li:nth-of-type(8) {
+				// 	left: calc($initPos + $wid * 6);
+				// 	transition-delay: 0.5s;
+				// }
 			}
 			.navi {
-				left: 5%;
-				bottom: 34%;
+				// left: 5%;
+				// bottom: 34%;
 				.prev,
 				.next {
 					width: 45px;
