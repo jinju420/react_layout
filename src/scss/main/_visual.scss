@@ -66,8 +66,8 @@ $initPos: 25%;
 						font: bold 16px/1 $contentFont;
 						color: #f5f5f5;
 						position: absolute;
-						top: 20%;
-						left: 14%;
+						top: 40%;
+						left: 19%;
 						transition: 0.5s 0.5s;
 						text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
 						&::before {
@@ -179,7 +179,7 @@ $initPos: 25%;
 				width: 55px;
 				height: 55px;
 				border-radius: 50%;
-				border: 1px solid #333;
+				border: 1px solid #fff;
 				cursor: pointer;
 				margin-right: 15px;
 				position: relative;
@@ -190,7 +190,7 @@ $initPos: 25%;
 					display: block;
 					width: 17px;
 					height: 2px;
-					background: #333;
+					background: #fff;
 					position: absolute;
 					border-radius: 3px 3px 3px 3px;
 					text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
@@ -206,7 +206,7 @@ $initPos: 25%;
 				span {
 					width: 20px;
 					height: 2px;
-					background: #333;
+					background: #fff;
 					position: absolute;
 					top: 49%;
 					opacity: 1;
@@ -214,7 +214,7 @@ $initPos: 25%;
 				}
 				&.on {
 					animation: wrap 0.3s 1;
-					color: #333;
+					color: #fff;
 				}
 			}
 
@@ -262,6 +262,11 @@ $initPos: 25%;
 			.list {
 				li {
 					width: $wid;
+					& > .inner {
+						h2 {
+							left: 5%;
+						}
+					}
 				}
 				li:nth-of-type(3) {
 					left: 1vw;

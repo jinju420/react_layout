@@ -1,7 +1,6 @@
 #news {
 	width: 100%;
 	height: auto;
-	// background: $bgMain;
 	position: relative;
 	padding-top: 10vw;
 	overflow: hidden;
@@ -31,7 +30,7 @@
 		}
 
 		.post_box {
-			padding: 5vw 10vw 20vw;
+			padding: 5vw 10vw 10vw;
 			text-align: right;
 			a {
 				display: inline-block;
