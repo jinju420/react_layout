@@ -14,6 +14,7 @@
 			text-align: left;
 			margin-bottom: 70px;
 			color: #fff;
+			padding-left: 10vw;
 			h1 {
 				margin-bottom: 20px;
 				font: 35px/1.2 $StrongFont;
@@ -23,7 +24,7 @@
 				align-items: flex-end;
 				span {
 					margin-right: 130px;
-					font: 14px/1 $contentFont;
+					font: 18px/1 $contentFont;
 				}
 				.controls {
 					display: flex;
@@ -72,13 +73,12 @@
 						img {
 							@include imgFit;
 							width: 100%;
-							height: 300px;
+							height: 400px;
 						}
 					}
 					.txt {
 						padding: 20px;
 						text-align: center;
-
 						h2 {
 							font: 30px/1.2 $StrongFont;
 							width: 100%;
@@ -125,6 +125,7 @@
 						a {
 							opacity: 1;
 							border: 1px solid #fff;
+							width: 15vw;
 						}
 					}
 				}
@@ -163,6 +164,13 @@
 	#pics {
 		> .inner {
 			padding: 10vw;
+			.title {
+				padding-left: 0;
+				text-align: center;
+				.controls_box {
+					justify-content: center;
+				}
+			}
 			.swiper {
 				.swiper-slide {
 					.inner {
@@ -206,6 +214,7 @@
 			padding: 10vw;
 			.title {
 				text-align: center;
+				padding-left: 0;
 				.controls_box {
 					justify-content: center;
 				}
