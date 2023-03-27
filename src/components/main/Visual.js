@@ -8,7 +8,7 @@ function Visual() {
 	const next = useRef(null);
 	const li = useRef(null);
 	const inner = useRef(true);
-	const enableClick = useRef(true);
+	// const enableClick = useRef(true);
 
 	useEffect(() => {
 		axios.get(`${process.env.PUBLIC_URL}/DB/swiper.json`).then((json) => {
