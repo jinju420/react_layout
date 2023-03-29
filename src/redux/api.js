@@ -18,12 +18,9 @@ export const fetchFlickr = async (opt) => {
 	const num = 20;
 	let url = '';
 
-	if (opt.type === 'interest')
-		url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
-	if (opt.type === 'search')
-		url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
-	if (opt.type === 'user')
-		url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
+	if (opt.type === 'interest') url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
+	if (opt.type === 'search') url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
+	if (opt.type === 'user') url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
 
 	return await axios.get(url);
 };

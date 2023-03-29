@@ -73,7 +73,6 @@ function Pics() {
 
 					<Swiper
 						slidesPerView={'auto'}
-						// spaceBetween={20}
 						loop={true}
 						centeredSlides={true}
 						grabCursor={true}
@@ -86,7 +85,6 @@ function Pics() {
 						breakpoints={{
 							1180: {
 								slidesPerView: 4,
-								// spaceBetween: 0,
 							},
 						}}
 						onSwiper={(swiper) => setInstance(swiper)}

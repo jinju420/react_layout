@@ -5,6 +5,7 @@ import Vids from './Vids';
 import Visual from './Visual';
 import Btns from './Btns';
 import { useState } from 'react';
+import Cookie from './Cookie';
 
 /*
 	useRef사용 이유
@@ -30,6 +31,7 @@ function Main(props) {
 			<News />
 			<Pics />
 			<Vids />
+			<Cookie />
 			{/* setScrolled state변경함수를 btns컴포넌트 전달 */}
 			<Btns setScrolled={setScrolled} setPos={setPos} />
 		</main>

@@ -14,9 +14,7 @@ function Visual() {
 		axios.get(`${process.env.PUBLIC_URL}/DB/swiper.json`).then((json) => {
 			setImg(json.data.swiper);
 		});
-	}, []);
 
-	useEffect(() => {
 		prev.current.addEventListener('click', () => {
 			list.current.append(list.current.firstElementChild);
 			prev.current.classList.add('on');
