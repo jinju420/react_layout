@@ -3,7 +3,7 @@ import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Detail = forwardRef((props, ref) => {
-	const isMobile = useMediaQuery('(max-width:789px)');
+	const isMobile = useMediaQuery('(max-width: 789px)');
 	const aniDetail = isMobile ? { init: { y: '-100%' } } : { init: { y: '100%' } };
 	const aniPic = isMobile
 		? { anim: { x: '0%', width: '100%', transition: { duration: 0.5, delay: 0.4 } } }
@@ -19,6 +19,7 @@ const Detail = forwardRef((props, ref) => {
 		setOpen(false);
 		props.listEl.current.classList.remove('off');
 	};
+
 	return (
 		<AnimatePresence>
 			{Open && (
