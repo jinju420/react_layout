@@ -29,20 +29,6 @@ const Menu = forwardRef((props, ref) => {
 					animate={{ x: 0, opacity: 1, transition: { duration: 0.3 } }}
 					exit={{ x: -270, opacity: 0 }}
 				>
-					{/* <div className='icons'>
-						<ul className='brands'>
-							<li>
-								<FontAwesomeIcon icon={faFacebookF} />
-							</li>
-							<li>
-								<FontAwesomeIcon icon={faTwitter} />
-							</li>
-							<li>
-								<FontAwesomeIcon icon={faSquareInstagram} />
-							</li>
-						</ul>
-					</div> */}
-
 					<h1
 						onClick={() => {
 							setOpen(false);

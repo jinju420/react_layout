@@ -10,7 +10,7 @@ import Menu from './components/common/Menu';
 
 //main
 import Main from './components/main/Main';
-
+// import List from './components/main/List';
 //sub
 import Brand from './components/sub/Brand';
 import Contact from './components/sub/Contact';
@@ -22,6 +22,7 @@ import './scss/style.scss';
 
 function App() {
 	const menu = useRef(null);
+	// const listEl = useRef(null);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -46,6 +47,7 @@ function App() {
 				<Route path='/brand' component={Brand} />
 			</Switch> */}
 			{/* <Route path='brand/about' component={About} /> */}
+
 			<Route path='/brand' component={Brand} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/youtube' component={Youtube} />

@@ -6,8 +6,6 @@ import Visual from './Visual';
 import Btns from './Btns';
 import { useState } from 'react';
 import Cookie from './Cookie';
-import Detail from './Detail';
-import List from './List';
 
 /*
 	useRef사용 이유
@@ -30,8 +28,6 @@ function Main(props) {
 			{/* 특정 값을 직계자식이 아닌 자손 컴포넌트에 전달하기 위해 불필요하게 중간 컴포넌트에 props를 전달 : Prop drilling */}
 			<Header type={'main'} menu={props.menu} />
 			<Visual />
-			<Detail />
-			<List />
 			<News />
 			<Pics />
 			<Vids />
