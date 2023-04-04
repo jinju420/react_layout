@@ -40,7 +40,7 @@ header {
 		align-items: center;
 		h1 {
 			a {
-				font: bold 40px/1 $titleFont;
+				font: bold 30px/1 $titleFont;
 				color: #333;
 				letter-spacing: 1px;
 			}
@@ -61,7 +61,7 @@ header {
 					letter-spacing: 1px;
 					text-align: center;
 					font-weight: bold;
-					font-size: 17px;
+					font-size: 14px;
 					&::after {
 						content: '';
 						display: block;
