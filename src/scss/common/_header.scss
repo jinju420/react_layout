@@ -32,15 +32,15 @@ header {
 	}
 	.inner {
 		@include innerWid;
-		height: 60px;
+		height: 80px;
 		position: relative;
-		line-height: 60px;
+		line-height: 80px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		h1 {
 			a {
-				font: bold 24px/1 $titleFont;
+				font: bold 40px/1 $titleFont;
 				color: #333;
 				letter-spacing: 1px;
 			}
@@ -50,8 +50,8 @@ header {
 			align-items: center;
 			height: 100%;
 			> li {
-				height: 60px;
-				line-height: 60px;
+				height: 80px;
+				line-height: 80px;
 				margin-left: 30px;
 				> a {
 					display: block;
@@ -61,7 +61,7 @@ header {
 					letter-spacing: 1px;
 					text-align: center;
 					font-weight: bold;
-					font-size: 14px;
+					font-size: 17px;
 					&::after {
 						content: '';
 						display: block;
