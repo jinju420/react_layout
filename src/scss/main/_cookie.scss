@@ -40,3 +40,15 @@
 		color: #333;
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	#popup {
+		right: 20px;
+	}
+}
+@media screen and (max-width: $mobile) {
+	#popup {
+		width: 450px;
+		right: 20px;
+	}
+}
