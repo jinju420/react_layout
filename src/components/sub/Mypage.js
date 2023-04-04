@@ -6,8 +6,6 @@ import { faFacebookF, faTwitter, faSquareInstagram } from '@fortawesome/free-bra
 
 function Mypage() {
 	const history = useHistory();
-	// const submit=useRef(null);
-	//name이라는 프로퍼티로 불러오기 위해
 	const initVal = {
 		userid: '',
 		pwd1: '',
@@ -20,35 +18,20 @@ function Mypage() {
 		mail: '',
 	};
 
-	/* 실시간 담아둘 공간*/
 	const [Val, setVal] = useState(initVal);
 	const [Err, setErr] = useState({});
-	/*
-	Submit버튼을 클릭했는지 확인하는 Submit정보를 기존처럼 State로 처리하면
-	아래 useEFfect에 의존성 배열로 등록을 해야되고 의존성 배열 등록시 처음 컴포넌트 마운트시에 호출되며 전송버튼 클릭전에 회원가입 성공 경고창이 뜸
-	해당 문제를 막기위해 Sumbit을 의존성 배열에 등록하지 않아도 되도록 useRef로 값 지정
-	 */
 	const Submit = useRef(false);
 
-	//인증체크함수value값은 check(Val)에서 Val 값을 뜻함
-	//value값으로 Val state가 전달되고 있음/파라미터로 전달되고 있는 Val == value값에
 	const check = (value) => {
-		//3. errs가 담길 빈 객체를 지역변수 errs로 만들어놓고
 		const errs = {};
 		const eng = /[a-zA-Z]/;
 		const num = /[0-9]/;
 		const spc = /[~!@#$%^&*()]/;
-		//Val.userid.length < 5와 같음
+
 		if (value.userid.length < 5) {
-			//errs라는 빈 객체에 userid라는 키값(property를 만들어서)으로 해당 에러 메세지를 담고 조건에 부합되지 않으면 메시지를 errs객체에 담아놓고 errs객체를 리턴 init
 			errs.userid = '아이디를 5글자 이상 입력하세요';
 		}
-		if (
-			value.pwd1.length < 5 ||
-			!eng.test(value.pwd1) ||
-			!num.test(value.pwd1) ||
-			!spc.test(value.pwd1)
-		) {
+		if (value.pwd1.length < 5 || !eng.test(value.pwd1) || !num.test(value.pwd1) || !spc.test(value.pwd1)) {
 			errs.pwd1 = '비밀번호는 5글자 이상, 영문, 숫자, 특수문자를 모두 포함하세요';
 		}
 		//pwd1과pwd2의 값이 같지 않거나 pwd2의 값이 없을 때
@@ -64,7 +47,7 @@ function Mypage() {
 		if (!value.gender) {
 			errs.gender = '성별을 선택하세요.';
 		}
-		//true가 아니면 === false일때
+
 		if (!value.perfume) {
 			errs.perfume = '좋아하는 종류를 하나만 선택해주세요';
 		}
@@ -74,27 +57,19 @@ function Mypage() {
 		if (value.age === '') {
 			errs.age = '연령을 선택하세요';
 		}
-		//4.조건에 부합하지 않으면 errs빈환
+		//조건에 부합하지 않으면 errs빈환
 		return errs;
 	};
 	//인풋 요소에 변화가 생길때마다 val state업데이트 함수
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		//현재 val값을 deep copy한 다음에 그중에 userid라는 키값의 value값만 계속 갱신
-		/*문자,숫자,boolean값 같은 원시형 자료를 바꿀때에는 바로 값을 바꾸면 되지만
-		참조형(배열,객체)같은 값은 원본이 바뀌기때문에 copy 꼭 하기!원본 유지/복사본 변경위해 deep copy/ 덮어쓰기 실시간으로*/
 		setVal({ ...Val, [name]: value });
 	};
 
 	//라디오버튼 체크시 Val state업데이트 함수
 	const handleRadio = (e) => {
 		const { name } = e.target;
-		//체크가 되면 checked가 된다.
-		//둘중에 무조건 하나만 선택이기 때문에 초기값에 false넣어놓는것 반복돌릴 필요가 없어서
-		//체크박스처럼 false로 해 놓으면 체크를 풀었을 때 에러가 생겼음
 		const isChecked = e.target.checked;
-		//false값이 들어가 있어서 착각할 수 있지만
-		//객체값(initVal)에 들어가 있기 떄문에 deep copy
 		setVal({ ...Val, [name]: isChecked });
 	};
 
@@ -105,35 +80,26 @@ function Mypage() {
 		const inputs = e.target.parentElement.querySelectorAll('input');
 
 		//모든 체크박스 반복을 돌면서 하나라도 체크된게 있으면 true값으로 변경 후 리턴
-		//&&뒤에 대입 연산자 있음 안됨()로묶음 체크가 되어있는거 확인해야돼서
 		inputs.forEach((el, idx) => el.checked && (isChecked = true));
 		setVal({ ...Val, [name]: isChecked });
 	};
 
-	//select요소 선택시 Val state 업데이트 함수
 	const handleSelect = (e) => {
 		const { name } = e.target;
 		const selected = e.target.value;
 		setVal({ ...Val, [name]: selected });
 	};
-	//1. 전송 버튼 클릭시 handleSubmit실행 => 인증 체크호출하고 에러메시지 생성 함수
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// console.log(check(Val));
-		//errs객체가 만들어진 return값을 setErr변경 스테이트 함수에 담아서 조건에 부합하지 않으면 Err스테이트 나타남
-		//2.전송 버튼 클릭시 체크함수 실행
 		setErr(check(Val));
-		//옮겨담음 에러문구 출력해야돼서 스테이트값에 담는다
 	};
-	//5.Err문구가 뜰때마다 실행
+
 	useEffect(() => {
-		//객체의 키값 반복돌기
-		//객체의 키값이 하나도 없으면 인증 통과
 		const len = Object.keys(Err).length;
 		//len의 키값이 0이고 submit값이 true여아지만 인증통과/send버튼을 한번 이상 클릭했을 때
 		if (len === 0 && Submit.current) {
 			alert('회원가입이 완료되었습니다.');
-			// setVal(initVal);
 			history.push('/');
 		}
 	}, [Err, history]);
@@ -254,13 +220,7 @@ function Mypage() {
 									<input type='radio' name='gender' value='male' id='male' onChange={handleRadio} />
 									<label htmlFor='male'>Male</label>
 
-									<input
-										type='radio'
-										name='gender'
-										value='female'
-										id='female'
-										onChange={handleRadio}
-									/>
+									<input type='radio' name='gender' value='female' id='female' onChange={handleRadio} />
 									<label htmlFor='female'>Female</label>
 
 									<span className='err'>{Err.gender}</span>
@@ -271,40 +231,16 @@ function Mypage() {
 							<tr>
 								<th scope='row'>KIND OF</th>
 								<td>
-									<input
-										type='checkbox'
-										name='perfume'
-										value='citrus'
-										id='citrus'
-										onChange={handleCheck}
-									/>
+									<input type='checkbox' name='perfume' value='citrus' id='citrus' onChange={handleCheck} />
 									<label htmlFor='citrus'>Citrus</label>
 
-									<input
-										type='checkbox'
-										name='perfume'
-										value='floral'
-										id='floral'
-										onChange={handleCheck}
-									/>
+									<input type='checkbox' name='perfume' value='floral' id='floral' onChange={handleCheck} />
 									<label htmlFor='floral'>Floral</label>
 
-									<input
-										type='checkbox'
-										name='perfume'
-										value='marine'
-										id='marine'
-										onChange={handleCheck}
-									/>
+									<input type='checkbox' name='perfume' value='marine' id='marine' onChange={handleCheck} />
 									<label htmlFor='marine'>Marine</label>
 
-									<input
-										type='checkbox'
-										name='perfume'
-										value='musk'
-										id='musk'
-										onChange={handleCheck}
-									/>
+									<input type='checkbox' name='perfume' value='musk' id='musk' onChange={handleCheck} />
 									<label htmlFor='musk'>Musk</label>
 
 									<span className='err'>{Err.perfume}</span>

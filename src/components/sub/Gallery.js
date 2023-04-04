@@ -4,9 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import Masonry from 'react-masonry-component';
 import Modal from '../common/Modal';
 import * as types from '../../redux/actionType';
-//npm i react-masonry-component
-//npm i interval-call (일정시간동안 중복되는 요청을 무시하고 첫번째 이벤트요청만 발생시켜주는 라이브러리)
-//npm i framer-motion@6 //팝업뜰때 모션처리
 
 function Gallery() {
 	const dispatch = useDispatch();
@@ -43,7 +40,6 @@ function Gallery() {
 		frame.current.classList.remove('on');
 		setLoading(true);
 		setOpt({ type: 'search', tags: result });
-		//tags=result는 내가 검색한 value의 값
 	};
 
 	let handleKeyUp = (e) => {
@@ -71,8 +67,7 @@ function Gallery() {
 								ref={btnInt}
 								onClick={() => {
 									showInterest();
-									if (!btnInt.current.classList.contains('on'))
-										btnMy.current.classList.remove('on');
+									if (!btnInt.current.classList.contains('on')) btnMy.current.classList.remove('on');
 									btnInt.current.classList.add('on');
 								}}
 							>
@@ -94,25 +89,13 @@ function Gallery() {
 					</div>
 					<div className='searchBox'>
 						{/* 키보드 이벤트 발생시 이벤트가 발생한 키보드 이름이 enter면 함수호출 */}
-						<input
-							type='text'
-							ref={input}
-							onKeyPress={handleKeyUp}
-							placeholder='검색어를 입력하세요.'
-						/>
+						<input type='text' ref={input} onKeyPress={handleKeyUp} placeholder='검색어를 입력하세요.' />
 						<button onClick={showSearch}>Search</button>
 					</div>
 				</div>
 
-				{Loading && (
-					<img
-						className='loader'
-						src={`${process.env.PUBLIC_URL}/img/gallery/load.gif`}
-						alt='loading'
-					/>
-				)}
+				{Loading && <img className='loader' src={`${process.env.PUBLIC_URL}/img/gallery/load.gif`} alt='loading' />}
 				<div className='frame' ref={frame}>
-					{/* 감싸주고 싶은 태그 넣기 elementType*/}
 					<Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
 						{Items.map((item, idx) => {
 							return (
@@ -125,10 +108,7 @@ function Gallery() {
 													src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
 													alt={item.owner}
 													onError={(e) => {
-														e.target.setAttribute(
-															'src',
-															`${process.env.PUBLIC_URL}/img/gallery/icon.jpeg`
-														);
+														e.target.setAttribute('src', `${process.env.PUBLIC_URL}/img/gallery/icon.jpeg`);
 													}}
 												/>
 												<span onClick={showUser}>{item.owner}</span>
