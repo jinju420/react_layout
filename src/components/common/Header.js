@@ -2,13 +2,7 @@ import { useCallback, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { memo } from 'react';
 import { useEffect, useState } from 'react';
-/*
-Link는 컴포넌트를 이용한 페이지 이동을 해준다
-하지만 url개념이 아니라 path의 개념이다
-NavLink는  LInk에다가 special version으로  특정 링크에 스타일을 적용해서 넣어줄수 있다
-activeStyle, activeClassName속성을 이용해서 스타일을 적용해주는것
-리액트 웹의 현재 url과 to가 가르키는 링크가 일치하면 활성화 되면서 적용되고, 그렇지 않으면 비활성화 되는 식의 적용방식
-*/
+
 function Header(props) {
 	const [Icon, setIcon] = useState(true);
 	const [Scrolled, setScrolled] = useState(0);
@@ -83,8 +77,6 @@ function Header(props) {
 					</div>
 				</div>
 			</header>
-
-			{/* setToggle함수 받음 */}
 		</>
 	);
 }
