@@ -20,6 +20,7 @@ a {
 }
 body {
 	position: relative;
+	background: $bgMain;
 	&::before {
 		z-index: 5;
 		position: absolute;
@@ -50,12 +51,6 @@ input[type='radio'] {
 		margin-left: 0;
 	}
 }
-// textarea,
-// input {
-// 	border-radius: 0;
-// 	-webkit-border-radius: 0;
-// 	-moz-border-radius: 0;
-// }
 select::-ms-expand {
 	display: none;
 }

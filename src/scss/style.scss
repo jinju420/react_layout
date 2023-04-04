@@ -4,10 +4,10 @@ $mobile: 539px;
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=El+Messiri:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Poppins:wght@300;500&display=swap');
 
 //common
+@import 'common/color';
 @import 'common/reset';
 @import 'common/mixin';
 @import 'common/font';
-@import 'common/color';
 @import 'common/header';
 @import 'common/footer';
 @import 'common/modal';
@@ -15,7 +15,6 @@ $mobile: 539px;
 @import 'common/menu';
 
 //main
-@import 'main/main';
 @import 'main/visual';
 @import 'main/detail';
 @import 'main/news';
