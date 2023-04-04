@@ -146,6 +146,7 @@ header {
 					> a {
 						&::after {
 							content: none;
+							background: #333;
 						}
 					}
 				}
