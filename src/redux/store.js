@@ -8,7 +8,6 @@ import rootSaga from './saga';
 const sagaMiddleware = createSagaMiddleware();
 
 //store공간에 reducer데이터를 전달할때 sagaMiddleware를 설정해서 연동
-//순서6 - 리듀서에서 변경된 데이터가 스토에 전달 (이때 리듀서에 saga미들웨어 설정)
 const store = createStore(reducers, applyMiddleware(sagaMiddleware));
 
 //미들웨어로 연결된 saga에 rootSaga함수 적용

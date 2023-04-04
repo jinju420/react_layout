@@ -24,13 +24,11 @@ function App() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		//순서1 - dispatch로 액션객체를 리듀서에 전달 {type: 'YOUTUBE_START'}
 		dispatch({ type: types.YOUTUBE.start });
 		dispatch({ type: types.FLICKR.start, Opt: { type: 'user', user: '195427004@N07' } });
 	}, [dispatch]);
 
 	return (
-		// switch는 좀 더 자세하게 적은 exact내용을 채택하고 예외로 그렇지 않은 내용을 처리
 		<>
 			<Switch>
 				{/* menu컴포넌트에서 전달된 참조객체를 다시 메인 전용 Header컴포넌트에 전달하기 위해 우선 Main 컴포넌트 props로 전달 */}
@@ -38,13 +36,6 @@ function App() {
 				{/* menu컴포넌트에서 전달된 참조객체를 다시 Header컴포넌트에 props로 전달 */}
 				<Route path='/' render={() => <Header type={'sub'} menu={menu} />} />
 			</Switch>
-
-			{/* 2depth줄때 */}
-			{/* <Switch>
-				<Route path='brand/about' component={About} />
-				<Route path='/brand' component={Brand} />
-			</Switch> */}
-			{/* <Route path='brand/about' component={About} /> */}
 
 			<Route path='/brand' component={Brand} />
 			<Route path='/gallery' component={Gallery} />

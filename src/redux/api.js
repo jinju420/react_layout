@@ -24,4 +24,3 @@ export const fetchFlickr = async (opt) => {
 
 	return await axios.get(url);
 };
-//youtube api로 부터 비동기 데이터를 요청해서 반환하는 순수함수 형태 (DOM제어, 리액트 컴포넌트 관련 기능 없음)
