@@ -48,9 +48,6 @@ function Pics() {
 									className='on'
 									ref={btnStart}
 									onClick={() => {
-										//pagination, 좌우버튼 클릭시 일지 정지가 되는 것이 아닌 autoplay기능 자체가 비활성화 됨
-										//현재 자동롤링 동작 유무는 swiper.autoplay.running값으로 확인
-										//자동롤링 시작, 정지 함수도 start, stop으로 변경
 										if (Instance.autoplay.running) return;
 										Instance.autoplay.start();
 										btnStart.current.classList.add('on');

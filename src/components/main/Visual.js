@@ -8,14 +8,7 @@ function Visual() {
 		const data = await axios.get(process.env.PUBLIC_URL + '/DB/data.json');
 		setInfo(data.data.info);
 	};
-	// const listEl = useRef(null);
-	// const keys = useRef({});
 	const openFunc = useRef(null);
-	// const open = useRef(null);
-	// const handleClick = () => {
-	// 	openFunc.current.open();
-	// 	listEl.current.classList.add('off');
-	// };
 
 	useEffect(() => getData(), []);
 

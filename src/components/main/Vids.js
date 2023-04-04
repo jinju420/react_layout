@@ -1,7 +1,5 @@
 import { memo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Modal from '../common/Modal';
 
 function Vids() {

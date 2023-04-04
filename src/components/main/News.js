@@ -4,11 +4,6 @@ import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 function News() {
-	/*
-	로컬스토리지의 데이터를 반환하는 함수
-	로컬스토리지의 값이 있으면 해당 값을 다시 json형태로 변경해서 반환
-	로컬스토리지의 값이 없으면 빈 배열을 반환
-	*/
 	const getLocalData = () => {
 		const dummys = [
 			{
