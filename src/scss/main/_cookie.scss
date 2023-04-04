@@ -1,5 +1,5 @@
 #popup {
-	width: 500px;
+	width: 450px;
 	position: absolute;
 	top: 100px;
 	padding: 10px;
@@ -41,14 +41,8 @@
 	}
 }
 
-@media screen and (max-width: $tablet) {
-	#popup {
-		right: 20px;
-	}
-}
 @media screen and (max-width: $mobile) {
 	#popup {
-		width: 450px;
 		right: 20px;
 	}
 }
