@@ -1,5 +1,5 @@
 #popup {
-	width: 450px;
+	width: 400px;
 	position: absolute;
 	top: 100px;
 	padding: 10px;
@@ -16,6 +16,10 @@
 		color: #333;
 		line-height: 1.4;
 		font-size: 16px;
+		p {
+			font-size: 12px;
+			word-break: keep-all;
+		}
 	}
 	.wrap {
 		display: inline-flex;
@@ -27,7 +31,7 @@
 		}
 		label {
 			color: #333;
-			font: 16px/1 $contentFont;
+			font: 12px/1 $contentFont;
 		}
 	}
 
@@ -36,13 +40,24 @@
 		bottom: 15px;
 		right: 15px;
 		text-align: right;
-		font: 14px/1 $contentFont;
+		font: 12px/1 $contentFont;
 		color: #333;
 	}
 }
 
 @media screen and (max-width: 789px) {
 	#popup {
+		width: 45vmax;
 		right: 20px;
+		.popCont {
+			.wrap {
+				label {
+					font: 10px/1 $contentFont;
+				}
+			}
+		}
+		.close {
+			font: 10px/1 $contentFont;
+		}
 	}
 }
